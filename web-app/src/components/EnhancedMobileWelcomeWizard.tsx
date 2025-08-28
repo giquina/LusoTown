@@ -1,43 +1,48 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
   XMarkIcon,
   ArrowRightIcon,
-  CheckIcon
-} from '@heroicons/react/24/outline'
-import { useLanguage } from '@/context/LanguageContext'
-import { ROUTES } from '@/config/routes'
-import { Card } from '@/components/ui/card'
-import { GradientText } from '@/components/ui'
+  CheckIcon,
+} from "@heroicons/react/24/outline";
+import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from "@/config/routes";
+import { Card } from "@/components/ui/card";
+import GradientBackground from "@/components/ui/GradientBackground";
+import { GradientText } from "@/components/ui";
 
 // Mobile Language Toggle Component
 function MobileLanguageToggle() {
-  const { language, setLanguage } = useLanguage()
-  
+  const { language, setLanguage } = useLanguage();
+
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'pt' : 'en')
-  }
-  
+    setLanguage(language === "en" ? "pt" : "en");
+  };
+
   return (
     <button
       onClick={toggleLanguage}
       className="flex items-center gap-1 px-3 py-2 bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200 hover:border-primary-300 transition-all text-sm font-medium shadow-lg"
       title="Toggle language / Alternar idioma"
-      aria-label={language === 'en' ? 'Mudar para Português' : 'Switch to English'}
+      aria-label={
+        language === "en" ? "Mudar para Português" : "Switch to English"
+      }
     >
-      <span className="text-lg">{language === 'en' ? '🇬🇧' : '🇵🇹'}</span>
-      <span className="text-sm font-bold text-gray-700">{language === 'en' ? 'EN' : 'PT'}</span>
+      <span className="text-lg">{language === "en" ? "🇬🇧" : "🇵🇹"}</span>
+      <span className="text-sm font-bold text-gray-700">
+        {language === "en" ? "EN" : "PT"}
+      </span>
     </button>
-  )
+  );
 }
 
 // Flag Flow Animation Component
 function FlagFlowAnimation() {
-  const flags = ['🇵🇹', '🇧🇷', '🇦🇴', '🇨🇻', '🇲🇿', '🇬🇼', '🇸🇹', '🇹🇱']
-  
+  const flags = ["🇵🇹", "🇧🇷", "🇦🇴", "🇨🇻", "🇲🇿", "🇬🇼", "🇸🇹", "🇹🇱"];
+
   return (
     <div className="flex justify-center items-center space-x-2 my-4">
       {flags.map((flag, index) => (
@@ -50,7 +55,7 @@ function FlagFlowAnimation() {
             duration: 0.5,
             repeat: Infinity,
             repeatType: "reverse",
-            repeatDelay: 3
+            repeatDelay: 3,
           }}
           className="text-2xl"
         >
@@ -58,142 +63,144 @@ function FlagFlowAnimation() {
         </motion.span>
       ))}
     </div>
-  )
+  );
 }
 
 interface EnhancedMobileWelcomeWizardProps {
-  isOpen: boolean
-  onClose: () => void
-  onComplete: (selection: string) => void
+  isOpen: boolean;
+  onClose: () => void;
+  onComplete: (selection: string) => void;
 }
 
 interface MembershipOption {
-  id: string
-  title: string
-  subtitle: string
-  description: string
-  membershipBenefit: string
-  heritageExamples: string
-  emoji: string
-  gradient: string
-  flags: string
-  route: string
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  membershipBenefit: string;
+  heritageExamples: string;
+  emoji: string;
+  gradient: string;
+  flags: string;
+  route: string;
 }
 
 export default function EnhancedMobileWelcomeWizard({
   isOpen,
   onClose,
-  onComplete
+  onComplete,
 }: EnhancedMobileWelcomeWizardProps) {
-  const { language, t } = useLanguage()
-  const router = useRouter()
-  const [selectedMembership, setSelectedMembership] = useState<string>('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const { language, t } = useLanguage();
+  const router = useRouter();
+  const [selectedMembership, setSelectedMembership] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  const isPortuguese = language === 'pt'
+  const isPortuguese = language === "pt";
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
-      document.body.style.position = 'fixed'
-      document.body.style.width = '100%'
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     } else {
-      document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.width = ''
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     }
 
     return () => {
-      document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.width = ''
-    }
-  }, [isOpen])
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    };
+  }, [isOpen]);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   // Exclusive Membership Options
   const exclusiveMembershipOptions: MembershipOption[] = [
     {
-      id: 'cultural',
-      title: t('wizard.enhanced.cultural.title'),
-      subtitle: t('wizard.enhanced.cultural.subtitle'),
-      description: t('wizard.enhanced.cultural.description'),
-      membershipBenefit: t('wizard.enhanced.cultural.benefit'),
-      heritageExamples: t('wizard.enhanced.cultural.heritage'),
-      emoji: '🎭',
-      gradient: 'from-purple-500 to-pink-500',
-      flags: '🇵🇹🇧🇷🇦🇴🇨🇻',
-      route: ROUTES.culturalMembership
+      id: "cultural",
+      title: t("wizard.enhanced.cultural.title"),
+      subtitle: t("wizard.enhanced.cultural.subtitle"),
+      description: t("wizard.enhanced.cultural.description"),
+      membershipBenefit: t("wizard.enhanced.cultural.benefit"),
+      heritageExamples: t("wizard.enhanced.cultural.heritage"),
+      emoji: "🎭",
+      gradient: "from-purple-500 to-pink-500",
+      flags: "🇵🇹🇧🇷🇦🇴🇨🇻",
+      route: ROUTES.culturalMembership,
     },
     {
-      id: 'connections',
-      title: t('wizard.enhanced.connections.title'),
-      subtitle: t('wizard.enhanced.connections.subtitle'),
-      description: t('wizard.enhanced.connections.description'),
-      membershipBenefit: t('wizard.enhanced.connections.benefit'),
-      heritageExamples: t('wizard.enhanced.connections.heritage'),
-      emoji: '💎',
-      gradient: 'from-red-500 to-orange-500',
-      flags: '🇲🇿🇬🇼🇸🇹🇹🇱',
-      route: ROUTES.socialMembership
+      id: "connections",
+      title: t("wizard.enhanced.connections.title"),
+      subtitle: t("wizard.enhanced.connections.subtitle"),
+      description: t("wizard.enhanced.connections.description"),
+      membershipBenefit: t("wizard.enhanced.connections.benefit"),
+      heritageExamples: t("wizard.enhanced.connections.heritage"),
+      emoji: "💎",
+      gradient: "from-red-500 to-orange-500",
+      flags: "🇲🇿🇬🇼🇸🇹🇹🇱",
+      route: ROUTES.socialMembership,
     },
     {
-      id: 'community',
-      title: t('wizard.enhanced.community.title'),
-      subtitle: t('wizard.enhanced.community.subtitle'),
-      description: t('wizard.enhanced.community.description'),
-      membershipBenefit: t('wizard.enhanced.community.benefit'),
-      heritageExamples: t('wizard.enhanced.community.heritage'),
-      emoji: '🤝',
-      gradient: 'from-green-500 to-teal-500',
-      flags: '🇬🇧🌍',
-      route: ROUTES.communityMembership
+      id: "community",
+      title: t("wizard.enhanced.community.title"),
+      subtitle: t("wizard.enhanced.community.subtitle"),
+      description: t("wizard.enhanced.community.description"),
+      membershipBenefit: t("wizard.enhanced.community.benefit"),
+      heritageExamples: t("wizard.enhanced.community.heritage"),
+      emoji: "🤝",
+      gradient: "from-green-500 to-teal-500",
+      flags: "🇬🇧🌍",
+      route: ROUTES.communityMembership,
     },
     {
-      id: 'business',
-      title: t('wizard.enhanced.business.title'),
-      subtitle: t('wizard.enhanced.business.subtitle'),
-      description: t('wizard.enhanced.business.description'),
-      membershipBenefit: t('wizard.enhanced.business.benefit'),
-      heritageExamples: t('wizard.enhanced.business.heritage'),
-      emoji: '💼',
-      gradient: 'from-blue-500 to-indigo-500',
-      flags: '💰🌐',
-      route: ROUTES.businessMembership
-    }
-  ]
+      id: "business",
+      title: t("wizard.enhanced.business.title"),
+      subtitle: t("wizard.enhanced.business.subtitle"),
+      description: t("wizard.enhanced.business.description"),
+      membershipBenefit: t("wizard.enhanced.business.benefit"),
+      heritageExamples: t("wizard.enhanced.business.heritage"),
+      emoji: "💼",
+      gradient: "from-blue-500 to-indigo-500",
+      flags: "💰🌐",
+      route: ROUTES.businessMembership,
+    },
+  ];
 
   const handleMembershipSelection = async (membershipId: string) => {
-    setSelectedMembership(membershipId)
-    setIsLoading(true)
+    setSelectedMembership(membershipId);
+    setIsLoading(true);
 
     try {
       // Store selection in localStorage for persistence
-      localStorage.setItem('lusotown-membership-selection', membershipId)
-      localStorage.setItem('lusotown-welcome-completed', 'true')
-      
+      localStorage.setItem("lusotown-membership-selection", membershipId);
+      localStorage.setItem("lusotown-welcome-completed", "true");
+
       // Find the selected option and navigate to its route
-      const selectedOption = exclusiveMembershipOptions.find(option => option.id === membershipId)
+      const selectedOption = exclusiveMembershipOptions.find(
+        (option) => option.id === membershipId
+      );
       if (selectedOption) {
         // Call the completion handler
-        onComplete(membershipId)
-        
+        onComplete(membershipId);
+
         // Navigate to the membership application page
-        router.push(selectedOption.route)
+        router.push(selectedOption.route);
       }
     } catch (error) {
-      console.error('Error handling membership selection:', error)
+      console.error("Error handling membership selection:", error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <AnimatePresence>
@@ -203,7 +210,7 @@ export default function EnhancedMobileWelcomeWizard({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 50 }}
@@ -213,9 +220,9 @@ export default function EnhancedMobileWelcomeWizard({
             className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto"
           >
             <GradientBackground variant="heritage" className="rounded-3xl">
-              <Card 
-                variant="glassmorphism" 
-                elevation="2xl" 
+              <Card
+                variant="glassmorphism"
+                elevation="2xl"
                 className="p-6 space-y-6"
                 animate={false}
               >
@@ -225,7 +232,7 @@ export default function EnhancedMobileWelcomeWizard({
                   <button
                     onClick={onClose}
                     className="p-2 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 hover:border-red-300 transition-colors shadow-lg"
-                    aria-label={t('wizard.enhanced.close')}
+                    aria-label={t("wizard.enhanced.close")}
                   >
                     <XMarkIcon className="w-5 h-5 text-gray-600" />
                   </button>
@@ -241,23 +248,27 @@ export default function EnhancedMobileWelcomeWizard({
                   >
                     <span className="text-3xl">🌍</span>
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                     className="space-y-2"
                   >
-                    <GradientText variant="heritage" size="2xl" className="font-bold">
-                      {t('wizard.enhanced.title')}
+                    <GradientText
+                      variant="heritage"
+                      size="2xl"
+                      className="font-bold"
+                    >
+                      {t("wizard.enhanced.title")}
                     </GradientText>
-                    
+
                     <p className="text-lg font-semibold text-primary-600">
-                      {t('wizard.enhanced.subtitle')}
+                      {t("wizard.enhanced.subtitle")}
                     </p>
-                    
+
                     <p className="text-sm text-gray-600 font-medium">
-                      {t('wizard.enhanced.tagline')}
+                      {t("wizard.enhanced.tagline")}
                     </p>
                   </motion.div>
 
@@ -279,9 +290,9 @@ export default function EnhancedMobileWelcomeWizard({
                         elevation="lg"
                         hover={true}
                         className={`cursor-pointer transition-all duration-300 ${
-                          selectedMembership === option.id 
-                            ? 'ring-2 ring-primary-500 bg-primary-50 border-primary-500' 
-                            : 'hover:border-primary-300 hover:shadow-xl'
+                          selectedMembership === option.id
+                            ? "ring-2 ring-primary-500 bg-primary-50 border-primary-500"
+                            : "hover:border-primary-300 hover:shadow-xl"
                         }`}
                         onClick={() => handleMembershipSelection(option.id)}
                       >
@@ -289,7 +300,9 @@ export default function EnhancedMobileWelcomeWizard({
                           {/* Header with Icon and Flags */}
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <div className={`w-14 h-14 bg-gradient-to-r ${option.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                              <div
+                                className={`w-14 h-14 bg-gradient-to-r ${option.gradient} rounded-2xl flex items-center justify-center shadow-lg`}
+                              >
                                 <span className="text-2xl">{option.emoji}</span>
                               </div>
                               <div className="text-left">
@@ -303,23 +316,23 @@ export default function EnhancedMobileWelcomeWizard({
                             </div>
                             <div className="text-xl">{option.flags}</div>
                           </div>
-                          
+
                           {/* Description */}
                           <div className="text-xs text-gray-600 leading-relaxed">
                             {option.description}
                           </div>
-                          
+
                           {/* Membership Benefit Badge */}
                           <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-xl p-3 border border-green-200">
                             <div className="text-xs font-semibold text-green-700 mb-1 flex items-center gap-1">
                               <CheckIcon className="w-3 h-3" />
-                              {t('wizard.enhanced.membership_benefit')}
+                              {t("wizard.enhanced.membership_benefit")}
                             </div>
                             <div className="text-xs text-green-600 font-medium">
                               {option.membershipBenefit}
                             </div>
                           </div>
-                          
+
                           {/* Heritage Promise */}
                           <div className="text-xs text-gray-500 italic text-center p-2 bg-gray-50 rounded-lg">
                             {option.heritageExamples}
@@ -353,7 +366,7 @@ export default function EnhancedMobileWelcomeWizard({
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 rounded-xl">
                       <div className="w-4 h-4 border-2 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
                       <span className="text-sm font-medium text-primary-600">
-                        {t('wizard.enhanced.processing')}
+                        {t("wizard.enhanced.processing")}
                       </span>
                     </div>
                   </motion.div>
@@ -362,7 +375,7 @@ export default function EnhancedMobileWelcomeWizard({
                 {/* Footer */}
                 <div className="text-center pt-4 border-t border-gray-200">
                   <p className="text-xs text-gray-500">
-                    {t('wizard.enhanced.welcome_message')}
+                    {t("wizard.enhanced.welcome_message")}
                   </p>
                 </div>
               </Card>
@@ -371,5 +384,5 @@ export default function EnhancedMobileWelcomeWizard({
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

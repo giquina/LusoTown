@@ -146,7 +146,7 @@ npm run audit:hardcoding    # Check for hardcoded values
 ```
 /
 ├── web-app/           # Next.js 14 App Router (~290 essential components)
-│   ├── src/config/    # Configuration-first system (46 config files)
+│   ├── src/config/    # Configuration-first system (48 config files)
 │   ├── src/i18n/      # Bilingual EN/PT translations
 │   ├── src/components/ # UI components with Portuguese theming
 │   └── src/context/   # React Context for state management
@@ -184,6 +184,12 @@ export default function ComponentName() {
 **Node.js**: v20+ (web-app) / v22.x (streaming) / v18+ (mobile-app)  
 **npm**: v9+ (web-app) / v8+ (other workspaces)  
 **Expo CLI**: Latest version for mobile development
+
+**Verification Commands**:
+```bash
+node --version    # Should show v20+ for web-app, v22+ for streaming
+npm --version     # Should show v9+ for web-app
+```
 
 ## 📖 Project Context
 
@@ -229,11 +235,58 @@ NEXT_PUBLIC_ENABLE_MATCHING=true
 NEXT_PUBLIC_ENABLE_TRANSPORT=true
 ```
 
-## 🤖 AI Integration
+## 🤖 AI Integration & Agent System
 
-**Primary Reference**: `/AGENTS.md` - Complete agent system with 30+ specialized advisors
+**Primary Reference**: `/AGENTS.md` - Master behavioral guidelines for all AI agents
 
-**Key Agents**: `frontend-architect`, `backend-engineer`, `mobile-ux-specialist`, `luso-heritage-agent`
+**Agent System**: 38 specialized agents in `.claude/agents/` for domain-specific expertise
+
+### Technical Agent Integration
+
+**Essential Development Agents**:
+- `frontend-architect`: React/Next.js development specialist  
+- `backend-engineer`: Node.js APIs and database optimization
+- `mobile-ux-specialist`: Mobile-first design expert
+- `fullstack-developer`: End-to-end feature development
+- `deploy-manager`: Deployment and DevOps specialist
+- `bug-finder`: Quality assurance and issue detection
+
+**Portuguese Community Agents**:
+- `luso-heritage-agent`: Cultural preservation and storytelling
+- `luso-growth-agent`: Community expansion and outreach  
+- `luso-partnership-agent`: Institutional relationships
+- `luso-membership-agent`: Subscription optimization
+
+### Agent Usage in Claude Code
+```javascript
+// Use Task tool with subagent_type parameter
+Task tool with:
+- description: "Brief task description"
+- subagent_type: "frontend-architect" // matches agent filename
+- prompt: "Detailed instructions for the specialist"
+```
+
+### Technical Architecture for Agents
+
+**Next.js 14 App Router Configuration**:
+- Bundle splitting: vendor, react, heroicons, framer-motion chunks
+- Image optimization: WebP/AVIF with multiple CDN domains  
+- TypeScript: `ignoreBuildErrors: true` for development
+- ESLint: `ignoreDuringBuilds: true` for CI/CD
+
+**Portuguese Color System**:
+```css
+--heritage-primary: '#1e40af'      /* Portuguese Atlantic Blue */
+--heritage-secondary: '#059669'    /* Portuguese Hope Green */  
+--heritage-accent: '#f59e0b'       /* Portuguese Golden Sun */
+--heritage-action: '#dc2626'       /* Portuguese Passion Red */
+```
+
+**Performance Optimization Stack**:
+- Bundle splitting with vendor, framework, and common chunks
+- Image format optimization (WebP, AVIF)
+- Mobile-first responsive design (375px, 768px, 1024px)
+- Portuguese text rendering optimization
 
 **GitHub Claude Integration**: Automated code reviews with Portuguese community focus. Add `ANTHROPIC_API_KEY` to repository secrets for activation.
 
@@ -432,7 +485,7 @@ npx playwright test ux-fixes-focused-verification.spec.ts
 │   ├── students/       # University partnership components
 │   ├── mobile/         # Mobile-optimized components
 │   └── transport/      # Transport coordination
-├── config/             # 46 config files (zero hardcoding system)
+├── config/             # 48 config files (zero hardcoding system)
 │   ├── brand.ts        # Portuguese cultural colors
 │   ├── pricing.ts      # Subscription and service pricing
 │   ├── routes.ts       # Application routing

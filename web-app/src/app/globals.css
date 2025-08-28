@@ -375,6 +375,87 @@ html {
   }
 }
 
+/* Portuguese Heritage Color Variables */
+:root {
+  /* Portuguese Primary Colors (Heritage Gold/Bronze) */
+  --heritage-primary-25: #fefdfb;
+  --heritage-primary-50: #fdf8f0;
+  --heritage-primary-100: #fbedc2;
+  --heritage-primary-200: #f7d997;
+  --heritage-primary-300: #f3c56b;
+  --heritage-primary-400: #efb140;
+  --heritage-primary: #d4a574;
+  --heritage-primary-600: #b8945e;
+  --heritage-primary-700: #9c8248;
+  --heritage-primary-800: #807032;
+  --heritage-primary-900: #645e1c;
+
+  /* Portuguese Secondary Colors (Heritage Brown) */
+  --heritage-secondary-25: #fdfcfb;
+  --heritage-secondary-50: #f7f3f0;
+  --heritage-secondary-100: #e8ddd6;
+  --heritage-secondary-200: #d9c7bc;
+  --heritage-secondary-300: #cab1a2;
+  --heritage-secondary-400: #bb9b88;
+  --heritage-secondary: #8b4513;
+  --heritage-secondary-600: #7a3e11;
+  --heritage-secondary-700: #69370f;
+  --heritage-secondary-800: #58300d;
+  --heritage-secondary-900: #47290b;
+
+  /* Portuguese Accent Colors (Heritage Green) */
+  --heritage-accent-25: #fbfefb;
+  --heritage-accent-50: #f0f8f0;
+  --heritage-accent-100: #d6e8d6;
+  --heritage-accent-200: #bcd8bc;
+  --heritage-accent-300: #a2c8a2;
+  --heritage-accent-400: #88b888;
+  --heritage-accent: #228b22;
+  --heritage-accent-600: #1e7d1e;
+  --heritage-accent-700: #1a6f1a;
+  --heritage-accent-800: #166116;
+  --heritage-accent-900: #125312;
+
+  /* Portuguese Action Colors (Heritage Red) */
+  --heritage-action-25: #fefcfc;
+  --heritage-action-50: #fdf2f2;
+  --heritage-action-100: #f8d7d7;
+  --heritage-action-200: #f3bcbc;
+  --heritage-action-300: #eea1a1;
+  --heritage-action-400: #e98686;
+  --heritage-action: #dc143c;
+  --heritage-action-600: #c51235;
+  --heritage-action-700: #ae102e;
+  --heritage-action-800: #970e27;
+  --heritage-action-900: #800c20;
+
+  /* Portuguese Premium Colors (Heritage Purple) */
+  --heritage-premium-25: #fdfaff;
+  --heritage-premium-50: #faf5ff;
+  --heritage-premium-100: #ede9fe;
+  --heritage-premium-200: #ddd6fe;
+  --heritage-premium-300: #c4b5fd;
+  --heritage-premium-400: #a78bfa;
+  --heritage-premium: #7c3aed;
+  --heritage-premium-600: #5b21b6;
+  --heritage-premium-700: #4c1d95;
+  --heritage-premium-800: #3730a3;
+  --heritage-premium-900: #312e81;
+
+  /* Portuguese Coral Colors (Heritage Orange) */
+  --heritage-coral-25: #fffbf9;
+  --heritage-coral-50: #fff7ed;
+  --heritage-coral-100: #fed7aa;
+  --heritage-coral-200: #fed7aa;
+  --heritage-coral-300: #fdba74;
+  --heritage-coral-400: #fb923c;
+  --heritage-coral: #f97316;
+  --heritage-coral-600: #ea580c;
+  --heritage-coral-700: #c2410c;
+  --heritage-coral-800: #9a3412;
+  --heritage-coral-900: #7c2d12;
+}
+
 /* Custom base styles for LusoTown London */
 @layer base {
   html {
@@ -771,8 +852,6 @@ html {
     @apply bg-gradient-to-r from-primary-600 via-accent-600 to-action-600;
   }
 
-  /* Original Portuguese Primary Button Styles */
-  .btn-primary {
   /* Enhanced Portuguese Primary Button Styles */
   .btn-primary {
     @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold px-8 py-4 rounded-button shadow-card hover:shadow-card-hover transform transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 min-h-[48px];
@@ -1106,6 +1185,8 @@ html {
     @apply min-w-0 max-w-[60%] xs:max-w-[70%] sm:max-w-full;
   }
 }
+
+/* Close the @layer components block */
 
 /* Utility classes */
 @layer utilities {
@@ -1487,7 +1568,4 @@ body.app-download-bar-visible {
 
 .animate-filter-slide-in {
   animation: filterSlideIn 0.3s ease-out;
-}
-
-/* Close the @layer components block */
 }

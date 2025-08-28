@@ -38,6 +38,7 @@ module.exports = {
         
         // Primary heritage color
         primary: {
+          25: 'var(--heritage-primary-25, #f8fafc)',
           50: 'var(--heritage-primary-50, #eff6ff)',
           100: 'var(--heritage-primary-100, #dbeafe)',
           200: 'var(--heritage-primary-200, #bfdbfe)',
@@ -52,6 +53,7 @@ module.exports = {
         
         // Secondary heritage color
         secondary: {
+          25: 'var(--heritage-secondary-25, #f0fdf4)',
           50: 'var(--heritage-secondary-50, #ecfdf5)',
           100: 'var(--heritage-secondary-100, #d1fae5)',
           200: 'var(--heritage-secondary-200, #a7f3d0)',
@@ -66,6 +68,7 @@ module.exports = {
         
         // Accent heritage color
         accent: {
+          25: 'var(--heritage-accent-25, #fffdf7)',
           50: 'var(--heritage-accent-50, #fffbeb)',
           100: 'var(--heritage-accent-100, #fef3c7)',
           200: 'var(--heritage-accent-200, #fde68a)',
@@ -80,6 +83,7 @@ module.exports = {
         
         // Action heritage color
         action: {
+          25: 'var(--heritage-action-25, #fefcfc)',
           50: 'var(--heritage-action-50, #fef2f2)',
           100: 'var(--heritage-action-100, #fee2e2)',
           200: 'var(--heritage-action-200, #fecaca)',
@@ -94,6 +98,7 @@ module.exports = {
         
         // Premium heritage color
         premium: {
+          25: 'var(--heritage-premium-25, #fdfdff)',
           50: 'var(--heritage-premium-50, #faf5ff)',
           100: 'var(--heritage-premium-100, #ede9fe)',
           200: 'var(--heritage-premium-200, #ddd6fe)',
@@ -108,6 +113,7 @@ module.exports = {
         
         // Coral heritage color
         coral: {
+          25: 'var(--heritage-coral-25, #fffaf8)',
           50: 'var(--heritage-coral-50, #fff7ed)',
           100: 'var(--heritage-coral-100, #fed7aa)',
           200: 'var(--heritage-coral-200, #fed7aa)',
