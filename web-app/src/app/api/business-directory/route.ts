@@ -1,38 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase';
-import { withRateLimit } from '@/lib/rate-limit-middleware';
-import { logRateLimitViolation, detectAndLogAbuse } from '@/lib/rate-limit-monitoring';
+import { getPortugueseApiMiddleware } from '@/lib/api-middleware';
 import logger from '@/utils/logger';
 import { getApiErrorMessage, getApiLogMessage, getApiSuccessMessage } from '@/config/api-messages';
 import { APIValidation, validateAPIInput, ValidationError } from '@/lib/validation/api-validation';
 
-// Business Directory API with Portuguese Community Rate Limiting
-export async function GET(request: NextRequest) {
-  // Apply rate limiting for business directory access
-  const rateLimitCheck = await withRateLimit(request, 'business-directory', {
-    bypassForTrusted: true, // Allow trusted Portuguese community partners
-  });
-  
-  if (!('success' in rateLimitCheck)) {
-    // Rate limit exceeded - log the violation
-    const clientIP = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
-    logRateLimitViolation(
-      clientIP,
-      'business-directory',
-      '/api/business-directory',
-      50, // limit from config
-      1, // current violation
-      request.headers.get('user-agent') || undefined
-    );
-    
-    return rateLimitCheck; // Return rate limit error response
-  }
+// Optimized Business Directory API with Connection Pooling and Caching
+const apiMiddleware = getPortugueseApiMiddleware();
 
-  try {
-    const supabase = createClient();
+export const GET = apiMiddleware.withOptimizations(
+  async (context, request) => {
     const { searchParams } = new URL(request.url);
     
-    // Validate and sanitize input parameters
+    // Extract and validate search parameters
     const searchData = {
       query: searchParams.get('query') || undefined,
       category: searchParams.get('category') || undefined,
@@ -46,155 +26,89 @@ export async function GET(request: NextRequest) {
     // Validate input using Zod schema
     const validatedSearch = validateAPIInput(APIValidation.businessDirectory.search, searchData);
     
-    // Extract Portuguese-specific query parameters
-    const category = validatedSearch.category;
-    const location = validatedSearch.location;
-    const portugueseSpecialties = validatedSearch.portugueseSpecialties;
-    const lon = parseFloat(searchParams.get('longitude') || '0');
+    // Extract location parameters for geospatial queries
     const lat = parseFloat(searchParams.get('latitude') || '0');
-    const radius = parseFloat(searchParams.get('radius') || '5'); // 5km default
+    const lon = parseFloat(searchParams.get('longitude') || '0');
+    const radius = parseFloat(searchParams.get('radius') || '10');
     
-    let query = supabase
-      .from('portuguese_businesses')
-      .select(`
-        id,
-        name,
-        category,
-        description,
-        address,
-        postcode,
-        phone,
-        email,
-        website,
-        portuguese_origin,
-        languages_supported,
-        coordinates,
-        opening_hours,
-        rating,
-        review_count,
-        verified,
-        cultural_specialties,
-        community_favorite,
-        created_at
-      `)
-      .eq('is_active', true)
-      .eq('is_approved', true);
+    // Build filters for the middleware
+    const filters = {
+      userLocation: lat && lon ? { lat, lng: lon } : undefined,
+      categories: validatedSearch.category ? [validatedSearch.category] : undefined,
+      radius,
+      searchText: validatedSearch.query,
+      limit: validatedSearch.limit,
+      offset: validatedSearch.offset
+    };
 
-    // Apply Portuguese community specific filters
-    if (category) {
-      query = query.eq('category', category);
-    }
-    
-    if (portugueseSpecialties) {
-      query = query.contains('cultural_specialties', portugueseSpecialties);
-    }
-
-    // Apply location-based filtering using PostGIS for London area
-    if (lon && lat && radius) {
-      // Use PostGIS distance query for Portuguese businesses in London
-      query = query.rpc('get_businesses_within_radius', {
-        center_lat: lat,
-        center_lon: lon,
-        radius_km: radius
-      });
-    } else if (location) {
-      // Text-based location search for Portuguese community areas
-      query = query.or(`address.ilike.%${location}%,postcode.ilike.%${location}%`);
-    }
-
-    // Order by community favorites and rating
-    query = query.order('community_favorite', { ascending: false })
-                  .order('rating', { ascending: false })
-                  .limit(50);
-
-    const { data: businesses, error } = await query;
-
-    if (error) {
-      logger.error(getApiLogMessage('PORTUGUESE_BUSINESS_DIRECTORY_FETCH_ERROR'), error, {
-        area: 'business_directory',
-        action: 'fetch_businesses',
-        filters: { category, location, portugueseSpecialties }
-      });
+    try {
+      // Use optimized business directory handler
+      const result = await apiMiddleware.getPortugueseBusinesses(context, filters);
       
-      return NextResponse.json(
-        { error: getApiErrorMessage('PORTUGUESE_BUSINESS_FETCH_FAILED') },
-        { status: 500, headers: rateLimitCheck.headers }
-      );
-    }
-
-    // Transform data for Portuguese community context
-    const transformedBusinesses = businesses?.map(business => ({
-      ...business,
-      distance_km: business.distance_km ? parseFloat(business.distance_km.toFixed(2)) : null,
-      cultural_context: {
-        portuguese_heritage: business.portuguese_origin?.includes('portugal'),
-        brazilian_heritage: business.portuguese_origin?.includes('brazil'),
-        palop_heritage: business.portuguese_origin?.some((origin: string) => 
-          ['angola', 'mozambique', 'cape-verde', 'guinea-bissau', 'sao-tome-principe'].includes(origin)
-        ),
-        lusophone_friendly: business.languages_supported?.includes('portuguese'),
-        community_verified: business.verified && business.community_favorite
-      }
-    })) || [];
-
-    // Log successful request for monitoring
-    logger.info(getApiLogMessage('PORTUGUESE_BUSINESS_DIRECTORY_SUCCESS'), undefined, {
-      area: 'business_directory',
-      action: 'fetch_success',
-      results_count: transformedBusinesses.length,
-      filters: { category, location, portugueseSpecialties }
-    });
-
-    const response = NextResponse.json({
-      businesses: transformedBusinesses,
-      total: transformedBusinesses.length,
-      filters: {
-        category,
-        location,
-        portuguese_specialties: portugueseSpecialties,
-        radius: radius
-      },
-      cultural_context: 'portuguese-speaking-community',
-      location_context: 'united-kingdom'
-    });
-
-    // Add rate limit headers
-    rateLimitCheck.headers.forEach((value, key) => {
-      response.headers.set(key, value);
-    });
-
-    return response;
-
-  } catch (error) {
-    // Handle validation errors specifically
-    if (error instanceof ValidationError) {
-      logger.warn('Business directory validation error', error, {
+      logger.info(getApiLogMessage('PORTUGUESE_BUSINESS_DIRECTORY_SUCCESS'), undefined, {
         area: 'business_directory',
-        action: 'validation_error',
-        issues: error.issues
+        action: 'fetch_success',
+        results_count: result.data.businesses.length,
+        cached: result.cached,
+        execution_time: result.executionTime,
+        filters
       });
 
-      return NextResponse.json(
-        { 
-          error: 'Validation failed',
-          details: error.issues,
-          message: getApiErrorMessage('VALIDATION_FAILED')
+      return {
+        data: {
+          businesses: result.data.businesses,
+          total: result.data.total,
+          filters: {
+            category: validatedSearch.category,
+            location: validatedSearch.location,
+            portuguese_specialties: validatedSearch.portugueseSpecialties,
+            radius
+          },
+          cultural_context: 'portuguese-speaking-community',
+          location_context: 'united-kingdom',
+          performance: {
+            cached: result.cached,
+            execution_time: result.executionTime,
+            cache_hit_ratio: result.cacheHitRatio
+          }
         },
-        { status: error.statusCode }
-      );
+        cached: result.cached,
+        executionTime: result.executionTime,
+        queryCount: result.queryCount,
+        cacheHitRatio: result.cacheHitRatio
+      };
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        logger.warn('Business directory validation error', error, {
+          area: 'business_directory',
+          action: 'validation_error',
+          issues: error.issues
+        });
+
+        throw error;
+      }
+
+      logger.error(getApiLogMessage('BUSINESS_DIRECTORY_API_ERROR'), error, {
+        area: 'business_directory',
+        action: 'api_error',
+        filters
+      });
+
+      throw error;
     }
-
-    logger.error(getApiLogMessage('BUSINESS_DIRECTORY_API_ERROR'), error, {
-      area: 'business_directory',
-      action: 'api_error'
-    });
-
-    return NextResponse.json(
-      { error: getApiErrorMessage('BUSINESS_DIRECTORY_SERVER_ERROR') },
-      { status: 500 }
-    );
+  },
+  {
+    enableCaching: true,
+    enableQueryOptimization: true,
+    enablePerformanceMonitoring: true,
+    cacheTTL: 900, // 15 minutes for business directory
+    rateLimit: {
+      endpoint: 'business-directory',
+      maxRequests: 50,
+      windowMs: 60000 // 1 minute
+    }
   }
-}
+);
 
 export async function POST(request: NextRequest) {
   // Apply stricter rate limiting for business submissions

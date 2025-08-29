@@ -150,3 +150,8 @@ export { default as ConversionOptimizationEngine } from './ConversionOptimizatio
 
 // Group Events Components
 export { default as GroupEventCard } from './GroupEventCard'
+
+// New components added for deployment fix
+export { default as PortuguesePolls } from './PortuguesePolls'
+export { default as MessageAuthorizationGate } from './MessageAuthorizationGate'
+export { default as ServiceIntegrationFeed } from './ServiceIntegrationFeed'

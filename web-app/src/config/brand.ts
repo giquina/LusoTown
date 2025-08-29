@@ -278,5 +278,15 @@ export const COMPONENT_COLORS = {
   }
 };
 
+// Heritage colors export for compatibility
+export const HERITAGE_COLORS = {
+  primary: brandColors.primary,
+  secondary: brandColors.secondary,
+  accent: brandColors.accent,
+  action: brandColors.action,
+  premium: brandColors.premium,
+  coral: brandColors.coral
+};
+
 // Consolidated export for backward compatibility
 export const brand = brandConfig;

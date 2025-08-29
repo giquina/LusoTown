@@ -1,137 +1,110 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
+import { getPortugueseApiMiddleware } from '@/lib/api-middleware';
 import logger from '@/utils/logger';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/events - Portuguese cultural events discovery
-export async function GET(request: NextRequest) {
-  try {
+// Optimized Portuguese Events API with Connection Pooling and Caching
+const apiMiddleware = getPortugueseApiMiddleware();
+
+export const GET = apiMiddleware.withOptimizations(
+  async (context, request) => {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get('category');
-    const region = searchParams.get('region'); // Portuguese region focus
+    const region = searchParams.get('region');
     const language = searchParams.get('language') || 'pt';
-    const location = searchParams.get('location'); // London area
+    const location = searchParams.get('location');
     const dateFrom = searchParams.get('dateFrom');
     const dateTo = searchParams.get('dateTo');
     const limit = parseInt(searchParams.get('limit') || '20');
     const offset = parseInt(searchParams.get('offset') || '0');
     
-    const cookieStore = cookies();
-    const supabase = createRouteHandlerClient({ cookies });
+    // Extract location for geospatial filtering
+    const lat = parseFloat(searchParams.get('latitude') || '0');
+    const lon = parseFloat(searchParams.get('longitude') || '0');
+    
+    // Build filters for the middleware
+    const filters = {
+      category,
+      region,
+      userLocation: lat && lon ? { lat, lng: lon } : undefined,
+      dateFrom,
+      dateTo,
+      limit,
+      offset
+    };
 
-    let query = supabase
-      .from('portuguese_events')
-      .select(`
-        id,
-        title,
-        description,
-        cultural_category,
-        location_pt,
-        location_en,
-        coordinates,
-        event_date,
-        event_time,
-        price_range,
-        max_participants,
-        current_participants,
-        organizer:profiles!organizer_id(
-          id,
-          first_name,
-          last_name,
-          profile_picture_url
-        ),
-        portuguese_region,
-        community_tags,
-        cultural_significance,
-        language_requirements,
-        accessibility_features,
-        is_free,
-        requires_booking,
-        booking_deadline,
-        contact_info,
-        created_at
-      `)
-      .eq('is_active', true)
-      .gte('event_date', new Date().toISOString().split('T')[0]) // Only future events
-      .order('event_date', { ascending: true })
-      .range(offset, offset + limit - 1);
+    try {
+      // Use optimized events handler
+      const result = await apiMiddleware.getPortugueseEvents(context, filters);
+      
+      // Transform events for bilingual display
+      const transformedEvents = result.data.events.map(event => ({
+        ...event,
+        titleDisplay: language === 'pt' ? event.title?.pt || event.title?.en || event.title : event.title?.en || event.title?.pt || event.title,
+        descriptionDisplay: language === 'pt' ? event.description?.pt || event.description?.en || event.description : event.description?.en || event.description?.pt || event.description,
+        locationDisplay: language === 'pt' ? event.location_pt || event.location_en : event.location_en || event.location_pt,
+      }));
 
-    // Apply filters
-    if (category) {
-      query = query.eq('cultural_category', category);
-    }
-
-    if (region && region !== 'all') {
-      query = query.contains('portuguese_region', [region]);
-    }
-
-    if (location && location !== 'all') {
-      query = query.eq('london_area', location);
-    }
-
-    if (dateFrom) {
-      query = query.gte('event_date', dateFrom);
-    }
-
-    if (dateTo) {
-      query = query.lte('event_date', dateTo);
-    }
-
-    const { data: events, error, count } = await query;
-
-    if (error) {
-      logger.error('Failed to fetch Portuguese events', error, {
+      logger.info('Portuguese events fetched successfully', {
         area: 'events',
         action: 'fetch_events',
         culturalContext: 'portuguese',
-        filters: { category, region, location, language }
+        results_count: transformedEvents.length,
+        cached: result.cached,
+        execution_time: result.executionTime,
+        filters
       });
-      return NextResponse.json({ error: 'Failed to fetch events' }, { status: 500 });
+
+      return {
+        data: {
+          events: transformedEvents,
+          total: result.data.total,
+          hasNext: offset + limit < result.data.total,
+          filters: {
+            category,
+            region,
+            location,
+            language,
+            dateFrom,
+            dateTo
+          },
+          cultural_context: 'portuguese-speaking-community',
+          performance: {
+            cached: result.cached,
+            execution_time: result.executionTime,
+            cache_hit_ratio: result.cacheHitRatio
+          }
+        },
+        cached: result.cached,
+        executionTime: result.executionTime,
+        queryCount: result.queryCount,
+        cacheHitRatio: result.cacheHitRatio
+      };
+    } catch (error) {
+      logger.error('Events API error', error, {
+        area: 'events',
+        action: 'events_api_get',
+        culturalContext: 'portuguese',
+        filters
+      });
+      throw error;
     }
-
-    // Get total count for pagination
-    const { count: totalCount } = await supabase
-      .from('portuguese_events')
-      .select('*', { count: 'exact', head: true })
-      .eq('is_active', true)
-      .gte('event_date', new Date().toISOString().split('T')[0]);
-
-    // Transform events for bilingual display
-    const transformedEvents = (events || []).map(event => ({
-      ...event,
-      titleDisplay: language === 'pt' ? event.title.pt || event.title.en : event.title.en || event.title.pt,
-      descriptionDisplay: language === 'pt' ? event.description.pt || event.description.en : event.description.en || event.description.pt,
-      locationDisplay: language === 'pt' ? event.location_pt || event.location_en : event.location_en || event.location_pt,
-      spotsAvailable: event.max_participants ? event.max_participants - event.current_participants : null,
-      isFullyBooked: event.max_participants && event.current_participants >= event.max_participants
-    }));
-
-    return NextResponse.json({
-      events: transformedEvents,
-      total: totalCount || 0,
-      hasNext: offset + limit < (totalCount || 0),
-      filters: {
-        category,
-        region,
-        location,
-        language,
-        dateFrom,
-        dateTo
-      },
-      culturalContext: 'portuguese-speaking-community'
-    });
-
-  } catch (error) {
-    logger.error('Events API GET error', error, {
-      area: 'events',
-      action: 'events_api_get',
-      culturalContext: 'portuguese'
-    });
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  },
+  {
+    enableCaching: true,
+    enableQueryOptimization: true,
+    enablePerformanceMonitoring: true,
+    cacheTTL: 300, // 5 minutes for events (more dynamic content)
+    rateLimit: {
+      endpoint: 'events',
+      maxRequests: 100,
+      windowMs: 60000 // 1 minute
+    }
   }
-}
+);
 
 // POST /api/events - Create new Portuguese cultural event
 export async function POST(request: NextRequest) {

@@ -1,431 +1,632 @@
 /**
- * API Middleware for Portuguese Community Platform
- * Combines rate limiting, error monitoring, and security for API routes
+ * Enhanced API Middleware for LusoTown Portuguese-speaking Community Platform
+ * 
+ * Integrates connection pooling, Redis caching, and query optimization:
+ * - Automatic connection pool management for Portuguese community queries
+ * - Intelligent caching for business directory and cultural events
+ * - Performance monitoring and optimization for Portuguese content
+ * - Rate limiting with Portuguese community context
  */
 
-import { NextRequest, NextResponse } from 'next/server'
-import { reportAPIError, reportDatabaseError, reportBusinessDirectoryServerError } from '../../sentry.server.config'
-import { withRateLimit } from '@/lib/rate-limit-middleware'
-import { RateLimitType } from '@/lib/rate-limit'
+import { NextRequest, NextResponse } from 'next/server';
+import { getPortugueseConnectionPool } from './database-connection-pool';
+import { getPortugueseCacheManager } from './redis-cache-manager';
+import { getPortugueseQueryOptimizer } from './query-optimizer';
+import { withRateLimit } from './rate-limit-middleware';
+import logger from '@/utils/logger';
 
-// API Response interface for consistent error handling
-export interface APIResponse<T = any> {
-  success: boolean
-  data?: T
-  error?: string
-  message?: string
-  code?: string
-  timestamp?: string
-  requestId?: string
+interface ApiMiddlewareConfig {
+  enableCaching?: boolean;
+  enableQueryOptimization?: boolean;
+  enablePerformanceMonitoring?: boolean;
+  cacheTTL?: number;
+  rateLimit?: {
+    endpoint: string;
+    maxRequests?: number;
+    windowMs?: number;
+  };
 }
 
-// Portuguese community API context
-interface PortugueseAPIContext {
-  userId?: string
-  isPortugueseCommunity: boolean
-  language: 'en' | 'pt'
-  trustLevel: 'new' | 'trusted' | 'verified'
-  location: 'uk' | 'portugal' | 'brazil' | 'other'
-  endpoint: string
-  method: string
+interface ApiContext {
+  connectionPool: any;
+  cacheManager: any;
+  queryOptimizer: any;
+  requestId: string;
+  startTime: number;
+  userId?: string;
+  culturalContext: 'portuguese' | 'general';
 }
 
-// Enhanced error handling for Portuguese community API routes
-export class PortugueseAPIError extends Error {
-  public readonly statusCode: number
-  public readonly code: string
-  public readonly context: Record<string, any>
+export interface OptimizedApiResponse<T = any> {
+  data: T;
+  cached: boolean;
+  executionTime: number;
+  queryCount: number;
+  cacheHitRatio: number;
+}
 
-  constructor(
-    message: string,
-    statusCode: number = 500,
-    code: string = 'INTERNAL_SERVER_ERROR',
-    context: Record<string, any> = {}
+export class PortugueseApiMiddleware {
+  private connectionPool: any;
+  private cacheManager: any;
+  private queryOptimizer: any;
+
+  constructor() {
+    this.connectionPool = getPortugueseConnectionPool();
+    this.cacheManager = getPortugueseCacheManager();
+    this.queryOptimizer = getPortugueseQueryOptimizer();
+  }
+
+  /**
+   * Main middleware wrapper for Portuguese community APIs
+   */
+  withOptimizations<T = any>(
+    handler: (context: ApiContext, request: NextRequest) => Promise<OptimizedApiResponse<T>>,
+    config: ApiMiddlewareConfig = {}
   ) {
-    super(message)
-    this.name = 'PortugueseAPIError'
-    this.statusCode = statusCode
-    this.code = code
-    this.context = context
-  }
-}
-
-// Extract Portuguese community context from request
-function getPortugueseAPIContext(request: NextRequest): PortugueseAPIContext {
-  const acceptLanguage = request.headers.get('accept-language') || ''
-  const userLanguage = request.headers.get('x-language-preference') || ''
-  const authHeader = request.headers.get('authorization')
-  const cfCountry = request.headers.get('cf-ipcountry') || ''
-  
-  // Detect Portuguese-speaking users
-  const isPortugueseCommunity = 
-    acceptLanguage.includes('pt') || 
-    userLanguage === 'pt' ||
-    userLanguage === 'portuguese'
-  
-  // Determine language preference
-  const language: 'en' | 'pt' = isPortugueseCommunity ? 'pt' : 'en'
-  
-  // Determine location
-  let location: 'uk' | 'portugal' | 'brazil' | 'other' = 'other'
-  if (cfCountry === 'GB') location = 'uk'
-  else if (cfCountry === 'PT') location = 'portugal'
-  else if (cfCountry === 'BR') location = 'brazil'
-  
-  // Determine trust level
-  let trustLevel: 'new' | 'trusted' | 'verified' = 'new'
-  if (authHeader?.startsWith('Bearer ')) {
-    trustLevel = 'trusted' // In production, decode JWT to get actual trust level
-  }
-  
-  return {
-    isPortugueseCommunity,
-    language,
-    trustLevel,
-    location,
-    endpoint: request.nextUrl.pathname,
-    method: request.method
-  }
-}
-
-// Generate unique request ID for tracking
-function generateRequestId(): string {
-  return `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-}
-
-// Create standardized API response
-export function createAPIResponse<T>(
-  success: boolean,
-  data?: T,
-  error?: string,
-  message?: string,
-  code?: string,
-  requestId?: string
-): APIResponse<T> {
-  return {
-    success,
-    data,
-    error,
-    message,
-    code,
-    timestamp: new Date().toISOString(),
-    requestId
-  }
-}
-
-// Create error response with Portuguese community context
-export function createErrorResponse(
-  error: string,
-  statusCode: number = 500,
-  code: string = 'INTERNAL_SERVER_ERROR',
-  message?: string,
-  requestId?: string,
-  language: 'en' | 'pt' = 'en'
-): NextResponse {
-  const errorMessages = {
-    en: {
-      INTERNAL_SERVER_ERROR: 'An internal server error occurred',
-      BAD_REQUEST: 'Invalid request parameters',
-      UNAUTHORIZED: 'Authentication required',
-      FORBIDDEN: 'Access denied',
-      NOT_FOUND: 'Resource not found',
-      RATE_LIMIT_EXCEEDED: 'Too many requests',
-      VALIDATION_ERROR: 'Validation failed',
-      DATABASE_ERROR: 'Database operation failed',
-      PORTUGUESE_BUSINESS_ERROR: 'Business directory error',
-      CULTURAL_MATCHING_ERROR: 'Cultural matching error'
-    },
-    pt: {
-      INTERNAL_SERVER_ERROR: 'Ocorreu um erro interno do servidor',
-      BAD_REQUEST: 'Parâmetros de solicitação inválidos',
-      UNAUTHORIZED: 'Autenticação necessária',
-      FORBIDDEN: 'Acesso negado',
-      NOT_FOUND: 'Recurso não encontrado',
-      RATE_LIMIT_EXCEEDED: 'Muitas solicitações',
-      VALIDATION_ERROR: 'Validação falhou',
-      DATABASE_ERROR: 'Operação de banco de dados falhou',
-      PORTUGUESE_BUSINESS_ERROR: 'Erro no diretório de negócios',
-      CULTURAL_MATCHING_ERROR: 'Erro de correspondência cultural'
-    }
-  }
-
-  const localizedMessage = message || 
-    errorMessages[language][code as keyof typeof errorMessages.en] || 
-    errorMessages[language].INTERNAL_SERVER_ERROR
-
-  return NextResponse.json(
-    createAPIResponse(false, undefined, error, localizedMessage, code, requestId),
-    { status: statusCode }
-  )
-}
-
-// Comprehensive API route wrapper with Portuguese community features
-export function withPortugueseAPIHandler(
-  handler: (request: NextRequest, context: PortugueseAPIContext) => Promise<NextResponse>,
-  options: {
-    rateLimitType?: RateLimitType
-    requireAuth?: boolean
-    allowedMethods?: string[]
-    skipRateLimit?: boolean
-  } = {}
-) {
-  return async (request: NextRequest): Promise<NextResponse> => {
-    const requestId = generateRequestId()
-    const startTime = Date.now()
-    
-    try {
-      // Extract Portuguese community context
-      const context = getPortugueseAPIContext(request)
+    return async (request: NextRequest): Promise<NextResponse> => {
+      const requestId = this.generateRequestId();
+      const startTime = Date.now();
       
-      // Method validation
-      if (options.allowedMethods && !options.allowedMethods.includes(request.method)) {
-        return createErrorResponse(
-          'Method not allowed',
-          405,
-          'METHOD_NOT_ALLOWED',
-          undefined,
-          requestId,
-          context.language
-        )
-      }
-      
-      // Authentication check
-      if (options.requireAuth) {
-        const authHeader = request.headers.get('authorization')
-        if (!authHeader || !authHeader.startsWith('Bearer ')) {
-          return createErrorResponse(
-            'Authentication required',
-            401,
-            'UNAUTHORIZED',
-            undefined,
-            requestId,
-            context.language
-          )
-        }
-      }
-      
-      // Apply rate limiting if not skipped
-      if (!options.skipRateLimit) {
-        const rateLimitResult = await withRateLimit(request, options.rateLimitType)
-        if (rateLimitResult && 'success' in rateLimitResult && !rateLimitResult.success) {
-          return rateLimitResult as NextResponse
-        }
-      }
-      
-      // Execute handler with context
-      const response = await handler(request, context)
-      
-      // Add Portuguese community headers to response
-      response.headers.set('X-Portuguese-Community', context.isPortugueseCommunity.toString())
-      response.headers.set('X-Request-ID', requestId)
-      response.headers.set('X-Processing-Time', `${Date.now() - startTime}ms`)
-      response.headers.set('X-Language-Context', context.language)
-      
-      // Log successful Portuguese community API calls
-      if (context.isPortugueseCommunity) {
-        console.log('Portuguese Community API Success:', {
-          endpoint: context.endpoint,
-          method: context.method,
-          requestId,
-          processingTime: Date.now() - startTime,
-          statusCode: response.status,
-          language: context.language,
-          location: context.location,
-          timestamp: new Date().toISOString()
-        })
-      }
-      
-      return response
-      
-    } catch (error) {
-      const apiError = error as PortugueseAPIError | Error
-      const context = getPortugueseAPIContext(request)
-      
-      // Enhanced error logging with Portuguese community context
-      console.error('Portuguese Community API Error:', {
-        error: apiError.message,
-        stack: apiError.stack,
-        endpoint: context.endpoint,
-        method: context.method,
+      // Setup API context
+      const context: ApiContext = {
+        connectionPool: this.connectionPool,
+        cacheManager: this.cacheManager,
+        queryOptimizer: this.queryOptimizer,
         requestId,
-        processingTime: Date.now() - startTime,
-        isPortugueseCommunity: context.isPortugueseCommunity,
-        language: context.language,
-        location: context.location,
-        timestamp: new Date().toISOString()
-      })
-      
-      // Report to Sentry with Portuguese community context
-      reportAPIError(apiError, {
-        endpoint: context.endpoint,
-        method: context.method,
-        requestData: {
-          hasBody: request.body !== null,
-          contentType: request.headers.get('content-type'),
-          userAgent: request.headers.get('user-agent')
-        },
-        isPortugueseUser: context.isPortugueseCommunity
-      })
-      
-      // Return appropriate error response
-      if (apiError instanceof PortugueseAPIError) {
-        return createErrorResponse(
-          apiError.message,
-          apiError.statusCode,
-          apiError.code,
-          undefined,
-          requestId,
-          context.language
-        )
-      }
-      
-      // Generic error handling
-      return createErrorResponse(
-        'An unexpected error occurred',
-        500,
-        'INTERNAL_SERVER_ERROR',
-        undefined,
-        requestId,
-        context.language
-      )
-    }
-  }
-}
+        startTime,
+        culturalContext: this.detectPortugueseContext(request)
+      };
 
-// Specialized wrapper for business directory API routes
-export function withBusinessDirectoryAPI(
-  handler: (request: NextRequest, context: PortugueseAPIContext) => Promise<NextResponse>
-) {
-  return withPortugueseAPIHandler(
-    async (request, context) => {
       try {
-        return await handler(request, context)
+        // Apply rate limiting if configured
+        if (config.rateLimit) {
+          const rateLimitResult = await withRateLimit(request, config.rateLimit.endpoint, {
+            maxRequests: config.rateLimit.maxRequests,
+            windowMs: config.rateLimit.windowMs
+          });
+
+          if (!('success' in rateLimitResult)) {
+            return rateLimitResult;
+          }
+        }
+
+        // Get user context if available
+        context.userId = await this.extractUserId(request);
+
+        // Check cache first if caching is enabled
+        if (config.enableCaching) {
+          const cachedResponse = await this.checkCache(request, context);
+          if (cachedResponse) {
+            return this.createResponse(cachedResponse, true, startTime);
+          }
+        }
+
+        // Execute the API handler
+        const result = await handler(context, request);
+
+        // Cache the response if caching is enabled
+        if (config.enableCaching && result.data) {
+          await this.cacheResponse(request, result.data, config.cacheTTL, context);
+        }
+
+        // Log performance metrics
+        if (config.enablePerformanceMonitoring) {
+          this.logPerformanceMetrics(context, result, request);
+        }
+
+        return this.createResponse(result, false, startTime);
+
       } catch (error) {
-        // Specialized business directory error reporting
-        reportBusinessDirectoryServerError(error as Error, {
-          operation: request.method.toLowerCase() as 'create' | 'read' | 'update' | 'delete',
-          userId: context.userId
-        })
-        throw error
+        logger.error('Portuguese API middleware error', error, {
+          area: 'api_middleware',
+          action: 'request_processing',
+          requestId,
+          culturalContext: context.culturalContext
+        });
+
+        return NextResponse.json(
+          { error: 'Internal server error', requestId },
+          { status: 500 }
+        );
       }
-    },
-    {
-      rateLimitType: 'business-directory',
-      allowedMethods: ['GET', 'POST', 'PUT', 'DELETE']
-    }
-  )
-}
+    };
+  }
 
-// Specialized wrapper for cultural matching API routes
-export function withCulturalMatchingAPI(
-  handler: (request: NextRequest, context: PortugueseAPIContext) => Promise<NextResponse>
-) {
-  return withPortugueseAPIHandler(
-    handler,
-    {
-      rateLimitType: 'matching',
-      requireAuth: true,
-      allowedMethods: ['GET', 'POST', 'PUT']
+  /**
+   * Optimized business directory API handler
+   */
+  async getPortugueseBusinesses(
+    context: ApiContext,
+    filters: {
+      userLocation?: { lat: number; lng: number };
+      categories?: string[];
+      radius?: number;
+      searchText?: string;
+      limit?: number;
+      offset?: number;
     }
-  )
-}
-
-// Specialized wrapper for events API routes
-export function withEventsAPI(
-  handler: (request: NextRequest, context: PortugueseAPIContext) => Promise<NextResponse>
-) {
-  return withPortugueseAPIHandler(
-    handler,
-    {
-      rateLimitType: 'event-booking',
-      allowedMethods: ['GET', 'POST', 'PUT', 'DELETE']
-    }
-  )
-}
-
-// Specialized wrapper for authentication API routes
-export function withAuthAPI(
-  handler: (request: NextRequest, context: PortugueseAPIContext) => Promise<NextResponse>
-) {
-  return withPortugueseAPIHandler(
-    handler,
-    {
-      rateLimitType: 'authentication',
-      allowedMethods: ['POST', 'PUT'],
-      skipRateLimit: false // Keep strict rate limiting for auth
-    }
-  )
-}
-
-// Database operation wrapper with error monitoring
-export async function withDatabaseOperation<T>(
-  operation: () => Promise<T>,
-  context: {
-    table?: string
-    operationType?: 'create' | 'read' | 'update' | 'delete'
-    isPortugueseData?: boolean
-  } = {}
-): Promise<T> {
-  try {
-    return await operation()
-  } catch (error) {
-    // Report database errors to Sentry
-    reportDatabaseError(error as Error, {
-      operation: context.operationType,
-      table: context.table,
-      isPortugueseData: context.isPortugueseData
-    })
+  ): Promise<OptimizedApiResponse> {
+    const { userLocation, categories, radius = 10, limit = 20, offset = 0 } = filters;
     
-    throw new PortugueseAPIError(
-      'Database operation failed',
-      500,
-      'DATABASE_ERROR',
-      { table: context.table, operation: context.operationType }
-    )
+    // Check cache first
+    const cacheKey = this.buildBusinessCacheKey(filters);
+    let businesses = await context.cacheManager.get(cacheKey, 'portuguese-businesses');
+
+    if (!businesses) {
+      // Use optimized PostGIS query
+      if (userLocation) {
+        const queryResult = await context.connectionPool.queryPortugueseBusinessesGeo(
+          userLocation.lat,
+          userLocation.lng,
+          radius,
+          categories
+        );
+        businesses = queryResult.rows;
+      } else {
+        // Use text-based search with Portuguese optimization
+        const optimizedQuery = await context.queryOptimizer.optimizeQuery(
+          `
+          SELECT 
+            b.*,
+            ts_rank(to_tsvector('portuguese', b.name || ' ' || b.description), query) as relevance
+          FROM portuguese_businesses b,
+               plainto_tsquery('portuguese', $1) query
+          WHERE 
+            b.is_active = true
+            AND ($2::text[] IS NULL OR b.business_type = ANY($2))
+            AND (to_tsvector('portuguese', b.name || ' ' || b.description) @@ query OR $1 = '')
+          ORDER BY 
+            CASE WHEN $1 != '' THEN relevance ELSE 0 END DESC,
+            b.community_favorite DESC,
+            b.rating_average DESC NULLS LAST
+          LIMIT $3 OFFSET $4
+          `,
+          [filters.searchText || '', categories, limit, offset],
+          'business'
+        );
+        
+        const queryResult = await context.connectionPool.query(
+          optimizedQuery.optimizedQuery,
+          [filters.searchText || '', categories, limit, offset]
+        );
+        businesses = queryResult.rows;
+      }
+
+      // Cache the results
+      await context.cacheManager.cachePortugueseBusinesses(
+        userLocation || { lat: 51.5074, lng: -0.1278 }, // Default to London
+        businesses,
+        radius
+      );
+    }
+
+    return {
+      data: {
+        businesses: this.enhanceBusinessData(businesses),
+        total: businesses.length,
+        cached: !!businesses,
+        filters
+      },
+      cached: !!businesses,
+      executionTime: Date.now() - context.startTime,
+      queryCount: 1,
+      cacheHitRatio: context.cacheManager.getMetrics().hitRatio
+    };
+  }
+
+  /**
+   * Optimized Portuguese events API handler
+   */
+  async getPortugueseEvents(
+    context: ApiContext,
+    filters: {
+      category?: string;
+      region?: string;
+      userLocation?: { lat: number; lng: number };
+      dateFrom?: string;
+      dateTo?: string;
+      limit?: number;
+      offset?: number;
+    }
+  ): Promise<OptimizedApiResponse> {
+    const { category, region, userLocation, dateFrom, dateTo, limit = 20, offset = 0 } = filters;
+
+    // Check cache first
+    const cacheKey = this.buildEventsCacheKey(filters);
+    let events = await context.cacheManager.get(cacheKey, 'portuguese-events');
+
+    if (!events) {
+      // Use optimized cultural events query
+      const queryResult = await context.connectionPool.queryPortugueseCulturalEvents(
+        context.userId,
+        category ? [category] : undefined,
+        userLocation ? { ...userLocation, radius: 25 } : undefined
+      );
+      
+      let eventsData = queryResult.rows;
+
+      // Apply additional filters
+      if (region && region !== 'all') {
+        eventsData = eventsData.filter(event => 
+          event.portuguese_region && event.portuguese_region.includes(region)
+        );
+      }
+
+      if (dateFrom) {
+        eventsData = eventsData.filter(event => 
+          new Date(event.event_date) >= new Date(dateFrom)
+        );
+      }
+
+      if (dateTo) {
+        eventsData = eventsData.filter(event => 
+          new Date(event.event_date) <= new Date(dateTo)
+        );
+      }
+
+      // Apply pagination
+      events = eventsData.slice(offset, offset + limit);
+
+      // Cache the results
+      await context.cacheManager.cachePortugueseEvents(
+        userLocation || { lat: 51.5074, lng: -0.1278 },
+        events,
+        filters
+      );
+    }
+
+    return {
+      data: {
+        events: this.enhanceEventData(events),
+        total: events.length,
+        cached: !!events,
+        filters
+      },
+      cached: !!events,
+      executionTime: Date.now() - context.startTime,
+      queryCount: 1,
+      cacheHitRatio: context.cacheManager.getMetrics().hitRatio
+    };
+  }
+
+  /**
+   * Optimized cultural matching API handler
+   */
+  async getPortugueseCulturalMatches(
+    context: ApiContext,
+    userId: string,
+    filters: {
+      minCompatibility?: number;
+      limit?: number;
+      location?: { lat: number; lng: number; radius: number };
+    } = {}
+  ): Promise<OptimizedApiResponse> {
+    const { minCompatibility = 0.7, limit = 20, location } = filters;
+
+    // Check cache first
+    const cacheKey = `matches_${userId}_${minCompatibility}_${limit}`;
+    let matches = await context.cacheManager.get(cacheKey, 'cultural-matches');
+
+    if (!matches) {
+      // Use optimized cultural compatibility query
+      const queryResult = await context.connectionPool.queryPortugueseCulturalMatching(
+        userId,
+        limit
+      );
+      
+      matches = queryResult.rows;
+
+      // Apply location filtering if specified
+      if (location && matches.length > 0) {
+        // This would require additional PostGIS query to filter by user locations
+        // For now, we'll keep all matches
+      }
+
+      // Cache the results
+      await context.cacheManager.cacheCulturalMatches(userId, matches);
+    }
+
+    return {
+      data: {
+        matches: this.enhanceMatchData(matches),
+        total: matches.length,
+        compatibility_threshold: minCompatibility,
+        cached: !!matches
+      },
+      cached: !!matches,
+      executionTime: Date.now() - context.startTime,
+      queryCount: 1,
+      cacheHitRatio: context.cacheManager.getMetrics().hitRatio
+    };
+  }
+
+  /**
+   * Cache invalidation for Portuguese content updates
+   */
+  async invalidatePortugueseCache(
+    contentType: 'businesses' | 'events' | 'matches' | 'all',
+    specificKeys?: string[]
+  ): Promise<void> {
+    const tags = this.getCacheTagsForContentType(contentType);
+    await this.cacheManager.invalidateByTags(tags);
+
+    if (specificKeys) {
+      for (const key of specificKeys) {
+        await this.cacheManager.delete(key);
+      }
+    }
+
+    logger.info('Portuguese community cache invalidated', {
+      contentType,
+      tags,
+      specificKeys: specificKeys?.length || 0
+    });
+  }
+
+  /**
+   * Get API performance metrics
+   */
+  async getPerformanceMetrics(): Promise<any> {
+    const connectionMetrics = this.connectionPool.getMetrics();
+    const cacheMetrics = this.cacheManager.getMetrics();
+    const queryAnalysis = await this.queryOptimizer.analyzeQueryPerformance('day');
+
+    return {
+      connections: connectionMetrics,
+      cache: cacheMetrics,
+      queries: queryAnalysis,
+      recommendations: this.generatePerformanceRecommendations(
+        connectionMetrics,
+        cacheMetrics,
+        queryAnalysis
+      )
+    };
+  }
+
+  /**
+   * Private helper methods
+   */
+
+  private generateRequestId(): string {
+    return `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  }
+
+  private detectPortugueseContext(request: NextRequest): 'portuguese' | 'general' {
+    const url = request.url.toLowerCase();
+    const hasPortugueseIndicators = 
+      url.includes('portuguese') ||
+      url.includes('cultural') ||
+      url.includes('business-directory') ||
+      url.includes('events') ||
+      url.includes('matching');
+
+    return hasPortugueseIndicators ? 'portuguese' : 'general';
+  }
+
+  private async extractUserId(request: NextRequest): Promise<string | undefined> {
+    try {
+      // This would integrate with your auth system
+      // For now, return undefined
+      return undefined;
+    } catch (error) {
+      return undefined;
+    }
+  }
+
+  private async checkCache(request: NextRequest, context: ApiContext): Promise<any> {
+    const cacheKey = this.buildRequestCacheKey(request);
+    return await context.cacheManager.get(cacheKey, 'api-responses');
+  }
+
+  private async cacheResponse(
+    request: NextRequest,
+    data: any,
+    ttl: number = 300,
+    context: ApiContext
+  ): Promise<void> {
+    const cacheKey = this.buildRequestCacheKey(request);
+    await context.cacheManager.set(cacheKey, data, 'api-responses', ttl);
+  }
+
+  private buildRequestCacheKey(request: NextRequest): string {
+    const url = new URL(request.url);
+    const path = url.pathname;
+    const params = Array.from(url.searchParams.entries()).sort();
+    const paramsString = params.map(([key, value]) => `${key}=${value}`).join('&');
+    
+    return `${path}?${paramsString}`;
+  }
+
+  private buildBusinessCacheKey(filters: any): string {
+    const { userLocation, categories, radius, searchText, limit, offset } = filters;
+    const locationKey = userLocation ? `${userLocation.lat}_${userLocation.lng}` : 'no_location';
+    const categoriesKey = categories?.join('_') || 'all_categories';
+    
+    return `businesses_${locationKey}_${categoriesKey}_${radius}_${searchText || ''}_${limit}_${offset}`;
+  }
+
+  private buildEventsCacheKey(filters: any): string {
+    const { category, region, userLocation, dateFrom, dateTo, limit, offset } = filters;
+    const locationKey = userLocation ? `${userLocation.lat}_${userLocation.lng}` : 'no_location';
+    
+    return `events_${category || 'all'}_${region || 'all'}_${locationKey}_${dateFrom || ''}_${dateTo || ''}_${limit}_${offset}`;
+  }
+
+  private enhanceBusinessData(businesses: any[]): any[] {
+    return businesses.map(business => ({
+      ...business,
+      cultural_heritage: this.determineCulturalHeritage(business.portuguese_origin),
+      distance_display: business.distance_km ? `${business.distance_km.toFixed(1)}km` : null,
+      languages_supported: business.languages_supported || ['portuguese'],
+      community_verified: business.verified && business.community_favorite
+    }));
+  }
+
+  private enhanceEventData(events: any[]): any[] {
+    return events.map(event => ({
+      ...event,
+      spots_available: event.max_attendees ? event.max_attendees - event.current_attendees : null,
+      is_fully_booked: event.max_attendees && event.current_attendees >= event.max_attendees,
+      cultural_significance_level: this.assessCulturalSignificance(event.cultural_category),
+      accessibility_score: this.calculateAccessibilityScore(event.accessibility_features || [])
+    }));
+  }
+
+  private enhanceMatchData(matches: any[]): any[] {
+    return matches.map(match => ({
+      ...match,
+      compatibility_level: this.getCompatibilityLevel(match.overall_compatibility),
+      shared_interests: match.shared_elements || [],
+      cultural_connection_strength: this.assessCulturalConnection(
+        match.cultural_compatibility,
+        match.language_compatibility
+      )
+    }));
+  }
+
+  private determineCulturalHeritage(origins: string[]): any {
+    if (!origins || origins.length === 0) return { type: 'unknown', strength: 0 };
+
+    const heritageMap = {
+      portugal: { type: 'portuguese', strength: 1.0 },
+      brazil: { type: 'brazilian', strength: 1.0 },
+      angola: { type: 'angolan', strength: 0.9 },
+      mozambique: { type: 'mozambican', strength: 0.9 },
+      'cape-verde': { type: 'cape_verdean', strength: 0.9 },
+      'guinea-bissau': { type: 'guinea_bissauan', strength: 0.8 },
+      'sao-tome-principe': { type: 'sao_tomean', strength: 0.8 },
+      'east-timor': { type: 'timorese', strength: 0.7 }
+    };
+
+    const primaryHeritage = origins[0];
+    return heritageMap[primaryHeritage] || { type: 'lusophone', strength: 0.8 };
+  }
+
+  private assessCulturalSignificance(category: string): 'high' | 'medium' | 'low' {
+    const highSignificance = ['fado', 'folklore', 'festival', 'literature'];
+    const mediumSignificance = ['cuisine', 'language', 'arts', 'sports'];
+    
+    if (highSignificance.includes(category)) return 'high';
+    if (mediumSignificance.includes(category)) return 'medium';
+    return 'low';
+  }
+
+  private calculateAccessibilityScore(features: string[]): number {
+    const totalPossible = 10;
+    const accessibilityFeatures = [
+      'wheelchair_accessible', 'hearing_loop', 'sign_language', 'large_print',
+      'audio_description', 'braille', 'accessible_parking', 'accessible_transport',
+      'step_free_access', 'accessible_toilets'
+    ];
+    
+    const score = features.filter(feature => 
+      accessibilityFeatures.includes(feature)
+    ).length;
+    
+    return (score / totalPossible) * 100;
+  }
+
+  private getCompatibilityLevel(score: number): string {
+    if (score >= 0.9) return 'excellent';
+    if (score >= 0.8) return 'very_good';
+    if (score >= 0.7) return 'good';
+    if (score >= 0.6) return 'fair';
+    return 'low';
+  }
+
+  private assessCulturalConnection(culturalScore: number, languageScore: number): string {
+    const avgScore = (culturalScore + languageScore) / 2;
+    
+    if (avgScore >= 0.85) return 'very_strong';
+    if (avgScore >= 0.7) return 'strong';
+    if (avgScore >= 0.55) return 'moderate';
+    return 'weak';
+  }
+
+  private getCacheTagsForContentType(contentType: string): string[] {
+    const tagMap = {
+      businesses: ['businesses', 'directory', 'portuguese'],
+      events: ['events', 'cultural', 'portuguese'],
+      matches: ['matching', 'cultural', 'portuguese'],
+      all: ['events', 'businesses', 'matching', 'cultural', 'portuguese']
+    };
+
+    return tagMap[contentType] || [];
+  }
+
+  private logPerformanceMetrics(
+    context: ApiContext,
+    result: OptimizedApiResponse,
+    request: NextRequest
+  ): void {
+    const executionTime = Date.now() - context.startTime;
+    
+    logger.info('Portuguese API performance metrics', {
+      requestId: context.requestId,
+      endpoint: new URL(request.url).pathname,
+      executionTime,
+      cached: result.cached,
+      queryCount: result.queryCount,
+      cacheHitRatio: result.cacheHitRatio,
+      culturalContext: context.culturalContext,
+      userId: context.userId
+    });
+  }
+
+  private createResponse(
+    result: OptimizedApiResponse,
+    cached: boolean,
+    startTime: number
+  ): NextResponse {
+    const response = NextResponse.json(result.data);
+    
+    // Add performance headers
+    response.headers.set('X-Execution-Time', `${Date.now() - startTime}ms`);
+    response.headers.set('X-Cached', cached.toString());
+    response.headers.set('X-Cache-Hit-Ratio', result.cacheHitRatio?.toString() || '0');
+    response.headers.set('X-Cultural-Context', 'portuguese-community');
+    
+    return response;
+  }
+
+  private generatePerformanceRecommendations(
+    connectionMetrics: any,
+    cacheMetrics: any,
+    queryAnalysis: any
+  ): string[] {
+    const recommendations: string[] = [];
+
+    if (connectionMetrics.activeConnections / connectionMetrics.totalConnections > 0.8) {
+      recommendations.push('Consider increasing database connection pool size during Portuguese community peak hours');
+    }
+
+    if (cacheMetrics.hitRatio < 0.7) {
+      recommendations.push('Low cache hit ratio - review caching strategies for Portuguese content');
+    }
+
+    if (queryAnalysis.averageExecutionTime > 200) {
+      recommendations.push('High average query execution time - optimize Portuguese cultural queries');
+    }
+
+    if (queryAnalysis.slowQueries > queryAnalysis.totalQueries * 0.1) {
+      recommendations.push('High percentage of slow queries - review database indexes for Portuguese content');
+    }
+
+    return recommendations;
   }
 }
 
-// Validation helper with Portuguese community context
-export function validatePortugueseInput(
-  data: any,
-  rules: Record<string, (value: any) => boolean | string>,
-  language: 'en' | 'pt' = 'en'
-): { valid: boolean; errors: Record<string, string> } {
-  const errors: Record<string, string> = {}
-  
-  const errorMessages = {
-    en: {
-      required: 'This field is required',
-      invalid: 'Invalid value',
-      tooShort: 'Value is too short',
-      tooLong: 'Value is too long',
-      invalidEmail: 'Invalid email address',
-      invalidPhone: 'Invalid phone number'
-    },
-    pt: {
-      required: 'Este campo é obrigatório',
-      invalid: 'Valor inválido',
-      tooShort: 'Valor muito curto',
-      tooLong: 'Valor muito longo',
-      invalidEmail: 'Endereço de email inválido',
-      invalidPhone: 'Número de telefone inválido'
-    }
+// Singleton instance
+let apiMiddleware: PortugueseApiMiddleware | null = null;
+
+/**
+ * Get the Portuguese API middleware instance
+ */
+export function getPortugueseApiMiddleware(): PortugueseApiMiddleware {
+  if (!apiMiddleware) {
+    apiMiddleware = new PortugueseApiMiddleware();
   }
-  
-  for (const [field, rule] of Object.entries(rules)) {
-    const result = rule(data[field])
-    if (typeof result === 'string') {
-      errors[field] = result
-    } else if (result === false) {
-      errors[field] = errorMessages[language].invalid
-    }
-  }
-  
-  return {
-    valid: Object.keys(errors).length === 0,
-    errors
-  }
+  return apiMiddleware;
 }
 
-// Export types for use in API routes
-export type { PortugueseAPIContext, APIResponse }
+export default PortugueseApiMiddleware;
