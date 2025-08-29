@@ -81,12 +81,15 @@ export const ERROR_SEVERITY = {
 
 // Portuguese community feature error thresholds
 export const PORTUGUESE_ERROR_THRESHOLDS = {
-  businessDirectoryFailureRate: 0.05, // 5% max failure rate
+  businessDirectoryFailureRate: parseFloat(process.env.PORTUGUESE_CONTENT_ERROR_THRESHOLD || '0.05'), // 5% max failure rate
   culturalContentLoadTime: 3000, // 3 seconds max
-  languageSwitchingTime: 500, // 500ms max for language switching
+  languageSwitchingTime: parseInt(process.env.BILINGUAL_SWITCHING_THRESHOLD || '500'), // 500ms max for language switching
   characterRenderingErrors: 0.01, // 1% max Portuguese character errors
   culturalMatchingTimeout: 5000, // 5 seconds max for cultural matching
-  eventBookingFailureRate: 0.02 // 2% max booking failures
+  eventBookingFailureRate: 0.02, // 2% max booking failures
+  communityEngagementThreshold: parseFloat(process.env.COMMUNITY_ENGAGEMENT_THRESHOLD || '0.7'), // 70% min engagement
+  mobilePortugueseUXScore: 85, // 85/100 min mobile UX score for Portuguese users
+  uptimeTarget: 0.999 // 99.9% uptime target
 }
 
 // Alert configuration for Portuguese community features
@@ -178,6 +181,60 @@ export const ERROR_MONITORING_FEATURES = {
   gdprCompliantLogging: true
 }
 
+// Uptime monitoring configuration
+export const UPTIME_MONITORING = {
+  enabled: process.env.NODE_ENV === 'production',
+  checkInterval: parseInt(process.env.UPTIME_CHECK_INTERVAL || '60000'), // 1 minute
+  webhookUrl: process.env.UPTIME_WEBHOOK_URL,
+  endpoints: {
+    homepage: '/',
+    events: '/events',
+    businessDirectory: '/business-directory',
+    streaming: '/streaming',
+    api: '/api/health',
+    auth: '/api/auth/user'
+  },
+  healthCheckTimeout: 10000, // 10 seconds
+  retryAttempts: 3,
+  alertThreshold: 2 // Alert after 2 consecutive failures
+}
+
+// Incident response configuration
+export const INCIDENT_RESPONSE = {
+  escalationLevels: {
+    level1: {
+      name: 'Community Support',
+      contacts: process.env.ALERT_RECIPIENTS?.split(',') || [],
+      responseTime: 300000, // 5 minutes
+      severity: ['low', 'medium']
+    },
+    level2: {
+      name: 'Technical Team',
+      contacts: process.env.PERFORMANCE_ALERT_RECIPIENTS?.split(',') || [],
+      responseTime: 900000, // 15 minutes
+      severity: ['high']
+    },
+    level3: {
+      name: 'Critical Response Team',
+      contacts: process.env.CRITICAL_ALERT_RECIPIENTS?.split(',') || [],
+      responseTime: 300000, // 5 minutes
+      severity: ['critical']
+    }
+  },
+  communicationChannels: {
+    email: true,
+    slack: process.env.SLACK_WEBHOOK_URL ? true : false,
+    sms: process.env.TWILIO_SMS_ENABLED === 'true',
+    statusPage: process.env.STATUS_PAGE_API_KEY ? true : false
+  },
+  automatedActions: {
+    restartServices: false, // Manual approval required
+    scaleResources: true, // Auto-scale if configured
+    rollbackDeployment: false, // Manual approval required
+    enableMaintenanceMode: true // Auto-enable for critical failures
+  }
+}
+
 // Dashboard configuration
 export const MONITORING_DASHBOARD = {
   refreshInterval: 30000, // 30 seconds
@@ -188,9 +245,14 @@ export const MONITORING_DASHBOARD = {
     'bilingual_switching_performance',
     'business_directory_success_rate',
     'cultural_matching_accuracy',
-    'mobile_user_experience_score'
+    'mobile_user_experience_score',
+    'uptime_percentage',
+    'community_engagement_rate',
+    'portuguese_character_rendering_success',
+    'api_response_times'
   ],
-  alertHistoryLimit: 100
+  alertHistoryLimit: 100,
+  realTimeUpdates: process.env.NEXT_PUBLIC_ENABLE_REAL_TIME_ALERTS === 'true'
 }
 
 export default {
@@ -202,5 +264,7 @@ export default {
   MONITORING_ALERTS,
   ERROR_CATEGORIES,
   ERROR_MONITORING_FEATURES,
+  UPTIME_MONITORING,
+  INCIDENT_RESPONSE,
   MONITORING_DASHBOARD
 }

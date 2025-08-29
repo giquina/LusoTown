@@ -45,7 +45,9 @@ export async function GET(request: NextRequest) {
         description: `New Portuguese cultural event: ${event.cultural_category}`,
         location: event.location_en || event.location_pt,
         date: event.event_date,
-        organizer: `${event.organizer.first_name} ${event.organizer.last_name}`,
+        organizer: event.organizer && Array.isArray(event.organizer) && event.organizer[0] 
+          ? `${event.organizer[0].first_name} ${event.organizer[0].last_name}`
+          : 'Unknown Organizer',
         created_at: event.created_at,
         category: event.cultural_category
       }))

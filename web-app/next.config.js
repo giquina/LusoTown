@@ -1,26 +1,37 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Memory optimization for large component libraries (497+ components)
+  // Advanced memory optimization for streamlined component library (228 components)
   experimental: {
     // Enable SWC compiler optimizations for better memory usage
     swcMinify: true,
-    // Reduce memory usage during build
-    cpus: Math.max(1, Math.floor(require('os').cpus().length / 2)),
-    // Enable worker threads optimization
-    workerThreads: false, // Disable to save memory in constrained environments
-    // Optimize for build performance
-    optimizePackageImports: ['lucide-react', '@heroicons/react'],
+    // Adaptive CPU allocation based on system resources
+    cpus: Math.max(1, Math.min(2, Math.floor(require('os').cpus().length / 3))),
+    // Disable worker threads in memory-constrained environments
+    workerThreads: false,
+    // Advanced package import optimizations
+    optimizePackageImports: ['lucide-react', '@heroicons/react', 'framer-motion', '@headlessui/react'],
+    // Enable modern bundling optimizations
+    serverComponentsExternalPackages: ['sharp', 'canvas'],
+    // Optimize CSS handling
+    optimizeCss: true,
+    // Reduce compilation memory usage
+    webVitalsAttribution: ['CLS', 'FCP', 'FID', 'INP', 'LCP', 'TTFB']
   },
   
-  // Webpack optimizations for large codebases
+  // Advanced webpack optimizations for Portuguese community platform
   webpack: (config, { dev, isServer }) => {
-    // Memory optimization
-  if (!dev && !isServer) {
+    // Production optimizations for client-side bundles
+    if (!dev && !isServer) {
       config.optimization = {
         ...config.optimization,
-        // Split chunks more aggressively to reduce memory pressure
+        // Aggressive chunk splitting for Portuguese community components
         splitChunks: {
           chunks: 'all',
+          minSize: 20000,
+          maxSize: 250000,
+          minChunks: 1,
+          maxAsyncRequests: 8,
+          maxInitialRequests: 6,
           cacheGroups: {
             default: {
               minChunks: 2,
@@ -31,35 +42,66 @@ const nextConfig = {
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
               priority: -10,
-              chunks: 'all'
+              chunks: 'all',
+              maxSize: 200000
             },
-            // Separate large libraries
+            // Core React bundle
             react: {
               test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
               name: 'react',
               chunks: 'all',
-              priority: 10
+              priority: 20
             },
+            // Portuguese community UI libraries
             heroicons: {
               test: /[\\/]node_modules[\\/]@heroicons[\\/]/,
               name: 'heroicons',
               chunks: 'all',
-              priority: 5
+              priority: 15
             },
             framerMotion: {
               test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
               name: 'framer-motion',
               chunks: 'all',
-              priority: 5
+              priority: 15
+            },
+            headlessui: {
+              test: /[\\/]node_modules[\\/]@headlessui[\\/]/,
+              name: 'headlessui',
+              chunks: 'all',
+              priority: 12
+            },
+            // Portuguese community components
+            carousels: {
+              test: /[\\/]src[\\/]components[\\/]carousels[\\/]/,
+              name: 'lusotown-carousels',
+              chunks: 'all',
+              priority: 18
+            },
+            lusotown: {
+              test: /[\\/]src[\\/]components[\\/]/,
+              name: 'lusotown-components',
+              chunks: 'all',
+              priority: 8,
+              minSize: 30000
             }
           }
         }
       };
       
-      // Reduce memory usage by limiting cache size (client only)
+      // Memory-efficient caching strategy
       config.cache = {
         type: 'memory',
-        maxGenerations: 1
+        maxGenerations: 1,
+        compression: 'gzip'
+      };
+      
+      // Reduce build memory footprint
+      config.stats = {
+        chunks: false,
+        modules: false,
+        assets: false,
+        children: false
       };
     }
     
@@ -144,7 +186,7 @@ const nextConfig = {
   // Reduce build time and memory usage
   productionBrowserSourceMaps: false,
   
-  // Custom headers for performance
+  // Security and performance headers
   async headers() {
     return [
       {
@@ -153,6 +195,50 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
+      {
+        // Apply security headers to all routes
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'X-Frame-Options', 
+            value: 'DENY'
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(self), payment=()'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://js.stripe.com https://maps.googleapis.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "img-src 'self' data: https: blob:",
+              "media-src 'self' https:",
+              "connect-src 'self' https: wss:",
+              "frame-src 'self' https://js.stripe.com https://maps.googleapis.com",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'none'",
+              "upgrade-insecure-requests"
+            ].join('; ')
           }
         ]
       }

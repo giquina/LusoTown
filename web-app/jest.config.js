@@ -23,7 +23,8 @@ const customJestConfig = {
   coverageReporters: ['text', 'lcov', 'html'],
   coverageDirectory: 'coverage',
   testMatch: [
-    '<rootDir>/__tests__/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/__tests__/**/*.test.{js,jsx,ts,tsx}',
+    '<rootDir>/__tests__/**/*.spec.{js,jsx,ts,tsx}',
   ],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/__tests__/e2e/'],
   transformIgnorePatterns: [

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
+import { getApiErrorMessage, getApiLogMessage } from '@/config/api-messages';
 
 export async function GET(request: NextRequest) {
   const supabase = createRouteHandlerClient({ cookies });
@@ -129,7 +130,7 @@ export async function GET(request: NextRequest) {
     const { data: businesses, error } = await query;
 
     if (error) {
-      console.error('Database error:', error);
+      console.error(getApiLogMessage('DATABASE_ERROR'), error);
       throw error;
     }
 
@@ -204,10 +205,10 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Business search API error:', error);
+    console.error(getApiLogMessage('BUSINESS_SEARCH_API_ERROR'), error);
     return NextResponse.json(
       { 
-        error: 'Failed to fetch businesses',
+        error: getApiErrorMessage('BUSINESS_FETCH_FAILED_GENERIC'),
         details: error instanceof Error ? error.message : 'Unknown error'
       },
       { status: 500 }
@@ -223,7 +224,7 @@ export async function POST(request: NextRequest) {
     const { data: { user }, error: authError } = await supabase.auth.getUser();
 
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: getApiErrorMessage('UNAUTHORIZED') }, { status: 401 });
     }
 
     const businessData = await request.json();
@@ -234,7 +235,7 @@ export async function POST(request: NextRequest) {
     
     if (missingFields.length > 0) {
       return NextResponse.json(
-        { error: `Missing required fields: ${missingFields.join(', ')}` },
+        { error: `${getApiErrorMessage('MISSING_BUSINESS_FIELDS_GENERIC')}: ${missingFields.join(', ')}` },
         { status: 400 }
       );
     }
@@ -282,7 +283,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error('Business insertion error:', error);
+      console.error(getApiLogMessage('BUSINESS_INSERTION_ERROR'), error);
       throw error;
     }
 
@@ -291,15 +292,15 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       business: newBusiness,
-      message: 'Business submitted for verification. You will be contacted within 48 hours.',
+      message: getApiErrorMessage('BUSINESS_SUBMISSION_SUCCESS_MESSAGE'),
       verificationRequired: true
     });
 
   } catch (error) {
-    console.error('Business creation API error:', error);
+    console.error(getApiLogMessage('BUSINESS_CREATION_API_ERROR'), error);
     return NextResponse.json(
       { 
-        error: 'Failed to create business',
+        error: getApiErrorMessage('BUSINESS_CREATION_FAILED'),
         details: error instanceof Error ? error.message : 'Unknown error'
       },
       { status: 500 }

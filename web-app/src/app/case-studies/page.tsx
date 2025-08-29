@@ -1,7 +1,10 @@
+'use client'
+
 import { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import CaseStudies from '@/components/CaseStudies'
 import CTA from '@/components/CTA'
+import { useSafeJsonLD } from '@/hooks/useSafeHTML'
 import { 
   HeartIcon, 
   UsersIcon, 
@@ -105,12 +108,14 @@ const jsonLd = {
 }
 
 export default function CaseStudiesPage() {
+  const safeJsonLD = useSafeJsonLD(jsonLd)
+  
   return (
     <>
       {/* Structured data for SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLD }}
       />
       
       <main className="min-h-screen">

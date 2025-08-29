@@ -77,11 +77,12 @@ export async function GET(request: NextRequest) {
 
       case 'centers':
         // Get cultural centers information
-        let centers = CULTURAL_CENTERS;
+        // Convert CULTURAL_CENTERS object to array for filtering
+        let centers = Object.values(CULTURAL_CENTERS);
         
         if (region) {
           centers = centers.filter(center => 
-            center.region?.toLowerCase() === region.toLowerCase()
+            center.name?.toLowerCase().includes(region.toLowerCase())
           );
         }
 

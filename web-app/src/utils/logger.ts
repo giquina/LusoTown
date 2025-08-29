@@ -59,7 +59,7 @@ export interface LogMeta {
   businessId?: string;
   eventId?: string;
   matchId?: string;
-  deviceType?: 'mobile' | 'tablet' | 'desktop';
+  deviceType?: string; // Device type for logging
   userAgent?: string;
   ipAddress?: string;
   timestamp?: Date;
@@ -69,17 +69,165 @@ export interface LogMeta {
   migratedFrom?: string; // For tracking migrated console.log statements
   migratedAt?: string; // Timestamp of migration
   error?: any; // Error object for error logging
+  
+  // API-specific properties
+  method?: string;
+  query?: any;
+  bounds?: any;
+  location?: any;
+  filters?: any;
+  eventCategory?: string;
+  conversationId?: string;
+  bookingReference?: string;
+  bookingId?: string;
+  matchType?: string;
+  targetUserId?: string;
+  preferences?: any;
+  email?: string;
+  reportId?: string;
+  issueType?: string;
+  contributionType?: string;
+  serviceName?: string;
+  urgency?: string;
+  
+  // Widget and UI-related properties
+  widgets?: any;
+  widgetsDetected?: any;
+  overlaps?: any;
+  recommendations?: any;
+  
+  // Performance and monitoring properties  
+  avgResponseTime?: number;
+  slowQueriesCount?: number;
+  performanceByType?: any;
+  testType?: string;     // For test logging
+  mobileOptimized?: boolean; // For mobile optimization logging
+}
+
+// Platform-specific logger interface
+interface PlatformLoggerInterface {
+  debug(message: string, meta?: LogMeta): void;
+  info(message: string, meta?: LogMeta): void;
+  warn(message: string, meta?: LogMeta): void;
+  error(message: string, error?: Error | any, meta?: LogMeta): void;
+}
+
+// Extended performance logger interface
+interface PerformanceLoggerInterface extends PlatformLoggerInterface {
+  start(operation: string, meta?: LogMeta): number;
+  end(operation: string, startTime: number, meta?: LogMeta): void;
+}
+
+// Extended cultural logger interface
+interface CulturalLoggerInterface extends PlatformLoggerInterface {
+  portuguese(level: string, action: string, message: string, meta?: LogMeta): void;
+  brazilian(level: string, action: string, message: string, meta?: LogMeta): void;
+  palop(level: string, action: string, message: string, meta?: LogMeta): void;
+  mixed(level: string, action: string, message: string, meta?: LogMeta): void;
+  lusophone(level: string, action: string, message: string, meta?: LogMeta): void;
 }
 
 class LusoTownLogger {
   private isDevelopment: boolean;
   private isDebugEnabled: boolean;
 
+  // Platform area loggers
+  public auth: PlatformLoggerInterface;
+  public business: PlatformLoggerInterface;
+  public businessAction: PlatformLoggerInterface; 
+  public cultural: CulturalLoggerInterface;
+  public matching: PlatformLoggerInterface;
+  public events: PlatformLoggerInterface;
+  public ai: PlatformLoggerInterface;
+  public streaming: PlatformLoggerInterface;
+  public mobile: PlatformLoggerInterface;
+  public performance: PerformanceLoggerInterface;
+  public security: PlatformLoggerInterface;
+  public community: PlatformLoggerInterface;
+  public payments: PlatformLoggerInterface;
+  public messaging: PlatformLoggerInterface;
+  public analytics: PlatformLoggerInterface;
+  public admin: PlatformLoggerInterface;
+  public geo: PlatformLoggerInterface;
+  public seo: PlatformLoggerInterface;
+  public aiSystem: PlatformLoggerInterface;
+
   constructor() {
     this.isDevelopment = process.env.NODE_ENV !== 'production';
     this.isDebugEnabled = this.isDevelopment || Boolean(
       typeof window !== 'undefined' && (window as any).LUSOTOWN_DEBUG
     );
+
+    // Initialize platform area loggers
+    this.auth = this.createAreaLogger('auth');
+    this.business = this.createAreaLogger('business');
+    this.businessAction = this.createAreaLogger('business'); // Alias
+    this.cultural = this.createCulturalLogger();
+    this.matching = this.createAreaLogger('matching');
+    this.events = this.createAreaLogger('events');
+    this.ai = this.createAreaLogger('ai');
+    this.streaming = this.createAreaLogger('streaming');
+    this.mobile = this.createAreaLogger('mobile');
+    this.performance = this.createPerformanceLogger();
+    this.security = this.createAreaLogger('security');
+    this.community = this.createAreaLogger('community');
+    this.payments = this.createAreaLogger('payments');
+    this.messaging = this.createAreaLogger('messaging');
+    this.analytics = this.createAreaLogger('analytics');
+    this.admin = this.createAreaLogger('admin');
+    this.geo = this.createAreaLogger('geo');
+    this.seo = this.createAreaLogger('seo');
+    this.aiSystem = this.createAreaLogger('ai'); // Alias for ai
+  }
+
+  // Create area-specific logger instance
+  private createAreaLogger(area: PlatformArea): PlatformLoggerInterface {
+    return {
+      debug: (message: string, meta: LogMeta = {}) => this.debug(message, { ...meta, area }),
+      info: (message: string, meta: LogMeta = {}) => this.info(message, { ...meta, area }),
+      warn: (message: string, meta: LogMeta = {}) => this.warn(message, { ...meta, area }),
+      error: (message: string, error?: Error | any, meta: LogMeta = {}) => this.error(message, error, { ...meta, area })
+    };
+  }
+
+  // Create performance logger with start/end methods
+  private createPerformanceLogger(): PerformanceLoggerInterface {
+    return {
+      debug: (message: string, meta: LogMeta = {}) => this.debug(message, { ...meta, area: 'performance' }),
+      info: (message: string, meta: LogMeta = {}) => this.info(message, { ...meta, area: 'performance' }),
+      warn: (message: string, meta: LogMeta = {}) => this.warn(message, { ...meta, area: 'performance' }),
+      error: (message: string, error?: Error | any, meta: LogMeta = {}) => this.error(message, error, { ...meta, area: 'performance' }),
+      start: (operation: string, meta: LogMeta = {}) => {
+        const startTime = Date.now();
+        this.debug(`Performance Start: ${operation}`, { ...meta, area: 'performance' });
+        return startTime;
+      },
+      end: (operation: string, startTime: number, meta: LogMeta = {}) => {
+        const duration = Date.now() - startTime;
+        this.info(`Performance End: ${operation} - ${duration}ms`, { ...meta, area: 'performance', duration });
+      }
+    };
+  }
+
+  // Create cultural logger with Portuguese methods
+  private createCulturalLogger(): CulturalLoggerInterface {
+    const culturalMethod = (culturalContext: CulturalContext) => 
+      (level: string, action: string, message: string, meta: LogMeta = {}) => {
+        const logLevel = level as 'debug' | 'info' | 'warn' | 'error';
+        this[logLevel](message, { ...meta, area: 'cultural', culturalContext, action });
+      };
+
+    return {
+      debug: (message: string, meta: LogMeta = {}) => this.debug(message, { ...meta, area: 'cultural' }),
+      info: (message: string, meta: LogMeta = {}) => this.info(message, { ...meta, area: 'cultural' }),
+      warn: (message: string, meta: LogMeta = {}) => this.warn(message, { ...meta, area: 'cultural' }),
+      error: (message: string, error?: Error | any, meta: LogMeta = {}) => this.error(message, error, { ...meta, area: 'cultural' }),
+      portuguese: culturalMethod('portuguese'),
+      brazilian: culturalMethod('brazilian'),
+      palop: culturalMethod('palop'),
+      mixed: culturalMethod('multicultural'),
+      lusophone: culturalMethod('lusophone')
+    };
   }
 
   // Portuguese Cultural Context Icons

@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { 
+  securityLogger, 
+  bruteForceProtection, 
+  SQLInjectionProtection,
+  PortugueseSessionManager,
+  createSecurityMiddleware
+} from '@/lib/security/comprehensive-security'
 
 // Rate limiting configuration
 interface RateLimitConfig {
@@ -10,15 +17,19 @@ interface RateLimitConfig {
 // Rate limiting storage (in production, use Redis or similar)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
 
-// Default rate limits by route type
+// Enhanced rate limits with Portuguese community protection
 const RATE_LIMITS: Record<string, RateLimitConfig> = {
-  '/api/auth/': { windowMs: 60000, maxRequests: 10 }, // 10 per minute for auth
+  '/api/auth/': { windowMs: 60000, maxRequests: 5 }, // 5 per minute for auth (stricter)
   '/api/lusobot/': { windowMs: 60000, maxRequests: 10 }, // 10 per minute for AI
+  '/api/messaging/': { windowMs: 60000, maxRequests: 30 }, // 30 per minute for messaging
+  '/api/business-directory/': { windowMs: 60000, maxRequests: 60 }, // 60 per minute for business queries
+  '/api/events/': { windowMs: 60000, maxRequests: 40 }, // 40 per minute for events
+  '/api/upload/': { windowMs: 300000, maxRequests: 5 }, // 5 per 5 minutes for uploads
   '/api/': { windowMs: 60000, maxRequests: 100 }, // 100 per minute for general API
   '/': { windowMs: 60000, maxRequests: 1000 }, // 1000 per minute for pages
 }
 
-// Security headers configuration
+// Enhanced security headers for Portuguese community protection
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -30,7 +41,7 @@ const securityHeaders = [
   },
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
+    value: 'DENY' // Stricter than SAMEORIGIN
   },
   {
     key: 'X-Content-Type-Options',
@@ -42,26 +53,35 @@ const securityHeaders = [
   },
   {
     key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin'
+    value: 'strict-origin-when-cross-origin' // Stricter referrer policy
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()'
+    value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=()'
+  },
+  {
+    key: 'Cross-Origin-Embedder-Policy',
+    value: 'require-corp'
+  },
+  {
+    key: 'Cross-Origin-Opener-Policy',
+    value: 'same-origin'
   },
   {
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.stripe.com https://maps.googleapis.com",
+      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.stripe.com https://maps.googleapis.com https://www.googletagmanager.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' data: blob: https://*.unsplash.com https://*.cloudinary.com https://*.b-cdn.net https://*.ytimg.com https://*.youtube.com",
+      "img-src 'self' data: blob: https://*.unsplash.com https://*.cloudinary.com https://*.b-cdn.net https://*.ytimg.com https://*.youtube.com https://*.supabase.co",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' https://*.supabase.co https://api.stripe.com https://maps.googleapis.com",
-      "media-src 'self' https://*.b-cdn.net",
+      "connect-src 'self' https://*.supabase.co https://api.stripe.com https://maps.googleapis.com https://nominatim.openstreetmap.org",
+      "media-src 'self' https://*.b-cdn.net https://*.supabase.co",
       "frame-src https://js.stripe.com https://www.youtube.com",
       "object-src 'none'",
       "base-uri 'self'",
-      "form-action 'self'"
+      "form-action 'self'",
+      "frame-ancestors 'none'"
     ].join('; ')
   }
 ]
@@ -132,29 +152,55 @@ function isAuthProtectedRoute(pathname: string): boolean {
   return protectedRoutes.some(route => pathname.startsWith(route))
 }
 
-function validateCSRF(request: NextRequest): boolean {
+async function validateCSRF(request: NextRequest): Promise<boolean> {
   if (request.method === 'GET' || request.method === 'HEAD' || request.method === 'OPTIONS') {
     return true
   }
   
-  const csrfHeader = request.headers.get('x-csrf-token')
-  const csrfCookie = request.cookies.get('csrf-token')?.value
-  
-  // Allow all requests for now to ensure Portuguese-speaking community can access platform
-  // TODO: Re-enable CSRF protection once authentication system is stable
-  return true
+  const csrfHeader = request.headers.get('x-csrf-token') || request.headers.get('x-lusotown-csrf-token')
+  const csrfCookie = request.cookies.get('csrf-token')?.value || request.cookies.get('lusotown-csrf-token')?.value
   
   // In development, allow requests without CSRF (for testing)
   if (process.env.NODE_ENV === 'development') {
     return true
   }
   
-  // For production, require CSRF token
-  // return csrfHeader === csrfCookie && !!csrfHeader
+  // For production, require CSRF token for state-changing operations
+  const requiresCSRF = pathname => 
+    pathname.includes('/api/') && 
+    !pathname.includes('/api/health') && 
+    !pathname.includes('/api/monitoring')
+  
+  if (requiresCSRF(request.nextUrl.pathname)) {
+    const isValid = csrfHeader === csrfCookie && !!csrfHeader && csrfHeader.length >= 32
+    
+    if (!isValid) {
+      // Log CSRF violation for Portuguese community security
+      await securityLogger.logSecurityEvent({
+        ip: getRateLimitKey(request),
+        userAgent: request.headers.get('user-agent') || 'unknown',
+        eventType: 'FAILED_CSRF',
+        severity: 'HIGH',
+        description: `CSRF validation failed for ${request.nextUrl.pathname}`,
+        culturalContext: 'portuguese-uk',
+        metadata: { 
+          hasHeader: !!csrfHeader,
+          hasCookie: !!csrfCookie,
+          headerLength: csrfHeader?.length || 0
+        }
+      })
+    }
+    
+    return isValid
+  }
+  
+  return true
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  const ip = getRateLimitKey(request)
+  const userAgent = request.headers.get('user-agent') || 'unknown'
   
   // Skip middleware for static assets and Next.js internals
   if (
@@ -165,64 +211,168 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
   
-  // Rate limiting check
-  const rateLimitKey = getRateLimitKey(request)
-  const rateLimit = checkRateLimit(rateLimitKey, pathname)
-  
-  if (!rateLimit.allowed) {
-    return new NextResponse(
-      JSON.stringify({
-        error: 'Rate limit exceeded',
-        message: 'Too many requests, please try again later'
-      }),
-      {
-        status: 429,
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Rate-Limit-Limit': RATE_LIMITS['/api/']?.maxRequests.toString() || '100',
-          'X-Rate-Limit-Remaining': '0',
-          'X-Rate-Limit-Reset': rateLimit.resetTime?.toString() || Date.now().toString(),
-          'Retry-After': '60'
+  try {
+    // Enhanced brute force protection check
+    if (pathname.includes('/api/auth/') || pathname.includes('/login')) {
+      const isBlocked = await bruteForceProtection.isBlocked(ip)
+      if (isBlocked) {
+        await securityLogger.logSecurityEvent({
+          ip,
+          userAgent,
+          eventType: 'LOGIN_ATTEMPT',
+          severity: 'HIGH',
+          description: `Blocked login attempt from IP ${ip} due to brute force protection`,
+          culturalContext: 'portuguese-uk'
+        })
+
+        return new NextResponse(
+          JSON.stringify({
+            error: 'Too many failed attempts',
+            message: 'Your IP has been temporarily blocked. Please try again later.',
+            blockReason: 'brute_force_protection'
+          }),
+          {
+            status: 429,
+            headers: {
+              'Content-Type': 'application/json',
+              'Retry-After': '1800', // 30 minutes
+              'X-Security-Block': 'brute-force'
+            }
+          }
+        )
+      }
+    }
+    
+    // SQL Injection detection for API endpoints
+    if (pathname.startsWith('/api/') && request.method !== 'GET') {
+      try {
+        const url = new URL(request.url)
+        const searchParams = Object.fromEntries(url.searchParams)
+        
+        const validation = SQLInjectionProtection.sanitizeForDatabase(searchParams)
+        if (!validation.isValid) {
+          await securityLogger.logSecurityEvent({
+            ip,
+            userAgent,
+            eventType: 'SQL_INJECTION_ATTEMPT',
+            severity: 'CRITICAL',
+            description: `Potential SQL injection attempt blocked from IP ${ip}`,
+            metadata: { 
+              threats: validation.threats, 
+              path: pathname,
+              params: searchParams
+            }
+          })
+
+          return new NextResponse(
+            JSON.stringify({
+              error: 'Invalid request parameters',
+              message: 'Request blocked for security reasons'
+            }),
+            {
+              status: 400,
+              headers: { 'Content-Type': 'application/json' }
+            }
+          )
         }
+      } catch (error) {
+        // Non-standard request format, continue with other validations
       }
-    )
+    }
+    
+    // Rate limiting check with enhanced logging
+    const rateLimit = checkRateLimit(ip, pathname)
+    
+    if (!rateLimit.allowed) {
+      await securityLogger.logSecurityEvent({
+        ip,
+        userAgent,
+        eventType: 'RATE_LIMIT_EXCEEDED',
+        severity: 'MEDIUM',
+        description: `Rate limit exceeded for IP ${ip} on path ${pathname}`,
+        metadata: { 
+          path: pathname,
+          resetTime: rateLimit.resetTime
+        }
+      })
+      
+      return new NextResponse(
+        JSON.stringify({
+          error: 'Rate limit exceeded',
+          message: 'Too many requests, please try again later'
+        }),
+        {
+          status: 429,
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Rate-Limit-Limit': RATE_LIMITS['/api/']?.maxRequests.toString() || '100',
+            'X-Rate-Limit-Remaining': '0',
+            'X-Rate-Limit-Reset': rateLimit.resetTime?.toString() || Date.now().toString(),
+            'Retry-After': '60'
+          }
+        }
+      )
+    }
+    
+    // Enhanced CSRF Protection
+    const csrfValid = await validateCSRF(request)
+    if (!csrfValid) {
+      return new NextResponse(
+        JSON.stringify({
+          error: 'Invalid CSRF token',
+          message: 'Request blocked for security reasons'
+        }),
+        {
+          status: 403,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      )
+    }
+    
+    // Create response with enhanced security headers
+    const response = NextResponse.next()
+    
+    // Add all security headers
+    securityHeaders.forEach(({ key, value }) => {
+      response.headers.set(key, value)
+    })
+    
+    // Add rate limit headers
+    if (rateLimit.remaining !== undefined) {
+      response.headers.set('X-Rate-Limit-Remaining', rateLimit.remaining.toString())
+    }
+    if (rateLimit.resetTime) {
+      response.headers.set('X-Rate-Limit-Reset', rateLimit.resetTime.toString())
+    }
+    
+    // Portuguese cultural and security headers
+    response.headers.set('X-Cultural-Context', 'portuguese-uk')
+    response.headers.set('X-Community-Protection', 'enhanced')
+    response.headers.set('X-Security-Level', 'maximum')
+    response.headers.set('X-Portuguese-Safe', 'true')
+    
+    return response
+    
+  } catch (error) {
+    // Log middleware errors but don't block requests
+    console.error('Security middleware error:', error)
+    await securityLogger.logSecurityEvent({
+      ip,
+      userAgent,
+      eventType: 'SUSPICIOUS_ACTIVITY',
+      severity: 'MEDIUM',
+      description: `Security middleware error for IP ${ip}: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      metadata: { path: pathname }
+    }).catch(() => {}) // Prevent cascading errors
+    
+    // Return response with basic security headers
+    const response = NextResponse.next()
+    securityHeaders.forEach(({ key, value }) => {
+      response.headers.set(key, value)
+    })
+    
+    return response
   }
-  
-  // CSRF Protection for state-changing requests
-  if (!validateCSRF(request)) {
-    return new NextResponse(
-      JSON.stringify({
-        error: 'Invalid CSRF token',
-        message: 'Request blocked for security reasons'
-      }),
-      {
-        status: 403,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    )
-  }
-  
-  // Create response with security headers
-  const response = NextResponse.next()
-  
-  // Add security headers
-  securityHeaders.forEach(({ key, value }) => {
-    response.headers.set(key, value)
-  })
-  
-  // Add rate limit headers
-  if (rateLimit.remaining !== undefined) {
-    response.headers.set('X-Rate-Limit-Remaining', rateLimit.remaining.toString())
-  }
-  if (rateLimit.resetTime) {
-    response.headers.set('X-Rate-Limit-Reset', rateLimit.resetTime.toString())
-  }
-  
-  // Portuguese cultural security headers
-  response.headers.set('X-Cultural-Context', 'portuguese-uk')
-  response.headers.set('X-Community-Protection', 'enabled')
-  
-  return response
 }
 
 export const config = {

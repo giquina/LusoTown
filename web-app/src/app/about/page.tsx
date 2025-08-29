@@ -72,7 +72,7 @@ export default function About() {
               >
                 <span className="text-2xl">{getAllFlags()}</span>
                 <span className="text-primary-700 font-semibold">
-                  {language === 'pt' ? 'Celebrando Todas as Nações Lusófonas' : 'Celebrating All Portuguese-Speaking Nations'}
+                  {t('about.nations.celebrating')}
                 </span>
               </motion.div>
               
@@ -84,7 +84,7 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <LusophoneGradientText size="4xl" animate={true}>
-                  {language === 'pt' ? 'Uma Língua, Nove Nações, Uma Comunidade' : 'One Language, Nine Nations, One Community'}
+                  {t('about.nations.unity')}
                 </LusophoneGradientText>
               </motion.h2>
               
@@ -95,10 +95,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                {language === 'pt' 
-                  ? 'Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro, das ilhas cabo-verdianas às praias moçambicanas - somos uma família global unida pela língua portuguesa no Reino Unido.'
-                  : 'From the Portuguese royal palace to the towers of Macau, from Angolan diamonds to Brazilian gold, from Cape Verdean islands to Mozambican shores - we are a global family united by the Portuguese language in the United Kingdom.'
-                }
+                {t('about.heritage.description')}
               </motion.p>
             </div>
 
@@ -165,14 +162,11 @@ export default function About() {
               <div className="text-5xl mb-6 saudade-glow">🤝</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 <LusophoneGradientText size="2xl">
-                  {language === 'pt' ? 'Somos uma Comunidade Inclusiva' : 'We Are an Inclusive Community'}
+                  {t('about.community.inclusive_title')}
                 </LusophoneGradientText>
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {language === 'pt' 
-                  ? 'Aqui todos têm lugar. Seja você de Portugal, Brasil, Angola, Cabo Verde, Moçambique, Guiné-Bissau, São Tomé e Príncipe, Timor-Leste ou Macau - celebramos a riqueza de todas as culturas lusófonas. Unidos pela língua, fortalecidos pela diversidade.'
-                  : 'Here, everyone belongs. Whether you\'re from Portugal, Brazil, Angola, Cape Verde, Mozambique, Guinea-Bissau, São Tomé and Príncipe, East Timor, or Macau - we celebrate the richness of all Portuguese-speaking cultures. United by language, strengthened by diversity.'
-                }
+                {t('about.community.inclusive_description')}
               </p>
               
               {/* Success Stories Preview */}

@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSafeUserContent } from '@/hooks/useSafeHTML';
+import { validateInput } from '@/lib/security/input-validation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Send, 
@@ -163,17 +165,44 @@ export default function CulturalMessaging({
 
   const handleSendMessage = () => {
     if (newMessage.trim() && chatUser) {
-      const message: Message = {
-        id: Date.now().toString(),
-        senderId: 'current-user',
-        content: newMessage,
-        timestamp: new Date(),
-        isRead: false,
-        language: messageLanguage
-      };
+      try {
+        // Validate and sanitize the message
+        const validatedMessage = validateInput.message({
+          content: newMessage,
+          messageType: 'text',
+          conversationId: chatUser.id,
+          receiverId: chatUser.id
+        });
 
-      setMessages(prev => [...prev, message]);
-      setNewMessage('');
+        const message: Message = {
+          id: Date.now().toString(),
+          senderId: 'current-user',
+          content: validatedMessage.content,
+          timestamp: new Date(),
+          isRead: false,
+          language: messageLanguage
+        };
+
+        setMessages(prev => [...prev, message]);
+        setNewMessage('');
+      } catch (error) {
+        console.error('Message validation failed:', error);
+        // Fall back to basic sanitization
+        const safeMessage = newMessage.replace(/<[^>]*>/g, '').trim();
+        if (safeMessage) {
+          const message: Message = {
+            id: Date.now().toString(),
+            senderId: 'current-user',
+            content: safeMessage,
+            timestamp: new Date(),
+            isRead: false,
+            language: messageLanguage
+          };
+
+          setMessages(prev => [...prev, message]);
+          setNewMessage('');
+        }
+      }
 
       // Simulate response after delay
       setTimeout(() => {
@@ -386,43 +415,46 @@ export default function CulturalMessaging({
 
       {/* Messages */}
       <div className="h-96 overflow-y-auto p-4 space-y-3">
-        {messages.map((message) => (
-          <motion.div
-            key={message.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`flex ${
-              message.senderId === 'current-user' ? 'justify-end' : 'justify-start'
-            }`}
-          >
-            <div
-              className={`max-w-xs px-3 py-2 rounded-lg ${
-                message.senderId === 'current-user'
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-900'
+        {messages.map((message) => {
+          const safeContent = useSafeUserContent(message.content);
+          return (
+            <motion.div
+              key={message.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`flex ${
+                message.senderId === 'current-user' ? 'justify-end' : 'justify-start'
               }`}
             >
-              <p className="text-sm">{message.content}</p>
-              <div className={`flex items-center justify-between mt-1 text-xs ${
-                message.senderId === 'current-user' ? 'text-primary-100' : 'text-gray-500'
-              }`}>
-                <span>{formatTime(message.timestamp)}</span>
-                {message.senderId === 'current-user' && (
-                  <div className="flex items-center space-x-1">
-                    {message.language && (
-                      <Languages className="w-3 h-3" />
-                    )}
-                    {message.isRead ? (
-                      <CheckCircle className="w-3 h-3" />
-                    ) : (
-                      <CheckCircle className="w-3 h-3 opacity-50" />
-                    )}
-                  </div>
-                )}
+              <div
+                className={`max-w-xs px-3 py-2 rounded-lg ${
+                  message.senderId === 'current-user'
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-gray-100 text-gray-900'
+                }`}
+              >
+                <p className="text-sm">{safeContent}</p>
+                <div className={`flex items-center justify-between mt-1 text-xs ${
+                  message.senderId === 'current-user' ? 'text-primary-100' : 'text-gray-500'
+                }`}>
+                  <span>{formatTime(message.timestamp)}</span>
+                  {message.senderId === 'current-user' && (
+                    <div className="flex items-center space-x-1">
+                      {message.language && (
+                        <Languages className="w-3 h-3" />
+                      )}
+                      {message.isRead ? (
+                        <CheckCircle className="w-3 h-3" />
+                      ) : (
+                        <CheckCircle className="w-3 h-3 opacity-50" />
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
         <div ref={messagesEndRef} />
       </div>
 

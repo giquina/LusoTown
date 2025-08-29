@@ -28,6 +28,7 @@ import {
   Edit,
   Trash2
 } from 'lucide-react'
+import logger from '@/utils/logger'
 
 interface PostComponentProps {
   post: ForumPost
@@ -331,14 +332,24 @@ export default function TopicDetail() {
     try {
       await forumsService.votePost(topic.id, postId, user.id, vote)
       // In real app, would refresh the data
-      console.log(`Voted ${vote} on post ${postId}`)
+      logger.info('User voted on forum post', {
+        area: 'forums',
+        action: 'post_vote',
+        postId,
+        vote,
+        userId: user.id
+      })
     } catch (error) {
       console.error('Error voting on post:', error)
     }
   }
 
   const handleReply = (postId: string) => {
-    console.log('Reply to post:', postId)
+    logger.info('Reply to forum post', {
+      area: 'forums',
+      action: 'post_reply',
+      postId
+    })
   }
 
   const handleNewPost = async () => {

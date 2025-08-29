@@ -16,6 +16,15 @@ export const API_ERROR_MESSAGES = {
   PROFILE_CREATION_FAILED: 'Failed to create user profile',
   UNAUTHORIZED: 'Unauthorized',
   ADMIN_ACCESS_REQUIRED: 'Admin access required',
+  AUTHENTICATION_REQUIRED: 'Authentication required',
+  INVALID_AUTHENTICATION_TOKEN: 'Invalid authentication token',
+  NO_ACTIVE_SESSION: 'No active session found',
+  INVALID_EMAIL_FORMAT: 'Invalid email format',
+  INVALID_EMAIL_OR_PASSWORD: 'Invalid email or password',
+  INVALID_REQUEST_PARAMETERS: 'Invalid request parameters',
+  TARGET_IP_REQUIRED: 'Target IP required for blocking',
+  EVENT_IDS_REQUIRED: 'Event IDs array required',
+  INVALID_ACTION: 'Invalid action',
   
   // Business directory errors
   SUPABASE_CONFIG_MISSING: 'Supabase configuration missing. Please check environment variables.',
@@ -24,6 +33,16 @@ export const API_ERROR_MESSAGES = {
   BUSINESS_SUBMISSION_FAILED: 'Failed to submit business',
   GEOCODING_UNAVAILABLE: 'Geocoding service unavailable',
   GEOCODING_FAILED: 'Geocoding failed',
+  PORTUGUESE_BUSINESS_FETCH_FAILED: 'Failed to fetch Portuguese businesses',
+  AUTHENTICATION_REQUIRED_BUSINESS: 'Authentication required for business submission',
+  MISSING_BUSINESS_FIELDS: 'Missing required fields: name, category, address, postcode, and Portuguese origin are required',
+  BUSINESS_SUBMISSION_FAILED_REVIEW: 'Failed to submit business for Portuguese community review',
+  BUSINESS_SUBMISSION_SERVER_ERROR: 'Internal server error processing Portuguese business submission',
+  BUSINESS_DIRECTORY_SERVER_ERROR: 'Internal server error accessing Portuguese business directory',
+  BUSINESS_FETCH_FAILED_GENERIC: 'Failed to fetch businesses',
+  BUSINESS_CREATION_FAILED: 'Failed to create business',
+  MISSING_BUSINESS_FIELDS_GENERIC: 'Missing required fields',
+  BUSINESS_SUBMISSION_SUCCESS_MESSAGE: 'Business submitted for verification. You will be contacted within 48 hours.',
   
   // Subscription errors
   MISSING_SUBSCRIPTION_ID: 'Missing subscription ID',
@@ -41,6 +60,16 @@ export const API_ERROR_MESSAGES = {
   EMAIL_PREFERENCES_UPDATE_FAILED: 'Failed to update email preferences',
   EMAIL_QUEUE_FAILED: 'Failed to queue email',
   
+  // Rate limiting errors
+  RATE_LIMIT_EXCEEDED: 'Rate limit exceeded. Please try again later.',
+  BUSINESS_DIRECTORY_RATE_LIMIT: 'Too many business directory requests. Please try again in a few minutes.',
+  MESSAGING_RATE_LIMIT: 'Too many messaging requests. Please slow down to maintain community safety.',
+  EVENT_BOOKING_RATE_LIMIT: 'Too many event booking attempts. Please wait before trying again.',
+  AUTH_RATE_LIMIT: 'Too many login attempts. Please try again in a few minutes.',
+  MATCHING_RATE_LIMIT: 'Too many matching requests. Please wait before continuing.',
+  TRANSPORT_RATE_LIMIT: 'Too many transport service requests. Please try again shortly.',
+  ADMIN_RATE_LIMIT: 'Too many administrative requests. Access temporarily restricted.',
+  
   // General errors
   INTERNAL_SERVER_ERROR: 'Internal server error',
   INVALID_METRIC_REQUESTED: 'Invalid metric requested'
@@ -53,7 +82,13 @@ export const API_SUCCESS_MESSAGES = {
   SUBSCRIPTION_CREATED: 'Subscription created successfully',
   SUBSCRIPTION_CANCELLED: 'Subscription cancelled successfully',
   EMAIL_QUEUED: 'Email queued successfully',
-  CATEGORY_CREATED: 'Category created successfully'
+  CATEGORY_CREATED: 'Category created successfully',
+  USER_SIGNED_OUT: 'Successfully signed out',
+  BUSINESS_REVIEW_PROCESS: 'Community moderation review (24-48 hours)',
+  CULTURAL_AUTHENTICITY_VERIFICATION: 'Cultural authenticity verification',
+  PORTUGUESE_COMMUNITY_FEEDBACK: 'Portuguese-speaking community feedback collection',
+  BUSINESS_LISTING_ACTIVATION: 'Business listing activation',
+  LOGIN_NOTIFICATION: 'Login notification sent'
 } as const;
 
 export const API_LOG_MESSAGES = {
@@ -71,6 +106,31 @@ export const API_LOG_MESSAGES = {
   OPTIMIZED_POSTGIS_QUERY_ERROR: 'Optimized PostGIS query error:',
   HYBRID_SEARCH_API_ERROR: 'Hybrid search API error:',
   SEARCH_SUGGESTIONS_API_ERROR: 'Search suggestions API error:',
+  // Security and authentication logging
+  SECURITY_STATS_FETCH_ERROR: 'Error fetching security stats:',
+  THREAT_DATA_FETCH_ERROR: 'Error fetching threat data:',
+  FAILED_LOGINS_FETCH_ERROR: 'Error fetching failed logins:',
+  SESSION_DATA_FETCH_ERROR: 'Error fetching session data:',
+  SECURITY_DASHBOARD_API_ERROR: 'Security dashboard API error:',
+  SECURITY_DASHBOARD_ACTION_ERROR: 'Security dashboard action error:',
+  SECURE_LOGIN_ERROR: 'Secure login error:',
+  SECURE_LOGOUT_ERROR: 'Secure logout error:',
+  SESSION_RETRIEVAL_ERROR: 'Session retrieval error',
+  AUTH_SESSION_API_ERROR: 'Auth session API error',
+  SIGN_OUT_ERROR: 'Sign out error',
+  AUTH_SESSION_DELETE_ERROR: 'Auth session delete API error',
+  // Business directory specific logging
+  PORTUGUESE_BUSINESS_DIRECTORY_FETCH_ERROR: 'Portuguese business directory fetch failed',
+  PORTUGUESE_BUSINESS_DIRECTORY_SUCCESS: 'Portuguese business directory accessed successfully',
+  PORTUGUESE_BUSINESS_ABUSE_DETECTED: 'Potential abuse detected on business directory submission',
+  GEOCODING_FAILED_BUSINESS: 'Geocoding failed for Portuguese business',
+  PORTUGUESE_BUSINESS_SUBMISSION_FAILED: 'Failed to submit Portuguese business',
+  PORTUGUESE_BUSINESS_SUBMISSION_SUCCESS: 'Portuguese business submitted successfully',
+  BUSINESS_DIRECTORY_POST_ERROR: 'Business directory POST API error',
+  DATABASE_ERROR: 'Database error:',
+  BUSINESS_SEARCH_API_ERROR: 'Business search API error:',
+  BUSINESS_INSERTION_ERROR: 'Business insertion error:',
+  BUSINESS_CREATION_API_ERROR: 'Business creation API error:',
   
   // Profile and authentication
   PROFILE_CREATION_ERROR: 'Profile creation error:',
@@ -117,6 +177,10 @@ export const PERFORMANCE_STATUS_MESSAGES = {
   CRITICAL: 'Critical performance issues detected'
 } as const;
 
+export const SYSTEM_STATUS_MESSAGES = {
+  SUPABASE_CONFIG_ERROR: 'Supabase configuration missing'
+} as const;
+
 export const API_ENDPOINT_DESCRIPTIONS = {
   GET_ADMIN_PERFORMANCE: 'GET /api/admin/performance',
   POST_ADMIN_PERFORMANCE: 'POST /api/admin/performance',
@@ -143,6 +207,7 @@ export type ApiLogMessage = keyof typeof API_LOG_MESSAGES;
 export type PerformanceRecommendation = keyof typeof PERFORMANCE_RECOMMENDATIONS;
 export type PerformanceStatus = keyof typeof PERFORMANCE_STATUS_MESSAGES;
 export type ApiEndpointDescription = keyof typeof API_ENDPOINT_DESCRIPTIONS;
+export type SystemStatusMessage = keyof typeof SYSTEM_STATUS_MESSAGES;
 
 // Helper functions
 export const getApiErrorMessage = (key: ApiErrorMessage): string => {
@@ -167,4 +232,8 @@ export const getPerformanceStatus = (key: PerformanceStatus): string => {
 
 export const getApiEndpointDescription = (key: ApiEndpointDescription): string => {
   return API_ENDPOINT_DESCRIPTIONS[key];
+};
+
+export const getSystemStatusMessage = (key: SystemStatusMessage): string => {
+  return SYSTEM_STATUS_MESSAGES[key];
 };

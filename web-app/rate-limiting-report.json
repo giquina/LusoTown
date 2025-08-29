@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-08-29T09:28:37.623Z",
+  "rateLimitingEnabled": true,
+  "endpoints": [
+    {
+      "name": "business-directory",
+      "limit": "50/min",
+      "protection": "Portuguese business listings"
+    },
+    {
+      "name": "community-messaging",
+      "limit": "20/min",
+      "protection": "Community chat safety"
+    },
+    {
+      "name": "event-booking",
+      "limit": "10/min",
+      "protection": "Event booking fairness"
+    },
+    {
+      "name": "authentication",
+      "limit": "5/min",
+      "protection": "Brute force prevention"
+    },
+    {
+      "name": "matching",
+      "limit": "30/min",
+      "protection": "Cultural matching system"
+    },
+    {
+      "name": "transport",
+      "limit": "15/min",
+      "protection": "Transport coordination"
+    }
+  ],
+  "features": [
+    "✅ Redis-based rate limiting",
+    "✅ Bilingual error messages (PT/EN)",
+    "✅ Abuse detection patterns",
+    "✅ Sentry monitoring integration",
+    "✅ Trusted partner bypass",
+    "✅ Portuguese community context"
+  ],
+  "culturalContext": "portuguese-speaking-community",
+  "targetAudience": "750+ Portuguese speakers, 2150+ students",
+  "location": "United Kingdom"
+}

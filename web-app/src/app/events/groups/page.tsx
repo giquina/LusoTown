@@ -1,6 +1,9 @@
+'use client'
+
 import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import GroupEventsPageClient from '@/components/GroupEventsPageClient'
+import { useSafeJsonLD } from '@/hooks/useSafeHTML'
 
 // Page metadata
 export const metadata: Metadata = {
@@ -83,12 +86,14 @@ const jsonLd = {
 }
 
 export default function GroupEventsPage() {
+  const safeJsonLD = useSafeJsonLD(jsonLd)
+  
   return (
     <>
       {/* Structured data for SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLD }}
       />
       
       <main className="min-h-screen w-full overflow-x-hidden">

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { WifiIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSafeHTML } from '@/hooks/useSafeHTML';
 
 /**
  * Offline Page for LusoTown Portuguese-speaking Community
@@ -15,6 +16,13 @@ export default function OfflinePage() {
   const { t, language } = useLanguage();
   const [isOnline, setIsOnline] = useState(false);
   const [retryAttempts, setRetryAttempts] = useState(0);
+  
+  // Safe script content for auto-reload
+  const autoReloadScript = useSafeHTML(`
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  `);
 
   useEffect(() => {
     // Check if we're online
@@ -225,11 +233,7 @@ export default function OfflinePage() {
       {isOnline && (
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              setTimeout(() => {
-                window.location.reload();
-              }, 2000);
-            `,
+            __html: autoReloadScript,
           }}
         />
       )}

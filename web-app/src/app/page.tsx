@@ -13,6 +13,7 @@ import { SPACING_UTILITIES } from "@/config/section-spacing-tokens";
 import MobileWelcomeWizard from "@/components/MobileWelcomeWizard";
 import StreamlinedCommunitySelector from "@/components/StreamlinedCommunitySelector";
 import ResponsiveButton from "@/components/ResponsiveButton";
+import { useSafeJsonLD } from "@/hooks/useSafeHTML";
 
 // Strategic component loading for cohesive experience
 const SuccessStories = dynamic(() => import("@/components/SuccessStories"), {
@@ -60,6 +61,7 @@ export default function Home() {
   const { t } = useLanguage();
   const [showWelcomeWizard, setShowWelcomeWizard] = useState(false);
   const router = useRouter();
+  const safeJsonLD = useSafeJsonLD(generateJsonLd("organization"));
 
   // Mobile welcome wizard - Only trigger on signup intent (no automatic triggers)
   const handleSignupClick = () => {
@@ -100,7 +102,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLD }}
       />
 
       <main className="min-h-screen w-full overflow-x-hidden" role="main">

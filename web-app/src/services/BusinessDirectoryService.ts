@@ -42,6 +42,7 @@ export interface PortugueseBusiness {
   }
   recent_reviews?: BusinessReview[]
   is_open?: boolean
+  distance_km?: number // Distance from search location
 }
 
 export interface BusinessReview {

@@ -147,14 +147,15 @@ export async function GET_HOTSPOTS(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '50');
     
     // Use direct query to materialized view for better performance
-    const { data, error } = await businessDirectoryService['supabaseClient']
+    let query = businessDirectoryService['supabaseClient']
       .from('mv_business_category_hotspots')
-      .select('*')
-      .modify((query) => {
-        if (businessType) {
-          query.eq('business_type', businessType);
-        }
-      })
+      .select('*');
+      
+    if (businessType) {
+      query = query.eq('business_type', businessType);
+    }
+      
+    const { data, error } = await query
       .order('hotspot_score', { ascending: false })
       .limit(limit);
 

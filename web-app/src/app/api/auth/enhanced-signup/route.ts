@@ -19,16 +19,30 @@ import {
   getApiLogMessage
 } from '@/config/api-messages'
 
-// Temporary placeholder types and functions for build
-interface EnhancedSignupForm {
-  email: string;
-  name: string;
-  culturalBackground?: string;
-}
-
-interface EnhancedSignupRequest extends EnhancedSignupForm {
+// Enhanced signup types matching the full form structure
+interface EnhancedSignupRequest {
+  email: string
   password: string
   confirmPassword: string
+  firstName: string
+  lastName: string
+  phone?: string
+  dateOfBirth: Date
+  primaryInterests?: string[]
+  businessTrack?: string[]
+  socialTrack?: string[]
+  culturalTrack?: string[]
+  portugueseOrigin?: {
+    country: string
+    region?: string
+    culturalBackground?: string[]
+  }
+  ukLocation?: string
+  languagePreference?: string
+  culturalVerificationBadges?: string[]
+  profileVisibility?: string
+  eventNotifications?: boolean
+  partnerEventInterest?: boolean
   agreeTerms: boolean
   ageConfirmation: boolean
   referralCode?: string
@@ -41,6 +55,23 @@ interface SignupResponse {
   culturalMatch?: any
   partnerEvents?: any[]
   recommendations?: any[]
+}
+
+// Placeholder function implementations for build compatibility
+async function processPartnerEventInterests(signupData: EnhancedSignupRequest) {
+  return {
+    interestedEvents: signupData.partnerEventInterest ? ['kizomba', 'fado'] : []
+  }
+}
+
+async function sendCulturalWelcomeEmail(data: any) {
+  // Placeholder for cultural welcome email
+  return Promise.resolve()
+}
+
+async function registerForInitialEvents(data: any) {
+  // Placeholder for initial event registration
+  return Promise.resolve([])
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse<SignupResponse>> {
@@ -149,9 +180,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
           
           // Cultural data
           cultural_preferences: {
-            origins: [signupData.portugueseOrigin.country],
-            regions: signupData.portugueseOrigin.region ? [signupData.portugueseOrigin.region] : [],
-            cultural_background: signupData.portugueseOrigin.culturalBackground || [],
+            origins: signupData.portugueseOrigin ? [signupData.portugueseOrigin.country] : [],
+            regions: signupData.portugueseOrigin?.region ? [signupData.portugueseOrigin.region] : [],
+            cultural_background: signupData.portugueseOrigin?.culturalBackground || [],
             verification_badges: signupData.culturalVerificationBadges || [],
             partner_events: partnerEventData.interestedEvents || []
           },
@@ -215,7 +246,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
         userId: authData.user.id,
         interests: signupData.primaryInterests,
         location: signupData.ukLocation,
-        culturalOrigin: signupData.portugueseOrigin.country,
+        culturalOrigin: signupData.portugueseOrigin?.country || 'unknown',
         partnerEventInterest: signupData.partnerEventInterest
       })
     } catch (registrationError) {

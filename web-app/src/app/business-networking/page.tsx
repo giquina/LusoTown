@@ -18,6 +18,7 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 import BusinessNetworkingMatch from "@/components/matches/BusinessNetworkingMatch";
 import BusinessNetworkingAlgorithm from "@/components/matches/BusinessNetworkingAlgorithm";
+import logger from "@/utils/logger";
 import Footer from "@/components/Footer";
 
 export default function BusinessNetworkingPage() {
@@ -316,13 +317,28 @@ export default function BusinessNetworkingPage() {
             <BusinessNetworkingMatch
               currentUserId="demo-user"
               onBusinessMatchAction={(matchId, action) => {
-                console.log('Demo: Business match action:', matchId, action);
+                logger.info('Demo: Business match action', {
+                  area: 'business',
+                  action: 'match_action',
+                  matchId,
+                  matchAction: action
+                });
               }}
               onMentorshipRequest={(menteeId, mentorId) => {
-                console.log('Demo: Mentorship request:', menteeId, mentorId);
+                logger.info('Demo: Mentorship request', {
+                  area: 'business',
+                  action: 'mentorship_request',
+                  menteeId,
+                  mentorId
+                });
               }}
               onBusinessEventBooking={(eventId, matchId) => {
-                console.log('Demo: Business event booking:', eventId, matchId);
+                logger.info('Demo: Business event booking', {
+                  area: 'business',
+                  action: 'event_booking',
+                  eventId,
+                  matchId
+                });
               }}
             />
           </motion.div>

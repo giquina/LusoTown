@@ -5,6 +5,8 @@ import { ExclamationTriangleIcon, HomeIcon, ArrowPathIcon } from '@heroicons/rea
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 import logger from '@/utils/logger'
+import { reportPortugueseError, reportBusinessDirectoryError, reportCulturalMatchingError, reportLanguageError } from '../../sentry.client.config'
+import { PORTUGUESE_ERROR_CONTEXTS } from '@/config/error-monitoring'
 
 interface Props {
   children: ReactNode
@@ -125,7 +127,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   private reportError = async (error: Error, errorInfo: ErrorInfo, context: any) => {
     try {
-      // Report to logging service (placeholder for actual implementation)
+      // Enhanced error reporting with Portuguese community context
       const errorReport = {
         message: error.message,
         stack: error.stack,
@@ -134,10 +136,46 @@ class ErrorBoundary extends Component<Props, State> {
         retryCount: this.state.retryCount
       }
       
-      // In a real implementation, send to Sentry, LogRocket, etc.
-      logger.info('Error reported to telemetry service:', errorReport)
+      // Determine the appropriate Sentry reporting function based on context
+      const url = context.url || ''
+      const component = context.component || ''
+      
+      if (url.includes('business-directory') || component.includes('BusinessDirectory')) {
+        reportBusinessDirectoryError(error, {
+          id: context.errorId,
+          name: component,
+          category: 'error-boundary'
+        })
+      } else if (url.includes('matching') || component.includes('Cultural') || component.includes('Matching')) {
+        reportCulturalMatchingError(error, {
+          userId: 'anonymous',
+          culturalPreferences: { component: component }
+        })
+      } else if (error.message.includes('language') || error.message.includes('i18n')) {
+        reportLanguageError(error, {
+          from: 'unknown',
+          to: 'unknown',
+          component: component
+        })
+      } else {
+        // General Portuguese community error
+        const contextKey = url.includes('events') ? 'EVENT_BOOKING' :
+                          url.includes('business') ? 'BUSINESS_DIRECTORY' :
+                          url.includes('cultural') ? 'CULTURAL_CONTENT' :
+                          'CULTURAL_CONTENT' as keyof typeof PORTUGUESE_ERROR_CONTEXTS
+        
+        reportPortugueseError(error, contextKey, {
+          componentStack: errorInfo.componentStack,
+          errorBoundary: this.constructor.name,
+          errorId: context.errorId,
+          retryCount: this.state.retryCount,
+          ...context
+        })
+      }
+      
+      logger.info('Error reported to Sentry with Portuguese community context:', errorReport)
     } catch (reportError) {
-      logger.error('Failed to report error to telemetry:', reportError)
+      logger.error('Failed to report error to Sentry:', reportError)
     }
   }
 

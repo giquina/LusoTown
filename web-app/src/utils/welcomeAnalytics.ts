@@ -78,7 +78,7 @@ export const trackWelcomeEvent = (
     }
 
   } catch (error) {
-    logger.warn('Error tracking welcome event', error, { area: 'analytics' });
+    logger.warn('Error tracking welcome event', { error, area: 'analytics' });
   }
 };
 

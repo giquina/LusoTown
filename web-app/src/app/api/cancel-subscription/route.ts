@@ -1,14 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import { getApiErrorMessage, getApiSuccessMessage, STRIPE_CONFIG } from '@/config/api-messages'
+import logger from '@/utils/logger'
 
 const getStripe = () => {
   const key = process.env.STRIPE_SECRET_KEY
   if (!key) {
-    throw new Error('STRIPE_SECRET_KEY environment variable is not set')
+    throw new Error(STRIPE_CONFIG.MISSING_SECRET_KEY)
   }
   return new Stripe(key, {
-    apiVersion: '2024-06-20',
+    apiVersion: '2025-07-30.basil' as any,
   })
 }
 
@@ -18,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     if (!subscriptionId) {
       return NextResponse.json(
-        { error: 'Missing subscription ID' },
+        { error: getApiErrorMessage('MISSING_SUBSCRIPTION_ID') },
         { status: 400 }
       )
     }
@@ -55,9 +57,9 @@ export async function POST(request: NextRequest) {
       subscription: cancelledSubscription 
     })
   } catch (error) {
-    console.error('Error cancelling subscription:', error)
+    logger.error('Error cancelling subscription:', error)
     return NextResponse.json(
-      { error: 'Failed to cancel subscription' },
+      { error: getApiErrorMessage('SUBSCRIPTION_CANCEL_FAILED') },
       { status: 500 }
     )
   }

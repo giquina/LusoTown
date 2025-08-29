@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import logger from '@/utils/logger'
+import { getApiErrorMessage, getApiSuccessMessage, getApiLogMessage } from '@/config/api-messages'
 
 export async function GET(request: NextRequest) {
   try {
@@ -10,12 +11,12 @@ export async function GET(request: NextRequest) {
     const { data: { session }, error } = await supabase.auth.getSession()
     
     if (error) {
-      logger.error('Session retrieval error', error, { 
+      logger.error(getApiLogMessage('SESSION_RETRIEVAL_ERROR'), error, { 
         area: 'auth', 
         action: 'session_retrieval' 
       })
       return NextResponse.json(
-        { error: 'Failed to retrieve session' },
+        { error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },
         { status: 500 }
       )
     }
@@ -51,12 +52,12 @@ export async function GET(request: NextRequest) {
       authenticated: true
     })
   } catch (error) {
-    logger.error('Auth session API error', error, { 
+    logger.error(getApiLogMessage('AUTH_SESSION_API_ERROR'), error, { 
       area: 'auth', 
       action: 'session_api' 
     })
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },
       { status: 500 }
     )
   }
@@ -70,24 +71,24 @@ export async function DELETE(request: NextRequest) {
     const { error } = await supabase.auth.signOut()
     
     if (error) {
-      logger.error('Sign out error', error, { 
+      logger.error(getApiLogMessage('SIGN_OUT_ERROR'), error, { 
         area: 'auth', 
         action: 'sign_out' 
       })
       return NextResponse.json(
-        { error: 'Failed to sign out' },
+        { error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },
         { status: 500 }
       )
     }
 
-    return NextResponse.json({ message: 'Successfully signed out' })
+    return NextResponse.json({ message: getApiSuccessMessage('USER_SIGNED_OUT') })
   } catch (error) {
-    logger.error('Auth session delete API error', error, { 
+    logger.error(getApiLogMessage('AUTH_SESSION_DELETE_ERROR'), error, { 
       area: 'auth', 
       action: 'session_delete' 
     })
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },
       { status: 500 }
     )
   }

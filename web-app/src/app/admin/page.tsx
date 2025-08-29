@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
+import { ROUTES } from '@/config/routes'
+import { PORTUGUESE_COLORS, brandColors } from '@/config/brand'
 import { useRouter } from 'next/navigation'
 import { 
   Heart, 
@@ -207,12 +209,12 @@ export default function AdminDashboard() {
   useEffect(() => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      router.push('/login')
+      router.push(ROUTES.login)
       return
     }
     
     if (!authService.isAdmin()) {
-      router.push('/dashboard')
+      router.push(ROUTES.dashboard)
       return
     }
     
@@ -222,13 +224,13 @@ export default function AdminDashboard() {
 
   const handleLogout = async () => {
     await authService.logout()
-    router.push('/')
+    router.push(ROUTES.home)
   }
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
       free: { icon: <UserIcon className="w-3 h-3" />, color: 'bg-gray-100 text-gray-600', label: 'Free' },
-      core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
+      core: { icon: <Star className="w-3 h-3" />, color: 'bg-red-500 text-white', label: 'Core' },
       premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
@@ -249,7 +251,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-red-500"></div>
       </div>
     )
   }
@@ -265,7 +267,7 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-emerald-500 rounded-full flex items-center justify-center">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -278,7 +280,7 @@ export default function AdminDashboard() {
             </div>
             <div className="flex items-center space-x-4">
               <button
-                onClick={() => router.push('/dashboard')}
+                onClick={() => router.push(ROUTES.dashboard)}
                 className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
               >
                 View User Dashboard
@@ -349,7 +351,7 @@ export default function AdminDashboard() {
                           +12% this month
                         </p>
                       </div>
-                      <Users className="w-8 h-8 text-[#FF6B6B]" />
+                      <Users className="w-8 h-8 text-red-500" />
                     </div>
                   </div>
 
@@ -363,7 +365,7 @@ export default function AdminDashboard() {
                           {Math.round((ADMIN_STATS.activeUsers / ADMIN_STATS.totalUsers) * 100)}% active
                         </p>
                       </div>
-                      <CheckCircle className="w-8 h-8 text-[#4ECDC4]" />
+                      <CheckCircle className="w-8 h-8 text-emerald-500" />
                     </div>
                   </div>
 
@@ -424,14 +426,14 @@ export default function AdminDashboard() {
                       onClick={() => setActiveTab('users')}
                       className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center"
                     >
-                      <Users className="w-6 h-6 text-[#FF6B6B] mx-auto mb-2" />
+                      <Users className="w-6 h-6 text-red-500 mx-auto mb-2" />
                       <p className="text-sm font-medium">Manage Users</p>
                     </button>
                     <button 
                       onClick={() => setActiveTab('events')}
                       className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center"
                     >
-                      <Plus className="w-6 h-6 text-[#4ECDC4] mx-auto mb-2" />
+                      <Plus className="w-6 h-6 text-emerald-500 mx-auto mb-2" />
                       <p className="text-sm font-medium">Create Event</p>
                     </button>
                     <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center">
@@ -452,7 +454,7 @@ export default function AdminDashboard() {
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="text-xl font-semibold text-gray-900">User Management</h2>
                   <div className="flex space-x-3">
-                    <button className="px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm">
+                    <button className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-sm">
                       Export Users
                     </button>
                     <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm">
@@ -481,7 +483,7 @@ export default function AdminDashboard() {
                           <tr key={user.id} className="border-b border-gray-100 hover:bg-gray-50">
                             <td className="py-4 px-4">
                               <div className="flex items-center space-x-3">
-                                <div className="w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                                   {user.name.split(' ').map(n => n[0]).join('')}
                                 </div>
                                 <div>
@@ -530,7 +532,7 @@ export default function AdminDashboard() {
               <div className="bg-white rounded-xl shadow-sm p-6">
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="text-xl font-semibold text-gray-900">Event Management</h2>
-                  <button className="px-4 py-2 bg-[#4ECDC4] text-white rounded-lg hover:bg-[#45b8b0] transition-colors flex items-center space-x-2">
+                  <button className="px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center space-x-2">
                     <Plus className="w-4 h-4" />
                     <span>Create Event</span>
                   </button>

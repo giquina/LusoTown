@@ -6,7 +6,7 @@ import { SUBSCRIPTION_PLANS, getPriceForStripe } from '@/config/pricing'
 const getStripe = () => {
   const key = process.env.STRIPE_SECRET_KEY as string
   return new Stripe(key, {
-    apiVersion: '2024-06-20'
+    apiVersion: '2025-07-30.basil' as any
   })
 }
 

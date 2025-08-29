@@ -1,8 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase'
+import { withRateLimit } from '@/lib/rate-limit-middleware'
+import { logRateLimitViolation, detectAndLogAbuse } from '@/lib/rate-limit-monitoring'
 import logger from '@/utils/logger'
 
 export async function GET(request: NextRequest) {
+  // Apply rate limiting for community messaging
+  const rateLimitCheck = await withRateLimit(request, 'community-messaging');
+  
+  if (!('success' in rateLimitCheck)) {
+    const clientIP = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+    logRateLimitViolation(
+      clientIP,
+      'community-messaging',
+      '/api/messaging/messages',
+      20, // limit from config
+      1,
+      request.headers.get('user-agent') || undefined
+    );
+    return rateLimitCheck;
+  }
+
   try {
     const supabase = createClient()
     const { data: { user }, error: authError } = await supabase.auth.getUser()
@@ -62,7 +80,14 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to fetch messages' }, { status: 500 })
     }
 
-    return NextResponse.json(messages || [])
+    const response = NextResponse.json(messages || [])
+    
+    // Add rate limit headers
+    rateLimitCheck.headers.forEach((value, key) => {
+      response.headers.set(key, value);
+    });
+    
+    return response;
   } catch (error) {
     logger.error('Messages API GET error', error, {
       area: 'messaging',
@@ -73,6 +98,32 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  // Apply stricter rate limiting for message posting
+  const rateLimitCheck = await withRateLimit(request, 'community-messaging');
+  
+  if (!('success' in rateLimitCheck)) {
+    const clientIP = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+    
+    // Detect potential spam or abuse patterns
+    const isAbuse = detectAndLogAbuse(
+      clientIP,
+      '/api/messaging/messages',
+      'community-messaging',
+      1,
+      60000 // 1 minute window
+    );
+    
+    if (isAbuse) {
+      logger.warn('Potential messaging abuse detected', undefined, {
+        area: 'security',
+        action: 'messaging_abuse_detection',
+        client_ip: `${clientIP.substring(0, 8)}***`
+      });
+    }
+    
+    return rateLimitCheck;
+  }
+
   try {
     const supabase = createClient()
     const { data: { user }, error: authError } = await supabase.auth.getUser()
@@ -157,7 +208,14 @@ export async function POST(request: NextRequest) {
       .update({ last_activity_at: new Date().toISOString() })
       .eq('id', conversationId)
 
-    return NextResponse.json(message)
+    const response = NextResponse.json(message)
+    
+    // Add rate limit headers
+    rateLimitCheck.headers.forEach((value, key) => {
+      response.headers.set(key, value);
+    });
+    
+    return response;
   } catch (error) {
     logger.error('Messages API POST error', error, {
       area: 'messaging',

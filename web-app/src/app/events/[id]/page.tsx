@@ -26,6 +26,7 @@ import { Event, EventReview, eventService } from '@/lib/events'
 import { authService } from '@/lib/auth'
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
+import logger from '@/utils/logger'
 
 
 
@@ -207,17 +208,30 @@ export default function EventDetailsPage() {
     setError(null) // Clear any previous errors
     
     try {
-      console.log('Loading event with ID:', eventId)
+      logger.info('Loading event', {
+        area: 'events',
+        action: 'event_load',
+        eventId
+      })
       const eventData = await eventService.getEventById(eventId as string)
       
       if (!eventData) {
-        console.log('Event not found for ID:', eventId)
+        logger.warn('Event not found', {
+          area: 'events',
+          action: 'event_not_found',
+          eventId
+        })
         setError('Event not found')
         setLoading(false)
         return
       }
       
-      console.log('Event loaded successfully:', eventData.title)
+      logger.info('Event loaded successfully', {
+        area: 'events',
+        action: 'event_loaded',
+        eventId,
+        eventTitle: eventData.title
+      })
       setEvent(eventData)
       
       // Check if user has already RSVP'd (mock for now)
@@ -280,7 +294,11 @@ export default function EventDetailsPage() {
         }
         
         // In a real implementation, this would call an API to create the post
-        console.log('Auto-posting to LusoFeed:', feedPost)
+        logger.info('Auto-posting to LusoFeed', {
+          area: 'events',
+          action: 'auto_feed_post',
+          eventId: feedPost?.eventId
+        })
         
         alert('success', `Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
       } else {

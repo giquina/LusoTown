@@ -671,3 +671,18 @@ export function getCommunityStats(): {
     highOpportunityMarkets: getHighOpportunityMarkets().length
   }
 }
+
+/**
+ * Get UK cities formatted for business directory component
+ */
+export function getUKCityBusinessData(): Array<{
+  id: string
+  name: { en: string; pt: string }
+  businesses: number
+}> {
+  return UK_CITIES_EXPANSION.map(city => ({
+    id: city.id,
+    name: { en: city.name, pt: city.namePortuguese },
+    businesses: city.portugueseBusinessConcentration.length
+  }))
+}

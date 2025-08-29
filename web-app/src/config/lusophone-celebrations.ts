@@ -21,6 +21,7 @@ export interface LusophoneCelebration {
     en: string
     pt: string
   }
+  date?: string // Date string for filtering (YYYY-MM-DD format)
   businessCount: number
   category: 'music' | 'festival' | 'independence' | 'religious' | 'cultural' | 'food' | 'art' | 'heritage'
   significance: {

@@ -1,22 +1,22 @@
 {
   "summary": {
-    "totalViolations": 11282,
+    "totalViolations": 12236,
     "byCategory": {
-      "hardcoded_text": 10176,
-      "hardcoded_routes": 205,
-      "hardcoded_colors": 405,
-      "hardcoded_urls": 245,
-      "console_logs": 171,
-      "hardcoded_emails": 56,
-      "hardcoded_prices": 24
+      "hardcoded_text": 11142,
+      "hardcoded_urls": 258,
+      "hardcoded_colors": 390,
+      "hardcoded_emails": 58,
+      "hardcoded_routes": 203,
+      "hardcoded_prices": 24,
+      "console_logs": 161
     },
     "bySeverity": {
-      "high": 10501,
-      "medium": 610,
-      "low": 171
+      "high": 11482,
+      "medium": 593,
+      "low": 161
     },
-    "filesAffected": 402,
-    "timestamp": "2025-08-29T05:24:47.596Z",
+    "filesAffected": 443,
+    "timestamp": "2025-08-29T15:12:23.630Z",
     "recommendations": [
       "🚨 CRITICAL: Implement bilingual system with t() function",
       "🔧 Create config/cdn.ts for URL management",
@@ -26,266 +26,6 @@
   },
   "violations": [
     {
-      "file": "src/app/about/page.tsx",
-      "line": 75,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Celebrando Todas as Nações Lusófonas'",
-      "context": "{language === 'pt' ? 'Celebrando Todas as Nações Lusófonas' : 'Celebrating All Portuguese-Speaking Nations'}",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 75,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Celebrating All Portuguese-Speaking Nations'",
-      "context": "{language === 'pt' ? 'Celebrando Todas as Nações Lusófonas' : 'Celebrating All Portuguese-Speaking Nations'}",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 87,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Uma Língua, Nove Nações, Uma Comunidade'",
-      "context": "{language === 'pt' ? 'Uma Língua, Nove Nações, Uma Comunidade' : 'One Language, Nine Nations, One Community'}",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 87,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'One Language, Nine Nations, One Community'",
-      "context": "{language === 'pt' ? 'Uma Língua, Nove Nações, Uma Comunidade' : 'One Language, Nine Nations, One Community'}",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 99,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro, das ilhas cabo-verdianas às praias moçambicanas - somos uma família global unida pela língua portuguesa no Reino Unido.'",
-      "context": "? 'Do palácio real português às torres de Macau, dos diamantes angolanos ao ouro brasileiro, das ilhas cabo-verdianas às praias moçambicanas - somos uma família global unida pela língua portuguesa no Reino Unido.'",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 100,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'From the Portuguese royal palace to the towers of Macau, from Angolan diamonds to Brazilian gold, from Cape Verdean islands to Mozambican shores - we are a global family united by the Portuguese language in the United Kingdom.'",
-      "context": ": 'From the Portuguese royal palace to the towers of Macau, from Angolan diamonds to Brazilian gold, from Cape Verdean islands to Mozambican shores - we are a global family united by the Portuguese language in the United Kingdom.'",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 168,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Somos uma Comunidade Inclusiva'",
-      "context": "{language === 'pt' ? 'Somos uma Comunidade Inclusiva' : 'We Are an Inclusive Community'}",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 168,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'We Are an Inclusive Community'",
-      "context": "{language === 'pt' ? 'Somos uma Comunidade Inclusiva' : 'We Are an Inclusive Community'}",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 173,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Aqui todos têm lugar. Seja você de Portugal, Brasil, Angola, Cabo Verde, Moçambique, Guiné-Bissau, São Tomé e Príncipe, Timor-Leste ou Macau - celebramos a riqueza de todas as culturas lusófonas. Unidos pela língua, fortalecidos pela diversidade.'",
-      "context": "? 'Aqui todos têm lugar. Seja você de Portugal, Brasil, Angola, Cabo Verde, Moçambique, Guiné-Bissau, São Tomé e Príncipe, Timor-Leste ou Macau - celebramos a riqueza de todas as culturas lusófonas. Unidos pela língua, fortalecidos pela diversidade.'",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/about/page.tsx",
-      "line": 174,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Here, everyone belongs. Whether you\\'",
-      "context": ": 'Here, everyone belongs. Whether you\\'re from Portugal, Brazil, Angola, Cape Verde, Mozambique, Guinea-Bissau, São Tomé and Príncipe, East Timor, or Macau - we celebrate the richness of all Portuguese-speaking cultures. United by language, strengthened by diversity.'",
-      "timestamp": "2025-08-29T05:24:46.886Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 210,
-      "category": "hardcoded_routes",
-      "severity": "medium",
-      "message": "Potential hardcoded route - use ROUTES constants",
-      "code": "'/login'",
-      "context": "router.push('/login')",
-      "timestamp": "2025-08-29T05:24:46.891Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 215,
-      "category": "hardcoded_routes",
-      "severity": "medium",
-      "message": "Potential hardcoded route - use ROUTES constants",
-      "code": "'/dashboard'",
-      "context": "router.push('/dashboard')",
-      "timestamp": "2025-08-29T05:24:46.891Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 281,
-      "category": "hardcoded_routes",
-      "severity": "medium",
-      "message": "Potential hardcoded route - use ROUTES constants",
-      "code": "'/dashboard'",
-      "context": "onClick={() => router.push('/dashboard')}",
-      "timestamp": "2025-08-29T05:24:46.891Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 252,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#FF6B6B",
-      "context": "<div className=\"animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]\"></div>",
-      "timestamp": "2025-08-29T05:24:46.891Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 268,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#FF6B6B",
-      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center\">",
-      "timestamp": "2025-08-29T05:24:46.891Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 268,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#4ECDC4",
-      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 352,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#FF6B6B",
-      "context": "<Users className=\"w-8 h-8 text-[#FF6B6B]\" />",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 366,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#4ECDC4",
-      "context": "<CheckCircle className=\"w-8 h-8 text-[#4ECDC4]\" />",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 427,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#FF6B6B",
-      "context": "<Users className=\"w-6 h-6 text-[#FF6B6B] mx-auto mb-2\" />",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 434,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#4ECDC4",
-      "context": "<Plus className=\"w-6 h-6 text-[#4ECDC4] mx-auto mb-2\" />",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 455,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#FF6B6B",
-      "context": "<button className=\"px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 455,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#e55a5a",
-      "context": "<button className=\"px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 484,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#FF6B6B",
-      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 484,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#4ECDC4",
-      "context": "<div className=\"w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 533,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#4ECDC4",
-      "context": "<button className=\"px-4 py-2 bg-[#4ECDC4] text-white rounded-lg hover:bg-[#45b8b0] transition-colors flex items-center space-x-2\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
-      "file": "src/app/admin/page.tsx",
-      "line": 533,
-      "category": "hardcoded_colors",
-      "severity": "medium",
-      "message": "Hardcoded color detected - use Portuguese brand colors from config",
-      "code": "#45b8b0",
-      "context": "<button className=\"px-4 py-2 bg-[#4ECDC4] text-white rounded-lg hover:bg-[#45b8b0] transition-colors flex items-center space-x-2\">",
-      "timestamp": "2025-08-29T05:24:46.892Z"
-    },
-    {
       "file": "src/app/api/admin/performance/route.ts",
       "line": 115,
       "category": "hardcoded_text",
@@ -293,7 +33,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'INVALID_METRIC_REQUESTED'",
       "context": "{ error: getApiErrorMessage('INVALID_METRIC_REQUESTED'), available_metrics: ['community', 'health', 'business', 'events', 'matching', 'transport', 'university', 'recommendations', 'maintenance'] },",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.854Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -303,7 +43,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'PERFORMANCE_METRICS_ERROR'",
       "context": "console.error(getApiLogMessage('PERFORMANCE_METRICS_ERROR'), error);",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -313,7 +53,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'PERFORMANCE_LOGGING_ERROR'",
       "context": "console.error(getApiLogMessage('PERFORMANCE_LOGGING_ERROR'), error);",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -323,7 +63,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'GET_ADMIN_PERFORMANCE'",
       "context": "[getApiEndpointDescription('GET_ADMIN_PERFORMANCE')]: {",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -333,7 +73,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'POST_ADMIN_PERFORMANCE'",
       "context": "[getApiEndpointDescription('POST_ADMIN_PERFORMANCE')]: {",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -343,7 +83,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'COMMUNITY_EVENTS'",
       "context": "getApiEndpointDescription('COMMUNITY_EVENTS'),",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -353,7 +93,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'BUSINESS_DIRECTORY'",
       "context": "getApiEndpointDescription('BUSINESS_DIRECTORY'),",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -363,7 +103,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'CULTURAL_MATCHING'",
       "context": "getApiEndpointDescription('CULTURAL_MATCHING'),",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -373,7 +113,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'TRANSPORT_COORDINATION'",
       "context": "getApiEndpointDescription('TRANSPORT_COORDINATION'),",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
     },
     {
       "file": "src/app/api/admin/performance/route.ts",
@@ -383,227 +123,487 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'UNIVERSITY_INTEGRATION'",
       "context": "getApiEndpointDescription('UNIVERSITY_INTEGRATION')",
-      "timestamp": "2025-08-29T05:24:46.892Z"
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 11,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Supabase configuration missing'",
+      "context": "throw new Error('Supabase configuration missing');",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 29,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Authentication required'",
+      "context": "{ error: 'Authentication required' },",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 39,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Invalid authentication token'",
+      "context": "{ error: 'Invalid authentication token' },",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 64,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Admin access required'",
+      "context": "{ error: 'Admin access required' },",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 134,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Error fetching security stats:'",
+      "context": "console.error('Error fetching security stats:', statsError);",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 148,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Error fetching threat data:'",
+      "context": "console.error('Error fetching threat data:', threatsError);",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 160,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Error fetching failed logins:'",
+      "context": "console.error('Error fetching failed logins:', loginsError);",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 171,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Error fetching session data:'",
+      "context": "console.error('Error fetching session data:', sessionsError);",
+      "timestamp": "2025-08-29T15:12:22.860Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 310,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Security dashboard API error:'",
+      "context": "console.error('Security dashboard API error:', error);",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 334,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Authentication required'",
+      "context": "{ error: 'Authentication required' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 344,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Invalid authentication token'",
+      "context": "{ error: 'Invalid authentication token' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 357,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Admin access required'",
+      "context": "{ error: 'Admin access required' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 369,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Target IP required for blocking'",
+      "context": "{ error: 'Target IP required for blocking' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 414,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Event IDs array required'",
+      "context": "{ error: 'Event IDs array required' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 449,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Invalid action'",
+      "context": "{ error: 'Invalid action' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
+    },
+    {
+      "file": "src/app/api/admin/security-dashboard/route.ts",
+      "line": 455,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Security dashboard action error:'",
+      "context": "console.error('Security dashboard action error:', error);",
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 53,
+      "line": 84,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'MISSING_CREDENTIALS'",
       "context": "{ success: false, error: getApiErrorMessage('MISSING_CREDENTIALS') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 60,
+      "line": 91,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'MISSING_USER_INFO'",
       "context": "{ success: false, error: getApiErrorMessage('MISSING_USER_INFO') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 67,
+      "line": 98,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'TERMS_NOT_AGREED'",
       "context": "{ success: false, error: getApiErrorMessage('TERMS_NOT_AGREED') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 74,
+      "line": 105,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'AGE_NOT_CONFIRMED'",
       "context": "{ success: false, error: getApiErrorMessage('AGE_NOT_CONFIRMED') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 81,
+      "line": 112,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'PASSWORDS_MISMATCH'",
       "context": "{ success: false, error: getApiErrorMessage('PASSWORDS_MISMATCH') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 109,
+      "line": 140,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'ACCOUNT_CREATION_FAILED'",
       "context": "{ success: false, error: authError?.message || getApiErrorMessage('ACCOUNT_CREATION_FAILED') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 172,
+      "line": 203,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'PROFILE_CREATION_ERROR'",
       "context": "logger.error(getApiLogMessage('PROFILE_CREATION_ERROR'), profileError)",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 174,
+      "line": 205,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'PROFILE_CREATION_FAILED'",
       "context": "{ success: false, error: getApiErrorMessage('PROFILE_CREATION_FAILED') },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 189,
+      "line": 220,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'REFERRAL_PROCESSING_ERROR'",
       "context": "logger.error(getApiLogMessage('REFERRAL_PROCESSING_ERROR'), referralError)",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 207,
+      "line": 238,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'WELCOME_EMAIL_ERROR'",
       "context": "logger.error(getApiLogMessage('WELCOME_EMAIL_ERROR'), emailError)",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 222,
+      "line": 253,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'AUTO_REGISTRATION_ERROR'",
       "context": "logger.error(getApiLogMessage('AUTO_REGISTRATION_ERROR'), registrationError)",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 244,
+      "line": 275,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'COMPATIBILITY_CALCULATION_ERROR'",
       "context": "logger.error(getApiLogMessage('COMPATIBILITY_CALCULATION_ERROR'), compatibilityError)",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
       "file": "src/app/api/auth/enhanced-signup/route.ts",
-      "line": 271,
+      "line": 302,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'ENHANCED_SIGNUP_ERROR'",
       "context": "logger.error(getApiLogMessage('ENHANCED_SIGNUP_ERROR'), error)",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 13,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 21,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Session retrieval error'",
-      "context": "logger.error('Session retrieval error', error, {",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Supabase configuration missing'",
+      "context": "throw new Error('Supabase configuration missing');",
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 18,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 96,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to retrieve session'",
-      "context": "{ error: 'Failed to retrieve session' },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Invalid request parameters'",
+      "context": "{ error: 'Invalid request parameters' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 54,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 106,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Auth session API error'",
-      "context": "logger.error('Auth session API error', error, {",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Email and password are required'",
+      "context": "{ error: 'Email and password are required' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 59,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 124,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Internal server error'",
-      "context": "{ error: 'Internal server error' },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Invalid email format'",
+      "context": "{ error: 'Invalid email format' },",
+      "timestamp": "2025-08-29T15:12:22.861Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 73,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 179,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Sign out error'",
-      "context": "logger.error('Sign out error', error, {",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Invalid email or password'",
+      "context": "{ error: 'Invalid email or password' },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 78,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 240,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to sign out'",
-      "context": "{ error: 'Failed to sign out' },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Invalid email or password'",
+      "context": "{ error: 'Invalid email or password' },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 83,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 313,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Successfully signed out'",
-      "context": "return NextResponse.json({ message: 'Successfully signed out' })",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Login notification sent'",
+      "context": "logger.info('Login notification sent', {",
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 85,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 385,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Auth session delete API error'",
-      "context": "logger.error('Auth session delete API error', error, {",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'Secure login error:'",
+      "context": "console.error('Secure login error:', error);",
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
-      "file": "src/app/api/auth/session/route.ts",
-      "line": 90,
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 412,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Internal server error'",
-      "context": "{ error: 'Internal server error' },",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "code": "'No active session found'",
+      "context": "{ error: 'No active session found' },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/secure-login/route.ts",
+      "line": 471,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Secure logout error:'",
+      "context": "console.error('Secure logout error:', error);",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 14,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'SESSION_RETRIEVAL_ERROR'",
+      "context": "logger.error(getApiLogMessage('SESSION_RETRIEVAL_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 19,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'INTERNAL_SERVER_ERROR'",
+      "context": "{ error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 55,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AUTH_SESSION_API_ERROR'",
+      "context": "logger.error(getApiLogMessage('AUTH_SESSION_API_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 60,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'INTERNAL_SERVER_ERROR'",
+      "context": "{ error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 74,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'SIGN_OUT_ERROR'",
+      "context": "logger.error(getApiLogMessage('SIGN_OUT_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 79,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'INTERNAL_SERVER_ERROR'",
+      "context": "{ error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 84,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'USER_SIGNED_OUT'",
+      "context": "return NextResponse.json({ message: getApiSuccessMessage('USER_SIGNED_OUT') })",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 86,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'AUTH_SESSION_DELETE_ERROR'",
+      "context": "logger.error(getApiLogMessage('AUTH_SESSION_DELETE_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.862Z"
+    },
+    {
+      "file": "src/app/api/auth/session/route.ts",
+      "line": 91,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'INTERNAL_SERVER_ERROR'",
+      "context": "{ error: getApiErrorMessage('INTERNAL_SERVER_ERROR') },",
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
       "file": "src/app/api/business-directory/clusters/route.ts",
@@ -613,17 +613,17 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Business clusters API error:'",
       "context": "logger.error('Business clusters API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
       "file": "src/app/api/business-directory/clusters/route.ts",
-      "line": 183,
+      "line": 184,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Business hotspots API error:'",
       "context": "logger.error('Business hotspots API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
       "file": "src/app/api/business-directory/nearby/route.ts",
@@ -633,7 +633,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Nearby businesses API error:'",
       "context": "logger.error('Nearby businesses API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.862Z"
     },
     {
       "file": "src/app/api/business-directory/nearby/route.ts",
@@ -643,7 +643,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Bulk nearby businesses API error:'",
       "context": "logger.error('Bulk nearby businesses API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.893Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -653,7 +653,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Supabase configuration missing'",
       "context": "throw new Error('Supabase configuration missing');",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -663,7 +663,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Performance data query error:'",
       "context": "logger.error('Performance data query error:', perfError);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -673,7 +673,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Database metrics query error:'",
       "context": "logger.error('Database metrics query error:', dbError);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -683,7 +683,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Alerts query error:'",
       "context": "logger.error('Alerts query error:', alertsError);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -693,7 +693,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Performance monitoring API error:'",
       "context": "logger.error('Performance monitoring API error:', error);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -703,7 +703,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Performance benchmark API error:'",
       "context": "logger.error('Performance benchmark API error:', error);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -713,7 +713,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Performance cache cleanup API error:'",
       "context": "logger.error('Performance cache cleanup API error:', error);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -723,7 +723,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Rebuild spatial indexes and optimize PostGIS queries'",
       "context": "? 'Rebuild spatial indexes and optimize PostGIS queries'",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -733,7 +733,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Consider adding composite indexes for frequently filtered combinations'",
       "context": ": 'Consider adding composite indexes for frequently filtered combinations';",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -743,7 +743,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Refresh materialized views and update table statistics'",
       "context": "return 'Refresh materialized views and update table statistics';",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -753,7 +753,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Add functional indexes on JSONB cultural preferences columns'",
       "context": "return 'Add functional indexes on JSONB cultural preferences columns';",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -763,7 +763,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Consider partitioning large materialized views by date or region'",
       "context": "return 'Consider partitioning large materialized views by date or region';",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/performance/route.ts",
@@ -773,127 +773,197 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Review query execution plans and consider adding appropriate indexes'",
       "context": "return 'Review query execution plans and consider adding appropriate indexes';",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 19,
+      "line": 104,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'SUPABASE_CONFIG_MISSING'",
-      "context": "throw new Error(getApiErrorMessage('SUPABASE_CONFIG_MISSING'));",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'PORTUGUESE_BUSINESS_DIRECTORY_FETCH_ERROR'",
+      "context": "logger.error(getApiLogMessage('PORTUGUESE_BUSINESS_DIRECTORY_FETCH_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 142,
+      "line": 111,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Business directory API error:'",
-      "context": "logger.error('Business directory API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'PORTUGUESE_BUSINESS_FETCH_FAILED'",
+      "context": "{ error: getApiErrorMessage('PORTUGUESE_BUSINESS_FETCH_FAILED') },",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 144,
+      "line": 132,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to fetch businesses'",
-      "context": "{ success: false, error: 'Failed to fetch businesses', executionTime },",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'PORTUGUESE_BUSINESS_DIRECTORY_SUCCESS'",
+      "context": "logger.info(getApiLogMessage('PORTUGUESE_BUSINESS_DIRECTORY_SUCCESS'), undefined, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 293,
+      "line": 163,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Optimized PostGIS query error:'",
-      "context": "logger.error('Optimized PostGIS query error:', error);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'Business directory validation error'",
+      "context": "logger.warn('Business directory validation error', error, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 392,
+      "line": 179,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Business clusters API error:'",
-      "context": "logger.error('Business clusters API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'BUSINESS_DIRECTORY_API_ERROR'",
+      "context": "logger.error(getApiLogMessage('BUSINESS_DIRECTORY_API_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 394,
+      "line": 185,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to get business clusters'",
-      "context": "{ success: false, error: 'Failed to get business clusters', executionTime },",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'BUSINESS_DIRECTORY_SERVER_ERROR'",
+      "context": "{ error: getApiErrorMessage('BUSINESS_DIRECTORY_SERVER_ERROR') },",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 470,
+      "line": 208,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Geocoding failed:'",
-      "context": "logger.warn('Geocoding failed:', error);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'PORTUGUESE_BUSINESS_ABUSE_DETECTED'",
+      "context": "logger.warn(getApiLogMessage('PORTUGUESE_BUSINESS_ABUSE_DETECTED'), undefined, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 517,
+      "line": 225,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Business submission error:'",
-      "context": "logger.error('Business submission error:', error);",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'AUTHENTICATION_REQUIRED_BUSINESS'",
+      "context": "{ error: getApiErrorMessage('AUTHENTICATION_REQUIRED_BUSINESS') },",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 519,
+      "line": 267,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to submit business'",
-      "context": "{ success: false, error: 'Failed to submit business' },",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'GEOCODING_FAILED_BUSINESS'",
+      "context": "logger.warn(getApiLogMessage('GEOCODING_FAILED_BUSINESS'), geocodeError, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 533,
+      "line": 302,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'LusoTown Portuguese Business Directory'",
-      "context": "'User-Agent': 'LusoTown Portuguese Business Directory'",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'PORTUGUESE_BUSINESS_SUBMISSION_FAILED'",
+      "context": "logger.error(getApiLogMessage('PORTUGUESE_BUSINESS_SUBMISSION_FAILED'), error, {",
+      "timestamp": "2025-08-29T15:12:22.863Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 539,
+      "line": 309,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Geocoding service unavailable'",
-      "context": "throw new Error('Geocoding service unavailable');",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'BUSINESS_SUBMISSION_FAILED_REVIEW'",
+      "context": "{ error: getApiErrorMessage('BUSINESS_SUBMISSION_FAILED_REVIEW') },",
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/business-directory/route.ts",
-      "line": 551,
+      "line": 314,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Geocoding failed'",
-      "context": "logger.warn('Geocoding failed', undefined, { area: 'business', action: 'geocoding' });",
-      "timestamp": "2025-08-29T05:24:46.894Z"
+      "code": "'PORTUGUESE_BUSINESS_SUBMISSION_SUCCESS'",
+      "context": "logger.info(getApiLogMessage('PORTUGUESE_BUSINESS_SUBMISSION_SUCCESS'), undefined, {",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 328,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'BUSINESS_REVIEW_PROCESS'",
+      "context": "getApiSuccessMessage('BUSINESS_REVIEW_PROCESS'),",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 329,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'CULTURAL_AUTHENTICITY_VERIFICATION'",
+      "context": "getApiSuccessMessage('CULTURAL_AUTHENTICITY_VERIFICATION'),",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 330,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'PORTUGUESE_COMMUNITY_FEEDBACK'",
+      "context": "getApiSuccessMessage('PORTUGUESE_COMMUNITY_FEEDBACK'),",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 331,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'BUSINESS_LISTING_ACTIVATION'",
+      "context": "getApiSuccessMessage('BUSINESS_LISTING_ACTIVATION')",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 345,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'Business submission validation error'",
+      "context": "logger.warn('Business submission validation error', error, {",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 361,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'BUSINESS_DIRECTORY_POST_ERROR'",
+      "context": "logger.error(getApiLogMessage('BUSINESS_DIRECTORY_POST_ERROR'), error, {",
+      "timestamp": "2025-08-29T15:12:22.864Z"
+    },
+    {
+      "file": "src/app/api/business-directory/route.ts",
+      "line": 367,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded user-facing text detected - should use t() function",
+      "code": "'BUSINESS_SUBMISSION_SERVER_ERROR'",
+      "context": "{ error: getApiErrorMessage('BUSINESS_SUBMISSION_SERVER_ERROR') },",
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/business-directory/search/route.ts",
@@ -903,7 +973,7 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Hybrid search API error:'",
       "context": "logger.error('Hybrid search API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.895Z"
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/business-directory/search/route.ts",
@@ -913,118 +983,48 @@
       "message": "Hardcoded user-facing text detected - should use t() function",
       "code": "'Search suggestions API error:'",
       "context": "logger.error('Search suggestions API error:', { error, executionTime });",
-      "timestamp": "2025-08-29T05:24:46.895Z"
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/businesses/route.ts",
-      "line": 132,
+      "line": 133,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Database error:'",
-      "context": "console.error('Database error:', error);",
-      "timestamp": "2025-08-29T05:24:46.896Z"
+      "code": "'DATABASE_ERROR'",
+      "context": "console.error(getApiLogMessage('DATABASE_ERROR'), error);",
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/businesses/route.ts",
-      "line": 207,
+      "line": 208,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Business search API error:'",
-      "context": "console.error('Business search API error:', error);",
-      "timestamp": "2025-08-29T05:24:46.896Z"
+      "code": "'BUSINESS_SEARCH_API_ERROR'",
+      "context": "console.error(getApiLogMessage('BUSINESS_SEARCH_API_ERROR'), error);",
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/businesses/route.ts",
-      "line": 226,
+      "line": 227,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Unauthorized'",
-      "context": "return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });",
-      "timestamp": "2025-08-29T05:24:46.896Z"
+      "code": "'UNAUTHORIZED'",
+      "context": "return NextResponse.json({ error: getApiErrorMessage('UNAUTHORIZED') }, { status: 401 });",
+      "timestamp": "2025-08-29T15:12:22.864Z"
     },
     {
       "file": "src/app/api/businesses/route.ts",
-      "line": 285,
+      "line": 238,
       "category": "hardcoded_text",
       "severity": "high",
       "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Business insertion error:'",
-      "context": "console.error('Business insertion error:', error);",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/businesses/route.ts",
-      "line": 299,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Business creation API error:'",
-      "context": "console.error('Business creation API error:', error);",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/cancel-subscription/route.ts",
-      "line": 8,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'STRIPE_SECRET_KEY environment variable is not set'",
-      "context": "throw new Error('STRIPE_SECRET_KEY environment variable is not set')",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/cancel-subscription/route.ts",
-      "line": 21,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Missing subscription ID'",
-      "context": "{ error: 'Missing subscription ID' },",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/cancel-subscription/route.ts",
-      "line": 58,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Error cancelling subscription:'",
-      "context": "console.error('Error cancelling subscription:', error)",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/cancel-subscription/route.ts",
-      "line": 60,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to cancel subscription'",
-      "context": "{ error: 'Failed to cancel subscription' },",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/categories/route.ts",
-      "line": 32,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Error fetching categories:'",
-      "context": "logger.error('Error fetching categories:', error)",
-      "timestamp": "2025-08-29T05:24:46.896Z"
-    },
-    {
-      "file": "src/app/api/categories/route.ts",
-      "line": 33,
-      "category": "hardcoded_text",
-      "severity": "high",
-      "message": "Hardcoded user-facing text detected - should use t() function",
-      "code": "'Failed to fetch categories'",
-      "context": "return NextResponse.json({ error: 'Failed to fetch categories' }, { status: 500 })",
-      "timestamp": "2025-08-29T05:24:46.896Z"
+      "code": "'MISSING_BUSINESS_FIELDS_GENERIC'",
+      "context": "{ error: `${getApiErrorMessage('MISSING_BUSINESS_FIELDS_GENERIC')}: ${missingFields.join(', ')}` },",
+      "timestamp": "2025-08-29T15:12:22.864Z"
     }
   ],
-  "fullViolationCount": 11282
+  "fullViolationCount": 12236
 }

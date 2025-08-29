@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSafeSearchQuery } from '@/hooks/useSafeHTML';
 import { BusinessCard } from '@/components';
 import { BusinessMap } from '@/components';
 import {
@@ -23,6 +24,7 @@ import {
   portugueseBusinessService,
   type BusinessFilters
 } from '@/lib/businessDirectory';
+import { UK_CITIES_PORTUGUESE_EXPANSION, getUKCityBusinessData } from '@/config/uk-cities-expansion';
 import {
   geolocationService,
   type Location,
@@ -86,17 +88,8 @@ export default function BusinessDirectory({
   // Popular categories for quick access
   const popularCategories = getPopularBusinessCategories();
   
-  // UK cities with Portuguese-speaking communities
-  const ukCities = [
-    { id: 'london', name: { en: 'London', pt: 'Londres' }, businesses: 156 },
-    { id: 'manchester', name: { en: 'Manchester', pt: 'Manchester' }, businesses: 23 },
-    { id: 'birmingham', name: { en: 'Birmingham', pt: 'Birmingham' }, businesses: 18 },
-    { id: 'edinburgh', name: { en: 'Edinburgh', pt: 'Edimburgo' }, businesses: 12 },
-    { id: 'glasgow', name: { en: 'Glasgow', pt: 'Glasgow' }, businesses: 9 },
-    { id: 'liverpool', name: { en: 'Liverpool', pt: 'Liverpool' }, businesses: 7 },
-    { id: 'bristol', name: { en: 'Bristol', pt: 'Bristol' }, businesses: 5 },
-    { id: 'leeds', name: { en: 'Leeds', pt: 'Leeds' }, businesses: 4 }
-  ];
+  // UK cities with Portuguese-speaking communities from config
+  const ukCities = getUKCityBusinessData();
   
   // Load businesses on component mount
   useEffect(() => {
@@ -150,12 +143,15 @@ export default function BusinessDirectory({
     }
   }, [businesses, radiusKm]);
   
+  // Sanitize search query
+  const safeSearchQuery = useSafeSearchQuery(searchQuery);
+
   const filterBusinesses = useCallback(() => {
     let filtered = [...businesses];
     
-    // Apply search filter
-    if (searchQuery.trim()) {
-      filtered = searchBusinesses(searchQuery.trim());
+    // Apply search filter with sanitization
+    if (safeSearchQuery.trim()) {
+      filtered = searchBusinesses(safeSearchQuery);
     }
     
     // Apply category filter
@@ -178,7 +174,7 @@ export default function BusinessDirectory({
     filtered = sortBusinesses(filtered);
     
     setFilteredBusinesses(filtered);
-  }, [searchQuery, selectedCategory, selectedLocation, businesses, userLocation, nearbyBusinesses, sortBy]);
+  }, [safeSearchQuery, selectedCategory, selectedLocation, businesses, userLocation, nearbyBusinesses, sortBy]);
   
   const sortBusinesses = useCallback((businessesToSort: BusinessCarouselItem[]) => {
     const sorted = [...businessesToSort];

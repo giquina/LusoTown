@@ -7,6 +7,7 @@ import {
   DRIVER_VERIFICATION,
   TRANSPORT_EMERGENCY 
 } from '@/config/transport-services';
+import logger from '@/utils/logger';
 
 export interface TransportRequest {
   id?: string;
@@ -285,7 +286,12 @@ export async function POST(request: NextRequest) {
 
     // In a real implementation, you'd send notifications to drivers here
     // For now, we'll just log the available drivers
-    console.log(`Found ${availableDrivers?.length || 0} available drivers for request ${newRequest.id}`);
+    logger.info('Found available drivers for transport request', {
+      area: 'transport',
+      action: 'driver_matching',
+      requestId: newRequest.id,
+      availableDriversCount: availableDrivers?.length || 0
+    });
 
     // Send confirmation email/SMS to user (implement with actual service)
     const confirmationMessage = {

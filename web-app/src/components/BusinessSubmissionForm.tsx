@@ -2,6 +2,8 @@
 
 import React, { useState, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { validateInput } from '@/lib/security/input-validation'
+import { useSafeHTML } from '@/hooks/useSafeHTML'
 import { 
   BusinessCategory, 
   PortugueseRegion, 
@@ -268,26 +270,34 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
     setSubmitStatus('idle')
 
     try {
-      // Prepare business data for submission
-      const businessData: Partial<PortugueseBusiness> = {
+      // Prepare business data for validation and sanitization
+      const rawBusinessData = {
         name: formData.name,
         namePortuguese: formData.namePortuguese || undefined,
-        category: formData.category as BusinessCategory,
         description: formData.description,
         descriptionPortuguese: formData.descriptionPortuguese || undefined,
         address: formData.address,
-        postcode: formData.postcode.toUpperCase(),
+        postcode: formData.postcode,
         phone: formData.phone,
         email: formData.email,
         website: formData.website || undefined,
         ownerName: formData.ownerName,
+        yearEstablished: formData.yearEstablished,
+        keywords: formData.keywords,
+      }
+
+      // Validate and sanitize all input data
+      const validatedData = validateInput.businessSubmission(rawBusinessData)
+
+      // Prepare final business data for submission  
+      const businessData: Partial<PortugueseBusiness> = {
+        ...validatedData,
+        category: formData.category as BusinessCategory,
         ownerRegion: formData.ownerRegion as PortugueseRegion,
         languagesSpoken: formData.languagesSpoken,
-        yearEstablished: formData.yearEstablished,
         openingHours: formData.openingHours,
         londonArea: formData.londonArea as LondonArea,
         supportsCulture: formData.supportsCulture,
-        keywords: formData.keywords,
         latitude: geocodedLocation?.latitude,
         longitude: geocodedLocation?.longitude
       }
@@ -304,8 +314,15 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
       }
     } catch (error) {
       console.error('Business submission failed:', error)
-      setSubmitStatus('error')
-      setSubmitMessage(t('form.submission_error', 'Failed to submit business. Please try again.'))
+      
+      // Handle validation errors specifically
+      if (error instanceof Error && error.message.includes('validation')) {
+        setSubmitStatus('error')
+        setSubmitMessage(t('form.validation_error', 'Please check your input data for invalid characters or formats.'))
+      } else {
+        setSubmitStatus('error')
+        setSubmitMessage(t('form.submission_error', 'Failed to submit business. Please try again.'))
+      }
     } finally {
       setIsSubmitting(false)
     }

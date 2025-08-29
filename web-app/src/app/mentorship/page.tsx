@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
 import Footer from '@/components/Footer'
 import MentorshipHero from '@/components/MentorshipHero'
+import { useSafeJsonLD } from '@/hooks/useSafeHTML'
 // import MentorshipProgramsSection from '@/components/MentorshipProgramsSection'
 // import MentorshipMatchingSection from '@/components/MentorshipMatchingSection'
 // import MentorshipSuccessStories from '@/components/MentorshipSuccessStories'
@@ -46,13 +47,14 @@ const jsonLd = {
 
 export default function MentorshipPage() {
   const { t } = useLanguage()
+  const safeJsonLD = useSafeJsonLD(jsonLd)
 
   return (
     <>
       {/* Structured data for SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLD }}
       />
       
       <main className="min-h-screen w-full overflow-x-hidden">

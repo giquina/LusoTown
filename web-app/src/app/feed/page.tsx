@@ -28,6 +28,7 @@ import PhotoUpload, { UploadedPhoto } from '@/components/PhotoUpload'
 import EventFeedCard, { EventFeedCardData } from '@/components/EventFeedCard'
 import { useLanguage } from '@/context/LanguageContext'
 import { Language } from '@/i18n'
+import logger from '@/utils/logger'
 
 interface FeedPost {
   id: string
@@ -209,12 +210,20 @@ export default function CommunityFeed() {
   const handleFiltersChange = (filter: 'all' | 'following' | 'cultural' | 'services' | 'events') => {
     setActiveFilter(filter)
     // Apply filters to posts here - for now just update state
-    console.log('Filter updated:', filter)
+    logger.info('Feed filter updated', {
+      area: 'feed',
+      action: 'filter_updated',
+      filter
+    })
   }
 
   const handleLiveUpdate = (update: any) => {
     // Handle live update clicks - could navigate to specific events/posts
-    console.log('Live update clicked:', update)
+    logger.info('Live update clicked', {
+      area: 'feed',
+      action: 'live_update_clicked',
+      update
+    })
   }
 
   return (

@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { Card } from '@/components/ui/card'
 import { ModernButton } from '@/components/ui/ModernButton'
+import { useSafeUserContent } from '@/hooks/useSafeHTML'
+import { validateInput } from '@/lib/security/input-validation'
 
 /**
  * Simple LusoBot chat component
@@ -16,8 +18,26 @@ export default function LusoBotChat() {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      setMessages([...messages, message])
-      setMessage('')
+      try {
+        // Validate and sanitize the message before adding
+        const validatedMessage = validateInput.message({
+          content: message,
+          messageType: 'text',
+          conversationId: 'lusobot-chat',
+          receiverId: 'lusobot'
+        });
+        
+        setMessages([...messages, validatedMessage.content])
+        setMessage('')
+      } catch (error) {
+        console.error('Message validation failed:', error)
+        // Still allow the message but sanitized
+        const safeMessage = message.replace(/<[^>]*>/g, '').trim()
+        if (safeMessage) {
+          setMessages([...messages, safeMessage])
+          setMessage('')
+        }
+      }
     }
   }
 
@@ -38,11 +58,14 @@ export default function LusoBotChat() {
             {t('lusobot.startConversation')}
           </p>
         ) : (
-          messages.map((msg, index) => (
-            <div key={index} className="bg-white p-2 rounded shadow-sm">
-              {msg}
-            </div>
-          ))
+          messages.map((msg, index) => {
+            const safeContent = useSafeUserContent(msg);
+            return (
+              <div key={index} className="bg-white p-2 rounded shadow-sm">
+                {safeContent}
+              </div>
+            );
+          })
         )}
       </div>
       
