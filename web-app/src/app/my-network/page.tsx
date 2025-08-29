@@ -21,15 +21,7 @@ import { useNetworking, ConnectionFilters as ConnectionFiltersType } from '@/con
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 
-// Import components we'll create
-import NetworkHeader from '@/components/NetworkHeader'
-import ConnectionsGrid from '@/components/ConnectionsGrid'
-import SortingControls from '@/components/SortingControls'
-import NetworkBadges from '@/components/NetworkBadges'
-import ConnectionNotificationBanner from '@/components/ConnectionNotificationBanner'
-import ConnectionFilters from '@/components/ConnectionFilters'
-import NetworkAnalytics from '@/components/NetworkAnalytics'
-import ReferralWidget from '@/components/ReferralWidget'
+// Components temporarily disabled for streamlined architecture
 
 export default function MyNetworkPage() {
   const { t, language } = useLanguage()
@@ -142,15 +134,25 @@ export default function MyNetworkPage() {
               </p>
 
               {/* Network Stats */}
-              <NetworkHeader stats={stats} />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary-600">0</div>
+                  <div className="text-sm text-gray-600">{isPortuguese ? 'Conexões' : 'Connections'}</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-secondary-600">0</div>
+                  <div className="text-sm text-gray-600">{isPortuguese ? 'Eventos' : 'Events'}</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent-600">0</div>
+                  <div className="text-sm text-gray-600">{isPortuguese ? 'Matches' : 'Matches'}</div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Notification Banner */}
-        {getUnreadNotificationsCount() > 0 && (
-          <ConnectionNotificationBanner notifications={notifications} />
-        )}
+        {/* Notification Banner - Coming Soon */}
 
         {/* Main Content */}
         <section className="py-12">
@@ -172,14 +174,14 @@ export default function MyNetworkPage() {
                     />
                   </div>
 
-                  {/* Controls Row */}
+                  {/* Controls Row - Simplified */}
                   <div className="flex items-center gap-4">
-                    <ConnectionFilters 
-                      onFiltersChange={handleFiltersChange}
-                      activeFilters={activeFilters}
-                      onClearFilters={handleClearFilters}
-                    />
-                    <SortingControls sortBy={sortBy} onSortChange={setSortBy} />
+                    <button className="px-4 py-2 border border-gray-200 rounded-lg text-gray-600">
+                      {isPortuguese ? 'Filtros' : 'Filters'}
+                    </button>
+                    <select className="px-4 py-2 border border-gray-200 rounded-lg">
+                      <option>{isPortuguese ? 'Ordenar' : 'Sort'}</option>
+                    </select>
                   </div>
                 </div>
                 
@@ -208,17 +210,14 @@ export default function MyNetworkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {/* Sidebar */}
               <div className="lg:col-span-1 space-y-6">
-                {/* Referral Widget */}
-                <ReferralWidget variant="compact" showStats={true} />
-                
-                {/* Network Analytics */}
-                <NetworkAnalytics />
-                
-                {/* Network Badges */}
-                <NetworkBadges achievements={stats.achievements} />
-                
-                {/* Conversation Starters */}
-                {/* ConversationStarters component removed */}
+                <div className="bg-white rounded-lg p-6">
+                  <h3 className="font-semibold text-gray-900 mb-3">
+                    {isPortuguese ? 'Funcionalidades' : 'Features'}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {isPortuguese ? 'Em desenvolvimento' : 'Coming soon'}
+                  </p>
+                </div>
               </div>
 
               {/* Main Content Area */}
@@ -254,8 +253,15 @@ export default function MyNetworkPage() {
                     )}
                   </div>
                 ) : (
-                  // Connections Grid
-                  <ConnectionsGrid connections={filteredConnections} />
+                  // Connections Grid - Simplified
+                  <div className="bg-white rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      {isPortuguese ? 'Suas Conexões' : 'Your Connections'}
+                    </h3>
+                    <p className="text-gray-600">
+                      {isPortuguese ? 'Sistema de rede em desenvolvimento' : 'Network system in development'}
+                    </p>
+                  </div>
                 )}
               </div>
             </div>

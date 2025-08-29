@@ -4,8 +4,8 @@ export const dynamic = 'force-dynamic'
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
-import ConversationsList from '@/components/ConversationsList'
-import MessagingInterface from '@/components/MessagingInterface'
+// import ConversationsList from '@/components/ConversationsList'
+// import MessagingInterface from '@/components/MessagingInterface'
 import { motion } from 'framer-motion'
 import { 
   MessageCircle, 
@@ -112,10 +112,14 @@ function MessagesContent() {
             animate={{ opacity: 1, x: 0 }}
             className={`${isMobile && selectedConversationId ? 'hidden' : 'block'} lg:col-span-1`}
           >
-            <ConversationsList 
-              onSelectConversation={(id) => setSelectedConversationId(id)}
-              selectedConversationId={selectedConversationId}
-            />
+            <div className="bg-white rounded-lg border p-6 text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {isPortuguese ? 'Conversas' : 'Conversations'}
+              </h3>
+              <p className="text-gray-600">
+                {isPortuguese ? 'Em breve disponível' : 'Coming soon'}
+              </p>
+            </div>
           </motion.div>
 
           {/* Messaging Interface */}
@@ -134,7 +138,16 @@ function MessagesContent() {
                     <ArrowLeft className="w-5 h-5 text-gray-600" />
                   </button>
                 )}
-                <MessagingInterface conversationId={selectedConversationId} />
+                <div className="bg-white rounded-lg border p-6 text-center h-full flex items-center justify-center">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {isPortuguese ? 'Mensagens' : 'Messages'}
+                    </h3>
+                    <p className="text-gray-600">
+                      {isPortuguese ? 'Funcionalidade em desenvolvimento' : 'Feature in development'}
+                    </p>
+                  </div>
+                </div>
               </div>
             ) : (
               <div className="h-full bg-white rounded-lg border border-gray-200 flex flex-col items-center justify-center p-8">
