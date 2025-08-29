@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircleIcon, ShieldCheckIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
 interface TrustIndicator {
   name: string

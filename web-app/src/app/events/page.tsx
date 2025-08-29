@@ -1,10 +1,11 @@
+import dynamic from 'next/dynamic';
 'use client'
 
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Footer from '@/components/Footer';
 import EventDiscoverySystem from '@/components/events/EventDiscoverySystem';
-import LusophoneCarousel from '@/components/carousels/LusophoneCarousel';
+const LusophoneCarousel = dynamic(() => import('@/components/LusophoneCarousel'), { loading: () => <div>Loading...</div> });
 import { LUSOPHONE_CELEBRATIONS, getCelebrationsByCategory, type LusophoneCelebration } from '@/config/lusophone-celebrations';
 import logger from '@/utils/logger';
 import { COMMON_IMAGES } from '@/config/cdn';

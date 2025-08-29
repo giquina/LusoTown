@@ -29,7 +29,7 @@ import {
   AcademicCapIcon as AcademicCapIconSolid,
   StarIcon as StarIconSolid,
   CheckBadgeIcon as CheckBadgeIconSolid
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 interface StudentSupportSectionProps {

@@ -26,7 +26,7 @@ import {
   CheckBadgeIcon as CheckBadgeIconSolid,
   StarIcon as StarIconSolid,
   AcademicCapIcon as AcademicCapIconSolid
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 import { UNIVERSITY_PARTNERSHIPS, UNIVERSITY_STATS, getUniversityById, getUniversitiesByPartnershipLevel } from '@/config/universities'
 import Link from 'next/link'
 

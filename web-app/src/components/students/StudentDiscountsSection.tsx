@@ -25,7 +25,7 @@ import {
   ExclamationTriangleIcon,
   InformationCircleIcon
 } from '@heroicons/react/24/outline'
-import { CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/outline'
 
 interface StudentDiscount {
   id: string

@@ -25,7 +25,7 @@ import {
   CheckBadgeIcon,
   StarIcon as StarSolidIcon,
   GiftIcon as GiftSolidIcon 
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
   getFormattedSubscriptionPrice,

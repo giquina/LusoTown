@@ -17,7 +17,7 @@ import {
 import {
   ChatBubbleLeftRightIcon as ChatSolid,
   HeartIcon as HeartSolid
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 
 interface ConversationStarter {
   id: string

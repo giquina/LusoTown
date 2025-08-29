@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { HeartIcon as HeartOutlineIcon } from '@heroicons/react/24/outline'
-import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
+import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/outline'
 import { useFavorites } from '@/context/FavoritesContext'
 import { toast } from 'react-hot-toast'
 import { motion, AnimatePresence } from 'framer-motion'

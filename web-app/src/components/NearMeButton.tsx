@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { geolocationService, GeolocationResult, BusinessDistance } from '@/lib/geolocation'
 import { PortugueseBusiness } from '@/lib/businessDirectory'
 import { MapPinIcon } from '@heroicons/react/24/outline'
-import { MapPinIcon as MapPinSolidIcon } from '@heroicons/react/24/solid'
+import { MapPinIcon as MapPinSolidIcon } from '@heroicons/react/24/outline'
 
 interface NearMeButtonProps {
   businesses: PortugueseBusiness[]

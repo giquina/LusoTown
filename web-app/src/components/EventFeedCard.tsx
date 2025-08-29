@@ -17,7 +17,7 @@ import {
   CameraIcon,
   PlusIcon
 } from '@heroicons/react/24/outline'
-import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { formatEventDate } from '@/lib/dateUtils'
 import { useFavorites } from '@/context/FavoritesContext'

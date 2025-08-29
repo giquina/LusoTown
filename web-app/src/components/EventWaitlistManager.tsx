@@ -13,7 +13,7 @@ import {
   TrophyIcon,
   StarIcon
 } from '@heroicons/react/24/outline';
-import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid';
+import { HeartIcon as HeartSolid } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { Event, WaitlistEntry } from '@/lib/events';
 

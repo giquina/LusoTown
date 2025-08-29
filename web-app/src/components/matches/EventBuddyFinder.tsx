@@ -17,7 +17,7 @@ import {
   FireIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
-import { HeartIcon as HeartSolid, StarIcon as StarSolid } from "@heroicons/react/24/solid";
+import { HeartIcon as HeartSolid, StarIcon as StarSolid } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { formatPrice } from "@/config/pricing";

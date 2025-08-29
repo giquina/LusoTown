@@ -14,7 +14,7 @@ import {
   GiftIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
-import { CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 import { useAuthPopup } from './AuthPopupProvider'
 import { useLanguage } from '@/context/LanguageContext'
 

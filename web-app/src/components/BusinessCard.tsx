@@ -17,7 +17,7 @@ import {
   SparklesIcon,
   BuildingStorefrontIcon
 } from '@heroicons/react/24/outline'
-import { StarIcon as StarSolidIcon, HeartIcon } from '@heroicons/react/24/solid'
+import { StarIcon as StarSolidIcon, HeartIcon } from '@heroicons/react/24/outline'
 
 interface BusinessCardProps {
   business: BusinessCarouselItem

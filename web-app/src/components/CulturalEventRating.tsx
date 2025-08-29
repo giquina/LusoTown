@@ -18,7 +18,7 @@ import {
   HandThumbDownIcon,
   ShareIcon
 } from '@heroicons/react/24/outline';
-import { StarIcon as StarSolid, HeartIcon as HeartSolid } from '@heroicons/react/24/solid';
+import { StarIcon as StarSolid, HeartIcon as HeartSolid } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { Event, EventReview } from '@/lib/events';
 

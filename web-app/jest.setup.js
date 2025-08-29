@@ -1,4 +1,20 @@
+import React from 'react'
 import '@testing-library/jest-dom'
+
+// Helper function to strip framer-motion props
+const stripFramerProps = (props) => {
+  const {
+    whileHover,
+    whileTap,
+    animate,
+    initial,
+    exit,
+    variants,
+    transition,
+    ...cleanProps
+  } = props
+  return cleanProps
+}
 
 // Mock Next.js router
 jest.mock('next/navigation', () => ({
@@ -29,19 +45,41 @@ const localStorageMock = {
 }
 global.localStorage = localStorageMock
 
-// Mock Framer Motion
+// Enhanced Framer Motion Mock with prop filtering
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }) => children,
-    section: ({ children, ...props }) => children,
-    h1: ({ children, ...props }) => children,
-    h2: ({ children, ...props }) => children,
-    h3: ({ children, ...props }) => children,
-    p: ({ children, ...props }) => children,
-    span: ({ children, ...props }) => children,
-    button: ({ children, ...props }) => children,
+    div: ({ children, ...props }) => React.createElement('div', stripFramerProps(props), children),
+    section: ({ children, ...props }) => React.createElement('section', stripFramerProps(props), children),
+    header: ({ children, ...props }) => React.createElement('header', stripFramerProps(props), children),
+    nav: ({ children, ...props }) => React.createElement('nav', stripFramerProps(props), children),
+    h1: ({ children, ...props }) => React.createElement('h1', stripFramerProps(props), children),
+    h2: ({ children, ...props }) => React.createElement('h2', stripFramerProps(props), children),
+    h3: ({ children, ...props }) => React.createElement('h3', stripFramerProps(props), children),
+    p: ({ children, ...props }) => React.createElement('p', stripFramerProps(props), children),
+    span: ({ children, ...props }) => React.createElement('span', stripFramerProps(props), children),
+    button: ({ children, ...props }) => React.createElement('button', stripFramerProps(props), children),
+    a: ({ children, ...props }) => React.createElement('a', stripFramerProps(props), children),
+    li: ({ children, ...props }) => React.createElement('li', stripFramerProps(props), children),
+    ul: ({ children, ...props }) => React.createElement('ul', stripFramerProps(props), children),
+    article: ({ children, ...props }) => React.createElement('article', stripFramerProps(props), children),
+    main: ({ children, ...props }) => React.createElement('main', stripFramerProps(props), children),
+    aside: ({ children, ...props }) => React.createElement('aside', stripFramerProps(props), children),
+    form: ({ children, ...props }) => React.createElement('form', stripFramerProps(props), children),
+    input: (props) => React.createElement('input', stripFramerProps(props)),
+    textarea: ({ children, ...props }) => React.createElement('textarea', stripFramerProps(props), children),
+    img: (props) => React.createElement('img', stripFramerProps(props)),
   },
   AnimatePresence: ({ children }) => children,
+  useAnimation: () => ({
+    start: jest.fn(),
+    stop: jest.fn(),
+    set: jest.fn(),
+  }),
+  useMotionValue: (initial) => ({
+    get: () => initial,
+    set: jest.fn(),
+    onChange: jest.fn(),
+  }),
 }))
 
 // Mock react-hot-toast

@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
@@ -17,8 +19,8 @@ import {
 import { authService } from "@/lib/auth";
 import { referralService } from "@/lib/referral";
 import Footer from "@/components/Footer";
-import UserOnboardingFlow from "@/components/UserOnboardingFlow";
-import GrowthFeatures from "@/components/GrowthFeatures";
+const UserOnboardingFlow = dynamic(() => import('@/components/UserOnboardingFlow'), { loading: () => <div>Loading...</div> });
+const GrowthFeatures = dynamic(() => import('@/components/GrowthFeatures'), { loading: () => <div>Loading...</div> });
 import toast from "react-hot-toast";
 
 // New Enhanced Components

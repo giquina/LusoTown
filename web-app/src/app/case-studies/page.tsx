@@ -1,10 +1,9 @@
-'use client'
+import dynamic from 'next/dynamic';
 
 import { Metadata } from 'next'
 import Footer from '@/components/Footer'
-import CaseStudies from '@/components/CaseStudies'
+const CaseStudies = dynamic(() => import('@/components/CaseStudies'), { loading: () => <div>Loading...</div> });
 import CTA from '@/components/CTA'
-import { useSafeJsonLD } from '@/hooks/useSafeHTML'
 import { 
   HeartIcon, 
   UsersIcon, 
@@ -108,14 +107,12 @@ const jsonLd = {
 }
 
 export default function CaseStudiesPage() {
-  const safeJsonLD = useSafeJsonLD(jsonLd)
-  
   return (
     <>
       {/* Structured data for SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLD }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
       <main className="min-h-screen">
@@ -140,211 +137,8 @@ export default function CaseStudiesPage() {
             </div>
           </section>
 
-          {/* Portuguese-speaking community Impact Stats */}
-          <section className="py-16 bg-white">
-            <div className="container-width">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-center text-gray-900 mb-12">
-                  Portuguese-speaking community Impact in London
-                </h2>
-                
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-secondary-100 to-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <HeartIcon className="w-8 h-8 text-secondary-600" />
-                    </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">750+</div>
-                    <div className="text-sm text-gray-600">Lusophone Speakers Connected</div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-coral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <UsersIcon className="w-8 h-8 text-accent-600" />
-                    </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">150+</div>
-                    <div className="text-sm text-gray-600">Meaningful Friendships Formed</div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-coral-100 to-action-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <TrophyIcon className="w-8 h-8 text-coral-600" />
-                    </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">25+</div>
-                    <div className="text-sm text-gray-600">Business Partnerships Created</div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-action-100 to-premium-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <SparklesIcon className="w-8 h-8 text-action-600" />
-                    </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">8</div>
-                    <div className="text-sm text-gray-600">Countries Represented</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* Main Case Studies Component */}
           <CaseStudies />
-
-          {/* Why These Stories Matter */}
-          <section className="py-20 bg-gradient-to-br from-secondary-50 to-accent-50">
-            <div className="container-width">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                  Why These Stories Matter
-                </h2>
-                
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <MapPinIcon className="w-8 h-8 text-secondary-600 mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Real London Venues</h3>
-                    <p className="text-gray-600">
-                      These connections happened at actual London locations - the National Gallery, The Shard, 
-                      British Library. Every Portuguese speaker can envision themselves at these accessible venues.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <CalendarIcon className="w-8 h-8 text-accent-600 mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Authentic Timelines</h3>
-                    <p className="text-gray-600">
-                      From first meeting to life transformation - these timelines show realistic progression 
-                      of Portuguese-speaking community relationships over months, not overnight magic.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <UsersIcon className="w-8 h-8 text-coral-600 mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Diverse Lusophone Heritage</h3>
-                    <p className="text-gray-600">
-                      Stories include speakers from Portugal, Brazil, Angola - showcasing how all Portuguese 
-                      speakers find common ground and mutual support in London's diaspora community.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <TrophyIcon className="w-8 h-8 text-action-600 mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Measurable Impact</h3>
-                    <p className="text-gray-600">
-                      Specific achievements: savings on rent, business revenue, cultural recognition, 
-                      community leadership. These aren't just feel-good stories - they're life improvements.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* How to Write Your Own Story */}
-          <section className="py-20 bg-white">
-            <div className="container-width">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                  How to Write Your Own Lusophone Story in London
-                </h2>
-                <p className="text-xl text-gray-600 mb-12">
-                  These transformations all started with someone attending their first LusoTown event. 
-                  Here's how you can begin your own story.
-                </p>
-                
-                <div className="grid md:grid-cols-3 gap-8 mb-12">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                      1
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Browse Events</h3>
-                    <p className="text-gray-600">
-                      Look for events that match your interests - cultural, professional, social, or creative. 
-                      Start with one that feels comfortable.
-                    </p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                      2
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Attend & Connect</h3>
-                    <p className="text-gray-600">
-                      Be open to conversations. Exchange contact details with people who share your interests 
-                      or background. Follow up after the event.
-                    </p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
-                      3
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Build Relationships</h3>
-                    <p className="text-gray-600">
-                      Meet regularly, support each other's goals, explore collaborations. Great friendships 
-                      and partnerships grow from consistent connection.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-r from-secondary-50 to-accent-50 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Ready to Start Your Story?
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-6">
-                    Your next life-changing connection could be at this week's event. Join the Lusophone 
-                    community that's transforming lives across London.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href={ROUTES.events}
-                      className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
-                    >
-                      <CalendarIcon className="w-5 h-5 mr-2" />
-                      Browse This Week's Events
-                    </a>
-                    <a
-                      href={ROUTES.signup}
-                      className="bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
-                    >
-                      <UsersIcon className="w-5 h-5 mr-2" />
-                      Join the Community
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Newsletter Signup */}
-          <section className="py-16 bg-gray-50">
-            <div className="container-width">
-              <div className="max-w-2xl mx-auto text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Get More Portuguese-speaking community Stories
-                </h3>
-                <p className="text-gray-600 mb-8">
-                  Subscribe to receive monthly case studies, community highlights, and inspiring stories 
-                  from Portuguese speakers across London and the United Kingdom.
-                </p>
-                
-                <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-400 focus:border-transparent"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-secondary-600 text-white hover:bg-secondary-700 font-semibold px-6 py-3 rounded-lg transition-colors duration-200 whitespace-nowrap"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-                
-                <p className="text-xs text-gray-500 mt-4">
-                  We respect your privacy. Unsubscribe anytime. No spam, just inspiring Portuguese-speaking community stories.
-                </p>
-              </div>
-            </div>
-          </section>
 
           {/* Call to Action */}
           <CTA />
@@ -354,3 +148,4 @@ export default function CaseStudiesPage() {
     </>
   )
 }
+

@@ -12,7 +12,7 @@ import {
   SparklesIcon,
   HeartIcon
 } from '@heroicons/react/24/outline'
-import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
+import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/outline'
 import { CrownIcon } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { Connection } from '@/context/NetworkingContext'

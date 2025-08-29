@@ -12,7 +12,7 @@ import {
   BuildingStorefrontIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
-import { HeartIcon, BookmarkIcon } from '@heroicons/react/24/solid'
+import { HeartIcon, BookmarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 import { PORTUGUESE_COLORS } from '@/config/brand'

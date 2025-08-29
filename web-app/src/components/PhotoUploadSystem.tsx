@@ -10,7 +10,7 @@ import {
   EyeIcon,
   ArrowUpTrayIcon
 } from '@heroicons/react/24/outline'
-import { StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
+import { StarIcon as StarSolidIcon } from '@heroicons/react/24/outline'
 import { toast } from 'react-hot-toast'
 import { uploadPhoto, deletePhoto, getCurrentUser } from '@/lib/supabase'
 

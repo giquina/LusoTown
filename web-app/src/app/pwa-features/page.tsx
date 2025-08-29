@@ -8,7 +8,7 @@ const MobileCameraIntegration = dynamic(() => import('@/components/MobileCameraI
 import MobileGeolocationServices from '@/components/MobileGeolocationServices';
 import PushNotificationSystem from '@/components/PushNotificationSystem';
 import PerformanceOptimization from '@/components/PerformanceOptimization';
-import AccessibilityFeatures from '@/components/AccessibilityFeatures';
+const AccessibilityFeatures = dynamic(() => import('@/components/AccessibilityFeatures'), { loading: () => <div>Loading...</div> });
 import { 
   Smartphone, 
   Camera, 

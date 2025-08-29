@@ -1,9 +1,8 @@
-'use client'
 
 import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import GroupEventsPageClient from '@/components/GroupEventsPageClient'
-import { useSafeJsonLD } from '@/hooks/useSafeHTML'
+import { EventsPageSchema, EventSchema } from '@/components/SEO/SchemaMarkup'
 
 // Page metadata
 export const metadata: Metadata = {
@@ -52,48 +51,22 @@ export const metadata: Metadata = {
   }
 }
 
-// Structured data for group events
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'EventSeries',
-  name: 'Lusophone Group Events & Tours in London',
-  description: 'Regular group events and tours for Portuguese speakers in London, including cultural experiences, historical tours, and family activities.',
-  url: 'https://lusotown.london/events/groups',
-  organizer: {
-    '@type': 'Organization',
-    name: 'LusoTown London',
-    url: 'https://lusotown.london'
-  },
-  location: {
-    '@type': 'City',
-    name: 'London',
-    addressCountry: 'GB'
-  },
-  audience: {
-    '@type': 'Audience',
-    audienceType: 'Portuguese-speaking community'
-  },
-  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-  eventStatus: 'https://schema.org/EventScheduled',
-  inLanguage: ['en', 'pt'],
-  keywords: ['Portuguese-speaking community', 'London tours', 'cultural events', 'group activities'],
-  offers: {
-    '@type': 'AggregateOffer',
-    lowPrice: 25,
-    highPrice: 55,
-    priceCurrency: 'GBP'
-  }
-}
+// Enhanced structured data using our comprehensive schema system
 
 export default function GroupEventsPage() {
-  const safeJsonLD = useSafeJsonLD(jsonLd)
-  
   return (
     <>
-      {/* Structured data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLD }}
+      {/* Enhanced Portuguese Community Schema Markup */}
+      <EventsPageSchema />
+      
+      {/* Specific group events schema */}
+      <EventSchema 
+        eventName="Lusophone Group Events & Tours London | Eventos de Grupo Lusófonos"
+        description="Regular group events and tours for Portuguese-speaking community in London. Eventos e tours regulares para a comunidade lusófona em Londres."
+        startDate="2025-01-15T19:00:00"
+        location="Various London Cultural Venues"
+        organizer="LusoTown London"
+        countries={["Portugal", "Brazil", "Angola", "Cape Verde", "Mozambique"]}
       />
       
       <main className="min-h-screen w-full overflow-x-hidden">

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { StarIcon, CheckCircleIcon, HeartIcon } from '@heroicons/react/24/solid'
+import { StarIcon, CheckCircleIcon, HeartIcon } from '@heroicons/react/24/outline'
 import { ArrowRightIcon, Users, MessageCircle } from 'lucide-react'
 import { useFavorites } from '@/context/FavoritesContext'
 

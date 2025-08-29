@@ -16,7 +16,7 @@ import {
   EyeIcon,
   CameraIcon
 } from '@heroicons/react/24/outline'
-import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { useFavorites } from '@/context/FavoritesContext'
 import FavoriteButton from '@/components/FavoriteButton'

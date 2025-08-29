@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { StarIcon, MapPinIcon, PhoneIcon, ClockIcon, HeartIcon } from '@heroicons/react/24/outline'
-import { StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
+import { StarIcon as StarSolidIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'

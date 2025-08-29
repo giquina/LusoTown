@@ -30,7 +30,7 @@ import {
   AcademicCapIcon as AcademicCapIconSolid,
   CheckBadgeIcon as CheckBadgeIconSolid,
   StarIcon as StarIconSolid
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { UNIVERSITY_PARTNERSHIPS, UNIVERSITY_STATS, getUniversityById } from '@/config/universities'
 

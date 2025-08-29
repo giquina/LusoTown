@@ -27,7 +27,7 @@ import {
   CheckBadgeIcon, 
   HeartIcon as HeartSolidIcon,
   StarIcon as StarSolidIcon 
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { useRouter } from 'next/navigation'
 

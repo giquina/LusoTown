@@ -1,0 +1,29 @@
+{
+  "title": "Bundle Size Optimization Report - Portuguese Community Platform",
+  "timestamp": "2025-08-29T15:38:00.559Z",
+  "duration": "111904ms",
+  "bundleSize": {
+    "initial": "0 B",
+    "final": "0 B",
+    "saved": "0 B",
+    "percentImprovement": "0%"
+  },
+  "analysis": {
+    "heavyImports": 134,
+    "culturalComponents": 34,
+    "duplicateDependencies": 1
+  },
+  "optimizations": [
+    "Optimized 170 import statements",
+    "Added 8 dynamic imports",
+    "Analyzed 0 images"
+  ],
+  "recommendations": [
+    "Consider lazy loading heavy components with dynamic imports",
+    "Remove duplicate dependencies to reduce bundle size",
+    "Enable gzip compression on your server",
+    "Use Next.js Image component for automatic image optimization",
+    "Consider code splitting at the route level",
+    "Monitor bundle size with bundle analyzer in CI/CD"
+  ]
+}

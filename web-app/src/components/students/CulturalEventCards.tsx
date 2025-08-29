@@ -12,7 +12,7 @@ import {
   SparklesIcon,
   HeartIcon
 } from '@heroicons/react/24/outline'
-import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { StarIcon as StarIconSolid } from '@heroicons/react/24/outline'
 
 interface CulturalEvent {
   id: string

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSafeSearchQuery } from '@/hooks/useSafeHTML';
+import logger from '@/utils/logger';
 import { BusinessCard } from '@/components';
 import { BusinessMap } from '@/components';
 import {
@@ -43,7 +44,7 @@ import {
   CheckBadgeIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
-import { HeartIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid';
+import { HeartIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/outline';
 
 interface BusinessDirectoryProps {
   className?: string;
@@ -113,7 +114,7 @@ export default function BusinessDirectory({
       const featured = allBusinesses.filter(b => b.isFeatured).slice(0, 6);
       setFeaturedBusinesses(featured);
     } catch (error) {
-      console.error('Failed to load businesses:', error);
+      logger.business.error('Failed to load businesses', error);
     } finally {
       setLoading(false);
     }
@@ -138,7 +139,7 @@ export default function BusinessDirectory({
       );
       setNearbyBusinesses(distances);
     } catch (error) {
-      console.error('Location request failed:', error);
+      logger.geo.error('Location request failed', error);
       setLocationPermission('denied');
     }
   }, [businesses, radiusKm]);

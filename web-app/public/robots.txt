@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://lusotown.vercel.app/sitemap.xml
+Sitemap: https://lusotown.london/sitemap.xml
 
 # Portuguese-speaking community Platform
 # LusoTown - Connecting Portuguese speakers across the United Kingdom

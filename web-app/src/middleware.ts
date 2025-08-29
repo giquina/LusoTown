@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { rateLimit, getRateLimitTypeFromPath, RateLimitResult } from '@/lib/rate-limit'
 import { RATE_LIMIT_MESSAGES } from '@/lib/rate-limit-middleware'
+import logger from '@/utils/logger'
 
 // Portuguese community context detection
 function getPortugueseUserContext(request: NextRequest): {
@@ -114,7 +115,7 @@ async function applyRateLimit(
       }
       
       // Log Portuguese community violations for monitoring
-      console.warn('Portuguese Community Rate Limit Violation:', {
+      logger.security.warn('Portuguese Community Rate Limit Violation', {
         identifier: identifier.substring(0, 20) + '***',
         endpoint: pathname,
         rateLimitType,
@@ -153,7 +154,7 @@ async function applyRateLimit(
     
     return { success: true, result };
   } catch (error) {
-    console.error('Rate limiting error:', error);
+    logger.security.error('Rate limiting error', error);
     // Fail open - allow requests if rate limiting fails
     return { success: true };
   }
@@ -220,7 +221,7 @@ export async function middleware(request: NextRequest) {
   const hasSuspiciousUserAgent = suspiciousPatterns.some(pattern => pattern.test(userAgent));
 
   if (hasSuspiciousUserAgent && !userAgent.includes('Googlebot') && !userAgent.includes('Bingbot')) {
-    console.warn('Security Alert: Suspicious user agent blocked', {
+    logger.security.warn('Security Alert: Suspicious user agent blocked', {
       userAgent,
       ip: clientIdentifier,
       url: request.nextUrl.pathname,
@@ -258,7 +259,7 @@ export async function middleware(request: NextRequest) {
     );
 
     if (hasSuspiciousQuery) {
-      console.warn('Security Alert: Suspicious query parameters blocked', {
+      logger.security.warn('Security Alert: Suspicious query parameters blocked', {
         query: queryString.substring(0, 200), // Truncate for logs
         ip: clientIdentifier,
         url: request.nextUrl.pathname,
@@ -283,7 +284,7 @@ export async function middleware(request: NextRequest) {
                                request.nextUrl.pathname.includes('matching');
 
   if (isPortugueseEndpoint || userContext.isPortugueseCommunity) {
-    console.log('Portuguese Community Access:', {
+    logger.community.info('Portuguese Community Access', {
       endpoint: request.nextUrl.pathname,
       method: request.method,
       isPortugueseCommunity: userContext.isPortugueseCommunity,

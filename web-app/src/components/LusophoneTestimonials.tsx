@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
-import { StarIcon } from '@heroicons/react/24/solid'
+import { StarIcon } from '@heroicons/react/24/outline'
 
 interface Testimonial {
   id: string

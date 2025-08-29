@@ -13,7 +13,7 @@ import {
   UsersIcon,
   GiftIcon
 } from '@heroicons/react/24/outline'
-import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
+import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 
 // Simple mobile language toggle component

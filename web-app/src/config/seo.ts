@@ -114,7 +114,7 @@ export const seo = {
   googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
   bingSiteVerification: process.env.BING_SITE_VERIFICATION,
 
-  // Structured data
+  // Enhanced structured data for Portuguese community
   jsonLd: {
     organization: {
       "@context": "https://schema.org",
@@ -122,7 +122,7 @@ export const seo = {
       name: brand.name,
       description:
         process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION ||
-        "Lusophone social and business network in London",
+        "Premier Portuguese-speaking community platform connecting diaspora across the United Kingdom through cultural events, business networking, and social connections",
       url: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
       logo: `${
         process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
@@ -133,13 +133,14 @@ export const seo = {
         contactType: "customer service",
         email: contact.support,
         areaServed: "GB",
-        availableLanguage: ["English", "Lusophone"],
+        availableLanguage: ["Portuguese", "English", "pt-PT", "pt-BR", "en-GB"],
       },
       sameAs: [
         socialMedia.facebook,
         socialMedia.instagram,
         socialMedia.twitter,
         socialMedia.linkedin,
+        socialMedia.youtube
       ].filter(Boolean),
       address: {
         "@type": "PostalAddress",
@@ -149,36 +150,125 @@ export const seo = {
         postalCode: officeLocations.london.postcode,
         addressCountry: "GB",
       },
+      areaServed: [
+        {
+          "@type": "Country",
+          "name": "United Kingdom",
+          "sameAs": "https://en.wikipedia.org/wiki/United_Kingdom"
+        },
+        {
+          "@type": "City",
+          "name": "London",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "United Kingdom"
+          }
+        }
+      ],
+      memberOf: {
+        "@type": "Organization",
+        "name": "Comunidade dos Países de Língua Portuguesa (CPLP)",
+        "description": "Community of Portuguese Language Countries"
+      },
+      knowsAbout: [
+        "Portuguese diaspora community",
+        "Brazilian community United Kingdom", 
+        "Angolan community London",
+        "Cape Verdean community",
+        "Mozambican heritage",
+        "Portuguese cultural events",
+        "Lusophone business networking",
+        "Portuguese language preservation",
+        "PALOP nations culture"
+      ]
     },
 
     localBusiness: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: brand.name,
-      description: "Portuguese-speaking community services in London",
+      description: "Portuguese-speaking community platform and business directory serving all lusophone diaspora across the United Kingdom",
       url: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
       telephone: contact.phone,
       email: contact.support,
-      priceRange: "££",
-      servesCuisine: "Lusophone",
-      areaServed: {
-        "@type": "City",
-        name: "London",
-      },
+      priceRange: "£-££",
+      servesCuisine: [
+        "Portuguese cuisine",
+        "Brazilian cuisine", 
+        "Angolan cuisine",
+        "Cape Verdean cuisine",
+        "Mozambican cuisine",
+        "Lusophone fusion"
+      ],
+      areaServed: [
+        {
+          "@type": "City",
+          "name": "London"
+        },
+        {
+          "@type": "City", 
+          "name": "Manchester"
+        },
+        {
+          "@type": "City",
+          "name": "Birmingham"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        }
+      ],
+      knowsLanguage: ["Portuguese", "English", "pt-PT", "pt-BR"],
+      audience: {
+        "@type": "PeopleAudience",
+        "name": "Portuguese-speaking diaspora community",
+        "geographicArea": "United Kingdom"
+      }
     },
 
     website: {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: brand.name,
+      alternateName: "LusoTown Londres",
+      description: "Portuguese-speaking community platform | Plataforma da comunidade lusófona",
       url: process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${
-          process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
-        }/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
+      inLanguage: ["en-GB", "pt-PT", "pt-BR"],
+      audience: {
+        "@type": "PeopleAudience",
+        "name": "Portuguese-speaking community United Kingdom"
       },
+      potentialAction: [
+        {
+          "@type": "SearchAction",
+          target: `${
+            process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
+          }/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+        {
+          "@type": "Action",
+          "name": "Find Portuguese Events",
+          "target": `${
+            process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
+          }/events`
+        },
+        {
+          "@type": "Action", 
+          "name": "Browse Portuguese Businesses",
+          "target": `${
+            process.env.NEXT_PUBLIC_SITE_URL || "https://lusotown.london"
+          }/business-directory`
+        }
+      ],
+      about: [
+        "Portuguese community London",
+        "Brazilian community UK",
+        "Lusophone cultural events", 
+        "Portuguese business directory",
+        "Portuguese language support",
+        "Cultural integration services"
+      ]
     },
   },
 };

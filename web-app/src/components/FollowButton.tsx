@@ -11,7 +11,7 @@ import {
 import { 
   HeartIcon as HeartSolid,
   CheckIcon
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 import { useFollowing, FollowableEntity } from '@/context/FollowingContext'
 import { useLanguage } from '@/context/LanguageContext'
 

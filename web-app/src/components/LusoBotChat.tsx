@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card'
 import { ModernButton } from '@/components/ui/ModernButton'
 import { useSafeUserContent } from '@/hooks/useSafeHTML'
 import { validateInput } from '@/lib/security/input-validation'
+import logger from '@/utils/logger'
 
 /**
  * Simple LusoBot chat component
@@ -30,7 +31,7 @@ export default function LusoBotChat() {
         setMessages([...messages, validatedMessage.content])
         setMessage('')
       } catch (error) {
-        console.error('Message validation failed:', error)
+        logger.ai.error('Message validation failed', error)
         // Still allow the message but sanitized
         const safeMessage = message.replace(/<[^>]*>/g, '').trim()
         if (safeMessage) {

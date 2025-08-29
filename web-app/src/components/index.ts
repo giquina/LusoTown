@@ -1,49 +1,82 @@
 /**
  * Component Index - Enhanced with PALOP Cultural Representation
  * Centralized exports for all UI components
+ * Optimized with dynamic imports for better bundle splitting
  */
+import dynamic from 'next/dynamic'
+import React from 'react'
+
 // PALOP Cultural Components - Equal Representation
 export { default as LusophoneTestimonials } from './LusophoneTestimonials'
 export { default as RotatingFlagDisplay, CompactFlagRotation, AllFlagsDisplay } from './RotatingFlagDisplay'
-// Core Components
-export { default as ComprehensiveLusophoneExperience } from './ComprehensiveLusophoneExperience'
-export { default as EnhancedMobileWelcomeWizard } from './EnhancedMobileWelcomeWizard'
-export { default as MobileOptimizedBusinessDirectory } from './MobileOptimizedBusinessDirectory'
+
+// Core Components - Dynamically imported for better performance
 export { default as BusinessCard } from './BusinessCard'
-export { default as MobileBenchmarkDisplay } from './MobileBenchmarkDisplay'
 export { default as MobileEventCard } from './MobileEventCard'
+
+// Heavy components - Lazy loaded (no JSX in loading functions to avoid TS errors)
+const ComprehensiveLusophoneExperience = dynamic(() => import('./ComprehensiveLusophoneExperience'))
+const EnhancedMobileWelcomeWizard = dynamic(() => import('./EnhancedMobileWelcomeWizard'))
+const MobileOptimizedBusinessDirectory = dynamic(() => import('./MobileOptimizedBusinessDirectory'))
+const MobileBenchmarkDisplay = dynamic(() => import('./MobileBenchmarkDisplay'))
+
+export { ComprehensiveLusophoneExperience, EnhancedMobileWelcomeWizard, MobileOptimizedBusinessDirectory, MobileBenchmarkDisplay }
+
 // UI Components
 export { default as GradientBackground } from './ui/GradientBackground'
 export { default as DesignTokens } from './ui/DesignTokens'
 export { default as ModernButton } from './ui/ModernButton'
 export { default as ModernCard } from './ui/ModernCard'
 export { default as TypographySystem } from './ui/TypographySystem'
+
+// SEO Components
+export { 
+  default as SchemaMarkup,
+  HomePageSchema,
+  EventsPageSchema, 
+  BusinessDirectorySchema,
+  CommunityPageSchema,
+  PortuguesePageSchema,
+  EventSchema,
+  BusinessSchema,
+  ReviewSchema,
+  SearchResultsSchema
+} from './SEO/SchemaMarkup'
+
 // Cultural Components
 export { default as CulturalHeaderEnhancements } from './cultural/CulturalHeaderEnhancements'
 export { default as LusophoneVisualPolish } from './cultural/LusophoneVisualPolish'
+
 // Carousel System
 export { default as LusophoneCarousel } from './carousels/LusophoneCarousel'
+
 // Matches System  
 export { default as CulturalProfileSetup } from './matches/CulturalProfileSetup'
+
 // Examples
 export { default as DesignSystemShowcase } from './examples/DesignSystemShowcase'
-// Missing Components - Portuguese Community Focus (UPDATED TO WORKING VERSIONS)
+
+// Missing Components - Portuguese Community Focus
 export { default as StreamlinedCommunitySelector } from './StreamlinedCommunitySelectorNew'
 export { default as MentorshipProgramsSection } from './MentorshipProgramsSectionNew'
 export { default as ConversationsList } from './ConversationsListNew'
 export { default as NetworkHeader } from './NetworkHeaderNew'
 export { default as NetworkBadges } from './NetworkBadgesNew'
 export { default as ConnectionNotificationBanner } from './ConnectionNotificationBannerNew'
+
 // Essential Layout Components
 export { default as Footer } from './Footer'
 export { default as PageHeader } from './PageHeader'
+
 // Missing PWA Components
 export { default as MobileGeolocationServices } from './MobileGeolocationServices'
 export { default as PerformanceOptimization } from './PerformanceOptimization'
+
 // Monitoring & Production Components
 export { default as MonitoringDashboard } from './monitoring/MonitoringDashboard'
 export { default as PushNotificationSystem } from './PushNotificationSystem'
 export { default as NotificationPreferences } from './NotificationPreferences'
+
 // Essential Community Components
 export { default as Header } from './Header'
 export { default as MessagingInterface } from './MessagingInterface'
@@ -53,6 +86,7 @@ export { default as PWAManager } from './PWAManager'
 export { default as GroupReportModal } from './GroupReportModal'
 export { default as LusoBotChat } from './LusoBotChat'
 export { default as PrimeirosPassos } from './PrimeirosPassos'
+
 // Business & Services
 export { default as BusinessMap } from './BusinessMap'
 export { default as NearMeButton } from './NearMeButton'
@@ -62,26 +96,57 @@ export { default as SubscriptionGate } from './SubscriptionGate'
 export { default as TrustBadges } from './TrustBadges'
 export { default as MembershipTiers } from './MembershipTiers'
 export { default as MembershipPortal } from './MembershipPortal'
+
 // Feed & Social
 export { default as PersonalizedFeed } from './PersonalizedFeed'
 export { default as EventFeed } from './EventFeed'
 export { default as LiveUpdateIndicator } from './LiveUpdateIndicator'
 export { default as PhotoUpload } from './PhotoUpload'
 export { default as EventFeedCard } from './EventFeedCard'
+
 // User Journey & Onboarding
 export { default as OnboardingFlowEnhanced } from './OnboardingFlowEnhanced'
-export { default as ProgressiveUserJourney } from './ProgressiveUserJourney'
-export { default as CrossPlatformEngagementTriggers } from './CrossPlatformEngagementTriggers'
-export { default as ConversionOptimizationEngine } from './ConversionOptimizationEngine'
 export { default as ProfileCreationWizard } from './ProfileCreationWizard'
 export { default as ProfileEditor } from './ProfileEditor'
 export { default as ProfileViewer } from './ProfileViewer'
+
 // Student & Education
 export { default as StudentSupportSection } from './StudentSupportSection'
 export { default as StudentVerificationSystem } from './StudentVerificationSystem'
+
 // Student Components - Portuguese Community Focus
 export { default as AccommodationSupportSection } from './students/AccommodationSupportSection'
 export { default as StudentBenefitsShowcase } from './students/StudentBenefitsShowcase'
 export { default as AccommodationHostFamilies } from './students/AccommodationHostFamilies'
+
 // Mentorship System
 export { default as MentorshipHero } from './MentorshipHero'
+
+// Recently Added Components
+export { default as MobileRedirectProvider } from './MobileRedirectProvider'
+
+// Streaming Components - Portuguese Cultural Content
+export { default as StreamReplayLibrary } from './StreamReplayLibrary'
+export { default as StreamViewerStats } from './StreamViewerStats'
+export { default as StreamCategories } from './StreamCategories'
+export { default as HowStreamingWorks } from './HowStreamingWorks'
+export { default as UnifiedExperienceHub } from './UnifiedExperienceHub'
+
+// Authentication Components
+export { default as AuthPopupProvider, useAuthPopup } from "./AuthPopupProvider"
+export { default as AuthPopup } from "./AuthPopup"
+
+// Transport Components - Critical for Vercel deployment
+export { default as TransportTestimonials } from './TransportTestimonials'
+export { default as LondonTourRoutes } from './LondonTourRoutes'
+export { default as CustomToursSection } from './CustomToursSection'
+export { default as ServiceCommunityBridge } from './ServiceCommunityBridge'
+export { default as CrossPlatformNavigationWidget } from './CrossPlatformNavigationWidget'
+
+// User Journey Components - Created for deployment
+export { default as ProgressiveUserJourney } from './ProgressiveUserJourney'
+export { default as CrossPlatformEngagementTriggers } from './CrossPlatformEngagementTriggers'
+export { default as ConversionOptimizationEngine } from './ConversionOptimizationEngine'
+
+// Group Events Components
+export { default as GroupEventCard } from './GroupEventCard'

@@ -15,7 +15,7 @@ import {
   SparklesIcon,
   HeartIcon,
 } from "@heroicons/react/24/outline";
-import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
+import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/outline";
 import EventImageWithFallback from "@/components/EventImageWithFallback";
 import NetworkPreview from "@/components/NetworkPreview";
 import { Event } from "@/lib/events";

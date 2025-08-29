@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { getApiErrorMessage, getApiLogMessage } from '@/config/api-messages';
+import logger from '@/utils/logger';
 
 export async function GET(request: NextRequest) {
   const supabase = createRouteHandlerClient({ cookies });
@@ -130,7 +131,7 @@ export async function GET(request: NextRequest) {
     const { data: businesses, error } = await query;
 
     if (error) {
-      console.error(getApiLogMessage('DATABASE_ERROR'), error);
+      logger.business.error(getApiLogMessage('DATABASE_ERROR'), error);
       throw error;
     }
 
@@ -205,7 +206,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error(getApiLogMessage('BUSINESS_SEARCH_API_ERROR'), error);
+    logger.business.error(getApiLogMessage('BUSINESS_SEARCH_API_ERROR'), error);
     return NextResponse.json(
       { 
         error: getApiErrorMessage('BUSINESS_FETCH_FAILED_GENERIC'),
@@ -283,7 +284,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error(getApiLogMessage('BUSINESS_INSERTION_ERROR'), error);
+      logger.business.error(getApiLogMessage('BUSINESS_INSERTION_ERROR'), error);
       throw error;
     }
 
@@ -297,7 +298,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error(getApiLogMessage('BUSINESS_CREATION_API_ERROR'), error);
+    logger.business.error(getApiLogMessage('BUSINESS_CREATION_API_ERROR'), error);
     return NextResponse.json(
       { 
         error: getApiErrorMessage('BUSINESS_CREATION_FAILED'),

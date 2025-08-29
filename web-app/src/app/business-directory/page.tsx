@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 'use client'
 import Image from 'next/image'
 
@@ -12,7 +13,7 @@ import { BusinessDirectoryTooltip } from '@/components/ui/GuidanceTooltip'
 import { geolocationService, BusinessDistance } from '@/lib/geolocation'
 import BusinessMap from '@/components/BusinessMap'
 import NearMeButton, { DistanceIndicator } from '@/components/NearMeButton'
-// import BusinessSubmissionForm from '@/components/BusinessSubmissionForm' // TODO: Implement component
+// const BusinessSubmissionForm = dynamic(() => import('@/components/BusinessSubmissionForm'), { loading: () => <div>Loading...</div> }); // TODO: Implement component
 import { LUSOPHONE_CELEBRATIONS, CULTURAL_WISDOM, getFeaturedCelebrations, getRandomCulturalWisdom } from '@/config/lusophone-celebrations'
 import { PALOP_BUSINESS_DIRECTORY, getFeaturedPALOPBusinesses, getPALOPBusinessesByCategory } from '@/config/palop-business-directory'
 import { 

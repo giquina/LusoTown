@@ -29,7 +29,7 @@ import {
   UserGroupIcon as CommunityIconSolid,
   BuildingLibraryIcon as BusinessIconSolid,
   ChatBubbleLeftRightIcon as ChatIconSolid
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { useHeritage } from '@/context/HeritageContext';
 import { PortugueseHeritageBadge, PortugueseCulturalCard } from './PortugueseCulturalMobileComponents';

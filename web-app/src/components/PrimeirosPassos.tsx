@@ -20,7 +20,7 @@ import {
 import {
   CheckCircleIcon as CheckCircleIconSolid,
   StarIcon as StarIconSolid
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 
 interface OnboardingStep {
   id: string
