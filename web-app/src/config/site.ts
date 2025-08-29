@@ -16,7 +16,7 @@ const envCandidate =
   process.env.SITE_URL ||
   process.env.VERCEL_URL;
 
-export const SITE_URL = normalizeUrl(envCandidate) || "https://lusotown.london";
+export const SITE_URL = normalizeUrl(envCandidate) || "https://web-99kxh0sku-giquinas-projects.vercel.app";
 
 export const METADATA_BASE = new URL(SITE_URL);
 

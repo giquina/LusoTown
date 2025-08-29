@@ -1,6 +1,7 @@
 // Portuguese-speaking community bundle optimization utilities
 import logger from "@/utils/logger";
-import { SafeDOM } from "@/lib/security/safe-dom";
+// Portuguese-speaking community bundle optimization utilities
+import logger from "@/utils/logger";
 
 interface BundleOptimizationConfig {
   enableCriticalResourcePreload: boolean;
@@ -376,12 +377,9 @@ export class PortugueseBundleOptimizer {
       const { default: CulturalGallery } = await import(
         "@/components/CulturalGallery"
       );
-      // Use SafeDOM to safely set innerHTML
-      SafeDOM.setInnerHTML(
-        element,
-        '<div class="cultural-gallery-loaded">Gallery loaded</div>',
-        { allowedTags: ['div'] }
-      );
+      // Render component in element
+      element.innerHTML =
+        '<div class="cultural-gallery-loaded">Gallery loaded</div>';
     } catch (error) {
       logger.error(
         "[Bundle Optimizer] Failed to load cultural gallery:",
@@ -395,11 +393,8 @@ export class PortugueseBundleOptimizer {
       const { default: CommunityFeed } = await import(
         "@/components/CommunityFeedSection"
       );
-      SafeDOM.setInnerHTML(
-        element,
-        '<div class="community-feed-loaded">Feed loaded</div>',
-        { allowedTags: ['div'] }
-      );
+      element.innerHTML =
+        '<div class="community-feed-loaded">Feed loaded</div>';
     } catch (error) {
       logger.error("[Bundle Optimizer] Failed to load community feed:", error);
     }
@@ -410,11 +405,8 @@ export class PortugueseBundleOptimizer {
       const { default: BusinessDirectory } = await import(
         "@/components/BusinessDirectory"
       );
-      SafeDOM.setInnerHTML(
-        element,
-        '<div class="business-listings-loaded">Businesses loaded</div>',
-        { allowedTags: ['div'] }
-      );
+      element.innerHTML =
+        '<div class="business-listings-loaded">Businesses loaded</div>';
     } catch (error) {
       logger.error(
         "[Bundle Optimizer] Failed to load business listings:",
@@ -429,14 +421,7 @@ export class PortugueseBundleOptimizer {
       if (eventId) {
         const response = await fetch(`/api/events/${eventId}`);
         const eventData = await response.json();
-        
-        // SECURITY FIX: Use SafeDOM to safely render event data
-        const safeEventData = SafeDOM.safeEventData(eventData);
-        SafeDOM.setInnerHTML(
-          element,
-          `<div class="event-details-loaded">${safeEventData.title}</div>`,
-          { allowedTags: ['div'] }
-        );
+        element.innerHTML = `<div class="event-details-loaded">${eventData.title}</div>`;
       }
     } catch (error) {
       logger.error("[Bundle Optimizer] Failed to load event details:", error);
@@ -492,8 +477,9 @@ export class PortugueseBundleOptimizer {
   }
 
   private optimizeCulturalTheming(): void {
-    // Apply Lusophone cultural color optimizations using SafeDOM
-    const colorOptimizations = SafeDOM.injectSafeCSS(`
+    // Apply Lusophone cultural color optimizations
+    const colorOptimizations = document.createElement("style");
+    colorOptimizations.textContent = `
       .portuguese-optimized {
         --primary-cultural: #1e40af; /* Lusophone blue */
         --secondary-cultural: #059669; /* Lusophone green */
@@ -513,9 +499,9 @@ export class PortugueseBundleOptimizer {
           var(--accent-cultural)
         );
       }
-    `, 'portuguese-cultural-theme');
-    
+    `;
     document.head.appendChild(colorOptimizations);
+
     document.documentElement.classList.add("portuguese-optimized");
   }
 

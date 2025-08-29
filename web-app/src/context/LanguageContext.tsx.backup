@@ -8,7 +8,6 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void
   t: (key: string, fallback?: string) => string
   isLoading: boolean
-  isHydrated: boolean
 }
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -21,13 +20,9 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguage] = useState<Language>('en')
   const [translations, setTranslations] = useState<Record<string, string>>({})
   const [isLoading, setIsLoading] = useState(true)
-  const [isHydrated, setIsHydrated] = useState(false)
 
-  // SSR-safe hydration effect
+  // Load saved language preference with English as default
   useEffect(() => {
-    setIsHydrated(true)
-    
-    // Only access localStorage after hydration
     if (typeof window !== 'undefined') {
       const savedLanguage = localStorage.getItem('lusotown-language')
       
@@ -35,6 +30,8 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         setLanguage(savedLanguage)
       }
     }
+    // Always default to English unless user explicitly saved a preference
+    // This ensures English is the true default language
   }, [])
 
   // Load translations when language changes
@@ -89,9 +86,8 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     language, 
     setLanguage: handleSetLanguage, 
     t,
-    isLoading,
-    isHydrated
-  }), [language, handleSetLanguage, t, isLoading, isHydrated])
+    isLoading
+  }), [language, handleSetLanguage, t, isLoading])
 
   return (
     <LanguageContext.Provider value={contextValue}>

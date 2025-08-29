@@ -15,6 +15,7 @@ import { validateCulturalBackground } from '@/lib/validation/cultural-validator'
 import {
   API_ERROR_MESSAGES,
   API_LOG_MESSAGES,
+  INITIAL_RECOMMENDATIONS,
   getApiErrorMessage,
   getApiLogMessage
 } from '@/config/api-messages'
@@ -303,7 +304,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SignupRes
     return NextResponse.json(
       { 
         success: false, 
-        error: 'An unexpected error occurred during signup. Please try again.' 
+        error: getApiErrorMessage('UNEXPECTED_SIGNUP_ERROR')
       },
       { status: 500 }
     )
@@ -323,59 +324,35 @@ function generateInitialRecommendations(data: {
   // Business networking recommendations
   if (data.primaryInterests.includes('business-networking')) {
     recommendations.push({
-      type: 'event',
-      title: 'Lusophone Business Breakfast',
-      description: 'Monthly networking event for Lusophone entrepreneurs',
-      location: 'Central London',
-      next_date: getNextFirstSaturday(),
-      category: 'business'
+      ...INITIAL_RECOMMENDATIONS.BUSINESS_NETWORKING,
+      next_date: getNextFirstSaturday()
     })
   }
 
   // Cultural event recommendations
   if (data.primaryInterests.includes('cultural-events')) {
     recommendations.push({
-      type: 'event',
-      title: 'Fado Night at Casa do Bacalhau',
-      description: 'Authentic Lusophone Fado music with traditional dinner',
-      location: 'Southwark, London',
-      next_date: getNextFirstFriday(),
-      category: 'cultural'
+      ...INITIAL_RECOMMENDATIONS.CULTURAL_EVENTS,
+      next_date: getNextFirstFriday()
     })
   }
 
   // Dance recommendations
   if (data.primaryInterests.includes('dance-cultural-arts') || data.partnerEventInterest) {
     recommendations.push({
-      type: 'event',
-      title: 'Chocolate Kizomba Night',
-      description: 'Beginner-friendly Kizomba dancing every Tuesday & Thursday',
-      location: 'One Regents Street, London',
-      next_date: getNextTuesday(),
-      category: 'dance'
+      ...INITIAL_RECOMMENDATIONS.DANCE_EVENTS,
+      next_date: getNextTuesday()
     })
   }
 
   // Dating recommendations
   if (data.primaryInterests.includes('dating-romance')) {
-    recommendations.push({
-      type: 'feature',
-      title: 'Cultural Compatibility Matching',
-      description: 'Find meaningful connections based on Lusophone cultural values',
-      action: 'complete_cultural_quiz',
-      category: 'matching'
-    })
+    recommendations.push(INITIAL_RECOMMENDATIONS.CULTURAL_MATCHING)
   }
 
   // Location-specific recommendations
   if (data.ukLocation === 'London') {
-    recommendations.push({
-      type: 'community',
-      title: 'Stockwell Lusophone Quarter',
-      description: 'Visit the heart of London\'s Lusophone community',
-      location: 'Stockwell, London',
-      category: 'community'
-    })
+    recommendations.push(INITIAL_RECOMMENDATIONS.STOCKWELL_COMMUNITY)
   }
 
   return recommendations.slice(0, 5) // Limit to 5 recommendations

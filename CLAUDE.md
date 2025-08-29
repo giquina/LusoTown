@@ -131,6 +131,11 @@ npm run test:e2e             # E2E test suite
 npm run test:e2e:headed      # E2E with browser UI
 npm run test:e2e:debug       # Debug E2E tests
 
+# Key E2E Test Suites (in __tests__/e2e/)
+npx playwright test homepage-analysis.spec.ts              # Homepage functionality
+npx playwright test ux-fixes-focused-verification.spec.ts  # UX validation
+npx playwright test mobile-ux-focused-audit.spec.ts       # Mobile UX audit
+
 # Specialized Testing
 npm run test:mobile          # Mobile-specific tests
 npm run test:portuguese      # Portuguese language tests
@@ -226,14 +231,14 @@ export default function ComponentName() {
 
 ## 💻 System Requirements
 
-**Node.js**: v20+ (web-app) / v22.x (streaming) / v18+ (mobile-app)  
-**npm**: v9+ (web-app) / v8+ (other workspaces)  
+**Node.js**: v20+ (web-app) / v22.x (streaming) / v18+ (mobile-app, monorepo root)  
+**npm**: v9+ (web-app) / v8+ (other workspaces, monorepo root)  
 **Expo CLI**: Latest version for mobile development
 
 **Verification Commands**:
 ```bash
-node --version    # Should show v20+ for web-app, v22+ for streaming
-npm --version     # Should show v9+ for web-app
+node --version    # Should show v18+ for root, v20+ for web-app, v22+ for streaming
+npm --version     # Should show v8+ for root, v9+ for web-app
 ```
 
 ## 📖 Project Context
@@ -257,6 +262,9 @@ npm --version     # Should show v9+ for web-app
 
 ## Environment Configuration
 
+### **Production Deployment Setup**
+**Complete Guide**: See `/web-app/DEPLOYMENT.md` for comprehensive production deployment instructions
+
 ### Required Variables (web-app/.env.local)
 ```env
 # Database (Required)
@@ -267,6 +275,17 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 NEXT_PUBLIC_TOTAL_MEMBERS=750
 NEXT_PUBLIC_TOTAL_STUDENTS=2150
 NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS=8
+
+# Production Monitoring (Critical)
+NEXT_PUBLIC_SENTRY_DSN=https://your-dsn@sentry.io/project-id
+SENTRY_ORG=lusotown-community
+SENTRY_PROJECT=lusotown-web
+SENTRY_AUTH_TOKEN=your-sentry-auth-token
+
+# Portuguese Community Monitoring
+NEXT_PUBLIC_ERROR_MONITORING_ENABLED=true
+PORTUGUESE_COMMUNITY_ERROR_THRESHOLD=0.05
+BILINGUAL_ERROR_TRACKING=true
 
 # External Services (Optional)
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_name
@@ -344,9 +363,19 @@ Task tool with:
 **Wrong terminology**: Use "Portuguese-speaking community" (not "Portuguese community")  
 **Missing translations**: Add keys to both `/src/i18n/en.json` and `/src/i18n/pt.json`  
 **Mobile app not starting**: Run `cd mobile-app && npm run validate:setup`  
-**Streaming server issues**: Check `cd streaming && npm run health-check`
+**Streaming server issues**: Check `cd streaming && npm run health-check`  
+**Test artifacts cleanup**: `git clean -fd web-app/test-results/` to remove Playwright artifacts
 
 ## 🚀 Deployment & Critical Issue Resolution
+
+### **🏆 PRODUCTION-READY DEPLOYMENT GUIDE COMPLETED (2025-08-29)**
+
+**Comprehensive Deployment Documentation**: Created complete production deployment guide (`/web-app/DEPLOYMENT.md`) with:
+- **Environment Setup**: Detailed Sentry configuration and environment variables
+- **Portuguese Community Monitoring**: Specialized error tracking for cultural features
+- **Quality Gates**: Mandatory pre-deployment checklist with all testing procedures
+- **Rollback Procedures**: Emergency response protocols with bilingual communication
+- **Performance Optimization**: Production-ready Next.js configuration
 
 ### **🏆 DEPLOYMENT SUCCESS AFTER 305,000+ LINE CLEANUP (2025-08-28)**
 
@@ -485,6 +514,14 @@ npm install -g @playwright/mcp@latest
 npx playwright test ux-fixes-focused-verification.spec.ts
 ```
 
+**Test Artifacts Management**: Clean up test artifacts after E2E testing
+```bash
+# Clean up Playwright artifacts (should be done regularly)
+git clean -fd web-app/test-results/
+git clean -fd web-app/playwright-report/
+# Or use .gitignore patterns to prevent artifacts from being tracked
+```
+
 ## 🏆 Development Workflow
 
 1. **Directory First**: `cd web-app && npm run dev`
@@ -512,8 +549,9 @@ npx playwright test ux-fixes-focused-verification.spec.ts
 3. **`/.github/copilot-instructions.md`** - Concise AI guide for GitHub Copilot
 4. **`/web-app/TODO.md`** - Development roadmap and completed features
 5. **`/web-app/README.md`** - Platform overview and success stories
-6. **`/streaming/README.md`** - Streaming server documentation
-7. **`/mobile-app/README.md`** - Mobile app setup and development
+6. **`/web-app/DEPLOYMENT.md`** - Complete production deployment guide
+7. **`/streaming/README.md`** - Streaming server documentation
+8. **`/mobile-app/README.md`** - Mobile app setup and development
 
 **Best Practice**: Start with `/AGENTS.md` for comprehensive guidance, then reference this file for specific commands
 

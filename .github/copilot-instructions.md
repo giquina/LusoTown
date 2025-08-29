@@ -2,17 +2,18 @@
 
 Read first: `AGENTS.md` (source of truth) and `CLAUDE.md` (commands, quality gates). This file is a concise operational guide for AI coding agents.
 
-## Architecture (monorepo)
-- `web-app/` Next.js 14 (TypeScript, Tailwind) – primary app (App Router), configs in `src/config/`, i18n in `src/i18n/`, contexts in `src/context/`.
-- `mobile-app/` Expo/React Native – imports shared config, follows zero-hardcoding.
-- `streaming/` Node/SRS RTMP+HLS – server at :8080, engines Node 22.
+## Architecture (streamlined monorepo) - 305,000+ lines eliminated
+- `web-app/` Next.js 14 (TypeScript, Tailwind) – **215 essential components** (from 419), 48 config files in `src/config/`, bilingual i18n, LusophoneCarousel system (1,100+ lines).
+- `mobile-app/` React Native/Expo with EAS Build – imports shared config, follows zero-hardcoding.
+- `streaming/` Node.js 22/SRS RTMP+HLS – server at :8080, Portuguese cultural content.
 - `packages/` `@lusotown/design-tokens`, `@lusotown/ui`; `shared/` cross-platform config/utilities.
-- Database: Supabase Postgres (+PostGIS). Redis/Upstash used for caching; Stripe, Cloudinary, SRS integrated.
+- Database: Supabase PostgreSQL + PostGIS for geolocation. Streamlined dependencies (86 packages eliminated).
 
 ## Non‑negotiable rules
-- Zero hardcoding: import from `web-app/src/config/*` (pricing, routes, brand, contact, universities, lusophone‑celebrations, community‑guidelines).
-- Bilingual first: all UI text via `useLanguage().t('key')`; add keys to both `src/i18n/en.json` and `src/i18n/pt.json`.
-- Portuguese cultural authenticity: use brand colors from config; avoid generic Tailwind colors like `bg-blue-*`/`bg-gray-*`.
+- **Zero hardcoding**: import from `web-app/src/config/*` (48 config files). **CRITICAL**: 17,478 violations across 547 files being addressed.
+- **Bilingual first**: all UI text via `useLanguage().t('key')`; add keys to both `src/i18n/en.json` and `src/i18n/pt.json`.
+- **Portuguese cultural authenticity**: use "Portuguese-speaking community" (NOT "Portuguese community"); reference "United Kingdom" (NOT just "London"); use brand colors from config.
+- **Mobile-first UX**: 56px touch targets (WCAG 2.1 AA), large 48px-64px headers, 80px-120px responsive margins.
 - Routes and data come from config; do not inline URLs, prices, emails, universities, or cultural lists.
 
 Example (web):
@@ -26,9 +27,10 @@ Example (web):
 - Mobile dev: `cd mobile-app && npm start` (Expo).
 - Root shortcuts (see `package.json`): `npm run dev`, `build`, `deploy`, `lint`, `test` delegate into workspaces.
 
-## Quality gates (must pass before commit/PR)
-- In `web-app/`: `npm run audit:hardcoding && npm run lint && npx tsc --noEmit && npm run build`.
-- Optional suites: `npm run test` (Jest), `npx playwright test` (E2E), mobile `npm run test:all`.
+## Quality gates (must pass before commit/PR) - 100% build success rate
+- In `web-app/`: `npm run audit:hardcoding && npm run lint && npx tsc --noEmit && npm run build` (114s optimized build).
+- Alternative: `npm run qa:pre-commit` (combined quality checks).
+- Optional suites: `npm run test` (Jest), `npx playwright test` (E2E including mobile UX audits), mobile `npm run test:all`.
 
 ## Deployment model
 - Hosting: Vercel for web (Promote Preview → Production). Auto Production builds from main are skipped (see `vercel.json`).

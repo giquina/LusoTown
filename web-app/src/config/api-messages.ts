@@ -43,6 +43,8 @@ export const API_ERROR_MESSAGES = {
   BUSINESS_CREATION_FAILED: 'Failed to create business',
   MISSING_BUSINESS_FIELDS_GENERIC: 'Missing required fields',
   BUSINESS_SUBMISSION_SUCCESS_MESSAGE: 'Business submitted for verification. You will be contacted within 48 hours.',
+  VALIDATION_FAILED: 'Request validation failed. Please check your input and try again.',
+  BUSINESS_REVIEW_PROCESS_MESSAGE: 'Portuguese business submitted successfully for community review',
   
   // Subscription errors
   MISSING_SUBSCRIPTION_ID: 'Missing subscription ID',
@@ -72,7 +74,13 @@ export const API_ERROR_MESSAGES = {
   
   // General errors
   INTERNAL_SERVER_ERROR: 'Internal server error',
-  INVALID_METRIC_REQUESTED: 'Invalid metric requested'
+  INVALID_METRIC_REQUESTED: 'Invalid metric requested',
+  UNEXPECTED_SIGNUP_ERROR: 'An unexpected error occurred during signup. Please try again.',
+  PERFORMANCE_METRICS_FAILED: 'Failed to retrieve performance metrics',
+  UNKNOWN_ERROR_OCCURRED: 'Unknown error occurred',
+  INVALID_REQUEST_BODY: 'Invalid request body',
+  PERFORMANCE_LOGGING_FAILED: 'Failed to log performance metrics',
+  SUPABASE_CONFIGURATION_MISSING: 'Supabase configuration missing'
 } as const;
 
 export const API_SUCCESS_MESSAGES = {
@@ -88,7 +96,9 @@ export const API_SUCCESS_MESSAGES = {
   CULTURAL_AUTHENTICITY_VERIFICATION: 'Cultural authenticity verification',
   PORTUGUESE_COMMUNITY_FEEDBACK: 'Portuguese-speaking community feedback collection',
   BUSINESS_LISTING_ACTIVATION: 'Business listing activation',
-  LOGIN_NOTIFICATION: 'Login notification sent'
+  LOGIN_NOTIFICATION: 'Login notification sent',
+  BUSINESS_SUBMITTED_FOR_REVIEW: 'Portuguese business submitted successfully for community review',
+  PERFORMANCE_METRICS_LOGGED: 'Performance metrics logged successfully'
 } as const;
 
 export const API_LOG_MESSAGES = {
@@ -113,6 +123,10 @@ export const API_LOG_MESSAGES = {
   SESSION_DATA_FETCH_ERROR: 'Error fetching session data:',
   SECURITY_DASHBOARD_API_ERROR: 'Security dashboard API error:',
   SECURITY_DASHBOARD_ACTION_ERROR: 'Security dashboard action error:',
+  SECURITY_STATS_FETCH_ERROR: 'Error fetching security stats:',
+  THREAT_DATA_FETCH_ERROR: 'Error fetching threat data:',
+  FAILED_LOGINS_FETCH_ERROR: 'Error fetching failed logins:',
+  SESSION_DATA_FETCH_ERROR: 'Error fetching session data:',
   SECURE_LOGIN_ERROR: 'Secure login error:',
   SECURE_LOGOUT_ERROR: 'Secure logout error:',
   SESSION_RETRIEVAL_ERROR: 'Session retrieval error',
@@ -191,6 +205,42 @@ export const API_ENDPOINT_DESCRIPTIONS = {
   UNIVERSITY_INTEGRATION: 'University Integration - 8 UK university partnerships monitoring'
 } as const;
 
+// Performance API metadata
+export const PERFORMANCE_API_METADATA = {
+  TITLE: 'Portuguese Community Platform Performance API',
+  VERSION: '1.0.0',
+  DESCRIPTION: 'Comprehensive performance monitoring and optimization for LusoTown community platform',
+  GET_METRICS_DESCRIPTION: 'Get performance metrics and health status',
+  POST_METRICS_DESCRIPTION: 'Log performance metrics for historical analysis',
+  AVAILABLE_METRICS: ['community', 'health', 'business', 'events', 'matching', 'transport', 'university', 'recommendations', 'maintenance'],
+  PARAMETERS: {
+    METRIC: 'Specific metric to retrieve (community, health, business, events, matching, transport, university, recommendations, maintenance)',
+    DETAILED: 'Set to "true" for comprehensive metrics'
+  }
+} as const;
+
+// Security dashboard configurations
+export const SECURITY_EVENTS = {
+  UNAUTHORIZED_API_ACCESS: 'UNAUTHORIZED_API_ACCESS',
+  RATE_LIMIT_EXCEEDED: 'RATE_LIMIT_EXCEEDED',
+  SQL_INJECTION_ATTEMPT: 'SQL_INJECTION_ATTEMPT'
+} as const;
+
+export const SECURITY_RECOMMENDATIONS = {
+  CRITICAL_EVENTS: {
+    action: 'Review critical events and consider blocking suspicious IPs'
+  },
+  INPUT_VALIDATION: {
+    action: 'Review and enhance input validation for Portuguese business submissions'
+  },
+  RATE_LIMITING: {
+    action: 'Consider reducing rate limits for sensitive endpoints'
+  },
+  IP_BLOCKING: {
+    action: 'Review blocked IPs and consider permanent banning for repeat offenders'
+  }
+} as const;
+
 export const STRIPE_CONFIG = {
   MISSING_SECRET_KEY: 'STRIPE_SECRET_KEY environment variable is not set'
 } as const;
@@ -198,6 +248,45 @@ export const STRIPE_CONFIG = {
 export const GEOCODING_CONFIG = {
   USER_AGENT: 'LusoTown Portuguese Business Directory',
   GEOCODING_FAILED_LOG: 'Geocoding failed'
+} as const;
+
+// Initial recommendations for new signups
+export const INITIAL_RECOMMENDATIONS = {
+  BUSINESS_NETWORKING: {
+    type: 'event',
+    title: 'Lusophone Business Breakfast',
+    description: 'Monthly networking event for Lusophone entrepreneurs',
+    location: 'Central London',
+    category: 'business'
+  },
+  CULTURAL_EVENTS: {
+    type: 'event',
+    title: 'Fado Night at Casa do Bacalhau',
+    description: 'Authentic Lusophone Fado music with traditional dinner',
+    location: 'Southwark, London',
+    category: 'cultural'
+  },
+  DANCE_EVENTS: {
+    type: 'event',
+    title: 'Chocolate Kizomba Night',
+    description: 'Beginner-friendly Kizomba dancing every Tuesday & Thursday',
+    location: 'One Regents Street, London',
+    category: 'dance'
+  },
+  CULTURAL_MATCHING: {
+    type: 'feature',
+    title: 'Cultural Compatibility Matching',
+    description: 'Find meaningful connections based on Lusophone cultural values',
+    action: 'complete_cultural_quiz',
+    category: 'matching'
+  },
+  STOCKWELL_COMMUNITY: {
+    type: 'community',
+    title: 'Stockwell Lusophone Quarter',
+    description: 'Visit the heart of London\'s Lusophone community',
+    location: 'Stockwell, London',
+    category: 'community'
+  }
 } as const;
 
 // Type definitions

@@ -8,7 +8,6 @@ interface HeritageContextType {
   heritageCode: string
   setHeritage: (code: string) => boolean
   availableHeritages: Array<{ code: string; name: string; flag: string }>
-  isHydrated: boolean
   
   // Utility methods for easy access
   colors: HeritageConfig['branding']['colors']
@@ -37,45 +36,32 @@ export function HeritageProvider({ children, defaultHeritage = 'pt' }: HeritageP
   const [heritageManager] = useState(() => HeritageManager.getInstance())
   const [heritage, setHeritageState] = useState<HeritageConfig>(heritageManager.getCurrentHeritage())
   const [heritageCode, setHeritageCode] = useState<string>(defaultHeritage)
-  const [isHydrated, setIsHydrated] = useState(false)
 
   useEffect(() => {
-    setIsHydrated(true)
-    
-    // Only access localStorage and window APIs after hydration
-    if (typeof window !== 'undefined') {
-      const savedHeritage = localStorage.getItem('heritage-code')
-      const envHeritage = process.env.NEXT_PUBLIC_HERITAGE_CODE
-      const initialHeritage = savedHeritage || envHeritage || defaultHeritage
+    // Initialize heritage from localStorage or environment
+    const savedHeritage = localStorage.getItem('heritage-code')
+    const envHeritage = process.env.NEXT_PUBLIC_HERITAGE_CODE
+    const initialHeritage = savedHeritage || envHeritage || defaultHeritage
 
-      if (initialHeritage && heritageManager.setHeritage(initialHeritage)) {
-        setHeritageState(heritageManager.getCurrentHeritage())
-        setHeritageCode(initialHeritage)
-      }
+    if (initialHeritage && heritageManager.setHeritage(initialHeritage)) {
+      setHeritageState(heritageManager.getCurrentHeritage())
+      setHeritageCode(initialHeritage)
     }
   }, [defaultHeritage, heritageManager])
 
   const setHeritage = (code: string): boolean => {
-    if (!isHydrated) return false
-    
     const success = heritageManager.setHeritage(code)
     if (success) {
       setHeritageState(heritageManager.getCurrentHeritage())
       setHeritageCode(code)
       
-      // Only access localStorage and window APIs after hydration
-      if (typeof window !== 'undefined') {
-        try {
-          localStorage.setItem('heritage-code', code)
-          
-          // Trigger a custom event for other components that might need to react
-          window.dispatchEvent(new CustomEvent('heritage-changed', { 
-            detail: { code, heritage: heritageManager.getCurrentHeritage() } 
-          }))
-        } catch (error) {
-          console.error('Failed to save heritage preference:', error)
-        }
-      }
+      // Persist to localStorage
+      localStorage.setItem('heritage-code', code)
+      
+      // Trigger a custom event for other components that might need to react
+      window.dispatchEvent(new CustomEvent('heritage-changed', { 
+        detail: { code, heritage: heritageManager.getCurrentHeritage() } 
+      }))
     }
     return success
   }
@@ -85,7 +71,6 @@ export function HeritageProvider({ children, defaultHeritage = 'pt' }: HeritageP
     heritageCode,
     setHeritage,
     availableHeritages: heritageManager.getAvailableHeritages(),
-    isHydrated,
     
     // Utility accessors
     colors: heritage.branding.colors,
@@ -139,19 +124,7 @@ export function useCulturalAreas() {
 
 // Helper hook for getting heritage-aware CSS custom properties
 export function useHeritageCSSProperties() {
-  const { colors, isHydrated } = useHeritage()
-  
-  // Return default colors during SSR to prevent hydration mismatch
-  if (!isHydrated) {
-    return {
-      '--heritage-primary': '#1e40af',
-      '--heritage-secondary': '#059669',
-      '--heritage-accent': '#f59e0b',
-      '--heritage-action': '#dc2626',
-      '--heritage-premium': '#7c3aed',
-      '--heritage-coral': '#ff6b6b',
-    }
-  }
+  const { colors } = useHeritage()
   
   return {
     '--heritage-primary': colors.primary,

@@ -281,7 +281,8 @@ Sentry.init({
   debug: process.env.NODE_ENV === 'development',
   
   // Transport options for better reliability
-  transport: Sentry.makeBrowserOfflineTransport(Sentry.makeFetchTransport)
+  // Using default transport for better compatibility
+  // transport: Sentry.makeFetchTransport // Default transport is automatically used
 });
 
 // Export Sentry for manual error reporting

@@ -7,6 +7,9 @@
 
 export const ERROR_MONITORING = {
   enabled: true,
+  environment: process.env.NODE_ENV || 'development',
+  maxBreadcrumbs: 100,
+  beforeSend: undefined as any,
   sentry: {
     dsn: process.env.NEXT_PUBLIC_SENTRY_DSN || '',
     environment: process.env.NODE_ENV || 'development',
@@ -65,6 +68,18 @@ export const ERROR_MONITORING = {
 } as const;
 
 export const PORTUGUESE_ERROR_CONTEXTS = {
+  BUSINESS_DIRECTORY: 'portuguese_business_search',
+  EVENT_BOOKING: 'portuguese_cultural_events',
+  CULTURAL_CONTENT: 'portuguese_heritage_preservation',
+  LANGUAGE_SWITCHING: 'portuguese_language_toggle',
+  CULTURAL_MATCHING: 'portuguese_cultural_matching',
+  UNIVERSITY_PARTNERSHIPS: 'portuguese_student_services',
+  PALOP_NATIONS: 'lusophone_community_features',
+  TRANSPORT_COORDINATION: 'portuguese_community_transport',
+  STREAMING_SERVICE: 'portuguese_cultural_streaming',
+  MOBILE_EXPERIENCE: 'portuguese_mobile_users',
+  AUTHENTICATION: 'portuguese_community_auth',
+  // Legacy lowercase aliases for backwards compatibility
   business_directory: 'portuguese_business_search',
   cultural_events: 'portuguese_cultural_events',
   heritage_content: 'portuguese_heritage_preservation',

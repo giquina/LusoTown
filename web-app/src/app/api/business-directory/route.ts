@@ -242,7 +242,7 @@ export async function POST(request: NextRequest) {
     const response = NextResponse.json({
       success: true,
       business,
-      message: 'Portuguese business submitted successfully for community review',
+      message: getApiSuccessMessage('BUSINESS_SUBMITTED_FOR_REVIEW'),
       next_steps: [
         getApiSuccessMessage('BUSINESS_REVIEW_PROCESS'),
         getApiSuccessMessage('CULTURAL_AUTHENTICITY_VERIFICATION'),
@@ -269,7 +269,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json(
         { 
-          error: 'Business submission validation failed',
+          error: getApiErrorMessage('VALIDATION_FAILED'),
           details: error.issues,
           message: getApiErrorMessage('VALIDATION_FAILED')
         },

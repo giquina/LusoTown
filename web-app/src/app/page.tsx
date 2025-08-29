@@ -14,6 +14,7 @@ import MobileWelcomeWizard from "@/components/MobileWelcomeWizard";
 import StreamlinedCommunitySelector from "@/components/StreamlinedCommunitySelector";
 import ResponsiveButton from "@/components/ResponsiveButton";
 import { useSafeJsonLD } from "@/hooks/useSafeHTML";
+import { useMobileDetection } from "@/hooks/useMobileDetection";
 
 // Strategic component loading for cohesive experience
 const SuccessStories = dynamic(() => import("@/components/SuccessStories"), {
@@ -62,23 +63,29 @@ export default function Home() {
   const [showWelcomeWizard, setShowWelcomeWizard] = useState(false);
   const router = useRouter();
   const safeJsonLD = useSafeJsonLD(generateJsonLd("organization"));
+  const { isMobile, isHydrated } = useMobileDetection(768);
 
   // Mobile welcome wizard - Only trigger on signup intent (no automatic triggers)
   const handleSignupClick = () => {
-    const isMobile = window.innerWidth < 768;
+    
 
-    if (isMobile) {
+    if (isHydrated && isMobile) {
       // Show wizard on mobile for personalized signup flow
       setShowWelcomeWizard(true);
-    } else {
+    } else if (isHydrated) {
       // Desktop: go directly to signup
+      router.push("/signup");
+    } else {
+      // Fallback for non-hydrated state
       router.push("/signup");
     }
   };
 
   const handleWelcomeComplete = (action: string) => {
     setShowWelcomeWizard(false);
-    localStorage.setItem("lusotown_welcome_seen", "true");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("lusotown_welcome_seen", "true");
+    }
 
     // Route to specific signup forms based on wizard responses
     const signupRoutes = {

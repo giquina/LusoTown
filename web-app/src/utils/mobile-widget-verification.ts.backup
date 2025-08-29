@@ -7,8 +7,6 @@
 
 import logger from '@/utils/logger';
 
-import { SafeDOM } from '@/lib/security/safe-dom';
-
 export interface WidgetPosition {
   element: HTMLElement;
   component: string;
@@ -236,37 +234,21 @@ export function showWidgetDebugOverlay(): () => void {
   const update = () => {
     const report = analyzeWidgetPositioning();
 
-    // SECURITY FIX: Use SafeDOM to safely create debug overlay content
-    const debugData = {
-      title: "🔧 Widget Debug Info",
-      items: [
-        { label: "Mobile", value: window.innerWidth < 768 ? "Yes" : "No" },
-        { label: "Optimized", value: report.mobileOptimized ? "✅" : "❌" },
-        { label: "Widgets", value: report.widgets.length },
-        { label: "Overlaps", value: report.overlaps.length },
-        { label: "Issues", value: report.recommendations.length }
-      ]
-    };
-
-    // Add individual widget items
-    report.widgets.forEach((w) => {
-      debugData.items.push({
-        label: w.component,
-        value: `z${w.zIndex} b${w.bottom}px ${w.visible ? "👁️" : "❌"}`
-      });
-    });
-
-    // Add overlaps warning if any
-    if (report.overlaps.length > 0) {
-      debugData.items.push({
-        label: "⚠️ Overlaps",
-        value: report.overlaps.length
-      });
-    }
-
-    const safeOverlay = SafeDOM.createSafeOverlay(debugData);
-    overlay.innerHTML = "";
-    overlay.appendChild(safeOverlay);
+    overlay.innerHTML = `
+      <div><strong>🔧 Widget Debug Info</strong></div>
+  <div>Mobile: ${window.innerWidth < 768 ? "Yes" : "No"}</div>
+  <div>Optimized: ${report.mobileOptimized ? "✅" : "❌"}</div>
+  <div>Widgets: ${report.widgets.length}</div>
+  <div>Overlaps: ${report.overlaps.length}</div>
+  <div>Issues: ${report.recommendations.length}</div>
+      ${report.widgets
+        .map(
+          (w) =>
+            `<div>${w.component}: z${w.zIndex} b${w.bottom}px ${w.visible ? "👁️" : "❌"}</div>`
+        )
+        .join("")}
+      ${report.overlaps.length > 0 ? `<div style="color: red">⚠️ ${report.overlaps.length} overlaps</div>` : ""}
+    `;
   };
 
   update();
