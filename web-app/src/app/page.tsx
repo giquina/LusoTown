@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer";
 import { ROUTES } from "@/config/routes";
+import { SPACING_UTILITIES } from "@/config/section-spacing-tokens";
 import MobileWelcomeWizard from "@/components/MobileWelcomeWizard";
 import StreamlinedCommunitySelector from "@/components/StreamlinedCommunitySelector";
 import ResponsiveButton from "@/components/ResponsiveButton";
@@ -790,7 +791,7 @@ export default function Home() {
           </section>
 
           {/* WEEKLY COMMUNITY DISCOVERY SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-50 to-pink-50 section-spacing">
+          <section className="py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-purple-50 to-pink-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -1141,7 +1142,7 @@ export default function Home() {
           </section>
 
           {/* PALOP HERITAGE CELEBRATION SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50 section-spacing">
+          <section className="py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -1507,7 +1508,7 @@ export default function Home() {
           </section>
 
           {/* MONTHLY CULTURAL CALENDAR SECTION - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50 section-spacing">
+          <section className="py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-teal-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -2005,7 +2006,7 @@ export default function Home() {
           </div>
 
           {/* FINAL FREE SIGNUP CTA - Cohesive ending - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white relative z-10 section-spacing">
+          <section className="py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white relative z-10 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="max-w-4xl mx-auto">
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold mb-8">
@@ -2085,7 +2086,7 @@ export default function Home() {
           <LusophoneTestimonials />
 
           {/* PALOP Events Showcase - Fixed spacing */}
-          <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 section-spacing">
+          <section className="py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">

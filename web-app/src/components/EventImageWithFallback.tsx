@@ -1,55 +1,44 @@
 'use client'
 
-import React, { useState } from 'react'
-import OptimizedPortugueseImage from './OptimizedPortugueseImage'
-import { getEventPlaceholder } from '@/lib/placeholders'
+import { useState } from 'react'
+import Image from 'next/image'
 
 interface EventImageWithFallbackProps {
   src: string
   alt: string
-  category?: string
+  width: number
+  height: number
   className?: string
-  fill?: boolean
-  width?: number
-  height?: number
-  priority?: boolean
 }
 
 export default function EventImageWithFallback({
   src,
   alt,
-  category = 'networking',
-  className = '',
-  fill = false,
   width,
   height,
-  priority = false
+  className = ''
 }: EventImageWithFallbackProps) {
-  // Map category to cultural category for optimization
-  const culturalCategory = category === 'networking' ? 'business' :
-                           category === 'cultural' ? 'cultural' :
-                           category === 'community' ? 'community' :
-                           'events'
+  const [hasError, setHasError] = useState(false)
+
+  if (hasError || !src) {
+    return (
+      <div 
+        className={`bg-primary-100 flex items-center justify-center ${className}`}
+        style={{ width, height }}
+      >
+        <span className="text-primary-600 text-2xl">🎉</span>
+      </div>
+    )
+  }
 
   return (
-    <OptimizedPortugueseImage
+    <Image
       src={src}
       alt={alt}
-      fill={fill}
       width={width}
       height={height}
       className={className}
-      priority={priority}
-      culturalCategory={culturalCategory}
-      enableLazyLoading={!priority}
-      enableWebP={true}
-      enableAVIF={true}
-      mobileOptimized={true}
-      placeholder="blur"
-      blurDataURL={getEventPlaceholder(category)}
-      onError={() => {
-        console.log(`Failed to load image: ${src}`)
-      }}
+      onError={() => setHasError(true)}
     />
   )
 }

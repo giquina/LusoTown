@@ -1,5 +1,4 @@
 'use client'
-
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { StarIcon } from '@heroicons/react/24/solid'
@@ -78,6 +77,88 @@ const testimonials: Testimonial[] = [
     achievement: 'Launched UK consulting practice',
     businessValue: '£200K+ first-year revenue'
   },
+  
+  // GUINEA-BISSAU REPRESENTATION
+  {
+    id: 'guinea-bissau-agricultural-success',
+    name: 'Maria Sanhá',
+    age: 35,
+    heritage: 'Guinea-Bissau',
+    flag: '🇬🇼',
+    location: 'Bissau → Bristol',
+    membershipType: 'Professional Member',
+    quote: 'Through LusoTown, I connected with other PALOP entrepreneurs and learned about UK agricultural markets. My cashew import business now supplies premium nuts to restaurants across Britain, celebrating Guinea-Bissau\'s agricultural heritage.',
+    achievement: 'Built UK cashew import business serving 40+ restaurants',
+    businessValue: 'First Guinea-Bissau agricultural products distributor in Southwest England'
+  },
+
+  {
+    id: 'guinea-bissau-healthcare-professional',
+    name: 'Dr. João Vieira',
+    age: 41,
+    heritage: 'Guinea-Bissau', 
+    flag: '🇬🇼',
+    location: 'Bissau → Manchester',
+    membershipType: 'Elite Member',
+    quote: 'LusoTown helped me connect with other Portuguese-speaking healthcare professionals. Working in Manchester NHS, I now coordinate tropical medicine programs and help train staff on PALOP health practices. My Guinea-Bissau medical knowledge benefits UK healthcare.',
+    achievement: 'Leads tropical medicine training programs for NHS Greater Manchester',
+    businessValue: 'Enhanced NHS cultural competency for Portuguese-speaking patients'
+  },
+
+  // SÃO TOMÉ AND PRÍNCIPE REPRESENTATION
+  {
+    id: 'sao-tome-cocoa-entrepreneur', 
+    name: 'Ana do Espírito Santo',
+    age: 38,
+    heritage: 'São Tomé and Príncipe',
+    flag: '🇸🇹',
+    location: 'São Tomé → Edinburgh',
+    membershipType: 'Founding Member',
+    quote: 'LusoTown connected me with luxury chocolate makers across Scotland. My São Tomé Premium Cocoa business now supplies Edinburgh\'s finest chocolatiers with beans from my family\'s plantation. We\'re putting São Tomé cocoa heritage on the UK luxury map.',
+    achievement: 'Supplies 12+ premium chocolatiers with authentic São Tomé cocoa',
+    businessValue: '£300K+ annual revenue showcasing island cocoa heritage'
+  },
+
+  {
+    id: 'sao-tome-cultural-center',
+    name: 'Carlos Neves',
+    age: 44,
+    heritage: 'São Tomé and Príncipe',
+    flag: '🇸🇹', 
+    location: 'Príncipe Island → London',
+    membershipType: 'Cultural Ambassador',
+    quote: 'Starting the first São Tomé Cultural Center in London through connections made at LusoTown events. We preserve Tchiloli dramatic traditions, teach Ússua music, and celebrate our unique island culture. The Portuguese-speaking community embraces our island heritage.',
+    achievement: 'Founded London\'s first São Tomé and Príncipe Cultural Center',
+    businessValue: 'Cultural preservation and community education hub'
+  },
+
+  // EAST TIMOR/TIMOR-LESTE REPRESENTATION
+  {
+    id: 'east-timor-academic-researcher',
+    name: 'Dr. Teresa Guterres',
+    age: 33,
+    heritage: 'East Timor (Timor-Leste)',
+    flag: '🇹🇱',
+    location: 'Dili → Oxford',
+    membershipType: 'Academic Member', 
+    quote: 'LusoTown opened doors to Portuguese-speaking academic networks across Europe. My research on post-colonial Portuguese identity benefits from connections with scholars from all PALOP nations. East Timor\'s unique Asian-Lusophone perspective enriches academic discourse.',
+    achievement: 'Published groundbreaking research on Asian-Lusophone identity',
+    businessValue: 'First East Timorese researcher at Oxford Portuguese Studies Department'
+  },
+
+  {
+    id: 'east-timor-cultural-ambassador',
+    name: 'Miguel Ximenes',
+    age: 29,
+    heritage: 'East Timor (Timor-Leste)',
+    flag: '🇹🇱',
+    location: 'Dili → Birmingham', 
+    membershipType: 'Cultural Bridge Builder',
+    quote: 'Through LusoTown, I organize events that showcase East Timor as the bridge between Asian and Lusophone cultures. Our Timorese coffee ceremonies combined with Portuguese traditions create unique cultural fusion experiences that celebrate our distinctive identity.',
+    achievement: 'Organizes monthly East Timor-Portuguese cultural fusion events', 
+    businessValue: 'Cultural education and bridge-building between Asian and Lusophone communities'
+  },
+  
   {
     id: 'mixed-heritage-member',
     name: 'Ricardo Fernandes',
@@ -103,128 +184,116 @@ export default function LusophoneTestimonials() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="text-2xl">🌍</span>
-              <span className="text-sm font-bold text-primary-600 uppercase tracking-wider">
-                {t('testimonials.lusophone.badge', 'UNIDOS PELA LÍNGUA')}
-              </span>
+              <span className="text-2xl">🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱</span>
+              <span className="text-2xl">🌍</span>
             </div>
             
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              {t('testimonials.lusophone.title', 'What Our Global Lusophone-Speaking Community Says')}
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                {t('testimonials.title', 'Real Stories from Our Portuguese-speaking Community')}
+              </span>
             </h2>
             
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('testimonials.lusophone.subtitle', 'From Portugal to Brazil, Angola to Cape Verde, Mozambique to the UK - hear from successful members across the entire Lusophone world')}
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-2">
+              {t('testimonials.subtitle', 'Celebrating success stories from all 8 Portuguese-speaking nations across the United Kingdom')}
             </p>
             
-            {/* Flag Display */}
-            <div className="flex justify-center gap-3 mt-6 text-3xl">
-              🇵🇹 🇧🇷 🇦🇴 🇨🇻 🇲🇿 🇬🇼 🇸🇹 🇹🇱
-            </div>
+            <p className="text-sm text-gray-500 italic">
+              {t('testimonials.inclusive', 'Portugal • Brazil • Angola • Cape Verde • Mozambique • Guinea-Bissau • São Tomé & Príncipe • East Timor')}
+            </p>
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100"
               >
-                {/* Member Header */}
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
-                      <span className="text-xl">{testimonial.flag}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <span>{testimonial.age}</span>
-                      <span>•</span>
-                      <span>{testimonial.heritage}</span>
-                    </div>
-                    <div className="text-xs text-gray-500">{testimonial.location}</div>
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-2xl">{testimonial.flag}</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.heritage} • {testimonial.location}
+                    </p>
                   </div>
                 </div>
 
-                {/* Membership Type Badge */}
-                <div className="mb-4">
-                  <span className="inline-flex items-center gap-1 bg-gradient-to-r from-accent-100 to-premium-100 text-accent-700 text-xs font-semibold px-3 py-1 rounded-full">
-                    <StarIcon className="w-3 h-3" />
-                    {testimonial.membershipType}
-                  </span>
+                {/* Rating */}
+                <div className="flex items-center gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-gray-700 mb-4 text-sm leading-relaxed">
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
 
-                {/* Achievement & Value */}
+                {/* Achievement */}
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-xs text-green-600">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span className="font-medium">{testimonial.achievement}</span>
+                  <div className="text-sm">
+                    <span className="font-medium text-primary-600">Achievement: </span>
+                    <span className="text-gray-600">{testimonial.achievement}</span>
                   </div>
                   
                   {testimonial.businessValue && (
-                    <div className="flex items-center gap-2 text-xs text-blue-600">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                      <span className="font-medium">{testimonial.businessValue}</span>
+                    <div className="text-sm">
+                      <span className="font-medium text-secondary-600">Impact: </span>
+                      <span className="text-gray-600">{testimonial.businessValue}</span>
                     </div>
                   )}
-                </div>
-
-                {/* 5-Star Rating */}
-                <div className="flex items-center gap-1 mt-4 pt-4 border-t border-gray-100">
-                  {[...Array(5)].map((_, i) => (
-                    <StarIcon key={i} className="w-4 h-4 text-yellow-400" />
-                  ))}
-                  <span className="text-xs text-gray-500 ml-2">Verified Member</span>
+                  
+                  <div className="text-xs text-gray-400 pt-2 border-t border-gray-100">
+                    {testimonial.membershipType}
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* PALOP Excellence Recognition */}
-          <div className="mt-16 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-2xl p-8 text-white text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="text-3xl">🏆</span>
-              <h3 className="text-2xl font-bold">
-                {t('palop.excellence', 'PALOP Excellence Recognition: Angola 🇦🇴, Cape Verde 🇨🇻, Guinea-Bissau 🇬🇼, Mozambique 🇲🇿, São Tomé 🇸🇹')}
-              </h3>
-            </div>
-            <p className="text-lg opacity-95 max-w-4xl mx-auto">
-              {t('palop.independence', 'Celebrating 50+ years of PALOP independence and success in the UK')}
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">
+              {t('testimonials.cta_text', 'Ready to write your own success story with the Portuguese-speaking community?')}
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-colors">
+                {t('testimonials.cta_primary', 'Join Our Community')}
+              </button>
+              
+              <button className="px-8 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors">
+                {t('testimonials.cta_secondary', 'Share Your Story')}
+              </button>
+            </div>
           </div>
 
-          {/* Community Stats */}
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600">750+</div>
-              <div className="text-sm text-gray-600">Lusophone Speakers</div>
-              <div className="text-xs text-gray-500">All Nations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-secondary-600">8</div>
-              <div className="text-sm text-gray-600">Countries Represented</div>
-              <div className="text-xs text-gray-500">🇵🇹🇧🇷🇦🇴🇨🇻🇲🇿🇬🇼🇸🇹🇹🇱</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent-600">50+</div>
-              <div className="text-sm text-gray-600">Monthly Events</div>
-              <div className="text-xs text-gray-500">All Cultures</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-premium-600">£25M+</div>
-              <div className="text-sm text-gray-600">Business Deals</div>
-              <div className="text-xs text-gray-500">Cross-Border</div>
+          {/* Community Statistics */}
+          <div className="mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-primary-600">8</div>
+                <div className="text-sm text-gray-600">Portuguese-speaking Nations Represented</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-secondary-600">750+</div>
+                <div className="text-sm text-gray-600">Active Community Members</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-accent-600">200+</div>
+                <div className="text-sm text-gray-600">Business Success Stories</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-action-600">15+</div>
+                <div className="text-sm text-gray-600">UK Cities Connected</div>
+              </div>
             </div>
           </div>
         </div>

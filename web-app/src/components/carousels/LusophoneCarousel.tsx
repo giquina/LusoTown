@@ -12,9 +12,10 @@ import {
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { PORTUGUESE_COLORS, DESIGN_TOKENS } from '@/config/brand'
-import { usePortugueseBundleOptimization } from '@/utils/portuguese-bundle-optimizer'
+// import { usePortugueseBundleOptimization } from '@/utils/portuguese-bundle-optimizer'
 import logger from '@/utils/logger'
 import EnhancedMobileGestures, { usePortugueseGestures } from '../EnhancedMobileGestures'
+import { isClient, safeWindow, safeNavigator, safePerformance, safeSpeechSynthesis } from "@/utils/ssr-safe"
 
 /**
  * Base interface for carousel items - all items must extend this
@@ -242,8 +243,10 @@ function useResponsive(responsive: ResponsiveConfig) {
   const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('mobile')
 
   useEffect(() => {
+    if (typeof window === "undefined") return
     const updateConfig = () => {
-      const width = window.innerWidth
+    if (typeof window === "undefined") return
+      const width = safeWindow.innerWidth
       
       if (width >= 1024) {
         setCurrentConfig(responsive.desktop)
@@ -258,9 +261,9 @@ function useResponsive(responsive: ResponsiveConfig) {
     }
 
     updateConfig()
-    window.addEventListener('resize', updateConfig)
+    safeWindow.addEventListener('resize', updateConfig)
     
-    return () => window.removeEventListener('resize', updateConfig)
+    return () => safeWindow.removeEventListener('resize', updateConfig)
   }, [responsive])
 
   return { currentConfig, screenSize }
@@ -279,12 +282,14 @@ function useMobilePerformance(onUpdate?: (metrics: PerformanceMetrics) => void) 
   })
 
   useEffect(() => {
-    const startTime = performance.now()
+    if (typeof window === "undefined") return
+    const startTime = typeof window !== "undefined" ? safePerformance.now() : 0
     
     // Network status monitoring
     const updateNetworkStatus = () => {
-      const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection
-      let status: 'online' | 'offline' | 'slow' = navigator.onLine ? 'online' : 'offline'
+    if (typeof window === "undefined" || typeof navigator === "undefined") return
+      const connection = (safeNavigator.connection) || (navigator as any).mozConnection || (navigator as any).webkitConnection
+      let status: 'online' | 'offline' | 'slow' = safeNavigator.onLine ? 'online' : 'offline'
       
       if (connection && connection.effectiveType) {
         if (['slow-2g', '2g'].includes(connection.effectiveType)) {
@@ -297,6 +302,7 @@ function useMobilePerformance(onUpdate?: (metrics: PerformanceMetrics) => void) 
 
     // Memory usage monitoring
     const updateMemoryUsage = () => {
+    if (typeof window === "undefined") return
       if ('memory' in performance) {
         const memory = (performance as any).memory
         setMetrics(prev => ({ 
@@ -308,7 +314,8 @@ function useMobilePerformance(onUpdate?: (metrics: PerformanceMetrics) => void) 
 
     // Load time measurement
     const updateLoadTime = () => {
-      const loadTime = performance.now() - startTime
+    if (typeof window === "undefined") return
+      const loadTime = safePerformance.now() - startTime
       setMetrics(prev => ({ ...prev, loadTime }))
     }
 
@@ -327,6 +334,7 @@ function useMobilePerformance(onUpdate?: (metrics: PerformanceMetrics) => void) 
   }, [])
 
   useEffect(() => {
+    if (typeof window === "undefined") return
     onUpdate?.(metrics)
   }, [metrics, onUpdate])
 
@@ -337,10 +345,11 @@ function useMobilePerformance(onUpdate?: (metrics: PerformanceMetrics) => void) 
  * Custom hook for PWA features
  */
 function usePWAFeatures(settings: PWASettings) {
-  const [isOffline, setIsOffline] = useState(!navigator.onLine)
+  const [isOffline, setIsOffline] = useState(typeof window !== "undefined" ? !safeNavigator.onLine : false)
   const [installPrompt, setInstallPrompt] = useState<any>(null)
 
   useEffect(() => {
+    if (typeof window === "undefined") return
     const handleOnline = () => setIsOffline(false)
     const handleOffline = () => setIsOffline(true)
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -348,14 +357,14 @@ function usePWAFeatures(settings: PWASettings) {
       setInstallPrompt(e)
     }
 
-    window.addEventListener('online', handleOnline)
-    window.addEventListener('offline', handleOffline)
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+    safeWindow.addEventListener('online', handleOnline)
+    safeWindow.addEventListener('offline', handleOffline)
+    safeWindow.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
 
     return () => {
-      window.removeEventListener('online', handleOnline)
-      window.removeEventListener('offline', handleOffline)
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+      safeWindow.removeEventListener('online', handleOnline)
+      safeWindow.removeEventListener('offline', handleOffline)
+      safeWindow.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
     }
   }, [])
 
@@ -431,6 +440,7 @@ function useCarouselNavigation<T extends CarouselItemType>(
 
   // Auto-advance logic
   useEffect(() => {
+    if (typeof window === "undefined") return
     if (isPlaying && items.length > itemsPerView) {
       intervalRef.current = setInterval(() => goToNext(true), autoAdvanceInterval)
     } else if (intervalRef.current) {
@@ -447,6 +457,7 @@ function useCarouselNavigation<T extends CarouselItemType>(
 
   // Reset current index if items change
   useEffect(() => {
+    if (typeof window === "undefined") return
     if (currentIndex > maxIndex) {
       setCurrentIndex(0)
     }
@@ -522,7 +533,7 @@ const LusophoneCarousel = memo(<T extends CarouselItemType>({
   enableAccessibilityAnnouncements = true
 }: LusophoneCarouselProps<T>) => {
   const { language, t } = useLanguage()
-  const { stats, loadBundle } = usePortugueseBundleOptimization()
+  // const { stats, loadBundle } = usePortugueseBundleOptimization()
   const { currentConfig, screenSize } = useResponsive(responsive)
   const carouselRef = useRef<HTMLDivElement>(null)
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -677,11 +688,11 @@ const LusophoneCarousel = memo(<T extends CarouselItemType>({
   const announceAccessibility = useCallback((message: string) => {
     if (!enableAccessibilityAnnouncements) return
     
-    if ('speechSynthesis' in window) {
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance(message)
       utterance.lang = language === 'pt' ? 'pt-PT' : 'en-GB'
       utterance.volume = 0.3
-      speechSynthesis.speak(utterance)
+      safeSpeechSynthesis.speak(utterance)
     }
   }, [enableAccessibilityAnnouncements, language])
 
