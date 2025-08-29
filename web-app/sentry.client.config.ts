@@ -4,7 +4,7 @@
  */
 
 import * as Sentry from '@sentry/nextjs'
-import { ERROR_MONITORING, PORTUGUESE_ERROR_CONTEXTS, ERROR_CATEGORIES } from '@/config/error-monitoring'
+import { ERROR_MONITORING, PORTUGUESE_ERROR_CONTEXTS, ERROR_CATEGORIES } from './src/config/error-monitoring'
 
 const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN
 
@@ -277,7 +277,6 @@ Sentry.init({
   
   // Configuration
   maxBreadcrumbs: ERROR_MONITORING.maxBreadcrumbs,
-  captureUnhandledRejections: true,
   debug: process.env.NODE_ENV === 'development',
   
   // Transport options for better reliability

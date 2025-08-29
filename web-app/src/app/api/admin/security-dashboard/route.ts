@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { securityLogger } from '@/lib/security/comprehensive-security';
+import {
+  getApiErrorMessage,
+  getApiLogMessage,
+  SECURITY_EVENTS,
+  SECURITY_RECOMMENDATIONS
+} from '@/config/api-messages';
 
 // Initialize Supabase client
 function getSupabaseClient() {
@@ -8,7 +14,7 @@ function getSupabaseClient() {
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   
   if (!supabaseUrl || !supabaseServiceKey) {
-    throw new Error('Supabase configuration missing');
+    throw new Error(getApiErrorMessage('SUPABASE_CONFIGURATION_MISSING'));
   }
   
   return createClient(supabaseUrl, supabaseServiceKey);
@@ -26,7 +32,7 @@ export async function GET(request: NextRequest) {
     
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return NextResponse.json(
-        { error: 'Authentication required' },
+        { error: getApiErrorMessage('AUTHENTICATION_REQUIRED') },
         { status: 401 }
       );
     }
@@ -36,7 +42,7 @@ export async function GET(request: NextRequest) {
     
     if (authError || !user) {
       return NextResponse.json(
-        { error: 'Invalid authentication token' },
+        { error: getApiErrorMessage('INVALID_AUTHENTICATION_TOKEN') },
         { status: 401 }
       );
     }
@@ -53,7 +59,7 @@ export async function GET(request: NextRequest) {
         userId: user.id,
         ip,
         userAgent,
-        eventType: 'UNAUTHORIZED_API_ACCESS',
+        eventType: SECURITY_EVENTS.UNAUTHORIZED_API_ACCESS,
         severity: 'HIGH',
         description: `Non-admin user attempted to access security dashboard`,
         culturalContext: 'portuguese-uk',
@@ -61,7 +67,7 @@ export async function GET(request: NextRequest) {
       });
       
       return NextResponse.json(
-        { error: 'Admin access required' },
+        { error: getApiErrorMessage('ADMIN_ACCESS_REQUIRED') },
         { status: 403 }
       );
     }
@@ -131,7 +137,7 @@ export async function GET(request: NextRequest) {
       });
     
     if (statsError) {
-      console.error('Error fetching security stats:', statsError);
+      console.error(getApiLogMessage('SECURITY_STATS_FETCH_ERROR'), statsError);
     }
     
     // Get top threat IPs
@@ -145,7 +151,7 @@ export async function GET(request: NextRequest) {
       .limit(10);
     
     if (threatsError) {
-      console.error('Error fetching threat data:', threatsError);
+      console.error(getApiLogMessage('THREAT_DATA_FETCH_ERROR'), threatsError);
     }
     
     // Get failed login attempts
@@ -157,7 +163,7 @@ export async function GET(request: NextRequest) {
       .limit(100);
     
     if (loginsError) {
-      console.error('Error fetching failed logins:', loginsError);
+      console.error(getApiLogMessage('FAILED_LOGINS_FETCH_ERROR'), loginsError);
     }
     
     // Get active sessions count
@@ -168,7 +174,7 @@ export async function GET(request: NextRequest) {
       .gt('expires_at', now.toISOString());
     
     if (sessionsError) {
-      console.error('Error fetching session data:', sessionsError);
+      console.error(getApiLogMessage('SESSION_DATA_FETCH_ERROR'), sessionsError);
     }
     
     // Calculate security metrics
@@ -331,7 +337,7 @@ export async function POST(request: NextRequest) {
     
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return NextResponse.json(
-        { error: 'Authentication required' },
+        { error: getApiErrorMessage('AUTHENTICATION_REQUIRED') },
         { status: 401 }
       );
     }
@@ -341,7 +347,7 @@ export async function POST(request: NextRequest) {
     
     if (authError || !user) {
       return NextResponse.json(
-        { error: 'Invalid authentication token' },
+        { error: getApiErrorMessage('INVALID_AUTHENTICATION_TOKEN') },
         { status: 401 }
       );
     }
@@ -354,7 +360,7 @@ export async function POST(request: NextRequest) {
     
     if (profileError || !profile || profile.role !== 'admin') {
       return NextResponse.json(
-        { error: 'Admin access required' },
+        { error: getApiErrorMessage('ADMIN_ACCESS_REQUIRED') },
         { status: 403 }
       );
     }

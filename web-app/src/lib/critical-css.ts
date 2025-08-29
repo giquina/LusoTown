@@ -1,12 +1,12 @@
 /**
+
+import { SafeDOM } from '@/lib/security/safe-dom';
  * Critical CSS Generation and Optimization for LusoTown
  * 
  * Generates and manages critical CSS for Portuguese cultural content,
  * mobile-first rendering, and above-the-fold optimization.
  */
-
 import { BRAND_COLORS } from '@/config/brand';
-
 export interface CriticalCSSConfig {
   includeMobilePriority: boolean;
   includePortugueseColors: boolean;
@@ -14,14 +14,12 @@ export interface CriticalCSSConfig {
   includeBilingualSupport: boolean;
   includeAccessibility: boolean;
 }
-
 export interface CriticalCSSOutput {
   css: string;
   size: number;
   coverage: string[];
   culturalElements: string[];
 }
-
 /**
  * Critical CSS Generator for Portuguese Cultural Content
  */
@@ -29,7 +27,6 @@ export class CriticalCSSGenerator {
   private config: CriticalCSSConfig;
   private mobileBreakpoint = 768;
   private tabletBreakpoint = 1024;
-
   constructor(config: CriticalCSSConfig = {
     includeMobilePriority: true,
     includePortugueseColors: true,
@@ -39,7 +36,6 @@ export class CriticalCSSGenerator {
   }) {
     this.config = config;
   }
-
   /**
    * Generate critical CSS for Portuguese community platform
    */
@@ -47,54 +43,44 @@ export class CriticalCSSGenerator {
     const cssBlocks: string[] = [];
     const coverage: string[] = [];
     const culturalElements: string[] = [];
-
     // Base CSS Variables and Reset
     cssBlocks.push(this.generateBaseCSS());
     coverage.push('base-reset');
-
     // Portuguese Heritage Colors
     if (this.config.includePortugueseColors) {
       cssBlocks.push(this.generatePortugueseColorSystem());
       coverage.push('portuguese-colors');
       culturalElements.push('heritage-colors');
     }
-
     // Mobile-First Layout
     if (this.config.includeMobilePriority) {
       cssBlocks.push(this.generateMobileFirstLayout());
       coverage.push('mobile-layout');
     }
-
     // Touch Optimization
     if (this.config.includeTouchOptimization) {
       cssBlocks.push(this.generateTouchOptimization());
       coverage.push('touch-targets');
     }
-
     // Bilingual Content Support
     if (this.config.includeBilingualSupport) {
       cssBlocks.push(this.generateBilingualSupport());
       coverage.push('bilingual-text');
       culturalElements.push('portuguese-typography');
     }
-
     // Accessibility
     if (this.config.includeAccessibility) {
       cssBlocks.push(this.generateAccessibilityCSS());
       coverage.push('accessibility');
     }
-
     // Portuguese Cultural Components
     cssBlocks.push(this.generatePortugueseCulturalComponents());
     coverage.push('cultural-components');
     culturalElements.push('fado-theme', 'azulejos-pattern', 'santos-populares');
-
     // Above-the-fold critical elements
     cssBlocks.push(this.generateAboveFoldCSS());
     coverage.push('above-fold');
-
     const css = cssBlocks.join('\n\n');
-
     return {
       css,
       size: new Blob([css]).size,
@@ -102,7 +88,6 @@ export class CriticalCSSGenerator {
       culturalElements
     };
   }
-
   /**
    * Generate base CSS with Portuguese cultural foundations
    */
@@ -116,13 +101,11 @@ export class CriticalCSSGenerator {
   margin: 0;
   padding: 0;
 }
-
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   font-size: 16px;
@@ -132,29 +115,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /* Focus management for Portuguese community navigation */
 :focus {
   outline: 2px solid var(--heritage-red, #DC2626);
   outline-offset: 2px;
 }
-
 :focus:not(:focus-visible) {
   outline: none;
 }
-
 /* Selection colors with Portuguese heritage */
 ::selection {
   background-color: var(--heritage-red, #DC2626);
   color: white;
 }
-
 ::-moz-selection {
   background-color: var(--heritage-red, #DC2626);
   color: white;
 }`;
   }
-
   /**
    * Generate Portuguese heritage color system
    */
@@ -167,55 +145,46 @@ body {
   --heritage-green: ${BRAND_COLORS.heritage.green};
   --heritage-gold: ${BRAND_COLORS.heritage.gold};
   --heritage-blue: ${BRAND_COLORS.heritage.blue};
-  
   /* Accessibility variants */
   --heritage-red-dark: #B91C1C;
   --heritage-green-dark: #047857;
   --heritage-gold-dark: #B45309;
   --heritage-blue-dark: #1E3A8A;
-  
   /* Light variants for backgrounds */
   --heritage-red-light: #FEE2E2;
   --heritage-green-light: #D1FAE5;
   --heritage-gold-light: #FEF3C7;
   --heritage-blue-light: #DBEAFE;
-  
   /* Lusophone cultural gradients */
   --portugal-gradient: linear-gradient(135deg, var(--heritage-red), var(--heritage-green));
   --brazil-gradient: linear-gradient(135deg, var(--heritage-green), var(--heritage-gold));
   --palop-gradient: linear-gradient(135deg, var(--heritage-blue), var(--heritage-red));
-  
   /* Semantic colors for Portuguese community */
   --cultural-primary: var(--heritage-red);
   --cultural-secondary: var(--heritage-green);
   --cultural-accent: var(--heritage-gold);
   --cultural-neutral: var(--heritage-blue);
 }
-
 /* Portuguese flag colors for special elements */
 .portuguese-flag {
   background: var(--portugal-gradient);
   color: white;
 }
-
 .brazilian-flag {
   background: var(--brazil-gradient);
   color: white;
 }
-
 .palop-flag {
   background: var(--palop-gradient);
   color: white;
 }`;
   }
-
   /**
    * Generate mobile-first layout system
    */
   private generateMobileFirstLayout(): string {
     return `
 /* Mobile-First Layout for Portuguese Community */
-
 /* Container system optimized for Portuguese content */
 .container {
   width: 100%;
@@ -223,19 +192,16 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
 @media (min-width: 640px) {
   .container {
     padding: 0 1.5rem;
   }
 }
-
 @media (min-width: ${this.mobileBreakpoint}px) {
   .container {
     padding: 0 2rem;
   }
 }
-
 /* Mobile navigation for Portuguese community */
 .mobile-nav {
   position: fixed;
@@ -248,7 +214,6 @@ body {
   z-index: 50;
   box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
 }
-
 .mobile-nav-item {
   display: flex;
   flex-direction: column;
@@ -260,59 +225,49 @@ body {
   line-height: 1;
   transition: color 0.2s ease;
 }
-
 .mobile-nav-item.active {
   color: var(--heritage-red);
 }
-
 .mobile-nav-item:hover {
   color: var(--heritage-red);
 }
-
 /* Responsive grid for Portuguese events and businesses */
 .grid-responsive {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
 }
-
 @media (min-width: 640px) {
   .grid-responsive {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: ${this.mobileBreakpoint}px) {
   .grid-responsive {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (min-width: ${this.tabletBreakpoint}px) {
   .grid-responsive {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
 /* Stack layout for mobile Portuguese content */
 .stack {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 .stack > * {
   width: 100%;
 }`;
   }
-
   /**
    * Generate touch optimization for Portuguese community interactions
    */
   private generateTouchOptimization(): string {
     return `
 /* Touch Target Optimization for Portuguese Community */
-
 /* Minimum 44px touch targets (WCAG AA compliance) */
 .touch-target {
   min-height: 44px;
@@ -322,7 +277,6 @@ body {
   justify-content: center;
   touch-action: manipulation;
 }
-
 /* Button styles optimized for Portuguese cultural content */
 .btn {
   display: inline-flex;
@@ -340,34 +294,28 @@ body {
   touch-action: manipulation;
   min-height: 44px;
 }
-
 .btn:focus {
   outline: 2px solid var(--heritage-red);
   outline-offset: 2px;
 }
-
 .btn-primary {
   background: var(--heritage-red);
   color: white;
 }
-
 .btn-primary:hover {
   background: var(--heritage-red-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(220, 38, 38, 0.2);
 }
-
 .btn-secondary {
   background: var(--heritage-green);
   color: white;
 }
-
 .btn-secondary:hover {
   background: var(--heritage-green-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(5, 150, 105, 0.2);
 }
-
 /* Portuguese cultural event cards with touch optimization */
 .event-card {
   padding: 1rem;
@@ -378,13 +326,11 @@ body {
   cursor: pointer;
   touch-action: manipulation;
 }
-
 .event-card:hover,
 .event-card:focus {
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-
 /* Touch-friendly Portuguese business directory items */
 .business-item {
   display: flex;
@@ -395,12 +341,10 @@ body {
   touch-action: manipulation;
   min-height: 60px;
 }
-
 .business-item:hover,
 .business-item:focus {
   background-color: var(--heritage-red-light);
 }
-
 /* Swipe gesture support for Portuguese cultural content */
 .swipe-container {
   overflow-x: auto;
@@ -409,25 +353,21 @@ body {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
-
 .swipe-container::-webkit-scrollbar {
   display: none;
 }
-
 .swipe-item {
   flex: 0 0 auto;
   width: 80%;
   margin-right: 1rem;
 }`;
   }
-
   /**
    * Generate bilingual content support
    */
   private generateBilingualSupport(): string {
     return `
 /* Bilingual Content Support for Portuguese Community */
-
 /* Text direction and language support */
 [lang="pt"],
 [lang="pt-PT"],
@@ -435,13 +375,11 @@ body {
   font-feature-settings: "liga" 1, "kern" 1;
   font-kerning: normal;
 }
-
 /* Portuguese character optimization */
 .portuguese-text {
   font-variant-ligatures: common-ligatures;
   text-rendering: optimizeLegibility;
 }
-
 /* Bilingual toggle styles */
 .language-toggle {
   display: inline-flex;
@@ -451,7 +389,6 @@ body {
   padding: 0.25rem;
   position: relative;
 }
-
 .language-toggle-option {
   padding: 0.5rem 1rem;
   border-radius: 9999px;
@@ -465,32 +402,27 @@ body {
   display: flex;
   align-items: center;
 }
-
 .language-toggle-option.active {
   background: var(--heritage-red);
   color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
 /* Text length adaptation for Portuguese vs English */
 .bilingual-container {
   min-height: 2.5rem;
   display: flex;
   align-items: center;
 }
-
 /* Portuguese text tends to be 20-30% longer than English */
 .text-pt {
   letter-spacing: -0.025em;
   word-spacing: -0.05em;
 }
-
 /* Cultural text emphasis */
 .cultural-emphasis {
   color: var(--heritage-red);
   font-weight: 600;
 }
-
 .lusophone-highlight {
   background: linear-gradient(120deg, var(--heritage-gold-light) 0%, var(--heritage-gold-light) 100%);
   background-repeat: no-repeat;
@@ -498,14 +430,12 @@ body {
   background-position: 0 88%;
 }`;
   }
-
   /**
    * Generate accessibility CSS
    */
   private generateAccessibilityCSS(): string {
     return `
 /* Accessibility for Portuguese Community */
-
 /* High contrast support */
 @media (prefers-contrast: high) {
   :root {
@@ -514,13 +444,11 @@ body {
     --heritage-gold: #CC6600;
     --heritage-blue: #000099;
   }
-  
   .event-card,
   .business-item {
     border: 2px solid #000000;
   }
 }
-
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -531,13 +459,11 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
   .btn:hover,
   .event-card:hover {
     transform: none;
   }
 }
-
 /* Screen reader optimizations */
 .sr-only {
   position: absolute;
@@ -550,7 +476,6 @@ body {
   white-space: nowrap;
   border: 0;
 }
-
 /* Skip links for Portuguese community navigation */
 .skip-link {
   position: absolute;
@@ -564,54 +489,45 @@ body {
   z-index: 100;
   font-size: 0.875rem;
 }
-
 .skip-link:focus {
   top: 6px;
 }
-
 /* Focus indicators for cultural elements */
 .cultural-link:focus {
   outline: 3px solid var(--heritage-gold);
   outline-offset: 2px;
   background: var(--heritage-gold-light);
 }
-
 /* Large text support for accessibility */
 @media (min-resolution: 2dppx) and (max-width: 768px) {
   body {
     font-size: 18px;
   }
-  
   .btn {
     font-size: 1.125rem;
     padding: 1rem 2rem;
   }
-  
   .mobile-nav-item {
     font-size: 0.875rem;
     padding: 0.75rem;
   }
 }`;
   }
-
   /**
    * Generate Portuguese cultural components
    */
   private generatePortugueseCulturalComponents(): string {
     return `
 /* Portuguese Cultural Components */
-
 /* Fado night theme */
 .fado-theme {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   color: #f5f5f5;
 }
-
 .fado-accent {
   border-left: 4px solid var(--heritage-gold);
   padding-left: 1rem;
 }
-
 /* Azulejos pattern inspiration */
 .azulejos-pattern {
   background-image: repeating-linear-gradient(
@@ -625,14 +541,12 @@ body {
   opacity: 0.1;
   position: relative;
 }
-
 /* Santos Populares celebration theme */
 .santos-populares {
   background: var(--portugal-gradient);
   position: relative;
   overflow: hidden;
 }
-
 .santos-populares::before {
   content: '';
   position: absolute;
@@ -644,7 +558,6 @@ body {
                     radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
   background-size: 50px 30px;
 }
-
 /* Portuguese business category icons */
 .business-icon {
   width: 48px;
@@ -657,28 +570,23 @@ body {
   color: var(--heritage-red);
   flex-shrink: 0;
 }
-
 .business-icon.restaurant {
   background: var(--heritage-red-light);
   color: var(--heritage-red);
 }
-
 .business-icon.service {
   background: var(--heritage-green-light);
   color: var(--heritage-green);
 }
-
 .business-icon.cultural {
   background: var(--heritage-gold-light);
   color: var(--heritage-gold);
 }
-
 /* Portuguese flag pattern for special elements */
 .flag-pattern {
   background: linear-gradient(to right, var(--heritage-green) 30%, var(--heritage-red) 70%);
   position: relative;
 }
-
 .flag-pattern::after {
   content: '';
   position: absolute;
@@ -691,7 +599,6 @@ body {
   border-radius: 50%;
   border: 2px solid var(--heritage-blue);
 }
-
 /* Cultural celebration cards */
 .celebration-card {
   background: white;
@@ -701,12 +608,10 @@ body {
   border-top: 4px solid var(--heritage-red);
   transition: all 0.2s ease;
 }
-
 .celebration-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
-
 .celebration-date {
   display: inline-block;
   background: var(--heritage-red);
@@ -718,14 +623,12 @@ body {
   margin-bottom: 0.5rem;
 }`;
   }
-
   /**
    * Generate above-the-fold critical styles
    */
   private generateAboveFoldCSS(): string {
     return `
 /* Above-the-fold Critical Styles for Portuguese Community */
-
 /* Hero section for Portuguese cultural events */
 .hero {
   min-height: 60vh;
@@ -739,7 +642,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 .hero::before {
   content: '';
   position: absolute;
@@ -750,34 +652,29 @@ body {
   background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
   margin: 0 auto;
 }
-
 .hero-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
-
 @media (min-width: ${this.mobileBreakpoint}px) {
   .hero-title {
     font-size: 3rem;
   }
 }
-
 .hero-subtitle {
   font-size: 1.125rem;
   opacity: 0.9;
   margin-bottom: 2rem;
   line-height: 1.5;
 }
-
 /* Header navigation for Portuguese community */
 .header {
   background: white;
@@ -787,7 +684,6 @@ body {
   z-index: 40;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
 .header-nav {
   display: flex;
   align-items: center;
@@ -796,7 +692,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
@@ -805,12 +700,10 @@ body {
   display: flex;
   align-items: center;
 }
-
 .logo::before {
   content: '🇵🇹';
   margin-right: 0.5rem;
 }
-
 /* Loading states for Portuguese cultural content */
 .loading-skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -818,7 +711,6 @@ body {
   animation: loading 1.5s infinite;
   border-radius: 0.5rem;
 }
-
 @keyframes loading {
   0% {
     background-position: 200% 0;
@@ -827,18 +719,15 @@ body {
     background-position: -200% 0;
   }
 }
-
 .loading-text {
   height: 1rem;
   margin-bottom: 0.5rem;
 }
-
 .loading-image {
   height: 200px;
   width: 100%;
   margin-bottom: 1rem;
 }
-
 /* Portuguese community welcome message */
 .welcome-banner {
   background: var(--heritage-gold-light);
@@ -848,41 +737,31 @@ body {
   font-size: 0.875rem;
   border-bottom: 1px solid var(--heritage-gold);
 }
-
 .welcome-banner::before {
   content: '✨ ';
 }
-
 .welcome-banner::after {
   content: ' ✨';
 }`;
   }
-
   /**
    * Inject critical CSS into document head
    */
   public injectCriticalCSS(): void {
     if (typeof document === 'undefined') return;
-
     const { css } = this.generateCriticalCSS();
-    
     // Remove existing critical CSS
     const existing = document.getElementById('critical-css');
     if (existing) {
       existing.remove();
     }
-
     // Create and inject new critical CSS
     const style = document.createElement('style');
     style.id = 'critical-css';
     style.innerHTML = css;
-    
     // Insert at the beginning of head for highest priority
     document.head.insertBefore(style, document.head.firstChild);
-    
-    console.log('[Critical CSS] Portuguese cultural styles injected');
-  }
-
+    }
   /**
    * Get critical CSS for server-side rendering
    */
@@ -890,7 +769,6 @@ body {
     const { css } = this.generateCriticalCSS();
     return css;
   }
-
   /**
    * Analyze page for critical CSS coverage
    */
@@ -898,11 +776,9 @@ body {
     if (typeof document === 'undefined') {
       return { used: [], unused: [], score: 0 };
     }
-
     const { coverage } = this.generateCriticalCSS();
     const used: string[] = [];
     const unused: string[] = [];
-
     // Check which critical CSS classes are actually used in the DOM
     coverage.forEach(selector => {
       const elements = document.querySelectorAll(`.${selector}`);
@@ -912,27 +788,20 @@ body {
         unused.push(selector);
       }
     });
-
     const score = Math.round((used.length / coverage.length) * 100);
-    
     return { used, unused, score };
   }
 }
-
 // Export singleton instance and utility functions
 export const criticalCSSGenerator = new CriticalCSSGenerator();
-
 export const generateCriticalCSS = (config?: CriticalCSSConfig): CriticalCSSOutput => {
   const generator = new CriticalCSSGenerator(config);
   return generator.generateCriticalCSS();
 };
-
 export const injectCriticalCSS = (): void => {
   criticalCSSGenerator.injectCriticalCSS();
 };
-
 export const getCriticalCSSForSSR = (): string => {
   return criticalCSSGenerator.getCriticalCSSForSSR();
 };
-
 export default CriticalCSSGenerator;

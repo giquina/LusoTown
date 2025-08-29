@@ -173,8 +173,9 @@ class CoreWebVitalsMonitor {
         const entries = entryList.getEntries();
         
         entries.forEach(entry => {
-          if (entry.name === 'first-input' && entry.processingStart && entry.startTime) {
-            const fid = entry.processingStart - entry.startTime;
+          const firstInputEntry = entry as any;
+          if (entry.name === 'first-input' && firstInputEntry.processingStart && entry.startTime) {
+            const fid = firstInputEntry.processingStart - entry.startTime;
             const measurement = this.createMeasurement('FID', fid);
             this.recordMeasurement(measurement);
             

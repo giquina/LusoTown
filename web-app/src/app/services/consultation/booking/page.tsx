@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
@@ -16,7 +15,6 @@ import { Crown, MessageSquare, Users } from 'lucide-react'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
-
 export default function ConsultationBookingPage() {
   const { language } = useLanguage()
   const isPortuguese = language === 'pt'
@@ -36,7 +34,6 @@ export default function ConsultationBookingPage() {
     budget: '',
     urgency: ''
   })
-
   const consultationTypes = [
     {
       id: 'executive-transport',
@@ -66,36 +63,29 @@ export default function ConsultationBookingPage() {
       price: 'Free consultation'
     }
   ]
-
   const timeSlots = [
     '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
     '12:00', '12:30', '14:00', '14:30', '15:00', '15:30',
     '16:00', '16:30', '17:00', '17:30', '18:00'
   ]
-
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
-
   const handleNextStep = () => {
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1)
     }
   }
-
   const handlePrevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1)
     }
   }
-
   const handleSubmit = () => {
     // Handle form submission
-    console.log('Consultation booking:', formData)
-  // Redirect to confirmation page
+    // Redirect to confirmation page
   window.location.href = `${ROUTES.services}/consultation/confirmation`
   }
-
   const renderStep1 = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -147,7 +137,6 @@ export default function ConsultationBookingPage() {
           ))}
         </div>
       </div>
-
       <div>
         <h3 className="text-xl font-semibold text-gray-900 mb-4">
           {isPortuguese ? 'Preferências de Consulta' : 'Consultation Preferences'}
@@ -167,7 +156,6 @@ export default function ConsultationBookingPage() {
               <option value="both">{isPortuguese ? 'Ambos' : 'Both'}</option>
             </select>
           </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               {isPortuguese ? 'Duração' : 'Duration'}
@@ -187,7 +175,6 @@ export default function ConsultationBookingPage() {
       </div>
     </motion.div>
   )
-
   const renderStep2 = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -212,7 +199,6 @@ export default function ConsultationBookingPage() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               {isPortuguese ? 'Hora Preferida' : 'Preferred Time'}
@@ -230,7 +216,6 @@ export default function ConsultationBookingPage() {
           </div>
         </div>
       </div>
-
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           {isPortuguese ? 'Local da Consulta' : 'Consultation Location'}
@@ -247,7 +232,6 @@ export default function ConsultationBookingPage() {
           <option value="client-location">{isPortuguese ? 'Na sua localização' : 'At your location'}</option>
         </select>
       </div>
-
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           {isPortuguese ? 'Requisitos Específicos' : 'Specific Requirements'}
@@ -265,7 +249,6 @@ export default function ConsultationBookingPage() {
       </div>
     </motion.div>
   )
-
   const renderStep3 = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -290,7 +273,6 @@ export default function ConsultationBookingPage() {
               required
             />
           </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               {isPortuguese ? 'Empresa (opcional)' : 'Company (optional)'}
@@ -302,7 +284,6 @@ export default function ConsultationBookingPage() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Email
@@ -315,7 +296,6 @@ export default function ConsultationBookingPage() {
               required
             />
           </div>
-
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               {isPortuguese ? 'Telefone' : 'Phone'}
@@ -329,7 +309,6 @@ export default function ConsultationBookingPage() {
           </div>
         </div>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -349,7 +328,6 @@ export default function ConsultationBookingPage() {
             <option value="discuss">{isPortuguese ? 'Discutir na consulta' : 'Discuss in consultation'}</option>
           </select>
         </div>
-
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             {isPortuguese ? 'Urgência' : 'Urgency'}
@@ -369,10 +347,8 @@ export default function ConsultationBookingPage() {
       </div>
     </motion.div>
   )
-
   return (
     <div className="min-h-screen bg-gray-50">
-      
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -384,14 +360,12 @@ export default function ConsultationBookingPage() {
               <ArrowLeftIcon className="w-5 h-5 mr-2" />
               {isPortuguese ? 'Voltar aos Serviços' : 'Back to Services'}
             </button>
-            
             <div className="flex items-center mb-4">
               <Crown className="w-6 h-6 text-primary-600 mr-3" />
               <h1 className="text-3xl font-bold text-gray-900">
                 {isPortuguese ? 'Agendar Consulta Gratuita' : 'Book Free Consultation'}
               </h1>
             </div>
-            
             <p className="text-lg text-gray-600">
               {isPortuguese
                 ? 'Agende uma consulta gratuita com nossos especialistas para discutir suas necessidades específicas'
@@ -399,7 +373,6 @@ export default function ConsultationBookingPage() {
               }
             </p>
           </div>
-
           {/* Progress Indicator */}
           <div className="mb-8">
             <div className="flex items-center justify-between">
@@ -430,13 +403,11 @@ export default function ConsultationBookingPage() {
               <span>{isPortuguese ? 'Contacto' : 'Contact'}</span>
             </div>
           </div>
-
           {/* Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             {currentStep === 1 && renderStep1()}
             {currentStep === 2 && renderStep2()}
             {currentStep === 3 && renderStep3()}
-
             {/* Navigation Buttons */}
             <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
               <button
@@ -446,7 +417,6 @@ export default function ConsultationBookingPage() {
               >
                 {isPortuguese ? 'Anterior' : 'Previous'}
               </button>
-              
               {currentStep < 3 ? (
                 <button
                   onClick={handleNextStep}
@@ -472,7 +442,6 @@ export default function ConsultationBookingPage() {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   )

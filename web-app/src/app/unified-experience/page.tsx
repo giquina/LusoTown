@@ -1,6 +1,5 @@
 "use client";
 export const dynamic = "force-dynamic";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
@@ -10,7 +9,6 @@ import CrossPlatformNavigationWidget from "@/components/CrossPlatformNavigationW
 import { useLanguage } from "@/context/LanguageContext";
 import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
 import { ROUTES } from '@/config/routes';
-
 export default function UnifiedExperiencePage() {
   const { language } = useLanguage();
   const { updateJourneyProgress } = usePlatformIntegration();
@@ -18,7 +16,6 @@ export default function UnifiedExperiencePage() {
     "hub"
   );
   const isPortuguese = language === "pt";
-
   const handleDemoChange = (demo: "hub" | "bridge") => {
     setActiveDemo(demo);
     updateJourneyProgress("demo_section_changed", {
@@ -26,10 +23,8 @@ export default function UnifiedExperiencePage() {
       page: "unified_experience_demo",
     });
   };
-
   return (
     <div className="min-h-screen bg-gray-50">
-
       <main className="pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white py-20">
@@ -76,7 +71,6 @@ export default function UnifiedExperiencePage() {
             </motion.div>
           </div>
         </section>
-
         {/* Demo Content */}
         <motion.div
           key={activeDemo}
@@ -88,22 +82,23 @@ export default function UnifiedExperiencePage() {
           {activeDemo === "hub" && (
             <UnifiedExperienceHub
               initialTab="discover"
-              onServiceBooked={() => console.log("Service booked")}
-              onEventJoined={() => console.log("Event joined")}
+              onServiceBooked={() => {
+                // Handle service booking
+              }}
+              onEventJoined={() => {
+                // Handle event joining
+              }}
             />
           )}
-
           {activeDemo === "bridge" && (
             <ServiceCommunityBridge
               triggerContext="homepage"
-              onIntegrationSelected={(integration) =>
-                console.log("Integration selected:", integration)
-              }
+              onIntegrationSelected={(integration) => {
+                // Handle integration selection
+              }}
             />
           )}
-
         </motion.div>
-
         {/* Integration Benefits */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,7 +120,6 @@ export default function UnifiedExperiencePage() {
                   : "LusoTown isn't just a collection of services - it's an ecosystem that creates value through advanced connections"}
               </p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -160,7 +154,6 @@ export default function UnifiedExperiencePage() {
                     : "One account, one subscription, access to everything - transport, events, networking, and community"}
                 </p>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +185,6 @@ export default function UnifiedExperiencePage() {
                     : "Each service becomes more valuable when connected - private transport, event networking, cross-discounts"}
                 </p>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -229,7 +221,6 @@ export default function UnifiedExperiencePage() {
             </div>
           </div>
         </section>
-
         {/* Call to Action */}
         <section className="py-20 bg-gradient-to-r from-primary-50 to-secondary-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -267,14 +258,12 @@ export default function UnifiedExperiencePage() {
           </div>
         </section>
       </main>
-
       {/* Cross-Platform Navigation Widget */}
       <CrossPlatformNavigationWidget
         currentPage="community"
         position="bottom-right"
         alwaysVisible={true}
       />
-
       <Footer />
     </div>
   );

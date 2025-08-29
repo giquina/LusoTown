@@ -1,11 +1,9 @@
 "use client";
-
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { WifiIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import { useSafeHTML } from '@/hooks/useSafeHTML';
-
 /**
  * Offline Page for LusoTown Portuguese-speaking Community
  * 
@@ -16,53 +14,43 @@ export default function OfflinePage() {
   const { t, language } = useLanguage();
   const [isOnline, setIsOnline] = useState(false);
   const [retryAttempts, setRetryAttempts] = useState(0);
-  
   // Safe script content for auto-reload
   const autoReloadScript = useSafeHTML(`
     setTimeout(() => {
       window.location.reload();
     }, 2000);
   `);
-
   useEffect(() => {
     // Check if we're online
     const updateOnlineStatus = () => {
       setIsOnline(navigator.onLine);
     };
-
     // Listen for online/offline events
     window.addEventListener('online', updateOnlineStatus);
     window.addEventListener('offline', updateOnlineStatus);
-
     // Initial check
     updateOnlineStatus();
-
     return () => {
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
     };
   }, []);
-
   const handleRetry = async () => {
     setRetryAttempts(prev => prev + 1);
-    
     try {
       // Test connectivity by trying to fetch a small resource
       const response = await fetch('/manifest.json', { 
         method: 'HEAD',
         cache: 'no-cache'
       });
-      
       if (response.ok) {
         // We're back online, reload the page
         window.location.reload();
       }
     } catch (error) {
       // Still offline, show retry count
-      console.log('Still offline, retry attempt:', retryAttempts + 1);
-    }
+      }
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 flex items-center justify-center p-4">
       {/* Cultural Elements Background */}
@@ -89,7 +77,6 @@ export default function OfflinePage() {
           </motion.div>
         ))}
       </div>
-
       <div className="relative z-10 max-w-md w-full">
         <motion.div
           className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 text-center border border-white/20"
@@ -116,7 +103,6 @@ export default function OfflinePage() {
               </div>
             )}
           </motion.div>
-
           {/* Title */}
           <h1 className="text-2xl font-bold text-gray-900 mb-3">
             {isOnline 
@@ -124,7 +110,6 @@ export default function OfflinePage() {
               : (language === 'pt' ? 'Você Está Offline' : 'You\'re Offline')
             }
           </h1>
-
           {/* Description */}
           <p className="text-gray-600 mb-2 leading-relaxed">
             {isOnline 
@@ -136,7 +121,6 @@ export default function OfflinePage() {
                   : 'Can\'t connect to the Portuguese-speaking community right now. Check your internet connection and try again.')
             }
           </p>
-
           {/* Portuguese Cultural Message */}
           <div className="bg-primary-50 border border-primary-200 rounded-lg p-3 mb-6">
             <p className="text-sm text-primary-800 italic">
@@ -146,7 +130,6 @@ export default function OfflinePage() {
               }
             </p>
           </div>
-
           {/* Retry Button */}
           {!isOnline && (
             <motion.button
@@ -165,7 +148,6 @@ export default function OfflinePage() {
               </span>
             </motion.button>
           )}
-
           {/* Auto-refresh when online */}
           {isOnline && (
             <div className="flex items-center justify-center gap-2 text-green-600">
@@ -175,7 +157,6 @@ export default function OfflinePage() {
               </span>
             </div>
           )}
-
           {/* Offline Tips */}
           {!isOnline && (
             <div className="mt-6 pt-6 border-t border-gray-200">
@@ -195,7 +176,6 @@ export default function OfflinePage() {
               </ul>
             </div>
           )}
-
           {/* Portuguese Cultural Footer */}
           <div className="mt-6 pt-4 border-t border-gray-200">
             <div className="flex items-center justify-center gap-2 text-primary-600">
@@ -210,7 +190,6 @@ export default function OfflinePage() {
             </p>
           </div>
         </motion.div>
-
         {/* Network Status Indicator */}
         <div className="mt-4 text-center">
           <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${
@@ -228,7 +207,6 @@ export default function OfflinePage() {
           </div>
         </div>
       </div>
-
       {/* Auto-reload when back online */}
       {isOnline && (
         <script

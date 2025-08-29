@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ROUTES } from '@/config/routes'
@@ -16,7 +15,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 import GroupEventCard, { GroupEventData } from "./GroupEventCard";
-
 // Sample data for group events
 const sampleGroupEvents: GroupEventData[] = [
   {
@@ -176,14 +174,12 @@ const sampleGroupEvents: GroupEventData[] = [
     languages: ["Lusophone", "English"],
   },
 ];
-
 interface GroupEventsSectionProps {
   variant?: "homepage" | "full-page";
   maxEvents?: number;
   showFilters?: boolean;
   className?: string;
 }
-
 export default function GroupEventsSection({
   variant = "homepage",
   maxEvents = 6,
@@ -192,9 +188,7 @@ export default function GroupEventsSection({
 }: GroupEventsSectionProps) {
   const { language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-
   const isPortuguese = language === "pt";
-
   const categories = [
     {
       id: "all",
@@ -218,24 +212,18 @@ export default function GroupEventsSection({
         .length,
     },
   ];
-
   const filteredEvents =
     selectedCategory === "all"
       ? sampleGroupEvents.slice(0, maxEvents)
       : sampleGroupEvents
           .filter((event) => event.category === selectedCategory)
           .slice(0, maxEvents);
-
   const handleReserve = (eventId: string) => {
-    console.log("Reserving spot for event:", eventId);
     // Handle reservation logic here
   };
-
   const handleLike = (eventId: string) => {
-    console.log("Liking event:", eventId);
     // Handle like logic here
   };
-
   if (variant === "homepage") {
     return (
       <section
@@ -251,7 +239,6 @@ export default function GroupEventsSection({
           <div className="absolute top-1/4 left-1/6 w-6 h-6 bg-secondary-300/50 rounded-full opacity-40" />
           <div className="absolute top-3/4 right-1/5 w-4 h-4 bg-coral-300/50 rounded-full opacity-30" />
         </div>
-
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
@@ -265,7 +252,6 @@ export default function GroupEventsSection({
                 </div>
                 <div className="w-2 h-2 bg-coral-400 rounded-full animate-pulse"></div>
               </div>
-
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
                 {isPortuguese
                   ? "Eventos & Tours de Grupo"
@@ -297,7 +283,6 @@ export default function GroupEventsSection({
                 </div>
               </div>
             </div>
-
             {/* Category Filter Tabs */}
             <div className="flex justify-center mb-12">
               <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-2 shadow-lg">
@@ -321,7 +306,6 @@ export default function GroupEventsSection({
                 </div>
               </div>
             </div>
-
             {/* Events Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
               {filteredEvents.map((event, index) => (
@@ -340,7 +324,6 @@ export default function GroupEventsSection({
                 </motion.div>
               ))}
             </div>
-
             {/* Group Benefits Highlight */}
             <div className="bg-gradient-to-r from-white/80 via-coral-50/60 to-secondary-50/60 backdrop-blur-lg border border-white/40 rounded-3xl p-8 mb-12 shadow-xl">
               <div className="text-center mb-8">
@@ -355,7 +338,6 @@ export default function GroupEventsSection({
                     : "Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you will explore London authentically while building lasting friendships with people who understand your language and culture."}
                 </p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-white/60 rounded-2xl border border-white/30">
                   <div className="w-12 h-12 bg-gradient-to-r from-coral-500 to-coral-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -372,7 +354,6 @@ export default function GroupEventsSection({
                       : "Connect with Portuguese speakers through shared experiences led by Lusophone hosts and guides"}
                   </p>
                 </div>
-
                 <div className="text-center p-6 bg-white/60 rounded-2xl border border-white/30">
                   <div className="w-12 h-12 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <MapPinIcon className="w-6 h-6 text-white" />
@@ -386,7 +367,6 @@ export default function GroupEventsSection({
                       : "Discover London with Portuguese-speaking guides who understand your cultural preferences and language"}
                   </p>
                 </div>
-
                 <div className="text-center p-6 bg-white/60 rounded-2xl border border-white/30">
                   <div className="w-12 h-12 bg-gradient-to-r from-premium-500 to-premium-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <StarIcon className="w-6 h-6 text-white" />
@@ -404,7 +384,6 @@ export default function GroupEventsSection({
                 </div>
               </div>
             </div>
-
             {/* Call-to-Action */}
             <div className="text-center">
               <div className="bg-gradient-to-r from-white/80 via-secondary-50/60 to-coral-50/60 backdrop-blur-lg border border-white/40 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
@@ -447,7 +426,6 @@ export default function GroupEventsSection({
       </section>
     );
   }
-
   // Full-page variant
   return (
     <div
@@ -468,7 +446,6 @@ export default function GroupEventsSection({
                 : "Discover events organized specifically for Portuguese speakers in London. Connect, explore, and create unforgettable memories."}
             </p>
           </div>
-
           {/* Filters and Search */}
           {showFilters && (
             <div className="mb-8">
@@ -493,7 +470,6 @@ export default function GroupEventsSection({
               </div>
             </div>
           )}
-
           {/* Events Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredEvents.map((event, index) => (

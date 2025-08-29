@@ -1,10 +1,8 @@
 'use client'
-
 import { motion } from 'framer-motion'
 import { CheckCircleIcon, StarIcon, ClockIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { Crown } from 'lucide-react'
 import { isServiceAvailable, getServiceStatus, getAvailabilityStyles, getAvailabilityLabel } from '@/lib/serviceAvailability'
-
 interface ServiceTier {
   id: string
   name: string
@@ -21,14 +19,12 @@ interface ServiceTier {
   imageAltPortuguese?: string
   serviceKey?: string // Map to service availability system
 }
-
 interface TransportServiceCardProps {
   tier: ServiceTier
   isPortuguese: boolean
   onBookNow: () => void
   index: number
 }
-
 export default function TransportServiceCard({ 
   tier, 
   isPortuguese, 
@@ -74,9 +70,7 @@ export default function TransportServiceCard({
     }
     return colorMap[color as keyof typeof colorMap] || colorMap.primary
   }
-
   const colors = getColorClasses(tier.color)
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -105,7 +99,6 @@ export default function TransportServiceCard({
           </div>
         )}
       </div>
-
       {/* Popular Badge */}
       {tier.popular && (
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
@@ -117,7 +110,6 @@ export default function TransportServiceCard({
           </div>
         </div>
       )}
-
       {/* Service Image */}
       {tier.image && (
         <div className="relative h-48 overflow-hidden">
@@ -129,7 +121,6 @@ export default function TransportServiceCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </div>
       )}
-
       {/* Header */}
       <div className={`bg-gradient-to-br ${colors.bg} px-6 py-8 text-center ${tier.popular ? 'pt-16' : ''}`}>
         <h3 className="text-2xl font-black text-gray-900 mb-2">
@@ -144,7 +135,6 @@ export default function TransportServiceCard({
           <span className="text-gray-500 ml-1 font-medium">/hour</span>
         </div>
       </div>
-
       {/* Features */}
       <div className="px-6 py-6 flex-1 overflow-y-auto">
         <ul className="space-y-3">
@@ -156,7 +146,6 @@ export default function TransportServiceCard({
           ))}
         </ul>
       </div>
-
       {/* Footer */}
       <div className="mt-auto px-6 py-6">
         {available ? (
@@ -181,8 +170,7 @@ export default function TransportServiceCard({
               <button
                 onClick={() => {
                   // Handle waiting list signup
-                  console.log(`Join waiting list for ${serviceKey}`);
-                }}
+                  }}
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-6 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {isPortuguese ? 'Entrar na Lista de Espera' : 'Join Waiting List'}
@@ -196,7 +184,6 @@ export default function TransportServiceCard({
             )}
           </div>
         )}
-        
         {/* Security Level Indicator */}
         <div className="mt-4 flex justify-center">
           <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${colors.badge} shadow-md`}>

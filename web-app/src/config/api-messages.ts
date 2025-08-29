@@ -80,7 +80,14 @@ export const API_ERROR_MESSAGES = {
   UNKNOWN_ERROR_OCCURRED: 'Unknown error occurred',
   INVALID_REQUEST_BODY: 'Invalid request body',
   PERFORMANCE_LOGGING_FAILED: 'Failed to log performance metrics',
-  SUPABASE_CONFIGURATION_MISSING: 'Supabase configuration missing'
+  SUPABASE_CONFIGURATION_MISSING: 'Supabase configuration missing',
+  TARGET_IP_REQUIRED: 'Target IP required for blocking',
+  EVENT_IDS_REQUIRED: 'Event IDs array required',
+  INVALID_ACTION: 'Invalid action',
+  INVALID_EMAIL_FORMAT: 'Invalid email format',
+  INVALID_EMAIL_OR_PASSWORD: 'Invalid email or password',
+  MISSING_CREDENTIALS: 'Email and password are required',
+  NO_ACTIVE_SESSION: 'No active session found'
 } as const;
 
 export const API_SUCCESS_MESSAGES = {
@@ -98,7 +105,8 @@ export const API_SUCCESS_MESSAGES = {
   BUSINESS_LISTING_ACTIVATION: 'Business listing activation',
   LOGIN_NOTIFICATION: 'Login notification sent',
   BUSINESS_SUBMITTED_FOR_REVIEW: 'Portuguese business submitted successfully for community review',
-  PERFORMANCE_METRICS_LOGGED: 'Performance metrics logged successfully'
+  PERFORMANCE_METRICS_LOGGED: 'Performance metrics logged successfully',
+  LOGIN_NOTIFICATION_SENT: 'Login notification sent'
 } as const;
 
 export const API_LOG_MESSAGES = {
@@ -121,12 +129,40 @@ export const API_LOG_MESSAGES = {
   THREAT_DATA_FETCH_ERROR: 'Error fetching threat data:',
   FAILED_LOGINS_FETCH_ERROR: 'Error fetching failed logins:',
   SESSION_DATA_FETCH_ERROR: 'Error fetching session data:',
+  PERFORMANCE_MONITORING_REQUEST: 'Performance monitoring API request',
+  PERFORMANCE_MONITORING_ERROR: 'Performance monitoring API error',
+  PERFORMANCE_OPTIMIZATION_TRIGGERED: 'Performance optimization action triggered',
+  PERFORMANCE_OPTIMIZATION_FAILED: 'Performance optimization action failed',
+  DATABASE_OPTIMIZATION_FAILED: 'Database optimization failed',
+  CACHE_CLEARING_FAILED: 'Cache clearing failed',
+  CACHE_WARMING_FAILED: 'Cache warming failed',
+  INDEX_CREATION_FAILED: 'Index creation failed',
+  QUERY_ANALYSIS_FAILED: 'Query analysis failed',
+  PERFORMANCE_MONITORING_START_FAILED: 'Performance monitoring start failed',
+  PERFORMANCE_MONITORING_STOP_FAILED: 'Performance monitoring stop failed',
+  SECURITY_DASHBOARD_API_ERROR: 'Security dashboard API error:',
+  SECURITY_DASHBOARD_ACTION_ERROR: 'Security dashboard action error:',
+  SECURE_LOGIN_ERROR: 'Secure login error:',
   SECURITY_DASHBOARD_API_ERROR: 'Security dashboard API error:',
   SECURITY_DASHBOARD_ACTION_ERROR: 'Security dashboard action error:',
   SECURITY_STATS_FETCH_ERROR: 'Error fetching security stats:',
   THREAT_DATA_FETCH_ERROR: 'Error fetching threat data:',
   FAILED_LOGINS_FETCH_ERROR: 'Error fetching failed logins:',
   SESSION_DATA_FETCH_ERROR: 'Error fetching session data:',
+  PERFORMANCE_MONITORING_REQUEST: 'Performance monitoring API request',
+  PERFORMANCE_MONITORING_ERROR: 'Performance monitoring API error',
+  PERFORMANCE_OPTIMIZATION_TRIGGERED: 'Performance optimization action triggered',
+  PERFORMANCE_OPTIMIZATION_FAILED: 'Performance optimization action failed',
+  DATABASE_OPTIMIZATION_FAILED: 'Database optimization failed',
+  CACHE_CLEARING_FAILED: 'Cache clearing failed',
+  CACHE_WARMING_FAILED: 'Cache warming failed',
+  INDEX_CREATION_FAILED: 'Index creation failed',
+  QUERY_ANALYSIS_FAILED: 'Query analysis failed',
+  PERFORMANCE_MONITORING_START_FAILED: 'Performance monitoring start failed',
+  PERFORMANCE_MONITORING_STOP_FAILED: 'Performance monitoring stop failed',
+  SECURITY_DASHBOARD_API_ERROR: 'Security dashboard API error:',
+  SECURITY_DASHBOARD_ACTION_ERROR: 'Security dashboard action error:',
+  SECURE_LOGIN_ERROR: 'Secure login error:',
   SECURE_LOGIN_ERROR: 'Secure login error:',
   SECURE_LOGOUT_ERROR: 'Secure logout error:',
   SESSION_RETRIEVAL_ERROR: 'Session retrieval error',
@@ -248,6 +284,85 @@ export const STRIPE_CONFIG = {
 export const GEOCODING_CONFIG = {
   USER_AGENT: 'LusoTown Portuguese Business Directory',
   GEOCODING_FAILED_LOG: 'Geocoding failed'
+} as const;
+
+// Performance optimization recommendations
+export const PERFORMANCE_OPTIMIZATION_MESSAGES = {
+  CULTURAL_EVENTS_INDEX: 'Optimize Portuguese cultural event queries with composite indexes',
+  POSTGIS_SPATIAL_INDEX: 'Implement PostGIS spatial indexing for Portuguese business searches',
+  PARTIAL_INDEXES: 'Add partial indexes for active Portuguese community content',
+  CACHE_WARMING_EVENTS: 'Implement cache warming for popular Portuguese events',
+  GEOLOCATION_CACHING: 'Add geolocation-based caching for Portuguese business searches',
+  CACHE_TTL_OPTIMIZATION: 'Optimize cache TTL for Portuguese cultural content',
+  CACHE_INVALIDATION: 'Implement cache invalidation strategies for real-time Portuguese updates',
+  DATABASE_OPTIMIZATION_TIMING: 'Run database optimization script during low-traffic hours',
+  MONITOR_INDEX_IMPACT: 'Monitor index creation impact on Portuguese community queries',
+  TEST_STAGING_FIRST: 'Test query optimizations in staging environment first',
+  DEPLOYMENT_CACHE_WARMING: 'Implement cache warming during deployment',
+  MONITOR_CACHE_RATIOS: 'Monitor cache hit ratios after optimization',
+  VALIDATE_CACHE_STRATEGIES: 'Validate Portuguese content cache invalidation strategies',
+  GRADUAL_ROLLOUT: 'Deploy API optimizations with gradual rollout',
+  MONITOR_RESPONSE_TIMES: 'Monitor Portuguese community API response times',
+  TEST_BILINGUAL_PERFORMANCE: 'Test bilingual content performance impacts'
+} as const;
+
+// Performance data categories
+export const PERFORMANCE_DATA_CATEGORIES = {
+  CULTURAL_EVENTS: 'Portuguese cultural events',
+  BUSINESS_DIRECTORY: 'Portuguese business directory', 
+  CULTURAL_MATCHING: 'Cultural compatibility matches',
+  GEOLOCATION: 'Geolocation data for Portuguese businesses',
+  POPULAR_EVENTS: 'Popular Portuguese cultural events',
+  TOP_BUSINESSES: 'Top-rated Portuguese businesses in London',
+  COMPATIBILITY_DATA: 'Frequently accessed cultural compatibility data',
+  USER_SESSIONS: 'Common Portuguese community user sessions'
+} as const;
+
+// Performance features
+export const PERFORMANCE_FEATURES = {
+  CULTURAL_EVENTS: 'Cultural Events',
+  BUSINESS_DIRECTORY: 'Business Directory',
+  GEOLOCATION_SERVICES: 'Geolocation Services',
+  CONTENT_CACHING: 'Content Caching'
+} as const;
+
+// Performance impact levels
+export const PERFORMANCE_IMPACT_LEVELS = {
+  HIGH: 'High - Portuguese community users experiencing significant issues',
+  MEDIUM: 'Medium - Some Portuguese community features may be slow', 
+  LOW: 'Low - Minor performance impact on Portuguese community'
+} as const;
+
+// Performance health status messages
+export const PERFORMANCE_HEALTH_MESSAGES = {
+  OPTIMAL: 'Portuguese community platform performing optimally',
+  GOOD: 'Portuguese community platform in good health with minor optimizations possible',
+  FAIR: 'Portuguese community platform performance is fair but improvements recommended',
+  NEEDS_ATTENTION: 'Portuguese community platform performance needs attention',
+  CRITICAL: 'Critical issues affecting Portuguese community platform performance'
+} as const;
+
+// Performance optimization tasks
+export const PERFORMANCE_OPTIMIZATION_TASKS = {
+  EVENTS_INDEX: 'Portuguese cultural events index optimization',
+  SPATIAL_INDEX: 'Portuguese business directory spatial indexing',
+  COMPATIBILITY_INDEX: 'Cultural compatibility matching index creation',
+  COMPOSITE_INDEX: 'Portuguese cultural events composite indexing',
+  SPATIAL_OPTIMIZATION: 'Portuguese business directory spatial optimization',
+  COMPATIBILITY_ENHANCEMENT: 'Cultural compatibility matching performance enhancement',
+  TEXT_SEARCH: 'Optimize Portuguese text search with proper language configuration',
+  SPATIAL_GEOLOCATION: 'Implement PostGIS spatial indexing for better geolocation performance',
+  COMPOSITE_QUERIES: 'Add composite indexes for frequently queried Portuguese content combinations',
+  QUERY_CACHING: 'Consider query result caching for popular Portuguese community searches'
+} as const;
+
+// Performance monitoring categories
+export const PERFORMANCE_MONITORING_CATEGORIES = {
+  REALTIME_TRACKING: 'Real-time database performance tracking',
+  CACHE_MONITORING: 'Cache hit ratio monitoring',
+  RESPONSE_ANALYSIS: 'API response time analysis',
+  CULTURAL_OPTIMIZATION: 'Portuguese cultural content optimization',
+  ALERT_GENERATION: 'Automatic alert generation'
 } as const;
 
 // Initial recommendations for new signups

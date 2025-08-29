@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { 
@@ -7,27 +6,21 @@ import {
   CulturalMessaging,
   CulturalCompatibilityForm
 } from '@/components';
-
 export default function MatchingDemoPage() {
   const { t, language } = useLanguage();
   const [currentView, setCurrentView] = useState<'matching' | 'messaging' | 'preferences'>('matching');
   const [selectedMatch, setSelectedMatch] = useState<{ id: string; name: string } | null>(null);
-
   const handleStartConversation = (matchId: string, matchName: string) => {
     setSelectedMatch({ id: matchId, name: matchName });
     setCurrentView('messaging');
   };
-
   const handleCloseMessaging = () => {
     setSelectedMatch(null);
     setCurrentView('matching');
   };
-
   const handlePreferencesComplete = (preferences: any) => {
-    console.log('Preferences saved:', preferences);
     setCurrentView('matching');
   };
-
   const translations = {
     en: {
       title: 'Portuguese Community Matching Demo',
@@ -66,9 +59,7 @@ export default function MatchingDemoPage() {
       `
     }
   };
-
   const tr = translations[language];
-
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
@@ -76,7 +67,6 @@ export default function MatchingDemoPage() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{tr.title}</h1>
           <p className="text-gray-600 mb-6">{tr.subtitle}</p>
-          
           {/* Description */}
           <div className="max-w-2xl mx-auto mb-8">
             <div className="bg-primary-50 border border-primary-200 rounded-lg p-4">
@@ -85,7 +75,6 @@ export default function MatchingDemoPage() {
               </pre>
             </div>
           </div>
-
           {/* Navigation */}
           <div className="flex justify-center space-x-4 mb-8">
             <button
@@ -122,7 +111,6 @@ export default function MatchingDemoPage() {
             )}
           </div>
         </div>
-
         {/* Demo Content */}
         <div className="max-w-6xl mx-auto">
           {currentView === 'matching' && (
@@ -131,7 +119,6 @@ export default function MatchingDemoPage() {
               className="bg-white rounded-lg shadow-sm border border-gray-200 p-6"
             />
           )}
-
           {currentView === 'messaging' && selectedMatch && (
             <div className="flex justify-center">
               <CulturalMessaging
@@ -142,7 +129,6 @@ export default function MatchingDemoPage() {
               />
             </div>
           )}
-
           {currentView === 'preferences' && (
             <div className="flex justify-center">
               <CulturalCompatibilityForm
@@ -153,7 +139,6 @@ export default function MatchingDemoPage() {
             </div>
           )}
         </div>
-
         {/* Footer note */}
         <div className="text-center mt-12">
           <div className="max-w-lg mx-auto">

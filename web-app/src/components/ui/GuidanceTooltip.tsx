@@ -1,8 +1,6 @@
 'use client'
-
 import React, { useEffect, useRef } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-
 interface GuidanceTooltipProps {
   id: string
   title: string
@@ -15,7 +13,6 @@ interface GuidanceTooltipProps {
   showOnMount?: boolean
   priority?: 'high' | 'medium' | 'low'
 }
-
 // Predefined guidance tooltips for common UI elements
 export const GUIDANCE_TOOLTIPS = {
   homepage: {
@@ -40,7 +37,6 @@ export const GUIDANCE_TOOLTIPS = {
     support: '❤️ Support Portuguese-speaking entrepreneurs in your community'
   }
 } as const
-
 export default function GuidanceTooltip({
   id,
   title,
@@ -55,7 +51,6 @@ export default function GuidanceTooltip({
 }: GuidanceTooltipProps) {
   const { t } = useLanguage()
   const elementRef = useRef<HTMLDivElement>(null)
-  
   // Initialize tooltip functionality on client side only
   useEffect(() => {
     // Only initialize tooltip functionality if TooltipProvider is available
@@ -66,11 +61,9 @@ export default function GuidanceTooltip({
         })
       } catch (error) {
         // Tooltip functionality not available, but data-guidance attribute will still work
-        console.debug('Tooltip functionality not available:', error)
-      }
+        }
     }
   }, [])
-
   // Always render the data-guidance attribute for testing/debugging
   return (
     <div
@@ -87,11 +80,9 @@ export default function GuidanceTooltip({
     </div>
   )
 }
-
 // Pre-configured guidance tooltips for common elements
 export function HomepageHeroTooltip({ children }: { children: React.ReactNode }) {
   const { t } = useLanguage()
-  
   return (
     <GuidanceTooltip
       id="homepage-hero"
@@ -107,10 +98,8 @@ export function HomepageHeroTooltip({ children }: { children: React.ReactNode })
     </GuidanceTooltip>
   )
 }
-
 export function PALOPSectionTooltip({ children }: { children: React.ReactNode }) {
   const { t } = useLanguage()
-  
   return (
     <GuidanceTooltip
       id="palop-section"
@@ -125,10 +114,8 @@ export function PALOPSectionTooltip({ children }: { children: React.ReactNode })
     </GuidanceTooltip>
   )
 }
-
 export function EventsCalendarTooltip({ children }: { children: React.ReactNode }) {
   const { t } = useLanguage()
-  
   return (
     <GuidanceTooltip
       id="events-calendar"
@@ -144,10 +131,8 @@ export function EventsCalendarTooltip({ children }: { children: React.ReactNode 
     </GuidanceTooltip>
   )
 }
-
 export function MatchingTooltip({ children }: { children: React.ReactNode }) {
   const { t } = useLanguage()
-  
   return (
     <GuidanceTooltip
       id="matching-section"
@@ -163,10 +148,8 @@ export function MatchingTooltip({ children }: { children: React.ReactNode }) {
     </GuidanceTooltip>
   )
 }
-
 export function BusinessDirectoryTooltip({ children }: { children: React.ReactNode }) {
   const { t } = useLanguage()
-  
   return (
     <GuidanceTooltip
       id="business-directory"
@@ -182,14 +165,12 @@ export function BusinessDirectoryTooltip({ children }: { children: React.ReactNo
     </GuidanceTooltip>
   )
 }
-
 // Hook for creating custom guidance tooltips
 export function useGuidanceTooltip(
   id: string,
   config: Partial<GuidanceTooltipProps> = {}
 ) {
   const { t } = useLanguage()
-  
   return {
     id,
     title: config.title || t(`guidance.${id}.title`, `Guidance for ${id}`),
@@ -200,7 +181,6 @@ export function useGuidanceTooltip(
     priority: config.priority || 'medium'
   }
 }
-
 // Utility to add guidance attributes to existing components
 export function withGuidance<T extends Record<string, any>>(
   Component: React.ComponentType<T>,

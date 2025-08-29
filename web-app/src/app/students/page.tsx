@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
@@ -7,40 +6,32 @@ import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
 import { SUBSCRIPTION_PLANS, STUDENT_PRICING, formatPrice } from '@/config/pricing'
 import { IMAGES, UNIVERSITY_URLS } from '@/config/cdn'
-
 import dynamic from 'next/dynamic'
-
 // Dynamic imports for heavy student components to improve performance
 const StudentEventsSection = dynamic(() => import('@/components/students/StudentEventsSection'), {
   loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-
 const AcademicNetworkingSection = dynamic(() => import('@/components/students/AcademicNetworkingSection'), {
   loading: () => <div className="h-48 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-
 const CareerHubSection = dynamic(() => import('@/components/students/CareerHubSection'), {
   loading: () => <div className="h-56 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-
 const StudentDiscountsSection = dynamic(() => import('@/components/students/StudentDiscountsSection'), {
   loading: () => <div className="h-40 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-
 const AccommodationSupportSection = dynamic(() => import('@/components/students/AccommodationSupportSection'), {
   loading: () => <div className="h-44 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-
 const StudentBenefitsShowcase = dynamic(() => import('@/components/students/StudentBenefitsShowcase'), {
   loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
 })
-
 const UniversityPartnershipDashboard = dynamic(() => import('@/components/students/UniversityPartnershipDashboard'), {
   loading: () => <div className="h-screen bg-gray-100 animate-pulse rounded-xl" />,
   ssr: false
@@ -75,14 +66,12 @@ import {
 } from '@heroicons/react/24/outline'
 import { CheckIcon as CheckIconSolid, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
 import { LusophoneCarousel, CAROUSEL_CONFIGS, AUTO_ADVANCE_TIMINGS } from '@/components/carousels'
-
 // Import new enhanced components
 import LusophoneFlagGrid from '@/components/students/LusophoneFlagGrid'
 import CulturalEventCards from '@/components/students/CulturalEventCards'
 import StudentJourneyVisualization from '@/components/students/StudentJourneyVisualization'
 import AccommodationHostFamilies from '@/components/students/AccommodationHostFamilies'
 import SuccessStoriesCarousel from '@/components/students/SuccessStoriesCarousel'
-
 interface University {
   id: string
   name: string
@@ -110,7 +99,6 @@ interface University {
   }
   logo?: string
 }
-
 interface StudentBenefit {
   id: string
   title: string
@@ -123,7 +111,6 @@ interface StudentBenefit {
   verificationRequired: boolean
   value: string
 }
-
 interface StudentEvent {
   id: string
   title: string
@@ -140,7 +127,6 @@ interface StudentEvent {
   speakers: string[]
   isStudentExclusive: boolean
 }
-
 const UNIVERSITIES: University[] = [
   {
     id: 'ucl',
@@ -399,7 +385,6 @@ const UNIVERSITIES: University[] = [
     }
   }
 ]
-
 const STUDENT_BENEFITS: StudentBenefit[] = [
   {
     id: 'membership-discount',
@@ -513,7 +498,6 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     value: 'Complete study abroad support'
   }
 ]
-
 const STUDENT_EVENTS: StudentEvent[] = [
   {
     id: 'career-workshop-tech',
@@ -608,7 +592,6 @@ const STUDENT_EVENTS: StudentEvent[] = [
     isStudentExclusive: true
   }
 ]
-
 export default function StudentsPage() {
   const { language, t } = useLanguage()
   const [selectedUniversityType, setSelectedUniversityType] = useState<string>('all')
@@ -616,15 +599,12 @@ export default function StudentsPage() {
   const [showVerificationModal, setShowVerificationModal] = useState(false)
   const [verificationStep, setVerificationStep] = useState(1)
   const [emailVerified, setEmailVerified] = useState(false)
-
   const filteredUniversities = selectedUniversityType === 'all' 
     ? UNIVERSITIES 
     : UNIVERSITIES.filter(uni => uni.type === selectedUniversityType)
-
   const filteredBenefits = selectedBenefitCategory === 'all' 
     ? STUDENT_BENEFITS 
     : STUDENT_BENEFITS.filter(benefit => benefit.category === selectedBenefitCategory)
-
   const universityTypes = [
     { value: 'all', label: { en: 'All Universities', pt: 'Todas as Universidades' } },
     { value: 'russell_group', label: { en: 'Russell Group', pt: 'Grupo Russell' } },
@@ -632,7 +612,6 @@ export default function StudentsPage() {
     { value: 'red_brick', label: { en: 'Red Brick', pt: 'Red Brick' } },
     { value: 'specialist', label: { en: 'Specialist', pt: 'Especializadas' } }
   ]
-
   const benefitCategories = [
     { value: 'all', label: { en: 'All Benefits', pt: 'Todos os Benefícios' } },
     { value: 'financial', label: { en: 'Financial', pt: 'Financeiros' } },
@@ -641,16 +620,13 @@ export default function StudentsPage() {
     { value: 'cultural', label: { en: 'Cultural', pt: 'Culturais' } },
     { value: 'social', label: { en: 'Social', pt: 'Sociais' } }
   ]
-
   const handleVerification = () => {
     setShowVerificationModal(true)
   }
-
   const handleEmailVerification = () => {
     setEmailVerified(true)
     setVerificationStep(2)
   }
-
   return (
     <main className="min-h-screen bg-white">
       <div className="pt-16">
@@ -675,7 +651,6 @@ export default function StudentsPage() {
                   </div>
                 </div>
               </motion.div>
-              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -691,7 +666,6 @@ export default function StudentsPage() {
                   </span>
                 </span>
               </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -739,7 +713,6 @@ export default function StudentsPage() {
                   )}
                 </span>
               </motion.h1>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -751,7 +724,6 @@ export default function StudentsPage() {
                   "Connect with students from Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Cape Verde 🇨🇻 Mozambique 🇲🇿 Guinea-Bissau 🇬🇼 São Tomé & Príncipe 🇸🇹 East Timor 🇹🇱 Macau 🇲🇴 and Equatorial Guinea 🇬🇶"
                 }
               </motion.div>
-
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -771,7 +743,6 @@ export default function StudentsPage() {
                     : "Connect with Portuguese-speaking students at United Kingdom universities. Exclusive discounts, multicultural events, and professional networking."}
                 </span>
               </motion.p>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -803,7 +774,6 @@ export default function StudentsPage() {
                   </span>
                 </div>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -830,7 +800,6 @@ export default function StudentsPage() {
                   {language === 'pt' ? "Explorar 8 Universidades Parceiras" : "Explore 8 Partner Universities"}
                 </button>
               </motion.div>
-              
               {/* Urgency Banner */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -850,7 +819,6 @@ export default function StudentsPage() {
                     : "Free verification + 30-day money back guarantee. Over students already joined!"}
                 </p>
               </motion.div>
-
               {/* Enhanced Success Metrics */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -888,7 +856,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* Student Benefits Section */}
         <section className="py-20 bg-white">
           <div className="container-width">
@@ -902,7 +869,6 @@ export default function StudentsPage() {
                   'Special discounts, exclusive events, and academic support for Portuguese-speaking students from all 10 Lusophone nations studying at London and United Kingdom universities'
                 }
               </p>
-
               {/* Benefit Category Filter */}
               <div className="flex flex-wrap gap-2 justify-center mb-12">
                 {benefitCategories.map(category => (
@@ -920,7 +886,6 @@ export default function StudentsPage() {
                 ))}
               </div>
             </div>
-
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {filteredBenefits.map(benefit => (
@@ -946,15 +911,12 @@ export default function StudentsPage() {
                         </span>
                       )}
                     </div>
-                    
                     <h3 className="font-bold text-lg text-gray-900 mb-3">
                       {language === 'pt' ? benefit.titlePortuguese : benefit.title}
                     </h3>
-                    
                     <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                       {language === 'pt' ? benefit.descriptionPortuguese : benefit.description}
                     </p>
-                    
                     <div className="space-y-2 mb-4">
                       <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
                         {language === 'pt' ? 'Elegibilidade:' : 'Eligibility:'}
@@ -966,7 +928,6 @@ export default function StudentsPage() {
                         </div>
                       ))}
                     </div>
-                    
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-primary-600">
                         {benefit.value}
@@ -981,7 +942,6 @@ export default function StudentsPage() {
                 </div>
               ))}
             </div>
-
             {/* Enhanced Value Proposition */}
             <div className="bg-gradient-to-br from-secondary-50 via-primary-50 to-accent-50 rounded-2xl p-8 text-center border border-secondary-200 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
@@ -1004,7 +964,6 @@ export default function StudentsPage() {
                   <div className="text-xs text-accent-600">{language === 'pt' ? 'ROI comprovado' : 'Proven ROI'}</div>
                 </div>
               </div>
-              
               {/* Multiple Strong CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
@@ -1022,7 +981,6 @@ export default function StudentsPage() {
                   {language === 'pt' ? 'Demo Personalizada' : 'Personal Demo'}
                 </button>
               </div>
-              
               <div className="mt-4 text-sm text-gray-600">
                 {language === 'pt' ? 
                   '✅ 30 dias garantia de devolução • ✅ Sem taxas ocultas • ✅ Cancele quando quiser' :
@@ -1032,7 +990,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* University Programs Carousel */}
         <section id="university-programs" className="py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
           <div className="container-width">
@@ -1156,7 +1113,6 @@ export default function StudentsPage() {
             />
           </div>
         </section>
-
         {/* Student Events Carousel */}
         <section className="py-20 bg-gradient-to-br from-secondary-50 via-white to-accent-50">
           <div className="container-width">
@@ -1284,7 +1240,6 @@ export default function StudentsPage() {
             />
           </div>
         </section>
-
         {/* Partner Universities Section */}
         <section id="partner-universities" className="py-20 bg-gray-50">
           <div className="container-width">
@@ -1298,7 +1253,6 @@ export default function StudentsPage() {
                   'We collaborate with leading London and United Kingdom universities to support Lusophone students and Lusophone studies programs'
                 }
               </p>
-
               {/* University Type Filter */}
               <div className="flex flex-wrap gap-2 justify-center mb-12">
                 {universityTypes.map(type => (
@@ -1316,7 +1270,6 @@ export default function StudentsPage() {
                 ))}
               </div>
             </div>
-
             {/* Universities Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {filteredUniversities.map(university => (
@@ -1341,7 +1294,6 @@ export default function StudentsPage() {
                       )}
                     </div>
                   </div>
-                  
                   {/* Content */}
                   <div className="p-6">
                     <div className="mb-4">
@@ -1355,7 +1307,6 @@ export default function StudentsPage() {
                         <span className="capitalize">{university.type.replace('_', ' ')}</span>
                       </div>
                     </div>
-                    
                     {/* Student Statistics */}
                     <div className="grid grid-cols-3 gap-3 mb-4 text-center">
                       <div className="bg-gray-50 rounded-lg p-2">
@@ -1371,7 +1322,6 @@ export default function StudentsPage() {
                         <div className="text-xs text-gray-600">{language === 'pt' ? 'Total' : 'Total'}</div>
                       </div>
                     </div>
-                    
                     {/* Programs */}
                     {university.hasPortugueseProgram && (
                       <div className="mb-4">
@@ -1391,7 +1341,6 @@ export default function StudentsPage() {
                         </div>
                       </div>
                     )}
-                    
                     {/* Benefits Preview */}
                     <div className="mb-4">
                       <h4 className="font-medium text-gray-900 mb-2 flex items-center">
@@ -1407,7 +1356,6 @@ export default function StudentsPage() {
                         ))}
                       </div>
                     </div>
-                    
                     {/* Contact */}
                     <div className="mb-4 bg-gray-50 rounded-lg p-3">
                       <h4 className="font-medium text-gray-900 mb-2 text-sm">
@@ -1418,7 +1366,6 @@ export default function StudentsPage() {
                         <p className="text-gray-600 text-xs">{university.contact.title}</p>
                       </div>
                     </div>
-                    
                     {/* Action Buttons */}
                     <div className="flex gap-2">
                       <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg text-sm hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 min-h-[44px] shadow-xl hover:shadow-2xl">
@@ -1437,7 +1384,6 @@ export default function StudentsPage() {
                 </div>
               ))}
             </div>
-
             {/* University Partnership Statistics */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
@@ -1464,7 +1410,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* University Societies Network Section */}
         <section className="py-20 bg-gradient-to-br from-accent-50 via-white to-primary-50">
           <div className="container-width">
@@ -1484,7 +1429,6 @@ export default function StudentsPage() {
                   : 'Connect Portuguese-speaking societies across UK universities. Plan joint events, share resources, and create larger cultural celebrations together.'
                 }
               </p>
-              
               {/* Key Statistics */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
                 <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
@@ -1513,7 +1457,6 @@ export default function StudentsPage() {
                 </div>
               </div>
             </div>
-
             {/* How It Works - Simple Steps */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
               <div className="text-center mb-8">
@@ -1527,7 +1470,6 @@ export default function StudentsPage() {
                   }
                 </p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="bg-gradient-to-br from-blue-100 to-primary-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
@@ -1548,7 +1490,6 @@ export default function StudentsPage() {
                     </span>
                   </div>
                 </div>
-
                 <div className="text-center">
                   <div className="bg-gradient-to-br from-green-100 to-accent-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                     <span className="text-3xl font-bold text-accent-600">2</span>
@@ -1568,7 +1509,6 @@ export default function StudentsPage() {
                     </span>
                   </div>
                 </div>
-
                 <div className="text-center">
                   <div className="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                     <span className="text-3xl font-bold text-orange-600">3</span>
@@ -1589,7 +1529,6 @@ export default function StudentsPage() {
                   </div>
                 </div>
               </div>
-
               {/* Real Example */}
               <div className="mt-12 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
                 <div className="text-center mb-4">
@@ -1633,7 +1572,6 @@ export default function StudentsPage() {
                   </div>
                 </div>
               </div>
-
               {/* Student Benefits Explanation */}
               <div className="mt-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 border border-blue-200">
                 <h4 className="text-lg font-bold text-gray-900 mb-4 text-center">
@@ -1665,7 +1603,6 @@ export default function StudentsPage() {
                 </div>
               </div>
             </div>
-
             {/* Features Showcase */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               <motion.div 
@@ -1691,7 +1628,6 @@ export default function StudentsPage() {
                   {language === 'pt' ? 'Londres a Edimburgo' : 'London to Edinburgh'}
                 </div>
               </motion.div>
-
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1715,7 +1651,6 @@ export default function StudentsPage() {
                   {language === 'pt' ? 'Gestão de Receitas' : 'Revenue Sharing'}
                 </div>
               </motion.div>
-
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1739,7 +1674,6 @@ export default function StudentsPage() {
                   {language === 'pt' ? 'Base de Patrocinadores' : 'Sponsor Database'}
                 </div>
               </motion.div>
-
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1764,7 +1698,6 @@ export default function StudentsPage() {
                 </div>
               </motion.div>
             </div>
-
             {/* Society Directory Preview */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
               <div className="flex items-center justify-between mb-8">
@@ -1776,7 +1709,6 @@ export default function StudentsPage() {
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </button>
               </div>
-
               {/* London Universities */}
               <div className="mb-8">
                 <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
@@ -1806,7 +1738,6 @@ export default function StudentsPage() {
                   ))}
                 </div>
               </div>
-
               {/* Major UK Universities */}
               <div className="mb-8">
                 <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
@@ -1835,7 +1766,6 @@ export default function StudentsPage() {
                   ))}
                 </div>
               </div>
-
               {/* Regional Networks */}
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
@@ -1860,7 +1790,6 @@ export default function StudentsPage() {
                 </div>
               </div>
             </div>
-
             {/* Yearly Subscription Pricing */}
             <div className="bg-gradient-to-r from-accent-500 to-primary-500 rounded-2xl p-8 text-white mb-16">
               <div className="text-center mb-8">
@@ -1874,7 +1803,6 @@ export default function StudentsPage() {
                   }
                 </p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Free Starter Plan */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
@@ -1917,7 +1845,6 @@ export default function StudentsPage() {
                     {language === 'pt' ? 'Começar Grátis' : 'Start Free'}
                   </button>
                 </div>
-
                 {/* Premium Collaboration Plan */}
                 <div className="bg-white rounded-xl p-6 text-gray-900 relative border-2 border-yellow-300">
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -1973,7 +1900,6 @@ export default function StudentsPage() {
                     {language === 'pt' ? 'Escolher Plano' : 'Choose Plan'}
                   </button>
                 </div>
-
                 {/* Multi-Society University Plan */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                   <div className="text-center mb-6">
@@ -2023,7 +1949,6 @@ export default function StudentsPage() {
                 </div>
               </div>
             </div>
-
             {/* Success Stories */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-16">
               <div className="text-center mb-8">
@@ -2037,7 +1962,6 @@ export default function StudentsPage() {
                   }
                 </p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-100">
                   <div className="text-center mb-4">
@@ -2073,7 +1997,6 @@ export default function StudentsPage() {
                     }
                   </p>
                 </div>
-
                 <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 border border-blue-100">
                   <div className="text-center mb-4">
                     <GlobeAltIcon className="w-8 h-8 text-blue-600 mx-auto mb-2" />
@@ -2108,7 +2031,6 @@ export default function StudentsPage() {
                     }
                   </p>
                 </div>
-
                 <div className="bg-gradient-to-br from-green-50 to-purple-50 rounded-xl p-6 border border-green-100">
                   <div className="text-center mb-4">
                     <MapPinIcon className="w-8 h-8 text-green-600 mx-auto mb-2" />
@@ -2145,7 +2067,6 @@ export default function StudentsPage() {
                 </div>
               </div>
             </div>
-
             {/* Cultural Event Categories */}
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 mb-16">
               <div className="text-center mb-8">
@@ -2159,7 +2080,6 @@ export default function StudentsPage() {
                   }
                 </p>
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
                   { 
@@ -2201,7 +2121,6 @@ export default function StudentsPage() {
                 ))}
               </div>
             </div>
-
             {/* Call to Action */}
             <div className="text-center">
               <div className="bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl p-8 text-white">
@@ -2232,7 +2151,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* Lusophone-Speaking Countries Flag Grid */}
         <section className="py-20 bg-white">
           <div className="container-width">
@@ -2253,16 +2171,12 @@ export default function StudentsPage() {
             <LusophoneFlagGrid showStudentCounts={true} />
           </div>
         </section>
-
         {/* Cultural Events for Students */}
         <CulturalEventCards limit={6} showPricing={true} />
-
         {/* Student Journey Visualization */}
         <StudentJourneyVisualization />
-
         {/* Enhanced Student Events Section */}
         <StudentEventsSection />
-
         {/* Exclusive Multicultural Student Programming */}
         <section className="py-20 bg-gradient-to-br from-green-50 via-blue-50 to-yellow-50">
           <div className="container-width">
@@ -2283,7 +2197,6 @@ export default function StudentsPage() {
                 }
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {[
                 {
@@ -2349,11 +2262,9 @@ export default function StudentsPage() {
                         </div>
                       </div>
                     </div>
-                    
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{event.title}</h3>
                     <p className="text-sm text-primary-600 font-medium mb-3">{event.subtitle}</p>
                     <p className="text-gray-600 text-sm mb-4 leading-relaxed">{event.description}</p>
-                    
                     <div className="space-y-2 mb-6">
                       {event.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center text-xs text-gray-600">
@@ -2362,7 +2273,6 @@ export default function StudentsPage() {
                         </div>
                       ))}
                     </div>
-                    
                     <button 
                       onClick={handleVerification}
                       className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 flex items-center justify-center"
@@ -2374,7 +2284,6 @@ export default function StudentsPage() {
                 </div>
               ))}
             </div>
-
             {/* CTA for More Events */}
             <div className="text-center">
               <button
@@ -2394,27 +2303,19 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* New Enhanced Student Sections */}
-        
         {/* Academic Networking Section */}
         <AcademicNetworkingSection />
-        
         {/* Career Hub Section */}
         <CareerHubSection />
-        
         {/* Student Discounts Section */}
         <StudentDiscountsSection />
-        
         {/* Lusophone-Speaking Host Families */}
         <AccommodationHostFamilies limit={5} showPricing={true} />
-        
         {/* Accommodation Support Section */}
         <AccommodationSupportSection />
-
         {/* Success Stories Carousel */}
         <SuccessStoriesCarousel autoplay={true} autoplayInterval={10000} />
-
         {/* Student Verification Section */}
         <section className="py-20 bg-gray-50">
           <div className="container-width">
@@ -2430,7 +2331,6 @@ export default function StudentsPage() {
                   }
                 </p>
               </div>
-
               {/* Verification Steps */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 <div className="text-center">
@@ -2447,7 +2347,6 @@ export default function StudentsPage() {
                     }
                   </p>
                 </div>
-                
                 <div className="text-center">
                   <div className="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <DocumentTextIcon className="w-8 h-8" />
@@ -2462,7 +2361,6 @@ export default function StudentsPage() {
                     }
                   </p>
                 </div>
-                
                 <div className="text-center">
                   <div className="w-16 h-16 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckBadgeIcon className="w-8 h-8" />
@@ -2478,7 +2376,6 @@ export default function StudentsPage() {
                   </p>
                 </div>
               </div>
-
               {/* Required Documents */}
               <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
@@ -2522,7 +2419,6 @@ export default function StudentsPage() {
                     </div>
                   </div>
                 </div>
-                
                 <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                   <div className="flex items-start">
                     <ShieldCheckIcon className="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -2538,7 +2434,6 @@ export default function StudentsPage() {
                   </div>
                 </div>
               </div>
-
               {/* Start Verification CTA */}
               <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white">
                 <h3 className="text-2xl font-bold mb-4">
@@ -2560,7 +2455,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* Student Testimonials Section */}
         <section className="py-20 bg-white">
           <div className="container-width">
@@ -2575,7 +2469,6 @@ export default function StudentsPage() {
                 }
               </p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -2625,11 +2518,9 @@ export default function StudentsPage() {
                       <p className="text-xs text-primary-600">{testimonial.year}</p>
                     </div>
                   </div>
-                  
                   <blockquote className="text-gray-700 italic mb-4 leading-relaxed">
                     "{language === 'pt' ? testimonial.quote : testimonial.quoteEn}"
                   </blockquote>
-                  
                   <div>
                     <h5 className="font-medium text-gray-900 mb-2 text-sm">
                       {language === 'pt' ? 'Benefícios utilizados:' : 'Benefits used:'}
@@ -2643,7 +2534,6 @@ export default function StudentsPage() {
                       ))}
                     </div>
                   </div>
-                  
                   <div className="flex items-center mt-4">
                     {[...Array(5)].map((_, i) => (
                       <StarIconSolid key={i} className="w-4 h-4 text-yellow-400" />
@@ -2654,7 +2544,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* Final CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-black/10"></div>
@@ -2667,21 +2556,18 @@ export default function StudentsPage() {
                   `Lusophone Student Community • ${communityStats.viewers}+ students from 10 Portuguese-speaking countries at United Kingdom universities`
                 }
               </div>
-              
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {language === 'pt' ? 
                   'Junte-se à Maior Comunidade de Estudantes Lusófonos em Universidades do Reino Unido' :
                   'Join the United Kingdom\'s Largest Community of Lusophone-Speaking Students'
                 }
               </h2>
-              
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {language === 'pt' ?
                   'Apenas £9.99/mês para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.' :
                   'Just £9.99/month for full access to exclusive benefits, cultural events, and professional networking.'
                 }
               </p>
-
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <button 
                   onClick={handleVerification}
@@ -2704,7 +2590,6 @@ export default function StudentsPage() {
                   {language === 'pt' ? 'Demo Gratuita (15 min)' : 'Free Demo (15 min)'}
                 </button>
               </div>
-              
               {/* Additional Social Proof & Urgency */}
               <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-8 max-w-3xl mx-auto">
                 <div className="flex flex-wrap justify-center items-center gap-4 text-sm">
@@ -2722,7 +2607,6 @@ export default function StudentsPage() {
                   </div>
                 </div>
               </div>
-
               {/* Trust Signals */}
               <div className="flex flex-wrap justify-center gap-6 text-sm opacity-80">
                 <div className="flex items-center">
@@ -2745,7 +2629,6 @@ export default function StudentsPage() {
             </div>
           </div>
         </section>
-
         {/* Student Success Stories Carousel */}
         <section className="py-20 bg-gradient-to-br from-premium-50 via-white to-gold-50">
           <div className="container-width">
@@ -2866,7 +2749,6 @@ export default function StudentsPage() {
                       <h3 className="font-bold text-lg line-clamp-2">{story.title[language]}</h3>
                     </div>
                   </div>
-
                   <div className="p-5 flex flex-col justify-between flex-1">
                     {/* Student Info */}
                     <div className="mb-4">
@@ -2879,12 +2761,10 @@ export default function StudentsPage() {
                         <div>{story.degree}</div>
                       </div>
                     </div>
-
                     {/* Testimonial */}
                     <blockquote className="text-sm text-gray-700 italic mb-4 border-l-4 border-primary-300 pl-3">
                       "{story.testimonial[language]}"
                     </blockquote>
-
                     {/* Key Achievements */}
                     <div className="mb-4">
                       <div className="text-xs font-semibold text-gray-800 mb-2">Key Achievements:</div>
@@ -2904,7 +2784,6 @@ export default function StudentsPage() {
                         )}
                       </div>
                     </div>
-
                     {/* Impact */}
                     <div className="pt-3 border-t border-gray-100">
                       <div className="flex items-center gap-2 text-sm">
@@ -2922,8 +2801,7 @@ export default function StudentsPage() {
               autoAdvanceInterval={9000}
               className="mb-12"
               onItemClick={(story) => {
-                console.log('Selected success story:', story.studentName)
-              }}
+                }}
               mobileSettings={{
                 enableSwipeGestures: true,
                 enablePullToRefresh: true,
@@ -2934,7 +2812,6 @@ export default function StudentsPage() {
             />
           </div>
         </section>
-
         {/* Student Verification Modal */}
         {showVerificationModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -2954,7 +2831,6 @@ export default function StudentsPage() {
                     </svg>
                   </button>
                 </div>
-
                 {/* Progress Indicator */}
                 <div className="flex items-center mb-6">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
@@ -2975,7 +2851,6 @@ export default function StudentsPage() {
                     3
                   </div>
                 </div>
-
                 {verificationStep === 1 && (
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
@@ -3032,7 +2907,6 @@ export default function StudentsPage() {
                     </div>
                   </div>
                 )}
-
                 {verificationStep === 2 && (
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
@@ -3064,7 +2938,6 @@ export default function StudentsPage() {
                     </div>
                   </div>
                 )}
-
                 {verificationStep === 3 && (
                   <div className="text-center">
                     <CheckBadgeIcon className="w-16 h-16 text-secondary-500 mx-auto mb-4" />

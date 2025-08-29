@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -20,7 +19,6 @@ import ConversionOptimizationEngine from '@/components/ConversionOptimizationEng
 import { useLanguage } from '@/context/LanguageContext'
 import { ROUTES } from '@/config/routes'
 import { useNetworking } from '@/context/NetworkingContext'
-
 export default function UserJourneyPage() {
   const { language, t } = useLanguage()
   const { stats, connections } = useNetworking()
@@ -29,33 +27,26 @@ export default function UserJourneyPage() {
   const [userSegment, setUserSegment] = useState<'new' | 'active' | 'engaged' | 'premium' | 'dormant'>('active')
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [analyticsData, setAnalyticsData] = useState<any>(null)
-
   const isPortuguese = language === 'pt'
-
   useEffect(() => {
     // Determine user segment based on activity
     determineUserSegment()
-    
     // Load user activity
     loadUserActivity()
-    
     // Load analytics data
     loadAnalyticsData()
-    
     // Check if onboarding should be shown
     const hasCompletedOnboarding = localStorage.getItem('lusotown-onboarding-completed')
     if (!hasCompletedOnboarding) {
       setShowOnboarding(true)
     }
   }, [stats, connections])
-
   const determineUserSegment = () => {
     const subscriptionActive = localStorage.getItem('lusotown-subscription-active') === 'true'
     const lastActivity = localStorage.getItem('lusotown-last-activity')
     const daysSinceActivity = lastActivity 
       ? Math.floor((Date.now() - parseInt(lastActivity)) / (1000 * 60 * 60 * 24))
       : 999
-
     if (subscriptionActive) {
       setUserSegment('premium')
     } else if (daysSinceActivity > 30) {
@@ -68,10 +59,8 @@ export default function UserJourneyPage() {
       setUserSegment('new')
     }
   }
-
   const loadUserActivity = () => {
     const activity: string[] = []
-    
     // Check various activity indicators
     if (localStorage.getItem('lusotown-transport-booked')) activity.push('used_transport')
     if (stats.eventsAttended > 0) activity.push('attended_events')
@@ -79,16 +68,13 @@ export default function UserJourneyPage() {
     if (localStorage.getItem('lusotown-profile-completed')) activity.push('completed_profile')
     if (localStorage.getItem('lusotown-mentorship-used')) activity.push('used_mentorship')
     if (localStorage.getItem('lusotown-housing-assistance-used')) activity.push('used_housing')
-    
     // Add mock activity based on page visits
     const visitedPages = JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]')
     if (visitedPages.includes('/transport')) activity.push('viewed_transport')
   if (visitedPages.includes(ROUTES.events)) activity.push('viewed_events')
     if (visitedPages.includes('/my-network')) activity.push('viewed_networking')
-    
     setUserActivity(activity)
   }
-
   const loadAnalyticsData = () => {
     // Mock analytics data - in real app would come from API
     const data = {
@@ -116,23 +102,16 @@ export default function UserJourneyPage() {
     }
     setAnalyticsData(data)
   }
-
   const handleOnboardingComplete = (data: any) => {
-    console.log('Onboarding completed:', data)
     setShowOnboarding(false)
-    
     // Update user activity based on onboarding data
     const newActivity = [...userActivity, 'completed_onboarding', 'completed_profile']
     if (data.role === 'student') newActivity.push('indicated_student_status')
     if (data.housingStatus === 'new-to-uk') newActivity.push('indicated_housing_need', 'new_to_uk')
     if (data.businessNeeds?.length > 0) newActivity.push('indicated_professional_interest')
-    
     setUserActivity(newActivity)
   }
-
   const handleConversion = (opportunityId: string, conversionType: string, value: number) => {
-    console.log('Conversion tracked:', { opportunityId, conversionType, value })
-    
     // Update analytics
     if (analyticsData) {
       setAnalyticsData(prev => ({
@@ -142,7 +121,6 @@ export default function UserJourneyPage() {
       }))
     }
   }
-
   const tabs = [
     {
       id: 'journey',
@@ -169,7 +147,6 @@ export default function UserJourneyPage() {
       description: isPortuguese ? 'Personalizar a sua experiência' : 'Customize your experience'
     }
   ]
-
   return (
     <>
       <main className="min-h-screen bg-gray-50 pt-16">
@@ -189,7 +166,6 @@ export default function UserJourneyPage() {
                   : 'Discover how you\'re progressing in our vibrant Portuguese-speaking community across London and the United Kingdom. Each step brings you closer to home.'
                 }
               </p>
-              
               {/* Quick Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
                 <div className="text-center">
@@ -212,7 +188,6 @@ export default function UserJourneyPage() {
             </div>
           </div>
         </section>
-
         {/* Navigation Tabs */}
         <section className="bg-white border-b border-gray-200 sticky top-16 z-30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -240,7 +215,6 @@ export default function UserJourneyPage() {
             </nav>
           </div>
         </section>
-
         {/* Content */}
         <section className="py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -259,7 +233,6 @@ export default function UserJourneyPage() {
                   />
                 </motion.div>
               )}
-
               {activeTab === 'achievements' && (
                 <motion.div
                   key="achievements"
@@ -274,7 +247,6 @@ export default function UserJourneyPage() {
                   </div>
                 </motion.div>
               )}
-
               {activeTab === 'analytics' && analyticsData && (
                 <motion.div
                   key="analytics"
@@ -312,7 +284,6 @@ export default function UserJourneyPage() {
                       </div>
                     </div>
                   </div>
-
                   {/* User Journey Flow */}
                   <div className="bg-white rounded-2xl p-8 border border-gray-200">
                     <h3 className="text-xl font-bold text-gray-900 mb-6">
@@ -345,7 +316,6 @@ export default function UserJourneyPage() {
                       </div>
                     </div>
                   </div>
-
                   {/* Top Conversion Paths */}
                   <div className="bg-white rounded-2xl p-8 border border-gray-200">
                     <h3 className="text-xl font-bold text-gray-900 mb-6">
@@ -368,7 +338,6 @@ export default function UserJourneyPage() {
                   </div>
                 </motion.div>
               )}
-
               {activeTab === 'settings' && (
                 <motion.div
                   key="settings"
@@ -382,7 +351,6 @@ export default function UserJourneyPage() {
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Configurações da Jornada' : 'Journey Settings'}
                     </h2>
-                    
                     <div className="space-y-6">
                       <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
                         <div>
@@ -403,7 +371,6 @@ export default function UserJourneyPage() {
                           {isPortuguese ? 'Reiniciar' : 'Reset'}
                         </button>
                       </div>
-
                       <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
                         <div>
                           <h3 className="font-semibold text-gray-900">
@@ -428,7 +395,6 @@ export default function UserJourneyPage() {
                           {isPortuguese ? 'Limpar' : 'Clear'}
                         </button>
                       </div>
-
                       <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
                         <h3 className="font-semibold text-amber-800 mb-2">
                           {isPortuguese ? 'Estado Atual do Utilizador' : 'Current User Status'}
@@ -451,20 +417,17 @@ export default function UserJourneyPage() {
             </AnimatePresence>
           </div>
         </section>
-
         {/* Engagement Triggers and Conversion Engine */}
         <CrossPlatformEngagementTriggers
           currentPage="/user-journey"
           userActivity={userActivity}
         />
-        
         <ConversionOptimizationEngine
           currentPage="/user-journey"
           userActivity={userActivity}
           userSegment={userSegment}
           onConversion={handleConversion}
         />
-
         {/* Enhanced Onboarding */}
         {showOnboarding && (
           <OnboardingFlowEnhanced

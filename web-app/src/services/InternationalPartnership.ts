@@ -7,7 +7,6 @@ import {
   CulturalExchangeProgram 
 } from '@/types/GlobalPortugueseExpansion'
 import { PORTUGUESE_RESOURCES } from '@/config/cdn'
-
 export interface EmbassyPartnership {
   id: string
   country: PortugueseCountry
@@ -27,7 +26,6 @@ export interface EmbassyPartnership {
   nextMeeting: Date
   status: 'active' | 'pending' | 'inactive'
 }
-
 export interface EmbassyService {
   id: string
   name: string
@@ -40,7 +38,6 @@ export interface EmbassyService {
   onlineAvailable: boolean
   appointmentRequired: boolean
 }
-
 export interface CulturalProgram {
   id: string
   name: string
@@ -61,7 +58,6 @@ export interface CulturalProgram {
   expectedOutcomes: string[]
   applicationProcess: string[]
 }
-
 export interface PartnershipAgreement {
   id: string
   partnerName: string
@@ -78,7 +74,6 @@ export interface PartnershipAgreement {
   renewalProcess: string
   status: 'active' | 'expired' | 'under-review' | 'terminated'
 }
-
 export interface Contact {
   name: string
   title: string
@@ -87,7 +82,6 @@ export interface Contact {
   department: string
   primaryContact: boolean
 }
-
 export interface DiplomaticEvent {
   id: string
   name: string
@@ -106,7 +100,6 @@ export interface DiplomaticEvent {
   protocol: ProtocolRequirements
   registration: RegistrationInfo
 }
-
 export interface ProtocolRequirements {
   dressCode: string
   languageOfEvent: string[]
@@ -115,7 +108,6 @@ export interface ProtocolRequirements {
   mediaAccreditation: boolean
   diplomaticPrecedence: boolean
 }
-
 export interface RegistrationInfo {
   required: boolean
   deadline: Date
@@ -125,7 +117,6 @@ export interface RegistrationInfo {
   capacity: number
   waitingList: boolean
 }
-
 export interface CulturalCenter {
   id: string
   name: string
@@ -145,7 +136,6 @@ export interface CulturalCenter {
   membershipProgram: MembershipProgram
   digitalPresence: DigitalPresence
 }
-
 export interface CulturalCenterStaff {
   name: string
   position: string
@@ -154,7 +144,6 @@ export interface CulturalCenterStaff {
   email: string
   bio: string
 }
-
 export interface Facility {
   name: string
   type: 'auditorium' | 'exhibition' | 'classroom' | 'library' | 'studio' | 'cafe' | 'shop'
@@ -164,7 +153,6 @@ export interface Facility {
   rentalCost: number
   currency: string
 }
-
 export interface CulturalService {
   name: string
   description: string
@@ -175,7 +163,6 @@ export interface CulturalService {
   requirements: string[]
   booking: BookingInfo
 }
-
 export interface BookingInfo {
   required: boolean
   advanceNotice: string
@@ -183,7 +170,6 @@ export interface BookingInfo {
   contact: string
   onlineBooking: boolean
 }
-
 export interface MembershipProgram {
   name: string
   benefits: string[]
@@ -194,7 +180,6 @@ export interface MembershipProgram {
   perks: string[]
   events: string[]
 }
-
 export interface DigitalPresence {
   website: string
   socialMedia: {
@@ -208,15 +193,12 @@ export interface DigitalPresence {
   virtualTours: boolean
   digitalArchive: boolean
 }
-
 class InternationalPartnershipService {
   private embassyPartnerships: EmbassyPartnership[] = []
   private culturalCenters: CulturalCenter[] = []
-  
   constructor() {
     this.initializeMockData()
   }
-
   private initializeMockData() {
     // Initialize mock embassy partnerships
     this.embassyPartnerships = [
@@ -274,7 +256,6 @@ class InternationalPartnershipService {
         status: 'active'
       }
     ]
-
     // Initialize mock cultural centers
     this.culturalCenters = [
       {
@@ -353,7 +334,6 @@ class InternationalPartnershipService {
       }
     ]
   }
-
   // Embassy Partnership Methods
   async getEmbassyPartnerships(country?: PortugueseCountry): Promise<EmbassyPartnership[]> {
     if (country) {
@@ -361,26 +341,21 @@ class InternationalPartnershipService {
     }
     return this.embassyPartnerships
   }
-
   async getEmbassyServices(embassyId: string): Promise<EmbassyService[]> {
     const embassy = this.embassyPartnerships.find(e => e.id === embassyId)
     return embassy?.services || []
   }
-
   async getCulturalPrograms(embassyId: string): Promise<CulturalProgram[]> {
     const embassy = this.embassyPartnerships.find(e => e.id === embassyId)
     return embassy?.culturalPrograms || []
   }
-
   async requestEmbassyPartnership(
     country: PortugueseCountry, 
     proposalDetails: PartnershipProposal
   ): Promise<string> {
     // Mock API call to request partnership
-    console.log(`Requesting partnership with ${country} embassy`, proposalDetails)
     return 'partnership-request-12345'
   }
-
   // Cultural Center Methods
   async getCulturalCenters(country?: PortugueseCountry): Promise<CulturalCenter[]> {
     if (country) {
@@ -388,12 +363,10 @@ class InternationalPartnershipService {
     }
     return this.culturalCenters
   }
-
   async getCulturalCenterPrograms(centerId: string): Promise<CulturalProgram[]> {
     const center = this.culturalCenters.find(c => c.id === centerId)
     return center?.programs || []
   }
-
   async bookCulturalService(
     centerId: string, 
     serviceId: string, 
@@ -408,7 +381,6 @@ class InternationalPartnershipService {
       currency: 'GBP'
     }
   }
-
   // Event Integration
   async getDiplomaticEvents(
     country?: PortugueseCountry,
@@ -417,7 +389,6 @@ class InternationalPartnershipService {
     // Mock diplomatic events
     return []
   }
-
   async registerForDiplomaticEvent(
     eventId: string,
     registrationInfo: EventRegistration
@@ -430,7 +401,6 @@ class InternationalPartnershipService {
       details: registrationInfo
     }
   }
-
   // Partnership Analytics
   async getPartnershipMetrics(country?: PortugueseCountry): Promise<PartnershipMetrics> {
     return {
@@ -444,16 +414,13 @@ class InternationalPartnershipService {
       diplomaticEngagements: 8
     }
   }
-
   // Collaboration Tools
   async initiateCollaboration(
     partnerIds: string[],
     collaborationDetails: CollaborationProposal
   ): Promise<string> {
-    console.log('Initiating collaboration', { partnerIds, collaborationDetails })
     return `collaboration-${Date.now()}`
   }
-
   async getCollaborationOpportunities(
     userInterests: string[],
     location?: PortugueseCountry
@@ -462,7 +429,6 @@ class InternationalPartnershipService {
     return []
   }
 }
-
 // Supporting interfaces
 export interface PartnershipProposal {
   organizationName: string
@@ -475,7 +441,6 @@ export interface PartnershipProposal {
   timeline: string
   expectedOutcomes: string[]
 }
-
 export interface ServiceBooking {
   userId: string
   serviceId: string
@@ -488,7 +453,6 @@ export interface ServiceBooking {
     phone: string
   }
 }
-
 export interface BookingConfirmation {
   confirmationId: string
   status: 'confirmed' | 'pending' | 'cancelled'
@@ -496,7 +460,6 @@ export interface BookingConfirmation {
   totalCost: number
   currency: string
 }
-
 export interface EventRegistration {
   participantName: string
   email: string
@@ -505,14 +468,12 @@ export interface EventRegistration {
   dietaryRequirements?: string[]
   accessibilityNeeds?: string[]
 }
-
 export interface RegistrationConfirmation {
   confirmationId: string
   status: 'confirmed' | 'pending' | 'waitlist'
   eventId: string
   details: EventRegistration
 }
-
 export interface PartnershipMetrics {
   totalPartnerships: number
   activePartnerships: number
@@ -523,7 +484,6 @@ export interface PartnershipMetrics {
   culturalProgramsOffered: number
   diplomaticEngagements: number
 }
-
 export interface CollaborationProposal {
   title: string
   description: string
@@ -532,7 +492,6 @@ export interface CollaborationProposal {
   resources: string[]
   expectedOutcomes: string[]
 }
-
 export interface CollaborationOpportunity {
   id: string
   title: string
@@ -544,7 +503,6 @@ export interface CollaborationOpportunity {
   benefits: string[]
   deadline: Date
 }
-
 // Singleton instance
 export const internationalPartnershipService = new InternationalPartnershipService()
 export default internationalPartnershipService

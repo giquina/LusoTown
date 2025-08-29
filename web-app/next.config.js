@@ -24,14 +24,14 @@ const nextConfig = {
     if (!dev && !isServer) {
       config.optimization = {
         ...config.optimization,
-        // Aggressive chunk splitting for Portuguese community components
+        // Advanced chunk splitting for Portuguese community platform
         splitChunks: {
           chunks: 'all',
-          minSize: 20000,
-          maxSize: 250000,
+          minSize: 15000,
+          maxSize: 200000,
           minChunks: 1,
-          maxAsyncRequests: 8,
-          maxInitialRequests: 6,
+          maxAsyncRequests: 12,
+          maxInitialRequests: 8,
           cacheGroups: {
             default: {
               minChunks: 2,
@@ -43,50 +43,91 @@ const nextConfig = {
               name: 'vendors',
               priority: -10,
               chunks: 'all',
-              maxSize: 200000
+              maxSize: 150000
             },
-            // Core React bundle
+            // Core React bundle (highest priority)
             react: {
               test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
               name: 'react',
               chunks: 'all',
-              priority: 20
+              priority: 25
+            },
+            // Next.js framework
+            nextjs: {
+              test: /[\\/]node_modules[\\/]next[\\/]/,
+              name: 'nextjs',
+              chunks: 'all',
+              priority: 22
             },
             // Portuguese community UI libraries
             heroicons: {
               test: /[\\/]node_modules[\\/]@heroicons[\\/]/,
               name: 'heroicons',
               chunks: 'all',
-              priority: 15
+              priority: 18
             },
             framerMotion: {
               test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
               name: 'framer-motion',
               chunks: 'all',
-              priority: 15
+              priority: 16
             },
             headlessui: {
               test: /[\\/]node_modules[\\/]@headlessui[\\/]/,
               name: 'headlessui',
               chunks: 'all',
-              priority: 12
+              priority: 14
             },
-            // Portuguese community components
+            // Portuguese cultural components (critical)
             carousels: {
               test: /[\\/]src[\\/]components[\\/]carousels[\\/]/,
               name: 'lusotown-carousels',
               chunks: 'all',
-              priority: 18
+              priority: 20
             },
+            // Events and business components (high priority)
+            eventsAndBusiness: {
+              test: /[\\/]src[\\/]components[\\/](events|business)[\\/]/,
+              name: 'lusotown-events-business',
+              chunks: 'all',
+              priority: 17
+            },
+            // SEO and performance components
+            seoPerformance: {
+              test: /[\\/]src[\\/]components[\\/](SEO|Performance)[\\/]/,
+              name: 'lusotown-seo-performance',
+              chunks: 'all',
+              priority: 15
+            },
+            // Mobile-specific components
+            mobile: {
+              test: /[\\/]src[\\/]components[\\/]mobile[\\/]/,
+              name: 'lusotown-mobile',
+              chunks: 'all',
+              priority: 13
+            },
+            // General Portuguese community components
             lusotown: {
               test: /[\\/]src[\\/]components[\\/]/,
               name: 'lusotown-components',
               chunks: 'all',
-              priority: 8,
-              minSize: 30000
+              priority: 10,
+              minSize: 20000
+            },
+            // Context and configuration
+            contextConfig: {
+              test: /[\\/]src[\\/](context|config)[\\/]/,
+              name: 'lusotown-context-config',
+              chunks: 'all',
+              priority: 12
             }
           }
-        }
+        },
+        // Module concatenation for better tree-shaking
+        concatenateModules: true,
+        // Use deterministic module IDs for better caching
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic'
       };
       
       // Memory-efficient caching strategy

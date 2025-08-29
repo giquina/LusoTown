@@ -1,5 +1,4 @@
 "use client";
-
 import { Suspense, useState, useEffect, useMemo, useCallback } from "react";
 import type React from "react";
 import { communityStats } from "@/config/community";
@@ -37,7 +36,6 @@ import MatchTestimonials from "@/components/MatchTestimonials";
 import HowItWorksSection from "@/components/matches/HowItWorksSection";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
-
 // Mock Lusophone profiles for demonstration
 const mockProfiles = [
   {
@@ -143,9 +141,7 @@ const mockProfiles = [
     compatibility: 88,
   },
 ];
-
 type Profile = (typeof mockProfiles)[number];
-
 function MatchesContent() {
   const { t, language } = useLanguage();
   const { hasActiveSubscription, createSubscription } = useSubscription();
@@ -166,25 +162,21 @@ function MatchesContent() {
     { id: number; action: "like" | "skip" }[]
   >([]);
   const swipeThreshold = 50; // px
-
   const interestOptions = useMemo(() => {
     const set = new Set<string>();
     profiles.forEach((p) => p.interests.forEach((i) => set.add(i)));
     return Array.from(set).sort();
   }, [profiles]);
-
   const filteredProfiles = useMemo(() => {
     if (!selectedInterests.length) return profiles;
     return profiles.filter((p) =>
       selectedInterests.every((i) => p.interests.includes(i))
     );
   }, [profiles, selectedInterests]);
-
   const currentProfile = filteredProfiles[currentProfileIndex];
   const remainingMatches = dailyMatches - dailyMatchesUsed;
   const isFreeTier = !hasActiveSubscription;
   const isLoggedIn = !!currentUser;
-
   // Check authentication state
   useEffect(() => {
     const checkAuth = async () => {
@@ -199,7 +191,6 @@ function MatchesContent() {
     };
     checkAuth();
   }, []);
-
   // Initialize success stories count
   useEffect(() => {
     const interval = setInterval(() => {
@@ -207,52 +198,41 @@ function MatchesContent() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
   // Reset index when filters change
   useEffect(() => {
     setCurrentProfileIndex(0);
   }, [selectedInterests]);
-
   // Keyboard shortcuts: Left = skip, Right = like
-
   const nextProfile = useCallback(() => {
     setCurrentProfileIndex((idx) =>
       idx < filteredProfiles.length - 1 ? idx + 1 : 0
     );
   }, [filteredProfiles.length]);
-
   const handleLike = useCallback(() => {
     if (isLiking || isSkipping) return;
-
     // If user is not logged in, redirect to signup
     if (!isLoggedIn) {
       window.location.href = `${ROUTES.signup  }?redirect=${  encodeURIComponent(window.location.pathname)}`;
       return;
     }
-
     // Check if user has reached daily limit (free tier only)
     if (isFreeTier && dailyMatchesUsed >= dailyMatches) {
       setShowUpgradePrompt(true);
       return;
     }
-
     setIsLiking(true);
-
     // Simulate match probability (35% chance for demo, higher for premium)
     const matchProbability = hasActiveSubscription ? 0.6 : 0.65;
     const isMatch = Math.random() > matchProbability;
-
     setTimeout(() => {
       if (isMatch && currentProfile) {
         setMatchedProfile(currentProfile);
         setShowMatchModal(true);
       }
-
       // Increment daily matches used for free tier
       if (isFreeTier) {
         setDailyMatchesUsed((prev) => prev + 1);
       }
-
       if (currentProfile) {
         setLastActions((prev) =>
           [...prev, { id: currentProfile.id, action: "like" as const }].slice(
@@ -260,7 +240,6 @@ function MatchesContent() {
           )
         );
       }
-
       nextProfile();
       setIsLiking(false);
     }, 600);
@@ -275,18 +254,14 @@ function MatchesContent() {
     nextProfile,
     isLoggedIn,
   ]);
-
   const handleSkip = useCallback(() => {
     if (isLiking || isSkipping) return;
-
     // If user is not logged in, redirect to signup (but allow a few previews first)
     if (!isLoggedIn && currentProfileIndex >= 2) {
       window.location.href = `${ROUTES.signup  }?redirect=${  encodeURIComponent(window.location.pathname)}`;
       return;
     }
-
     setIsSkipping(true);
-
     setTimeout(() => {
       if (currentProfile) {
         setLastActions((prev) =>
@@ -299,7 +274,6 @@ function MatchesContent() {
       setIsSkipping(false);
     }, 400);
   }, [isLiking, isSkipping, currentProfile, nextProfile, currentProfileIndex, isLoggedIn]);
-
   const handleUndo = () => {
     if (!lastActions.length || isLiking || isSkipping) return;
     const last = lastActions[lastActions.length - 1];
@@ -312,7 +286,6 @@ function MatchesContent() {
       }
     }
   };
-
   // Simple touch swipe handlers
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(
     null
@@ -336,7 +309,6 @@ function MatchesContent() {
     }
     setTouchStart(null);
   };
-
   // Keyboard shortcuts: Left = skip, Right = like
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -352,7 +324,6 @@ function MatchesContent() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [showMatchModal, handleLike, handleSkip]);
-
   const getOriginFlag = (origin: string) => {
     if (
       origin.includes("Portugal") ||
@@ -374,7 +345,6 @@ function MatchesContent() {
     if (origin.includes("Cabo Verde")) return "🇨🇻";
     return "🌍";
   };
-
   const steps = [
     {
       icon: UsersIcon,
@@ -413,7 +383,6 @@ function MatchesContent() {
         "Inicie conversas em português ou inglês e construa amizades duradouras ou relacionamentos profissionais",
     },
   ];
-
   const benefits = [
     "All matches are Portuguese speakers from diverse backgrounds across the United Kingdom",
     "Cultural compatibility scoring",
@@ -421,7 +390,6 @@ function MatchesContent() {
     "Professional and social networking opportunities",
     "Safe and verified community members",
   ];
-
   const benefitsPt = [
     "Todas as correspondências são falantes de português em todo o Reino Unido",
     "Pontuação de compatibilidade cultural",
@@ -429,7 +397,6 @@ function MatchesContent() {
     "Oportunidades de networking profissional e social",
     "Membros da comunidade seguros e verificados",
   ];
-
   // Show loading state while checking authentication
   if (isCheckingAuth) {
     return (
@@ -443,7 +410,6 @@ function MatchesContent() {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen pt-20 md:pt-24 pb-8">
       {/* Enhanced Hero Section */}
@@ -452,10 +418,8 @@ function MatchesContent() {
         <div className="absolute top-12 left-12 w-32 h-32 bg-gradient-to-br from-secondary-400/20 to-secondary-500/30 rounded-full animate-pulse" />
         <div className="absolute bottom-16 right-16 w-24 h-24 bg-gradient-to-br from-action-400/20 to-action-500/30 rounded-full animate-pulse delay-1000" />
         <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-accent-400/20 to-accent-500/30 rounded-full animate-pulse delay-500" />
-
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 bg-primary-900/10" />
-
         <div className="relative z-10 flex items-start justify-center px-4 pt-8 md:pt-14 pb-8">
           <div className="text-center max-w-4xl mx-auto">
             {/* Hero Content */}
@@ -473,7 +437,6 @@ function MatchesContent() {
                   ? "Conecte-se com uma comunidade vibrante de falantes de português - brasileiros, portugueses, angolanos, cabo-verdianos e mais. Partilhe a sua língua, cultura e experiências no Reino Unido."
                   : "Connect with a vibrant community of Portuguese speakers - Brazilians, Lusophone, Angolans, Cape Verdeans and more. Share your language, culture, and experiences in the United Kingdom."}
               </p>
-
               {/* Live Success Counter */}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
                 <div className="flex items-center justify-center gap-3 mb-3">
@@ -501,7 +464,6 @@ function MatchesContent() {
                   </p>
                 </div>
               </div>
-
               {/* Cultural Quote */}
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/20">
                 <blockquote className="text-base md:text-lg text-white/95 italic">
@@ -519,7 +481,6 @@ function MatchesContent() {
                 </cite>
               </div>
             </div>
-
             {/* Usage Meter for Free Users */}
             {isFreeTier && (
               <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 mb-6 border border-white/20">
@@ -547,7 +508,6 @@ function MatchesContent() {
                 </p>
               </div>
             )}
-
             {/* CTA Buttons */}
             <div className="flex flex-row gap-3 sm:gap-4 justify-center">
               <a
@@ -565,7 +525,6 @@ function MatchesContent() {
                   : `${formatPrice(plans.community.monthly)}/month`}
               </button>
             </div>
-
             {/* Cultural Matching Link */}
             <div className="mt-4 text-center">
               <a
@@ -580,7 +539,6 @@ function MatchesContent() {
                 </span>
               </a>
             </div>
-
             {/* Enhanced Stats */}
             <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-5">
               <div className="text-center group">
@@ -651,7 +609,6 @@ function MatchesContent() {
           </div>
         </div>
       </div>
-
       {/* What This Page Is About Banner */}
       <section className="py-8 md:py-12 bg-white border-b-2 border-primary-100">
         <div className="max-w-5xl mx-auto px-4">
@@ -708,7 +665,6 @@ function MatchesContent() {
           </div>
         </div>
       </section>
-
       {/* Lusophone-Speaking Nations Section */}
       <section className="py-8 md:py-12 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
@@ -722,7 +678,6 @@ function MatchesContent() {
                 : "Connecting Portuguese speakers from all Lusophone nations across the United Kingdom"}
             </p>
           </div>
-          
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-4 md:gap-6">
             {[
               { flag: "🇵🇹", country: "Portugal", name: language === "pt" ? "Portugal" : "Portugal" },
@@ -745,7 +700,6 @@ function MatchesContent() {
               </div>
             ))}
           </div>
-          
           <div className="text-center mt-8">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 px-4 py-2 rounded-full border border-primary-200">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -756,7 +710,6 @@ function MatchesContent() {
           </div>
         </div>
       </section>
-
       {/* Interactive Matching Section */}
       <section className="py-10 md:py-14 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -771,7 +724,6 @@ function MatchesContent() {
                 ? "Navegue por falantes de português em todo o Reino Unido que partilham os seus interesses, valores e património cultural. Cada perfil é cuidadosamente verificado para garantir ligações autênticas."
                 : "Browse Portuguese speakers across the United Kingdom who share your interests, values, and cultural heritage. Every profile is carefully verified to ensure authentic connections."}
             </p>
-
             {/* Cultural Compatibility Highlight */}
             <div className="flex justify-center items-center gap-4 flex-wrap">
               <div className="flex items-center gap-2 bg-primary-100 px-4 py-2 rounded-full">
@@ -798,7 +750,6 @@ function MatchesContent() {
               </div>
             </div>
           </div>
-
           {/* Sign Up Required Notice for Non-Logged-In Users */}
           {!isLoggedIn && !isCheckingAuth && (
             <div className="max-w-md mx-auto mb-6">
@@ -812,7 +763,6 @@ function MatchesContent() {
                     ? "Para mostrar correspondências relevantes, precisamos conhecer os seus interesses, localização no Reino Unido e preferências culturais. O nosso algoritmo usa esta informação para conectá-lo com falantes de português compatíveis."
                     : "To show you relevant matches, we need to know your interests, United Kingdom location, and cultural preferences. Our algorithm uses this information to connect you with compatible Portuguese speakers."}
                 </p>
-                
                 <div className="bg-white/80 rounded-lg p-3 mb-4 text-left">
                   <div className="text-primary-800 font-semibold text-xs mb-2">
                     {language === "pt" ? "O que precisamos saber:" : "What we need to know:"}
@@ -824,21 +774,18 @@ function MatchesContent() {
                     <li>👥 {language === "pt" ? "Tipo de conexões que procura" : "Type of connections you're seeking"}</li>
                   </ul>
                 </div>
-
                 <a
                   href={ROUTES.signup}
                   className="inline-block bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all transform hover:scale-105 shadow-lg"
                 >
                   {language === "pt" ? "Criar Conta Gratuita" : "Create Free Account"}
                 </a>
-                
                 <p className="text-primary-600 text-xs mt-3">
                   {language === "pt" ? "Grátis para sempre • 3 matches diários" : "Free forever • 3 daily matches"}
                 </p>
               </div>
             </div>
           )}
-
           <div className="max-w-md mx-auto">
             {/* Filters: Quick interest chips */}
             <div className="mb-6">
@@ -917,7 +864,6 @@ function MatchesContent() {
                           👤
                         </div>
                       </div>
-
                       {/* Enhanced Compatibility Badge */}
                       <div className="absolute top-3 right-3 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-2xl text-xs md:text-sm font-bold shadow-xl backdrop-blur-sm border border-white/20">
                         <div className="flex items-center gap-1">
@@ -925,16 +871,13 @@ function MatchesContent() {
                           {currentProfile.compatibility}% Match
                         </div>
                       </div>
-
                       {/* Enhanced Origin Badge - Flag Only */}
                       <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-2xl text-xs md:text-sm font-semibold shadow-xl border border-primary-100">
                         <span className="text-lg">{getOriginFlag(currentProfile.origin)}</span>
                       </div>
-
                       {/* Gradient Overlay */}
                       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
                     </div>
-
                     {/* Enhanced Profile Info with Better Layout */}
                     <div className="p-4 md:p-6 flex flex-col flex-1">
                       {/* Header Section */}
@@ -960,7 +903,6 @@ function MatchesContent() {
                             </div>
                           </div>
                         </div>
-
                         {/* Bio Section with Better Typography */}
                         <div className="bg-primary-25 p-3 rounded-xl border border-primary-100">
                           <p className="text-primary-800 text-sm leading-relaxed">
@@ -968,7 +910,6 @@ function MatchesContent() {
                           </p>
                         </div>
                       </div>
-
                       {/* Interests Section - Enhanced */}
                       <div className="mb-4">
                         <h4 className="text-sm font-bold text-primary-900 mb-2.5 flex items-center gap-2">
@@ -988,7 +929,6 @@ function MatchesContent() {
                             ))}
                         </div>
                       </div>
-
                       {/* Enhanced Lusophone Cultural Connection */}
                       <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-3 rounded-2xl border border-secondary-200 shadow-inner">
                         <div className="flex items-center justify-between mb-3">
@@ -1011,7 +951,6 @@ function MatchesContent() {
                             ))}
                           </div>
                         </div>
-
                         <div className="grid grid-cols-2 gap-1.5 mb-3">
                           <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -1038,7 +977,6 @@ function MatchesContent() {
                             </span>
                           </div>
                         </div>
-
                         {/* Connection Reasons */}
                         <div className="bg-white/80 backdrop-blur-sm p-2.5 rounded-xl border border-white/60">
                           <h5 className="font-bold text-secondary-800 mb-2 text-xs">
@@ -1071,13 +1009,11 @@ function MatchesContent() {
                   </motion.div>
                   )}
               </AnimatePresence>
-
               {/* Background Cards for Stack Effect */}
               <div className="absolute inset-0 bg-white rounded-3xl shadow-lg transform translate-y-2 translate-x-1 border border-primary-50 -z-10"></div>
               <div className="absolute inset-0 bg-white rounded-3xl shadow-md transform translate-y-4 translate-x-2 border border-primary-50 -z-20"></div>
             </div>
             )}
-
             {/* Enhanced Action Buttons */}
             <div className="flex justify-center gap-6 px-4">
               <button
@@ -1097,7 +1033,6 @@ function MatchesContent() {
                   </span>
                 </div>
               </button>
-
               <button
                 onClick={handleLike}
                 disabled={isLiking || isSkipping || !currentProfile}
@@ -1115,7 +1050,6 @@ function MatchesContent() {
                   </span>
                 </div>
               </button>
-
               {/* Super Like Button - Premium Feature */}
               {hasActiveSubscription && (
                 <button
@@ -1136,7 +1070,6 @@ function MatchesContent() {
                 </button>
               )}
             </div>
-
             {/* Undo */}
             <div className="mt-3 text-center">
               <button
@@ -1147,7 +1080,6 @@ function MatchesContent() {
                 {language === "pt" ? "Desfazer" : "Undo"}
               </button>
             </div>
-
             {/* Instructions & Encouragement */}
             <div className="text-center mt-5 space-y-2.5">
               <p className="text-primary-600 text-sm font-medium">
@@ -1155,7 +1087,6 @@ function MatchesContent() {
                   ? "Toque em ❌ para passar • Toque em ❤️ para gostar • Conheçam-se em eventos portugueses!"
                   : "Tap ❌ to skip • Tap ❤️ to like • Meet at Lusophone events!"}
               </p>
-
               {remainingMatches <= 1 && isFreeTier && (
                 <div className="bg-orange-50 border border-orange-200 rounded-xl p-3">
                   <p className="text-orange-800 text-sm font-medium mb-2">
@@ -1181,7 +1112,6 @@ function MatchesContent() {
                   </button>
                 </div>
               )}
-
               <div className="flex items-center justify-center gap-2 text-primary-500 text-xs">
                 <ClockIcon className="w-4 h-4" />
                 <span>
@@ -1194,7 +1124,6 @@ function MatchesContent() {
           </div>
         </div>
       </section>
-
       {/* Match Modal */}
       <AnimatePresence>
         {showMatchModal && matchedProfile && (
@@ -1221,7 +1150,6 @@ function MatchesContent() {
                   ? `Você e ${matchedProfile?.name} gostaram um do outro! Iniciem uma conversa e planeiem encontrar-se num evento português.`
                   : `You and ${matchedProfile?.name} both liked each other! Start chatting and plan to meet at a Lusophone event.`}
               </p>
-
               {/* Match Quality Indicator */}
               <div className="bg-gradient-to-r from-green-50 to-green-100 p-3 rounded-xl mb-6 border border-green-200">
                 <div className="flex items-center justify-center gap-2 mb-1">
@@ -1237,7 +1165,6 @@ function MatchesContent() {
                     : "Based on cultural interests and location"}
                 </p>
               </div>
-
               <div className="flex gap-4">
                 <button
                   onClick={() => setShowMatchModal(false)}
@@ -1252,7 +1179,6 @@ function MatchesContent() {
                   {language === "pt" ? "Enviar Mensagem" : "Send Message"}
                 </button>
               </div>
-
               {/* Conversion prompt for free users */}
               {isFreeTier && (
                 <div className="mt-4 p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl border border-orange-200">
@@ -1278,7 +1204,6 @@ function MatchesContent() {
           </motion.div>
         )}
       </AnimatePresence>
-
       {/* How It Works Section - Enhanced */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -1291,7 +1216,6 @@ function MatchesContent() {
                 ? "O nosso algoritmo de correspondência foi especificamente desenvolvido para falantes de português no Reino Unido, focando na compatibilidade cultural e experiências partilhadas."
                 : "Our matching algorithm is specifically designed for Portuguese speakers in the United Kingdom, focusing on cultural compatibility and shared experiences."}
             </p>
-            
             {/* Algorithm Highlights */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-4 rounded-xl border border-primary-200">
@@ -1314,7 +1238,6 @@ function MatchesContent() {
               </div>
             </div>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {steps.map((step, index) => (
               <div key={index} className="text-center group">
@@ -1335,7 +1258,6 @@ function MatchesContent() {
               </div>
             ))}
           </div>
-
           {/* Account Types & Features */}
           <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 rounded-3xl p-8 md:p-10 border border-primary-200">
             <div className="text-center mb-8">
@@ -1348,7 +1270,6 @@ function MatchesContent() {
                   : "Choose the plan that best fits your Portuguese-speaking community networking needs."}
               </p>
             </div>
-
             <div className="grid md:grid-cols-3 gap-6">
               {/* Free Plan */}
               <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md">
@@ -1391,7 +1312,6 @@ function MatchesContent() {
                   {language === "pt" ? "Começar Grátis" : "Start Free"}
                 </a>
               </div>
-
               {/* Community Plan */}
               <div className="bg-white rounded-2xl p-6 border-2 border-primary-300 shadow-lg relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -1446,7 +1366,6 @@ function MatchesContent() {
                   {language === "pt" ? "Começar Premium" : "Start Premium"}
                 </button>
               </div>
-
               {/* Ambassador Plan */}
               <div className="bg-white rounded-2xl p-6 border border-premium-200 shadow-md">
                 <div className="text-center mb-6">
@@ -1497,7 +1416,6 @@ function MatchesContent() {
                 </button>
               </div>
             </div>
-
             <div className="text-center mt-8">
               <p className="text-sm text-primary-600">
                 {language === "pt" 
@@ -1508,7 +1426,6 @@ function MatchesContent() {
           </div>
         </div>
       </section>
-
       {/* Benefits Section */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -1607,7 +1524,6 @@ function MatchesContent() {
           </div>
         </div>
       </section>
-
       {/* How This Works - Simple Guide */}
       <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-primary-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -1621,7 +1537,6 @@ function MatchesContent() {
                 : "A simple guide to navigate and use our Portuguese-speaking community matching system in the United Kingdom"}
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {/* Step 1 */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-primary-100 text-center">
@@ -1640,7 +1555,6 @@ function MatchesContent() {
                 {language === "pt" ? "Gratuito • Sem registo necessário" : "Free • No signup required"}
               </div>
             </div>
-
             {/* Step 2 */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1658,7 +1572,6 @@ function MatchesContent() {
                 {language === "pt" ? "3 matches diários grátis" : "3 daily free matches"}
               </div>
             </div>
-
             {/* Step 3 */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-accent-100 text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1676,7 +1589,6 @@ function MatchesContent() {
                 {language === "pt" ? "Mensagens limitadas (grátis)" : "Limited messages (free)"}
               </div>
             </div>
-
             {/* Step 4 */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-premium-100 text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1695,13 +1607,11 @@ function MatchesContent() {
               </div>
             </div>
           </div>
-
           {/* User Type Guide */}
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-primary-200">
             <h3 className="text-xl font-bold text-primary-900 mb-6 text-center">
               {language === "pt" ? "O Que Cada Tipo de Utilizador Pode Fazer" : "What Each User Type Can Do"}
             </h3>
-            
             <div className="grid md:grid-cols-3 gap-6">
               {/* Visitors */}
               <div className="text-center">
@@ -1726,7 +1636,6 @@ function MatchesContent() {
                   </a>
                 </div>
               </div>
-
               {/* Free Members */}
               <div className="text-center border-2 border-primary-200 rounded-xl p-4">
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1745,7 +1654,6 @@ function MatchesContent() {
                   {language === "pt" ? "Sempre gratuito" : "Always free"}
                 </div>
               </div>
-
               {/* Premium Members */}
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1773,10 +1681,8 @@ function MatchesContent() {
           </div>
         </div>
       </section>
-
       {/* Success Stories Section */}
       <MatchTestimonials />
-
       {/* Upgrade Prompt Modal */}
       <AnimatePresence>
         {showUpgradePrompt && (
@@ -1805,7 +1711,6 @@ function MatchesContent() {
                   ? "Usou os seus 3 matches diários gratuitos. Faça upgrade para matches ilimitados e continue a conectar-se com mais membros da comunidade de falantes de português."
                   : "You've used your 3 free daily matches. Upgrade to unlimited matches and continue connecting with more Portuguese-speaking community members."}
               </p>
-
               {/* Quick Benefits */}
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl mb-6 text-left">
                 <h4 className="font-semibold text-primary-900 mb-3">
@@ -1848,7 +1753,6 @@ function MatchesContent() {
                   </div>
                 </div>
               </div>
-
               <div className="flex flex-col gap-3">
                 <button
                   onClick={() => {
@@ -1870,7 +1774,6 @@ function MatchesContent() {
                   {language === "pt" ? "Talvez mais tarde" : "Maybe later"}
                 </button>
               </div>
-
               <div className="mt-4 text-xs text-gray-500">
                 {language === "pt"
                   ? "Pode cancelar a qualquer momento • Sem compromissos de longo prazo"
@@ -1883,13 +1786,10 @@ function MatchesContent() {
     </div>
   );
 }
-
 export default function MatchesPage() {
   const { hasActiveSubscription } = useSubscription();
-
   // If user doesn't have subscription and hits daily limits, show premium gate
   // For now, we'll integrate this with the enhanced dashboard
-
   return (
     <>
       <main className="min-h-screen">
@@ -1907,21 +1807,15 @@ export default function MatchesPage() {
             showGroupMatching={true}
             onMatchAction={(matchId, action) => {
               // Handle match actions (like, skip, super_like)
-              console.log(`Match action: ${action} on match ${matchId}`);
-            }}
+              }}
             onEventBooking={(eventId, matchId) => {
               // Handle event booking
-              console.log(
-                `Event ${eventId} booked${matchId ? ` with match ${matchId}` : ""}`
-              );
-            }}
+              }}
           />
         </Suspense>
-        
         {/* How It Works Section */}
         <HowItWorksSection />
       </main>
-      
       {/* Proper Footer Component */}
       <Footer />
     </>

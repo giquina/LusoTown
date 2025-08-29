@@ -1,5 +1,4 @@
 'use client'
-
 import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo, useCallback } from 'react'
 import { 
   PortugueseCountry, 
@@ -13,7 +12,6 @@ import {
   CommunityGrowthMetrics,
   DiasporaFamily
 } from '@/types/GlobalPortugueseExpansion'
-
 interface GlobalPortugueseContextType {
   currentCountry: PortugueseCountry
   currentRegion: LocalizedRegion | null
@@ -22,17 +20,14 @@ interface GlobalPortugueseContextType {
   regionalData: Record<PortugueseCountry, LocalizedRegion>
   currency: Currency
   regionalPreferences: RegionalPreferences | null
-  
   // Community features
   communityEvents: GlobalPortugueseEvent[]
   professionalNetwork: PortugueseProfessional[]
   businessDirectory: PortugueseBusinessDirectory[]
   exchangePrograms: CulturalExchangeProgram[]
   diasporaFamilies: DiasporaFamily[]
-  
   // Analytics and growth
   communityMetrics: CommunityGrowthMetrics | null
-  
   // Actions
   switchRegion: (country: PortugueseCountry) => void
   searchProfessionals: (criteria: string) => PortugueseProfessional[]
@@ -40,27 +35,21 @@ interface GlobalPortugueseContextType {
   getBusinesses: (industry?: string) => PortugueseBusinessDirectory[]
   joinExchangeProgram: (programId: string) => void
   connectWithFamily: (familyId: string) => void
-  
   // Localization
   formatCurrency: (amount: number) => string
   formatDate: (date: Date) => string
   formatTime: (date: Date) => string
   getLocalizedText: (key: string) => string
-  
   // Cultural features
   loadCulturalCalendar: () => Promise<GlobalPortugueseEvent[]>
   findCulturalOrganizations: () => Promise<any[]>
   getCulturalPreservationProjects: () => Promise<any[]>
-  
   isLoading: boolean
 }
-
 const GlobalPortugueseContext = createContext<GlobalPortugueseContextType | undefined>(undefined)
-
 interface GlobalPortugueseProviderProps {
   children: ReactNode
 }
-
 // Mock regional data - in production this would come from API
 const mockRegionalData: Record<PortugueseCountry, LocalizedRegion> = {
   'uk': {
@@ -438,11 +427,9 @@ const mockRegionalData: Record<PortugueseCountry, LocalizedRegion> = {
     religiousCenters: []
   }
 }
-
 export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderProps) {
   const [currentCountry, setCurrentCountry] = useState<PortugueseCountry>('uk')
   const [isLoading, setIsLoading] = useState(false)
-  
   // Mock data - in production, these would come from APIs
   const [communityEvents, setCommunityEvents] = useState<GlobalPortugueseEvent[]>([])
   const [professionalNetwork, setProfessionalNetwork] = useState<PortugueseProfessional[]>([])
@@ -450,7 +437,6 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
   const [exchangePrograms, setExchangePrograms] = useState<CulturalExchangeProgram[]>([])
   const [diasporaFamilies, setDiasporaFamilies] = useState<DiasporaFamily[]>([])
   const [communityMetrics, setCommunityMetrics] = useState<CommunityGrowthMetrics | null>(null)
-
   // Auto-detect country based on browser/location if possible
   useEffect(() => {
     const savedCountry = localStorage.getItem('lusotown-country')
@@ -459,22 +445,17 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
     }
     // TODO: Add geolocation-based country detection
   }, [])
-
   const currentRegion = useMemo(() => {
     return mockRegionalData[currentCountry] || null
   }, [currentCountry])
-
   const currency = useMemo(() => {
     return currentRegion?.currency || 'EUR'
   }, [currentRegion])
-
   const availableCountries = useMemo(() => {
     return Object.keys(mockRegionalData) as PortugueseCountry[]
   }, [])
-
   const regionalPreferences = useMemo((): RegionalPreferences | null => {
     if (!currentRegion) return null
-    
     // Mock regional preferences - would be stored in database
     return {
       dateFormat: 'DD/MM/YYYY',
@@ -496,12 +477,10 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
       religiousConsiderations: ['catholic_traditions']
     }
   }, [currentRegion])
-
   const switchRegion = useCallback((country: PortugueseCountry) => {
     setCurrentCountry(country)
     localStorage.setItem('lusotown-country', country)
   }, [])
-
   const searchProfessionals = useCallback((criteria: string): PortugueseProfessional[] => {
     return professionalNetwork.filter(prof => 
       prof.profession.toLowerCase().includes(criteria.toLowerCase()) ||
@@ -509,36 +488,26 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
       prof.expertise.some(exp => exp.toLowerCase().includes(criteria.toLowerCase()))
     )
   }, [professionalNetwork])
-
   const findLocalEvents = useCallback((): GlobalPortugueseEvent[] => {
     return communityEvents.filter(event => event.location.country === currentCountry)
   }, [communityEvents, currentCountry])
-
   const getBusinesses = useCallback((industry?: string): PortugueseBusinessDirectory[] => {
     let filtered = businessDirectory.filter(business => business.location.country === currentCountry)
-    
     if (industry) {
       filtered = filtered.filter(business => 
         business.industry.toLowerCase().includes(industry.toLowerCase())
       )
     }
-    
     return filtered
   }, [businessDirectory, currentCountry])
-
   const joinExchangeProgram = useCallback(async (programId: string) => {
     // TODO: Implement API call to join exchange program
-    console.log(`Joining exchange program: ${programId}`)
-  }, [])
-
+    }, [])
   const connectWithFamily = useCallback(async (familyId: string) => {
     // TODO: Implement API call to connect with diaspora family
-    console.log(`Connecting with family: ${familyId}`)
-  }, [])
-
+    }, [])
   const formatCurrency = useCallback((amount: number): string => {
     if (!regionalPreferences) return `€${amount.toFixed(2)}`
-    
     const currencySymbols: Record<Currency, string> = {
       'EUR': '€',
       'USD': '$',
@@ -548,55 +517,43 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
       'GBP': '£',
       'CHF': 'CHF'
     }
-    
     const symbol = currencySymbols[currency]
     return `${symbol}${amount.toFixed(2)}`
   }, [currency, regionalPreferences])
-
   const formatDate = useCallback((date: Date): string => {
     if (!regionalPreferences) return date.toLocaleDateString()
-    
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
       month: '2-digit', 
       day: '2-digit'
     }
-    
     return date.toLocaleDateString('pt-PT', options)
   }, [regionalPreferences, currentCountry])
-
   const formatTime = useCallback((date: Date): string => {
     if (!regionalPreferences) return date.toLocaleTimeString()
-    
     const options: Intl.DateTimeFormatOptions = {
       hour: '2-digit',
       minute: '2-digit',
       hour12: regionalPreferences.timeFormat === '12h'
     }
-    
     return date.toLocaleTimeString('pt-PT', options)
   }, [regionalPreferences, currentCountry])
-
   const getLocalizedText = useCallback((key: string): string => {
     // TODO: Integrate with enhanced i18n system for regional variations
     return key
   }, [])
-
   const loadCulturalCalendar = useCallback(async (): Promise<GlobalPortugueseEvent[]> => {
     // TODO: Load cultural calendar from API
     return []
   }, [])
-
   const findCulturalOrganizations = useCallback(async () => {
     // TODO: Load cultural organizations from API
     return []
   }, [])
-
   const getCulturalPreservationProjects = useCallback(async () => {
     // TODO: Load cultural preservation projects from API
     return []
   }, [])
-
   const contextValue = useMemo(() => ({
     currentCountry,
     currentRegion,
@@ -652,14 +609,12 @@ export function GlobalPortugueseProvider({ children }: GlobalPortugueseProviderP
     getCulturalPreservationProjects,
     isLoading
   ])
-
   return (
     <GlobalPortugueseContext.Provider value={contextValue}>
       {children}
     </GlobalPortugueseContext.Provider>
   )
 }
-
 export function useGlobalPortuguese() {
   const context = useContext(GlobalPortugueseContext)
   if (context === undefined) {

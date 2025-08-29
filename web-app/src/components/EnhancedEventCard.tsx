@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -24,7 +23,6 @@ import {
 } from './PortugueseMicroInteractions';
 import PullToRefreshWrapper from './PullToRefreshWrapper';
 import SmartSwipeNavigation from './SmartSwipeNavigation';
-
 // Event interface for enhanced card
 interface EnhancedEvent {
   id: string;
@@ -52,7 +50,6 @@ interface EnhancedEvent {
   organizerAvatar?: string;
   lastUpdated: Date;
 }
-
 interface EnhancedEventCardProps {
   event: EnhancedEvent;
   onLike?: (eventId: string) => void;
@@ -65,7 +62,6 @@ interface EnhancedEventCardProps {
   showActions?: boolean;
   compact?: boolean;
 }
-
 export default function EnhancedEventCard({
   event,
   onLike,
@@ -80,22 +76,18 @@ export default function EnhancedEventCard({
 }: EnhancedEventCardProps) {
   const { language } = useLanguage();
   const isPortuguese = language === 'pt';
-
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
-
   // Loading state
   if (loading) {
     return <AdvancedSkeletonLoader variant="event-card" portugueseTheme={true} />;
   }
-
   // Format price
   const formatPrice = (price: number, currency: string) => {
     if (price === 0) return isPortuguese ? 'Grátis' : 'Free';
     return `${currency}${price.toFixed(2)}`;
   };
-
   // Format date
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -105,7 +97,6 @@ export default function EnhancedEventCard({
       day: 'numeric',
     });
   };
-
   // Handle interactions
   const handleLike = () => {
     if (onLike) onLike(event.id);
@@ -113,14 +104,12 @@ export default function EnhancedEventCard({
       setShowCelebration(true);
     }
   };
-
   const handleSave = () => {
     if (onSave) onSave(event.id);
     if (!event.isSaved) {
       setShowCelebration(true);
     }
   };
-
   const handleShare = async () => {
     if (onShare) {
       onShare(event);
@@ -132,19 +121,15 @@ export default function EnhancedEventCard({
           url: `${window.location.origin}/events/${event.id}`,
         });
       } catch (error) {
-        console.log('Share cancelled or failed');
-      }
+        }
     }
   };
-
   const handleView = () => {
     if (onView) onView(event);
   };
-
   const handleRate = (rating: number) => {
     if (onRate) onRate(event.id, rating);
   };
-
   return (
     <>
       <motion.div
@@ -177,7 +162,6 @@ export default function EnhancedEventCard({
               />
             </>
           )}
-          
           {/* Fallback when no image or error */}
           {(!event.imageUrl || imageError) && !imageLoading && (
             <div className="w-full h-full bg-gradient-to-br from-green-400 to-red-400 flex items-center justify-center">
@@ -187,15 +171,12 @@ export default function EnhancedEventCard({
               </div>
             </div>
           )}
-
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          
           {/* Lusophone Flag Indicator */}
           <div className="absolute top-3 right-3">
             <PortugueseFlagWave size="w-8 h-5" animate={true} />
           </div>
-
           {/* Featured Badge */}
           {event.isFeatured && (
             <motion.div
@@ -207,14 +188,12 @@ export default function EnhancedEventCard({
               ⭐ {isPortuguese ? 'Destaque' : 'Featured'}
             </motion.div>
           )}
-
           {/* Category Badge */}
           <div className="absolute bottom-3 left-3">
             <div className="bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
               {event.category}
             </div>
           </div>
-
           {/* Distance Info */}
           {event.distance && (
             <div className="absolute bottom-3 right-3">
@@ -225,7 +204,6 @@ export default function EnhancedEventCard({
             </div>
           )}
         </div>
-
         {/* Event Content */}
         <div className="p-6">
           {/* Header */}
@@ -244,7 +222,6 @@ export default function EnhancedEventCard({
                 </p>
               )}
             </div>
-            
             {/* Quick Actions */}
             {showActions && (
               <div className="flex items-center gap-2 ml-3">
@@ -261,7 +238,6 @@ export default function EnhancedEventCard({
               </div>
             )}
           </div>
-
           {/* Event Details */}
           <div className="space-y-2 mb-4">
             {/* Date and Time */}
@@ -272,7 +248,6 @@ export default function EnhancedEventCard({
               <span>{event.startTime}</span>
               {event.endTime && <span>- {event.endTime}</span>}
             </div>
-
             {/* Location */}
             <div className="flex items-center gap-2 text-gray-600 text-sm">
               <MapPinIcon className="w-4 h-4 flex-shrink-0" />
@@ -283,7 +258,6 @@ export default function EnhancedEventCard({
                 </span>
               )}
             </div>
-
             {/* Attendance and Price */}
             <div className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-2 text-gray-600">
@@ -295,7 +269,6 @@ export default function EnhancedEventCard({
                   {isPortuguese ? 'confirmados' : 'attending'}
                 </span>
               </div>
-              
               <div className="flex items-center gap-1">
                 <CurrencyPoundIcon className="w-4 h-4 text-gray-500" />
                 <span className="font-semibold text-gray-900">
@@ -304,7 +277,6 @@ export default function EnhancedEventCard({
               </div>
             </div>
           </div>
-
           {/* Cultural Tags */}
           {event.culturalTags && event.culturalTags.length > 0 && (
             <div className="flex flex-wrap gap-1 mb-4">
@@ -323,7 +295,6 @@ export default function EnhancedEventCard({
               )}
             </div>
           )}
-
           {/* Rating */}
           {event.rating > 0 && (
             <div className="flex items-center gap-3 mb-4">
@@ -338,7 +309,6 @@ export default function EnhancedEventCard({
               </span>
             </div>
           )}
-
           {/* Organizer */}
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-red-400 rounded-full flex items-center justify-center">
@@ -363,7 +333,6 @@ export default function EnhancedEventCard({
               </div>
             </div>
           </div>
-
           {/* Action Buttons */}
           {showActions && (
             <div className="flex gap-2">
@@ -374,7 +343,6 @@ export default function EnhancedEventCard({
               >
                 {isPortuguese ? 'Ver Detalhes' : 'View Details'}
               </PortugueseRippleButton>
-              
               <motion.button
                 onClick={handleShare}
                 className="w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-xl flex items-center justify-center transition-colors touch-manipulation"
@@ -385,7 +353,6 @@ export default function EnhancedEventCard({
               </motion.button>
             </div>
           )}
-
           {/* Activity Indicators */}
           {!compact && (
             <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
@@ -395,7 +362,6 @@ export default function EnhancedEventCard({
                 label={isPortuguese ? 'interessados' : 'interested'}
                 animate={true}
               />
-              
               <div className="text-xs text-gray-500">
                 {isPortuguese ? 'Actualizado ' : 'Updated '}
                 {new Date(event.lastUpdated).toLocaleDateString()}
@@ -404,7 +370,6 @@ export default function EnhancedEventCard({
           )}
         </div>
       </motion.div>
-
       {/* Success Celebration */}
       <PortugueseCompletionCelebration
         show={showCelebration}
@@ -413,7 +378,6 @@ export default function EnhancedEventCard({
     </>
   );
 }
-
 // Grid wrapper with advanced features
 export function EnhancedEventGrid({
   events,
@@ -431,7 +395,6 @@ export function EnhancedEventGrid({
 } & Omit<EnhancedEventCardProps, 'event'>) {
   const { language } = useLanguage();
   const isPortuguese = language === 'pt';
-
   const gridContent = (
     <div className={`${className}`}>
       {/* Swipe Navigation */}
@@ -444,7 +407,6 @@ export function EnhancedEventGrid({
           />
         </div>
       )}
-
       {/* Events Grid */}
       {loading ? (
         <AdvancedSkeletonLoader variant="event-grid" count={6} />
@@ -474,7 +436,6 @@ export function EnhancedEventGrid({
       )}
     </div>
   );
-
   // Wrap with pull-to-refresh if enabled
   if (onRefresh) {
     return (
@@ -483,6 +444,5 @@ export function EnhancedEventGrid({
       </PullToRefreshWrapper>
     );
   }
-
   return gridContent;
 }

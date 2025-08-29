@@ -1,5 +1,4 @@
 "use client";
-
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { IMAGES } from "@/config/cdn";
@@ -18,11 +17,9 @@ import {
   ExclamationTriangleIcon
 } from "@heroicons/react/24/outline";
 import { isServiceAvailable, getServiceStatus, getAvailabilityStyles, getAvailabilityLabel } from "@/lib/serviceAvailability";
-
 export default function ToursPage() {
   const { language } = useLanguage();
   const isPortuguese = language === "pt";
-
   const tours = [
     {
       id: 1,
@@ -149,7 +146,6 @@ export default function ToursPage() {
       }
     }
   ];
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -173,7 +169,6 @@ export default function ToursPage() {
                 </span>
               </span>
             </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -223,7 +218,6 @@ export default function ToursPage() {
                 )}
               </span>
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -243,7 +237,6 @@ export default function ToursPage() {
                   : "Explore London with qualified Lusophone guides! Authentic cultural experiences and Lusophone storytelling."}
               </span>
             </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -275,7 +268,6 @@ export default function ToursPage() {
                 </span>
               </div>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -298,7 +290,6 @@ export default function ToursPage() {
           </div>
         </div>
       </section>
-
       {/* Enhanced Tours Grid */}
       <section className="py-16">
         <div className="container-width">
@@ -314,14 +305,12 @@ export default function ToursPage() {
                 }
               </p>
             </div>
-            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {tours.map((tour, index) => {
                 const serviceStatus = getServiceStatus(tour.serviceKey);
                 const available = isServiceAvailable(tour.serviceKey);
                 const availabilityStyles = serviceStatus ? getAvailabilityStyles(serviceStatus.status) : null;
                 const availabilityLabel = serviceStatus ? getAvailabilityLabel(serviceStatus.status, isPortuguese) : null;
-                
                 return (
                 <motion.div
                   key={tour.id}
@@ -358,7 +347,6 @@ export default function ToursPage() {
                       <span className="text-sm font-medium">{tour.rating}</span>
                     </div>
                   </div>
-                  
                   <div className="p-8">
                     {/* Tour Title & Price */}
                     <div className="flex items-start justify-between mb-4">
@@ -368,10 +356,8 @@ export default function ToursPage() {
                         <div className="text-sm text-gray-500">{isPortuguese ? "por pessoa" : "per person"}</div>
                       </div>
                     </div>
-                    
                     {/* Description */}
                     <p className="text-gray-600 mb-6 leading-relaxed">{tour.description}</p>
-                    
                     {/* Tour Details */}
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="flex items-center gap-2 text-gray-600">
@@ -383,7 +369,6 @@ export default function ToursPage() {
                         <span className="text-sm">{tour.groupSize} {isPortuguese ? "pessoas" : "people"}</span>
                       </div>
                     </div>
-                    
                     {/* Tour Highlights */}
                     <div className="mb-6">
                       <h4 className="font-semibold text-gray-900 mb-3">
@@ -403,7 +388,6 @@ export default function ToursPage() {
                         )}
                       </div>
                     </div>
-                    
                     {/* Guide Information */}
                     <div className="bg-gray-50 rounded-2xl p-4 mb-6">
                       <div className="flex items-center gap-3">
@@ -420,7 +404,6 @@ export default function ToursPage() {
                         </div>
                       </div>
                     </div>
-                    
                     {/* Action Buttons */}
                     <div className="space-y-3">
                       {available ? (
@@ -448,8 +431,7 @@ export default function ToursPage() {
                           {serviceStatus?.waitingListAvailable && (
                             <button
                               onClick={() => {
-                                console.log(`Join waiting list for tour ${tour.serviceKey}`);
-                              }}
+                                }}
                               className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2.5 px-6 rounded-xl font-bold transition-all duration-300"
                             >
                               {isPortuguese ? 'Entrar na Lista de Espera' : 'Join Waiting List'}
@@ -472,7 +454,6 @@ export default function ToursPage() {
           </div>
         </div>
       </section>
-
       {/* Lusophone Tour Testimonials */}
       <section id="testimonials" className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container-width">
@@ -488,7 +469,6 @@ export default function ToursPage() {
                 }
               </p>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center mb-4">
@@ -514,7 +494,6 @@ export default function ToursPage() {
                   </div>
                 </div>
               </div>
-              
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="flex gap-1">
@@ -539,7 +518,6 @@ export default function ToursPage() {
                   </div>
                 </div>
               </div>
-              
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="flex gap-1">
@@ -568,7 +546,6 @@ export default function ToursPage() {
           </div>
         </div>
       </section>
-
       {/* Enhanced Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="container-width">
@@ -584,7 +561,6 @@ export default function ToursPage() {
                 }
               </p>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center group">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -600,7 +576,6 @@ export default function ToursPage() {
                   }
                 </p>
               </div>
-              
               <div className="text-center group">
                 <div className="w-20 h-20 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <UsersIcon className="w-10 h-10 text-secondary-600" />
@@ -615,7 +590,6 @@ export default function ToursPage() {
                   }
                 </p>
               </div>
-              
               <div className="text-center group">
                 <div className="w-20 h-20 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <MapPinIcon className="w-10 h-10 text-accent-600" />
@@ -630,7 +604,6 @@ export default function ToursPage() {
                   }
                 </p>
               </div>
-              
               <div className="text-center group">
                 <div className="w-20 h-20 bg-gradient-to-br from-coral-100 to-coral-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <GlobeAltIcon className="w-10 h-10 text-coral-600" />
@@ -649,7 +622,6 @@ export default function ToursPage() {
           </div>
         </div>
       </section>
-
       {/* Final CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -681,7 +653,6 @@ export default function ToursPage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

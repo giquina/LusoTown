@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -24,7 +23,6 @@ import CrossPlatformNavigationWidget from "@/components/CrossPlatformNavigationW
 import { useLanguage } from "@/context/LanguageContext";
 import { IMAGES } from "@/config/cdn";
 import { TRANSPORT_PRICING } from "@/config/pricing";
-
 // Premium security and VIP services - London-focused operations only
 const serviceTiers = [
   {
@@ -172,7 +170,6 @@ const serviceTiers = [
     targetAudience: "vip_clients",
   },
 ];
-
 // London Tourism Experience Packages with Lusophone-Speaking Guides - Premium London Attractions
 const londonTourismExperiences = [
   {
@@ -354,7 +351,6 @@ const londonTourismExperiences = [
     targetAudience: "shopping_enthusiasts",
   },
 ];
-
 // Multi-Day London Tourism Packages - Premium London Experiences with Lusophone-Speaking Service
 const multiDayPackages = [
   {
@@ -479,7 +475,6 @@ const multiDayPackages = [
     targetAudience: "adults_and_professionals",
   },
 ];
-
 // Standard London Tourism Packages - Professional London Services with Lusophone-Speaking Staff
 const standardPackages = [
   {
@@ -592,14 +587,12 @@ const standardPackages = [
     targetAudience: "theatre_enthusiasts",
   },
 ];
-
 // Combine all packages
 const experiencePackages = [
   ...londonTourismExperiences,
   ...multiDayPackages,
   ...standardPackages,
 ];
-
 const features = [
   {
     icon: ShieldCheckIcon,
@@ -636,24 +629,19 @@ const features = [
       "Conhecimento profundo das atrações de Londres e destinos premium",
   },
 ];
-
 export default function TransportPage() {
   const { t, language } = useLanguage();
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [showSIABookingFlow, setShowSIABookingFlow] = useState(false);
   const [selectedService, setSelectedService] = useState<string | null>(null);
-
   const isPortuguese = language === "pt";
-
   const handleBookService = (serviceId: string) => {
     // Always start with the SIA questionnaire as the first step
     setSelectedService(serviceId);
     setShowSIABookingFlow(true);
   };
-
   return (
     <div className="min-h-screen bg-white">
-
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">
         <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url('${IMAGES.backgrounds.theShard}')` }}></div>
@@ -675,7 +663,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -727,7 +714,6 @@ export default function TransportPage() {
                 )}
               </span>
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -747,7 +733,6 @@ export default function TransportPage() {
                   : "Certified Lusophone driver & guide in London. VIP experiences with communication in your language!"}
               </span>
             </motion.p>
-
             {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -768,7 +753,6 @@ export default function TransportPage() {
                 {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
               </div>
             </motion.div>
-            
             {/* Quick Contact Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -792,7 +776,6 @@ export default function TransportPage() {
                 </span>
               </div>
             </motion.div>
-
             {/* Main CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -816,7 +799,6 @@ export default function TransportPage() {
                 {isPortuguese ? "Falar Connosco" : "Contact Us"}
               </button>
             </motion.div>
-            
             {/* Pricing Preview */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -844,7 +826,6 @@ export default function TransportPage() {
                   </div>
                 </div>
               </div>
-              
               {/* Additional pricing info */}
               <div className="text-center mt-6 pt-4 border-t border-gray-200">
                 <p className="text-sm text-gray-600 font-medium">
@@ -862,7 +843,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* How SIA Close Protection Works Section */}
       <section className="py-24 bg-white border-t border-gray-100">
         <div className="container-width">
@@ -881,7 +861,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
               {isPortuguese
                 ? "Processo Profissional de Proteção SIA"
@@ -893,7 +872,6 @@ export default function TransportPage() {
                 : "Our system ensures full compliance with United Kingdom SIA regulations and the highest security standards"}
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
             {/* Step 1 */}
             <motion.div
@@ -921,7 +899,6 @@ export default function TransportPage() {
                 <ArrowRightIcon className="w-6 h-6 text-secondary-400" />
               </div>
             </motion.div>
-
             {/* Step 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -947,7 +924,6 @@ export default function TransportPage() {
                 <ArrowRightIcon className="w-6 h-6 text-accent-400" />
               </div>
             </motion.div>
-
             {/* Step 3 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -973,7 +949,6 @@ export default function TransportPage() {
                 <ArrowRightIcon className="w-6 h-6 text-premium-400" />
               </div>
             </motion.div>
-
             {/* Step 4 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -999,7 +974,6 @@ export default function TransportPage() {
                 <ArrowRightIcon className="w-6 h-6 text-action-400" />
               </div>
             </motion.div>
-
             {/* Step 5 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1025,7 +999,6 @@ export default function TransportPage() {
               </div>
             </motion.div>
           </div>
-
           {/* Key Benefits */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div
@@ -1047,7 +1020,6 @@ export default function TransportPage() {
                   : "All officers are SIA licensed and follow strict United Kingdom protocols"}
               </p>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1067,7 +1039,6 @@ export default function TransportPage() {
                   : "Confirmation within 2-4 hours with immediate officer assignment"}
               </p>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1088,7 +1059,6 @@ export default function TransportPage() {
               </p>
             </motion.div>
           </div>
-
           {/* CTA Section */}
           <div className="mt-16 text-center">
             <motion.div
@@ -1118,7 +1088,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* Cultural Authenticity Section */}
       <section className="py-24 bg-gradient-to-br from-secondary-50/60 via-white to-accent-50/40 border-t border-gray-100 relative overflow-hidden">
         {/* Lusophone-inspired background decorative elements */}
@@ -1132,7 +1101,6 @@ export default function TransportPage() {
           <div className="absolute top-3/4 right-1/5 w-4 h-4 bg-accent-300/50 rounded-full opacity-30" />
           <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-coral-300/50 rounded-full opacity-35" />
         </div>
-
         <div className="container-width relative z-10">
           <div className="text-center mb-16">
             <motion.div
@@ -1151,7 +1119,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
               {isPortuguese
                 ? "Quer Explorar Londres com Total Segurança?"
@@ -1163,7 +1130,6 @@ export default function TransportPage() {
                 : "Our specialized drivers and security personnel provide discreet personal protection and fluent Lusophone communication. Explore London with complete confidence!"}
             </p>
           </div>
-
           {/* Cultural Expertise Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-16">
             <motion.div
@@ -1219,7 +1185,6 @@ export default function TransportPage() {
                 </li>
               </ul>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1273,7 +1238,6 @@ export default function TransportPage() {
                 </li>
               </ul>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1324,7 +1288,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* London Attractions Gallery */}
       <section className="py-16 bg-white">
         <div className="container-width">
@@ -1352,7 +1315,6 @@ export default function TransportPage() {
                 : "Discover iconic landmarks and must-see attractions in London with our specialist guides"}
             </motion.p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               {
@@ -1436,7 +1398,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* Features Section - Why Choose Us */}
       <section className="py-24 bg-gradient-to-br from-secondary-900 via-premium-900 to-action-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
@@ -1444,7 +1405,6 @@ export default function TransportPage() {
           <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-secondary-400/20 via-accent-300/20 to-coral-300/20 rounded-full opacity-60 animate-pulse" />
           <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-tr from-action-400/20 via-secondary-300/20 to-accent-300/20 rounded-full opacity-50 animate-bounce" />
         </div>
-        
         <div className="container-width relative">
           <div className="text-center mb-20">
             <motion.div
@@ -1463,7 +1423,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-            
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1475,7 +1434,6 @@ export default function TransportPage() {
                 ? "A Diferença Está no Detalhe"
                 : "The Difference is in the Details"}
             </motion.h2>
-            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1487,7 +1445,6 @@ export default function TransportPage() {
                 ? "Não somos apenas um serviço de transporte. Somos os seus parceiros de confiança em Londres, oferecendo experiências autênticas com total compreensão cultural."
                 : "We're not just a transport service. We're your trusted partners in London, offering authentic experiences with complete cultural understanding."}
             </motion.p>
-            
             {/* Statistics */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1516,7 +1473,6 @@ export default function TransportPage() {
               </div>
             </motion.div>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             {features.map((feature, index) => (
               <motion.div
@@ -1543,7 +1499,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* Advanced Booking & Planning Section */}
       <section className="py-16 bg-gradient-to-br from-accent-50 via-white to-secondary-50">
         <div className="container-width">
@@ -1569,7 +1524,6 @@ export default function TransportPage() {
                 : "Plan your London experience before you even arrive. Book in advance and have your Portuguese-speaking driver ready to meet you at the airport."}
             </motion.p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1623,7 +1577,6 @@ export default function TransportPage() {
                 </li>
               </ul>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1673,7 +1626,6 @@ export default function TransportPage() {
                 </li>
               </ul>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1726,7 +1678,6 @@ export default function TransportPage() {
               </ul>
             </motion.div>
           </div>
-
           <div className="text-center mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1767,7 +1718,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* Service Tiers Section */}
       <section
         id="services"
@@ -1778,7 +1728,6 @@ export default function TransportPage() {
           <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-secondary-200/30 via-accent-100/20 to-coral-100/20 rounded-full opacity-60 animate-pulse" />
           <div className="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-tr from-action-200/30 via-secondary-100/20 to-accent-100/20 rounded-full opacity-50 animate-bounce" />
         </div>
-        
         <div className="container-width relative">
           <div className="text-center mb-20">
             <motion.div
@@ -1797,7 +1746,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-            
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1809,7 +1757,6 @@ export default function TransportPage() {
                 ? "O Que Precisa em Londres?"
                 : "What Do You Need in London?"}
             </motion.h2>
-            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1821,7 +1768,6 @@ export default function TransportPage() {
                 ? "Transporte seguro, guias especializados e experiências únicas em Londres - tudo com profissionais que falam o seu idioma e compreendem a sua cultura."
                 : "Safe transport, expert guides, and unique London experiences - all with professionals who speak your language and understand your culture."}
             </motion.p>
-            
             {/* Key Benefits Bar */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1850,7 +1796,6 @@ export default function TransportPage() {
               </div>
             </motion.div>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
             {serviceTiers.map((tier, index) => (
               <TransportServiceCard
@@ -1864,7 +1809,6 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* London Tourism Experiences with Lusophone Service Section */}
       <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30">
         <div className="container-width">
@@ -1885,7 +1829,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-
             <h2 className="text-4xl font-black text-gray-900 mb-4">
               {isPortuguese
                 ? "Quer Conhecer Londres Como um VIP?"
@@ -1897,7 +1840,6 @@ export default function TransportPage() {
                 : "Exclusive access to London's top attractions with your personal Portuguese-speaking guide. Skip lines, enter through the back, and have experiences other tourists will never get!"}
             </p>
           </div>
-
           {/* London Tourism Experiences */}
           <div className="mb-16">
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
@@ -1947,7 +1889,6 @@ export default function TransportPage() {
                       </div>
                     </div>
                   )}
-
                   <div className="p-3 sm:p-4 lg:p-6 flex flex-col flex-1">
                     <div className="mb-2 sm:mb-3">
                       <h3 className="text-sm sm:text-base lg:text-xl font-semibold text-gray-900 mb-1 sm:mb-2 leading-tight">
@@ -1962,13 +1903,11 @@ export default function TransportPage() {
                         </div>
                       </div>
                     </div>
-
                     <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm lg:text-base flex-1">
                       {isPortuguese
                         ? pkg.descriptionPortuguese
                         : pkg.description}
                     </p>
-
                     {/* Highlights - Show fewer on mobile */}
                     {pkg.highlights && (
                       <div className="mb-3 sm:mb-4 lg:mb-6">
@@ -1993,7 +1932,6 @@ export default function TransportPage() {
                         </ul>
                       </div>
                     )}
-
                     <button
                       onClick={() => handleBookService(pkg.id)}
                       className="w-full bg-secondary-600 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-md sm:rounded-lg font-semibold hover:bg-secondary-700 transition-colors transform hover:scale-105 duration-200 text-xs sm:text-sm lg:text-base mt-auto"
@@ -2005,7 +1943,6 @@ export default function TransportPage() {
               ))}
             </div>
           </div>
-
           {/* Multi-Day Packages */}
           <div className="mb-16">
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
@@ -2039,13 +1976,11 @@ export default function TransportPage() {
                         {isPortuguese ? pkg.namePortuguese : pkg.name}
                       </h3>
                     </div>
-
                     <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">
                       {isPortuguese
                         ? pkg.descriptionPortuguese
                         : pkg.description}
                     </p>
-
                     <button
                       onClick={() => handleBookService(pkg.id)}
                       className="w-full bg-premium-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-premium-700 transition-colors text-sm mt-auto"
@@ -2057,7 +1992,6 @@ export default function TransportPage() {
               ))}
             </div>
           </div>
-
           {/* Standard Services */}
           <div>
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
@@ -2091,13 +2025,11 @@ export default function TransportPage() {
                         </div>
                       </div>
                     </div>
-
                     <p className="text-gray-600 mb-6">
                       {isPortuguese
                         ? pkg.descriptionPortuguese
                         : pkg.description}
                     </p>
-
                     <button
                       onClick={() => handleBookService(pkg.id)}
                       className="w-full bg-primary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors mt-auto"
@@ -2111,16 +2043,13 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* London Tour Routes Section */}
       <LondonTourRoutes
         isPortuguese={isPortuguese}
         onBookTour={(tourId) => handleBookService(tourId)}
       />
-
       {/* Testimonials Section */}
       <TransportTestimonials />
-
       {/* Final CTA Section */}
       <section className="py-32 bg-gradient-to-br from-secondary-900 via-premium-900 to-action-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
@@ -2132,7 +2061,6 @@ export default function TransportPage() {
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-premium-400/20 via-accent-400/20 to-coral-400/20 rounded-full opacity-40 animate-ping" />
         </div>
-
         <div className="container-width relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
@@ -2151,7 +2079,6 @@ export default function TransportPage() {
                 </span>
               </span>
             </motion.div>
-            
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -2163,7 +2090,6 @@ export default function TransportPage() {
                 ? "Sua Aventura em Londres Começa Aqui"
                 : "Your London Adventure Starts Here"}
             </motion.h2>
-            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -2175,7 +2101,6 @@ export default function TransportPage() {
                 ? "Fale connosco agora e reserve a sua experiência premium em Londres. Nossa equipa está disponível 24/7 para criar momentos inesquecíveis."
                 : "Contact us now and book your premium London experience. Our team is available 24/7 to create unforgettable moments."}
             </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -2200,7 +2125,6 @@ export default function TransportPage() {
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
-            
             {/* Final trust indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -2231,10 +2155,8 @@ export default function TransportPage() {
           </div>
         </div>
       </section>
-
       {/* Custom Tours Section */}
       <CustomToursSection onBookTour={handleBookService} showHeader={true} />
-
       {/* Standard Booking Form Modal */}
       {showBookingForm && (
         <TransportBookingForm
@@ -2248,7 +2170,6 @@ export default function TransportPage() {
           experiencePackages={experiencePackages}
         />
       )}
-
       {/* SIA Compliance Booking Flow */}
       {showSIABookingFlow && (
         <TransportBookingFlow
@@ -2265,22 +2186,18 @@ export default function TransportPage() {
           experiencePackages={experiencePackages}
         />
       )}
-
       {/* Service-Community Bridge Integration */}
       <ServiceCommunityBridge 
         triggerContext="transport_page"
         onIntegrationSelected={(integration) => {
-          console.log('Integration selected:', integration)
           // Could open booking flow with integration
         }}
       />
-
       {/* Cross-Platform Navigation Widget */}
       <CrossPlatformNavigationWidget 
         currentPage="transport"
         position="bottom-right"
       />
-
       <Footer />
     </div>
   );

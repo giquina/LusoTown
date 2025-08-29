@@ -1,7 +1,5 @@
 "use client";
-
 import React from "react";
-
 interface EnhancedMobileGesturesProps {
   onSwipeLeft?: () => void;
   onSwipeRight?: () => void;
@@ -16,7 +14,6 @@ interface EnhancedMobileGesturesProps {
   disabled?: boolean;
   children: React.ReactNode;
 }
-
 export default function EnhancedMobileGestures({
   onSwipeLeft,
   onSwipeRight,
@@ -33,12 +30,9 @@ export default function EnhancedMobileGestures({
 }: EnhancedMobileGesturesProps) {
   const [touchStart, setTouchStart] = React.useState({ x: 0, y: 0, time: 0 });
   const [touchEnd, setTouchEnd] = React.useState({ x: 0, y: 0, time: 0 });
-
   const minSwipeDistance = 50;
-
   const handleTouchStart = (e: React.TouchEvent) => {
     if (disabled) return;
-    
     const touch = e.targetTouches[0];
     setTouchStart({
       x: touch.clientX,
@@ -47,10 +41,8 @@ export default function EnhancedMobileGestures({
     });
     setTouchEnd({ x: 0, y: 0, time: 0 });
   };
-
   const handleTouchMove = (e: React.TouchEvent) => {
     if (disabled) return;
-    
     const touch = e.targetTouches[0];
     setTouchEnd({
       x: touch.clientX,
@@ -58,20 +50,16 @@ export default function EnhancedMobileGestures({
       time: Date.now()
     });
   };
-
   const handleTouchEnd = () => {
     if (disabled || !touchStart.x || !touchEnd.x) return;
-    
     const distanceX = touchStart.x - touchEnd.x;
     const distanceY = touchStart.y - touchEnd.y;
     const timeDiff = Math.max(touchEnd.time - touchStart.time, 1);
     const velocity = Math.sqrt(distanceX * distanceX + distanceY * distanceY) / timeDiff;
-
     const isLeftSwipe = distanceX > minSwipeDistance;
     const isRightSwipe = distanceX < -minSwipeDistance;
     const isUpSwipe = distanceY > minSwipeDistance;
     const isDownSwipe = distanceY < -minSwipeDistance;
-
     // Prioritize horizontal swipes over vertical ones
     if (Math.abs(distanceX) > Math.abs(distanceY)) {
       if (isLeftSwipe) {
@@ -91,13 +79,10 @@ export default function EnhancedMobileGestures({
       }
     }
   };
-
   const handleClick = (e: React.MouseEvent) => {
     if (disabled) return;
-    
     onTap?.({ x: e.clientX, y: e.clientY });
   };
-
   return (
     <div
       className={className}
@@ -110,7 +95,6 @@ export default function EnhancedMobileGestures({
     </div>
   );
 }
-
 // Export hook for Portuguese gestures
 export const usePortugueseGestures = () => {
   const detectCulturalPattern = React.useCallback((gesture: any) => {
@@ -118,12 +102,9 @@ export const usePortugueseGestures = () => {
     // This could be enhanced with more sophisticated pattern recognition
     return null;
   }, []);
-
   const handleSwipe = React.useCallback((direction: 'left' | 'right' | 'up' | 'down') => {
     // Simple gesture handler for Portuguese community
-    console.log(`Portuguese gesture: ${direction}`);
-  }, []);
-
+    }, []);
   return {
     detectCulturalPattern,
     handleSwipe

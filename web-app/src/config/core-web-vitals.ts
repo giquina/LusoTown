@@ -2,12 +2,10 @@
  * Core Web Vitals Configuration for Portuguese Community Platform
  * Comprehensive performance monitoring system
  */
-
 // Core Web Vitals metric types
 export type WebVitalMetric = 'LCP' | 'FID' | 'CLS' | 'FCP' | 'TTI';
 export type PerformanceScore = 'good' | 'needs-improvement' | 'poor';
 export type MonitoringCategory = 'CULTURAL_EVENTS' | 'BUSINESS_DIRECTORY' | 'AI_MATCHING' | 'STREAMING_PLATFORM' | 'COMMUNITY_PROFILES';
-
 // Web Vitals thresholds
 export const WEB_VITALS_THRESHOLDS = {
   LCP: { GOOD: 2500, NEEDS_IMPROVEMENT: 4000 },
@@ -16,7 +14,6 @@ export const WEB_VITALS_THRESHOLDS = {
   FCP: { GOOD: 1800, NEEDS_IMPROVEMENT: 3000 },
   TTI: { GOOD: 3800, NEEDS_IMPROVEMENT: 7300 }
 } as const;
-
 // Portuguese monitoring categories
 export const PORTUGUESE_MONITORING_CATEGORIES = {
   CULTURAL_EVENTS: 'portuguese-cultural-events',
@@ -25,14 +22,12 @@ export const PORTUGUESE_MONITORING_CATEGORIES = {
   STREAMING_PLATFORM: 'portuguese-streaming-content',
   COMMUNITY_PROFILES: 'portuguese-community-profiles'
 } as const;
-
 // Mobile monitoring breakpoints
 export const MOBILE_MONITORING_BREAKPOINTS = {
   MOBILE: { width: 768, priority: 'high' },
   TABLET: { width: 1024, priority: 'medium' },
   DESKTOP: { width: 1920, priority: 'normal' }
 } as const;
-
 // AI performance thresholds
 export const AI_PERFORMANCE_THRESHOLDS = {
   LUSOBOT_RESPONSE_TIME: 2000,
@@ -40,7 +35,6 @@ export const AI_PERFORMANCE_THRESHOLDS = {
   NOTIFICATION_PROCESSING: 1000,
   ANALYTICS_PROCESSING: 5000
 } as const;
-
 // Monitoring configuration
 export const MONITORING_CONFIG = {
   COLLECTION_INTERVALS: {
@@ -53,7 +47,6 @@ export const MONITORING_CONFIG = {
     WARNING_PERFORMANCE_DEGRADATION: 0.6
   }
 } as const;
-
 // Web Vital Measurement interface
 export interface WebVitalMeasurement {
   metric: WebVitalMetric;
@@ -65,7 +58,6 @@ export interface WebVitalMeasurement {
   userLanguage: 'en' | 'pt';
   culturalContent: boolean;
 }
-
 // Dashboard metrics interface
 export interface DashboardMetrics {
   timestamp: number;
@@ -89,7 +81,6 @@ export interface DashboardMetrics {
   };
   budgetStatus: any[];
 }
-
 // Performance scoring function
 export const getPerformanceScore = (metric: WebVitalMetric, value: number): PerformanceScore => {
   const thresholds = WEB_VITALS_THRESHOLDS[metric];
@@ -97,7 +88,6 @@ export const getPerformanceScore = (metric: WebVitalMetric, value: number): Perf
   if (value <= thresholds.NEEDS_IMPROVEMENT) return 'needs-improvement';
   return 'poor';
 };
-
 // Portuguese content weight calculation
 export const getPortugueseContentWeight = (category: MonitoringCategory): number => {
   const weights = {
@@ -109,7 +99,6 @@ export const getPortugueseContentWeight = (category: MonitoringCategory): number
   };
   return weights[category] || 0.5;
 };
-
 // Mobile performance priority calculation
 export const calculateMobilePerformancePriority = (category: MonitoringCategory): number => {
   const priorities = {
@@ -121,20 +110,16 @@ export const calculateMobilePerformancePriority = (category: MonitoringCategory)
   };
   return priorities[category] || 0.5;
 };
-
 // Simple performance tracking for community platform (legacy compatibility)
 export const trackCommunityPerformance = (metric: string, value: number) => {
   if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined') {
-    console.log(`Community Performance: ${metric} = ${value}`);
-  }
+    }
 };
-
 // Legacy performance config (for backward compatibility)
 export const PERFORMANCE_CONFIG = {
   trackPageViews: process.env.NODE_ENV === 'production',
   trackCommunityEngagement: true,
   basicErrorReporting: true,
-  
   // Core Web Vitals (simplified)
   thresholds: {
     LCP_GOOD: 2500,

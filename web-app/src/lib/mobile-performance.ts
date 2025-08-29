@@ -1,4 +1,6 @@
 /**
+
+import { SafeDOM } from '@/lib/security/safe-dom';
  * Mobile Performance Optimization Engine for LusoTown
  * 
  * Comprehensive mobile performance optimization system for Portuguese-speaking community,
@@ -820,7 +822,8 @@ export class MobilePerformanceOptimizer {
   private optimizeHeritageColors(): void {
     // Ensure heritage colors load quickly on mobile
     const style = document.createElement('style');
-    style.innerHTML = `
+    // SECURITY FIX: Use SafeDOM to safely inject heritage colors CSS
+    const heritageCSS = `
       :root {
         --heritage-red: #DC2626;
         --heritage-green: #059669;
@@ -828,7 +831,8 @@ export class MobilePerformanceOptimizer {
         --heritage-blue: #1E40AF;
       }
     `;
-    document.head.appendChild(style);
+    const safeStyle = SafeDOM.injectSafeCSS(heritageCSS, 'heritage-colors');
+    document.head.appendChild(safeStyle);
   }
 
   private removeRenderBlockingResources(): void {

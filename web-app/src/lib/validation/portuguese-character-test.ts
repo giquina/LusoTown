@@ -2,10 +2,8 @@
  * Portuguese Character Validation Test Suite
  * Comprehensive testing of Portuguese special characters (ã, ç, õ, etc.)
  */
-
 import { PORTUGUESE_PATTERNS } from '@/lib/security/input-validation';
 import { PortugueseAddressValidator } from './portuguese-address-validator';
-
 // Portuguese character test data
 export const PORTUGUESE_CHARACTER_TESTS = {
   names: {
@@ -41,7 +39,6 @@ export const PORTUGUESE_CHARACTER_TESTS = {
       'António data:text/html'
     ]
   },
-  
   addresses: {
     portugal: [
       'Rua das Flores, 123, 4º andar',
@@ -70,7 +67,6 @@ export const PORTUGUESE_CHARACTER_TESTS = {
       'Restaurante São João, Vauxhall'
     ]
   },
-  
   businessNames: {
     valid: [
       'Restaurante São João',
@@ -100,7 +96,6 @@ export const PORTUGUESE_CHARACTER_TESTS = {
       'Açougue &#x3C;script&#x3E;'
     ]
   },
-  
   culturalContent: {
     valid: [
       'A festa de São João é uma tradição muito importante na cultura portuguesa.',
@@ -127,7 +122,6 @@ export const PORTUGUESE_CHARACTER_TESTS = {
       'A saudade ";DROP TABLE users;-- é sentimento.'
     ]
   },
-  
   phoneNumbers: {
     portugal: [
       '+351 123 456 789',
@@ -162,7 +156,6 @@ export const PORTUGUESE_CHARACTER_TESTS = {
       'vbscript:alert(1)'
     ]
   },
-  
   postalCodes: {
     portugal: [
       '1000-001', // Lisboa
@@ -200,18 +193,15 @@ export const PORTUGUESE_CHARACTER_TESTS = {
     ]
   }
 };
-
 /**
  * Test Portuguese character validation
  */
 export class PortugueseCharacterTester {
-  
   // Test name validation
   static testNames(): { passed: number; failed: number; results: any[] } {
     const results: any[] = [];
     let passed = 0;
     let failed = 0;
-
     // Test valid names
     for (const name of PORTUGUESE_CHARACTER_TESTS.names.valid) {
       const isValid = PORTUGUESE_PATTERNS.name.test(name);
@@ -223,7 +213,6 @@ export class PortugueseCharacterTester {
         results.push({ name, expected: true, actual: false, status: 'FAIL' });
       }
     }
-
     // Test invalid names (should fail pattern but pass after sanitization)
     for (const name of PORTUGUESE_CHARACTER_TESTS.names.invalid) {
       const isValid = PORTUGUESE_PATTERNS.name.test(name);
@@ -235,21 +224,17 @@ export class PortugueseCharacterTester {
         results.push({ name, expected: false, actual: true, status: 'FAIL' });
       }
     }
-
     return { passed, failed, results };
   }
-
   // Test address validation
   static async testAddresses(): Promise<{ passed: number; failed: number; results: any[] }> {
     const results: any[] = [];
     let passed = 0;
     let failed = 0;
-
     // Test Portuguese addresses
     for (const address of PORTUGUESE_CHARACTER_TESTS.addresses.portugal) {
       const isValidPattern = PORTUGUESE_PATTERNS.address.test(address);
       const isValidCultural = PORTUGUESE_PATTERNS.culturalText.test(address);
-      
       if (isValidPattern && isValidCultural) {
         passed++;
         results.push({ address, country: 'portugal', status: 'PASS' });
@@ -259,12 +244,10 @@ export class PortugueseCharacterTester {
           pattern: isValidPattern, cultural: isValidCultural });
       }
     }
-
     // Test Brazilian addresses
     for (const address of PORTUGUESE_CHARACTER_TESTS.addresses.brazil) {
       const isValidPattern = PORTUGUESE_PATTERNS.address.test(address);
       const isValidCultural = PORTUGUESE_PATTERNS.culturalText.test(address);
-      
       if (isValidPattern && isValidCultural) {
         passed++;
         results.push({ address, country: 'brazil', status: 'PASS' });
@@ -274,16 +257,13 @@ export class PortugueseCharacterTester {
           pattern: isValidPattern, cultural: isValidCultural });
       }
     }
-
     return { passed, failed, results };
   }
-
   // Test business name validation
   static testBusinessNames(): { passed: number; failed: number; results: any[] } {
     const results: any[] = [];
     let passed = 0;
     let failed = 0;
-
     // Test valid business names
     for (const name of PORTUGUESE_CHARACTER_TESTS.businessNames.valid) {
       const isValid = PORTUGUESE_PATTERNS.businessName.test(name);
@@ -295,7 +275,6 @@ export class PortugueseCharacterTester {
         results.push({ name, expected: true, actual: false, status: 'FAIL' });
       }
     }
-
     // Test malicious business names (should fail)
     for (const name of PORTUGUESE_CHARACTER_TESTS.businessNames.invalid) {
       const isValid = PORTUGUESE_PATTERNS.businessName.test(name);
@@ -307,16 +286,13 @@ export class PortugueseCharacterTester {
         results.push({ name, expected: false, actual: true, status: 'FAIL - SECURITY RISK' });
       }
     }
-
     return { passed, failed, results };
   }
-
   // Test cultural content validation
   static testCulturalContent(): { passed: number; failed: number; results: any[] } {
     const results: any[] = [];
     let passed = 0;
     let failed = 0;
-
     // Test valid cultural content
     for (const content of PORTUGUESE_CHARACTER_TESTS.culturalContent.valid) {
       const isValid = PORTUGUESE_PATTERNS.culturalText.test(content);
@@ -330,7 +306,6 @@ export class PortugueseCharacterTester {
           expected: true, actual: false, status: 'FAIL' });
       }
     }
-
     // Test malicious content (should fail)
     for (const content of PORTUGUESE_CHARACTER_TESTS.culturalContent.malicious) {
       const isValid = PORTUGUESE_PATTERNS.culturalText.test(content);
@@ -344,22 +319,18 @@ export class PortugueseCharacterTester {
           expected: false, actual: true, status: 'FAIL - SECURITY RISK' });
       }
     }
-
     return { passed, failed, results };
   }
-
   // Test phone number validation
   static testPhoneNumbers(): { passed: number; failed: number; results: any[] } {
     const results: any[] = [];
     let passed = 0;
     let failed = 0;
-
     const allValidNumbers = [
       ...PORTUGUESE_CHARACTER_TESTS.phoneNumbers.portugal,
       ...PORTUGUESE_CHARACTER_TESTS.phoneNumbers.brazil,
       ...PORTUGUESE_CHARACTER_TESTS.phoneNumbers.uk
     ];
-
     // Test valid phone numbers
     for (const phone of allValidNumbers) {
       const validation = PortugueseAddressValidator.validatePhoneNumber(phone);
@@ -371,7 +342,6 @@ export class PortugueseCharacterTester {
         results.push({ phone, country: validation.country, status: 'FAIL' });
       }
     }
-
     // Test invalid phone numbers
     for (const phone of PORTUGUESE_CHARACTER_TESTS.phoneNumbers.invalid) {
       const validation = PortugueseAddressValidator.validatePhoneNumber(phone);
@@ -383,22 +353,18 @@ export class PortugueseCharacterTester {
         results.push({ phone, expected: false, actual: true, status: 'FAIL - SECURITY RISK' });
       }
     }
-
     return { passed, failed, results };
   }
-
   // Test postal code validation
   static testPostalCodes(): { passed: number; failed: number; results: any[] } {
     const results: any[] = [];
     let passed = 0;
     let failed = 0;
-
     const testCases = [
       { codes: PORTUGUESE_CHARACTER_TESTS.postalCodes.portugal, country: 'portugal' },
       { codes: PORTUGUESE_CHARACTER_TESTS.postalCodes.brazil, country: 'brazil' },
       { codes: PORTUGUESE_CHARACTER_TESTS.postalCodes.uk, country: 'uk' }
     ];
-
     // Test valid postal codes
     for (const { codes, country } of testCases) {
       for (const code of codes) {
@@ -413,7 +379,6 @@ export class PortugueseCharacterTester {
         }
       }
     }
-
     // Test invalid postal codes
     for (const code of PORTUGUESE_CHARACTER_TESTS.postalCodes.invalid) {
       const validation = PortugueseAddressValidator.validatePostalCode(code);
@@ -425,17 +390,13 @@ export class PortugueseCharacterTester {
         results.push({ code, expected: false, actual: true, status: 'FAIL - SECURITY RISK' });
       }
     }
-
     return { passed, failed, results };
   }
-
   // Run comprehensive test suite
   static async runAllTests(): Promise<{
     summary: { totalPassed: number; totalFailed: number; totalTests: number };
     details: Record<string, any>;
   }> {
-    console.log('🧪 Running Portuguese Character Validation Tests...\n');
-
     const tests = {
       names: this.testNames(),
       addresses: await this.testAddresses(),
@@ -444,42 +405,31 @@ export class PortugueseCharacterTester {
       phoneNumbers: this.testPhoneNumbers(),
       postalCodes: this.testPostalCodes()
     };
-
     const summary = {
       totalPassed: Object.values(tests).reduce((sum, test) => sum + test.passed, 0),
       totalFailed: Object.values(tests).reduce((sum, test) => sum + test.failed, 0),
       totalTests: Object.values(tests).reduce((sum, test) => sum + test.passed + test.failed, 0)
     };
-
-    // Log results
-    console.log('📊 Test Results Summary:');
-    console.log(`✅ Passed: ${summary.totalPassed}`);
-    console.log(`❌ Failed: ${summary.totalFailed}`);
-    console.log(`📈 Success Rate: ${((summary.totalPassed / summary.totalTests) * 100).toFixed(1)}%\n`);
-
+    // Log results (removed console.log for production)
+    // Calculate success rate: ${(summary.totalPassed / summary.totalTests * 100).toFixed(1)}%
+    
     // Detailed results
     for (const [testName, result] of Object.entries(tests)) {
-      console.log(`${testName.toUpperCase()}:`);
-      console.log(`  ✅ ${result.passed} passed, ❌ ${result.failed} failed`);
+      // Process test result for ${testName}
       
       // Show security risks
       const securityRisks = result.results.filter(r => r.status?.includes('SECURITY RISK'));
       if (securityRisks.length > 0) {
-        console.log(`  🚨 ${securityRisks.length} SECURITY RISKS DETECTED!`);
         securityRisks.forEach(risk => {
-          console.log(`    - ${risk.name || risk.phone || risk.code || 'Content'}`);
+          // Handle security risk: ${risk.description}
         });
       }
-      console.log('');
     }
-
     return { summary, details: tests };
   }
 }
-
 // Export test runner for use in development
 export const runPortugueseCharacterTests = PortugueseCharacterTester.runAllTests;
-
 // Quick validation functions for common use cases
 export const testPortugueseName = (name: string) => PORTUGUESE_PATTERNS.name.test(name);
 export const testPortugueseAddress = (address: string) => PORTUGUESE_PATTERNS.address.test(address);

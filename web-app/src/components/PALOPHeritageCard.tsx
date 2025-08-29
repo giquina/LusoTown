@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -16,7 +15,6 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAriaAnnouncements, ARIA_MESSAGES } from '@/hooks/useAriaAnnouncements'
 import { useFocusIndicator } from '@/hooks/useFocusManagement'
-
 interface PALOPNation {
   id: string
   nameEn: string
@@ -39,7 +37,6 @@ interface PALOPNation {
   communitySize: number
   isUserFavorite: boolean
 }
-
 interface PALOPHeritageCardProps {
   nation: PALOPNation
   onFavoriteToggle: (nationId: string) => void
@@ -48,7 +45,6 @@ interface PALOPHeritageCardProps {
   variant?: 'default' | 'compact' | 'featured'
   className?: string
 }
-
 export default function PALOPHeritageCard({
   nation,
   onFavoriteToggle,
@@ -60,7 +56,6 @@ export default function PALOPHeritageCard({
   const { language } = useLanguage()
   const [isHovered, setIsHovered] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
-  
   // ARIA and Focus Management
   const { announcePolite } = useAriaAnnouncements()
   const { addFocusClasses } = useFocusIndicator()
@@ -68,24 +63,20 @@ export default function PALOPHeritageCard({
   const favoriteButtonRef = useRef<HTMLButtonElement>(null)
   const learnMoreButtonRef = useRef<HTMLButtonElement>(null)
   const connectButtonRef = useRef<HTMLButtonElement>(null)
-
   const nationName = language === 'pt' ? nation.namePt : nation.nameEn
   const description = language === 'pt' ? nation.description.pt : nation.description.en
   const highlights = language === 'pt' ? nation.culturalHighlights.pt : nation.culturalHighlights.en
-
   const handleCardFocus = () => {
     announcePolite(ARIA_MESSAGES.palop.cardFocused, true)
     if (cardRef.current) {
       addFocusClasses(cardRef.current, 'card')
     }
   }
-
   const handleCardBlur = () => {
     if (cardRef.current) {
       cardRef.current.classList.remove('lusotown-card-focus', 'lusotown-focus-smooth')
     }
   }
-
   const handleFavoriteToggle = () => {
     onFavoriteToggle(nation.id)
     const message = nation.isUserFavorite
@@ -93,7 +84,6 @@ export default function PALOPHeritageCard({
       : ARIA_MESSAGES.events.favoriteAdded
     announcePolite(message)
   }
-
   const handleLearnMore = () => {
     announcePolite({
       en: `Opening ${nationName} cultural information`,
@@ -101,7 +91,6 @@ export default function PALOPHeritageCard({
     })
     onLearnMore(nation.id)
   }
-
   const handleConnect = () => {
     announcePolite({
       en: `Connecting with ${nationName} community`,
@@ -109,7 +98,6 @@ export default function PALOPHeritageCard({
     })
     onConnect(nation.id)
   }
-
   const handleKeyNavigation = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault()
@@ -119,14 +107,12 @@ export default function PALOPHeritageCard({
       announcePolite(ARIA_MESSAGES.palop.ctaAvailable)
     }
   }
-
   const shareNation = async () => {
     const shareData = {
       title: `${nationName} Heritage - LusoTown`,
       text: `Explore ${nationName} cultural heritage and connect with the community through LusoTown`,
       url: window.location.href
     }
-
     if (navigator.share) {
       try {
         await navigator.share(shareData)
@@ -135,8 +121,7 @@ export default function PALOPHeritageCard({
           pt: `Herança de ${nationName} partilhada com sucesso`
         })
       } catch (err) {
-        console.log('Error sharing:', err)
-      }
+        }
     } else {
       // Fallback to clipboard
       navigator.clipboard.writeText(shareData.url)
@@ -146,7 +131,6 @@ export default function PALOPHeritageCard({
       })
     }
   }
-
   return (
     <motion.div
       ref={cardRef}
@@ -168,7 +152,6 @@ export default function PALOPHeritageCard({
           <div className="absolute top-2 right-4 w-3 h-3 bg-white rounded-full animate-pulse"></div>
           <div className="absolute bottom-4 left-6 w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
-        
         <div className="relative z-10 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="text-5xl" aria-hidden="true">{nation.flag}</div>
@@ -181,7 +164,6 @@ export default function PALOPHeritageCard({
               </p>
             </div>
           </div>
-
           {/* Favorite Button */}
           <button
             ref={favoriteButtonRef}
@@ -214,13 +196,11 @@ export default function PALOPHeritageCard({
           </button>
         </div>
       </div>
-
       {/* Content */}
       <div className="p-6">
         <p id={`palop-description-${nation.id}`} className="text-gray-600 mb-4 leading-relaxed">
           {description}
         </p>
-
         {/* Cultural Highlights */}
         <div className="space-y-3 mb-6">
           <h4 className="font-semibold text-gray-900 flex items-center gap-2">
@@ -236,7 +216,6 @@ export default function PALOPHeritageCard({
             ))}
           </div>
         </div>
-
         {/* Traditions */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           <div className="text-center p-3 bg-gray-50 rounded-xl">
@@ -261,7 +240,6 @@ export default function PALOPHeritageCard({
             </p>
           </div>
         </div>
-
         {/* Community Size */}
         <div className="flex items-center justify-between mb-6 p-3 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl">
           <div className="flex items-center gap-2">
@@ -274,7 +252,6 @@ export default function PALOPHeritageCard({
             {nation.communitySize.toLocaleString()}+
           </span>
         </div>
-
         {/* Action Buttons */}
         <div className="space-y-3">
           <button
@@ -301,7 +278,6 @@ export default function PALOPHeritageCard({
             {language === 'pt' ? 'Explorar Cultura' : 'Explore Culture'}
             <ArrowRightIcon className="w-4 h-4" aria-hidden="true" />
           </button>
-
           <div className="flex gap-2">
             <button
               ref={connectButtonRef}
@@ -326,7 +302,6 @@ export default function PALOPHeritageCard({
               <GlobeAltIcon className="w-4 h-4" aria-hidden="true" />
               {language === 'pt' ? 'Conectar' : 'Connect'}
             </button>
-
             <button
               onClick={(e) => {
                 e.stopPropagation()
@@ -344,7 +319,6 @@ export default function PALOPHeritageCard({
           </div>
         </div>
       </div>
-
       {/* Hover Effects */}
       <AnimatePresence>
         {isHovered && (
@@ -359,7 +333,6 @@ export default function PALOPHeritageCard({
     </motion.div>
   )
 }
-
 // Sample PALOP nations data for demonstration
 export const PALOP_NATIONS: PALOPNation[] = [
   {

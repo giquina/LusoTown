@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -17,7 +16,6 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { ChatRoom, ChatUser, ChatModeration } from '@/types/chat'
 import { socketManager } from '@/lib/socket-client'
-
 interface ModeratorPanelProps {
   room: ChatRoom | null
   onlineUsers: ChatUser[]
@@ -25,7 +23,6 @@ interface ModeratorPanelProps {
   isVisible: boolean
   onClose: () => void
 }
-
 export default function ModeratorPanel({ 
   room, 
   onlineUsers, 
@@ -43,17 +40,12 @@ export default function ModeratorPanel({
   })
   const [moderationHistory, setModerationHistory] = useState<ChatModeration[]>([])
   const [selectedUser, setSelectedUser] = useState<ChatUser | null>(null)
-
   if (!isVisible || !currentUser?.isModerator) return null
-
   const handleSettingsUpdate = (setting: string, value: any) => {
     const newSettings = { ...roomSettings, [setting]: value }
     setRoomSettings(newSettings)
-    
     // In real implementation, this would update the room settings via socket
-    console.log('Updating room settings:', newSettings)
-  }
-
+    }
   const handleUserAction = (userId: string, action: 'timeout' | 'ban' | 'unban', duration?: number) => {
     switch (action) {
       case 'timeout':
@@ -65,18 +57,14 @@ export default function ModeratorPanel({
       // 'unban' would be implemented similarly
     }
   }
-
   const getUsersByRole = () => {
     const hosts = onlineUsers.filter(u => u.isHost)
     const moderators = onlineUsers.filter(u => u.isModerator && !u.isHost)
     const subscribers = onlineUsers.filter(u => u.isSubscriber && !u.isModerator && !u.isHost)
     const viewers = onlineUsers.filter(u => !u.isSubscriber && !u.isModerator && !u.isHost)
-    
     return { hosts, moderators, subscribers, viewers }
   }
-
   const { hosts, moderators, subscribers, viewers } = getUsersByRole()
-
   return (
     <AnimatePresence>
       <motion.div
@@ -101,7 +89,6 @@ export default function ModeratorPanel({
               ×
             </button>
           </div>
-
           {/* Tabs */}
           <div className="flex mt-3 bg-white rounded-lg p-1">
             {[
@@ -125,7 +112,6 @@ export default function ModeratorPanel({
             ))}
           </div>
         </div>
-
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-4">
           {/* Settings Tab */}
@@ -134,7 +120,6 @@ export default function ModeratorPanel({
               <h3 className="text-sm font-semibold text-gray-900 mb-3">
                 {language === 'pt' ? 'Configurações do Chat' : 'Chat Settings'}
               </h3>
-
               {/* Slow Mode */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
@@ -153,7 +138,6 @@ export default function ModeratorPanel({
                   <option value={300}>5 {language === 'pt' ? 'minutos' : 'minutes'}</option>
                 </select>
               </div>
-
               {/* Subscriber Only */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -175,7 +159,6 @@ export default function ModeratorPanel({
                   />
                 </button>
               </div>
-
               {/* Emote Only */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -197,7 +180,6 @@ export default function ModeratorPanel({
                   />
                 </button>
               </div>
-
               {/* Lusophone Only */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -221,14 +203,12 @@ export default function ModeratorPanel({
               </div>
             </div>
           )}
-
           {/* Users Tab */}
           {activeTab === 'users' && (
             <div className="space-y-4">
               <h3 className="text-sm font-semibold text-gray-900 mb-3">
                 {language === 'pt' ? 'Usuários Online' : 'Online Users'} ({onlineUsers.length})
               </h3>
-
               {/* Hosts */}
               {hosts.length > 0 && (
                 <div>
@@ -248,7 +228,6 @@ export default function ModeratorPanel({
                   </div>
                 </div>
               )}
-
               {/* Moderators */}
               {moderators.length > 0 && (
                 <div>
@@ -268,7 +247,6 @@ export default function ModeratorPanel({
                   </div>
                 </div>
               )}
-
               {/* Subscribers */}
               {subscribers.length > 0 && (
                 <div>
@@ -288,7 +266,6 @@ export default function ModeratorPanel({
                   </div>
                 </div>
               )}
-
               {/* Viewers */}
               {viewers.length > 0 && (
                 <div>
@@ -310,14 +287,12 @@ export default function ModeratorPanel({
               )}
             </div>
           )}
-
           {/* Moderation Tab */}
           {activeTab === 'moderation' && (
             <div className="space-y-4">
               <h3 className="text-sm font-semibold text-gray-900 mb-3">
                 {language === 'pt' ? 'Ações de Moderação' : 'Moderation Actions'}
               </h3>
-
               {moderationHistory.length === 0 ? (
                 <div className="text-center py-8 text-gray-500">
                   <AlertTriangle className="w-8 h-8 mx-auto mb-2 text-gray-300" />
@@ -349,7 +324,6 @@ export default function ModeratorPanel({
             </div>
           )}
         </div>
-
         {/* Footer */}
         <div className="p-4 border-t border-gray-200 bg-gray-50">
           <div className="text-xs text-gray-500 text-center">
@@ -363,7 +337,6 @@ export default function ModeratorPanel({
     </AnimatePresence>
   )
 }
-
 // User Row Component
 function UserRow({ 
   user, 
@@ -378,7 +351,6 @@ function UserRow({
 }) {
   const [showActions, setShowActions] = useState(false)
   const canModerate = currentUser?.isHost || (currentUser?.isModerator && !user.isHost && !user.isModerator)
-
   return (
     <div className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 group">
       <div className="flex items-center gap-2">
@@ -393,7 +365,6 @@ function UserRow({
         }`}>
           {user.username.slice(0, 2).toUpperCase()}
         </div>
-        
         <div>
           <div className="flex items-center gap-1">
             <span className="text-sm font-medium text-gray-900">{user.username}</span>
@@ -409,7 +380,6 @@ function UserRow({
           </div>
         </div>
       </div>
-
       {canModerate && (
         <div className="relative">
           <button
@@ -419,7 +389,6 @@ function UserRow({
           >
             <AlertTriangle className="w-4 h-4" />
           </button>
-
           {showActions && (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -438,7 +407,6 @@ function UserRow({
                 <Clock className="w-3 h-3" />
                 {language === 'pt' ? '1min' : '1min'}
               </button>
-              
               <button
                 onClick={() => {
                   onAction(user.id, 'timeout', 600)
@@ -450,9 +418,7 @@ function UserRow({
                 <Clock className="w-3 h-3" />
                 {language === 'pt' ? '10min' : '10min'}
               </button>
-              
               <hr className="my-1" />
-              
               <button
                 onClick={() => {
                   onAction(user.id, 'ban')

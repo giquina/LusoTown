@@ -6,14 +6,11 @@
  * 
  * Implements all GDPR articles with Portuguese community context and bilingual support.
  */
-
 import { PRIVACY_SECURITY_CONFIG, PORTUGUESE_CULTURAL_PRIVACY } from '@/config/privacy-security'
 import type { Language } from '@/i18n'
-
 // =============================================================================
 // GDPR COMPLIANCE AUDIT TYPES
 // =============================================================================
-
 export interface GDPRComplianceAudit {
   timestamp: string
   auditId: string
@@ -38,7 +35,6 @@ export interface GDPRComplianceAudit {
   dataProcessingActivities: DataProcessingActivity[]
   riskAssessment: PrivacyRiskAssessment
 }
-
 export interface ArticleComplianceStatus {
   article: number
   title: string
@@ -49,14 +45,12 @@ export interface ArticleComplianceStatus {
   issues?: string[]
   recommendations?: string[]
 }
-
 export interface RequirementStatus {
   requirement: string
   status: 'compliant' | 'non_compliant' | 'partially_compliant' | 'not_applicable'
   evidence?: string[]
   remediation?: string[]
 }
-
 export interface ComplianceIssue {
   severity: 'critical' | 'high' | 'medium' | 'low'
   category: 'data_processing' | 'consent' | 'rights' | 'security' | 'cultural_sensitivity'
@@ -67,7 +61,6 @@ export interface ComplianceIssue {
   portugueseContext?: string
   timeline: 'immediate' | 'within_week' | 'within_month' | 'next_review'
 }
-
 export interface ComplianceRecommendation {
   priority: 'high' | 'medium' | 'low'
   category: string
@@ -77,7 +70,6 @@ export interface ComplianceRecommendation {
   expectedBenefit: string
   portugueseSpecific: boolean
 }
-
 export interface CulturalDataComplianceStatus {
   heritageDataProtection: ComplianceScore
   familyConnectionPrivacy: ComplianceScore
@@ -85,21 +77,18 @@ export interface CulturalDataComplianceStatus {
   regionalIdentityProtection: ComplianceScore
   religiousContentRespect: ComplianceScore
 }
-
 export interface LanguageRightsComplianceStatus {
   bilingualInformation: ComplianceScore
   portugueseDataProcessing: ComplianceScore
   culturalContextAccuracy: ComplianceScore
   dialectPreservation: ComplianceScore
 }
-
 export interface CommunityConsentComplianceStatus {
   explicitConsent: ComplianceScore
   granularConsent: ComplianceScore
   withdrawalMechanisms: ComplianceScore
   culturalConsentContext: ComplianceScore
 }
-
 export interface AISystemComplianceStatus {
   systemName: string
   gdprCompliance: ComplianceScore
@@ -110,13 +99,11 @@ export interface AISystemComplianceStatus {
   issues: string[]
   recommendations: string[]
 }
-
 export interface ComplianceScore {
   score: number // 0-100
   status: 'excellent' | 'good' | 'needs_improvement' | 'non_compliant'
   details: string
 }
-
 export interface DataProcessingActivity {
   activity: string
   legalBasis: string
@@ -129,14 +116,12 @@ export interface DataProcessingActivity {
   culturalData: boolean
   compliance: ComplianceScore
 }
-
 export interface PrivacyRiskAssessment {
   overallRisk: 'low' | 'medium' | 'high' | 'critical'
   riskFactors: RiskFactor[]
   mitigationMeasures: MitigationMeasure[]
   portugueseSpecificRisks: RiskFactor[]
 }
-
 export interface RiskFactor {
   factor: string
   likelihood: number // 0-100
@@ -144,7 +129,6 @@ export interface RiskFactor {
   riskScore: number // likelihood * impact / 100
   mitigation: string[]
 }
-
 export interface MitigationMeasure {
   risk: string
   measure: string
@@ -152,48 +136,34 @@ export interface MitigationMeasure {
   implemented: boolean
   cost: 'low' | 'medium' | 'high'
 }
-
 // =============================================================================
 // GDPR COMPLIANCE AUDIT ENGINE
 // =============================================================================
-
 export class GDPRComplianceAuditEngine {
   private auditVersion = '2.0.0'
   private supportedLanguages: Language[] = ['en', 'pt']
-
   /**
    * Performs comprehensive GDPR compliance audit
    */
   async performComplianceAudit(userId?: string): Promise<GDPRComplianceAudit> {
     const auditId = this.generateAuditId()
     const timestamp = new Date().toISOString()
-
-    console.log(`🔍 Starting GDPR Compliance Audit ${auditId}`)
-
     // Audit all GDPR articles
     const articlesCompliance = await this.auditGDPRArticles(userId)
-    
     // Audit Portuguese-specific compliance
     const portugueseCompliance = await this.auditPortugueseCommunityCompliance(userId)
-    
     // Audit AI systems
     const aiCompliance = await this.auditAISystemsCompliance(userId)
-    
     // Audit data processing activities
     const dataProcessingActivities = await this.auditDataProcessingActivities(userId)
-    
     // Perform risk assessment
     const riskAssessment = await this.performPrivacyRiskAssessment(userId)
-
     // Calculate overall compliance score
     const overallScore = this.calculateOverallComplianceScore(articlesCompliance, portugueseCompliance, aiCompliance)
-
     // Identify critical issues
     const criticalIssues = this.identifyCriticalIssues(articlesCompliance, portugueseCompliance, aiCompliance)
-
     // Generate recommendations
     const recommendations = this.generateComplianceRecommendations(articlesCompliance, portugueseCompliance, aiCompliance)
-
     const audit: GDPRComplianceAudit = {
       timestamp,
       auditId,
@@ -209,65 +179,45 @@ export class GDPRComplianceAuditEngine {
       dataProcessingActivities,
       riskAssessment
     }
-
-    console.log(`✅ GDPR Compliance Audit completed. Score: ${overallScore}%`)
     return audit
   }
-
   /**
    * Audit compliance with individual GDPR articles
    */
   private async auditGDPRArticles(userId?: string): Promise<ArticleComplianceStatus[]> {
     const articles: ArticleComplianceStatus[] = []
-
     // Article 5: Principles of processing personal data
     articles.push(await this.auditArticle5())
-
     // Article 6: Lawfulness of processing
     articles.push(await this.auditArticle6())
-
     // Article 7: Conditions for consent
     articles.push(await this.auditArticle7())
-
     // Article 12: Transparent information
     articles.push(await this.auditArticle12())
-
     // Article 13: Information to be provided (data collection)
     articles.push(await this.auditArticle13())
-
     // Article 15: Right of access
     articles.push(await this.auditArticle15(userId))
-
     // Article 16: Right to rectification
     articles.push(await this.auditArticle16(userId))
-
     // Article 17: Right to erasure
     articles.push(await this.auditArticle17(userId))
-
     // Article 18: Right to restriction of processing
     articles.push(await this.auditArticle18(userId))
-
     // Article 20: Right to data portability
     articles.push(await this.auditArticle20(userId))
-
     // Article 21: Right to object
     articles.push(await this.auditArticle21(userId))
-
     // Article 22: Automated individual decision-making
     articles.push(await this.auditArticle22())
-
     // Article 25: Data protection by design and by default
     articles.push(await this.auditArticle25())
-
     // Article 32: Security of processing
     articles.push(await this.auditArticle32())
-
     // Article 35: Data protection impact assessment
     articles.push(await this.auditArticle35())
-
     return articles
   }
-
   /**
    * Article 5: Principles of processing personal data
    */
@@ -304,9 +254,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['AES-256 encryption', 'Access controls', 'Audit trails', 'Cultural data special protection']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 5,
       title: 'Principles of processing personal data',
@@ -316,7 +264,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Portuguese cultural data receives enhanced protection under data minimization and purpose limitation principles.'
     }
   }
-
   /**
    * Article 6: Lawfulness of processing
    */
@@ -338,9 +285,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Service contract includes data processing', 'Terms available in Portuguese', 'Clear service delivery basis']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 6,
       title: 'Lawfulness of processing',
@@ -350,7 +295,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Cultural and heritage data processing requires explicit consent given its sensitive nature in Portuguese community context.'
     }
   }
-
   /**
    * Article 7: Conditions for consent
    */
@@ -382,9 +326,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Easy withdrawal mechanisms', 'Privacy dashboard controls', 'Immediate effect withdrawal']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 7,
       title: 'Conditions for consent',
@@ -394,7 +336,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Portuguese community values clear communication, so consent information is culturally appropriate and available in Portuguese.'
     }
   }
-
   /**
    * Article 12: Transparent information
    */
@@ -426,9 +367,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['No charges for privacy information', 'Free access to data subjects rights']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 12,
       title: 'Transparent information',
@@ -438,7 +377,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'All privacy information is available in Portuguese to ensure Portuguese-speaking community members understand their rights.'
     }
   }
-
   /**
    * Article 13: Information to be provided (data collection)
    */
@@ -480,9 +418,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['All rights explained', 'Exercise mechanisms provided', 'Portuguese language rights information']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 13,
       title: 'Information to be provided when personal data are collected',
@@ -492,7 +428,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Collection notices include specific information about Portuguese cultural data handling and community-specific processing.'
     }
   }
-
   /**
    * Article 15: Right of access
    */
@@ -524,9 +459,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['AI decision processes explained', 'Cultural matching logic described', 'User control options provided']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 15,
       title: 'Right of access by the data subject',
@@ -536,7 +469,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Access requests include Portuguese cultural data and AI system information with cultural context explanations.'
     }
   }
-
   /**
    * Article 16: Right to rectification
    */
@@ -563,9 +495,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Recipients of corrections disclosed', 'Update confirmation provided']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 16,
       title: 'Right to rectification',
@@ -575,7 +505,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Rectification includes Portuguese cultural data and ensures AI systems receive updated cultural context.'
     }
   }
-
   /**
    * Article 17: Right to erasure
    */
@@ -607,9 +536,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Legal compliance exceptions', 'Public interest assessments', 'Freedom of expression balance']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 17,
       title: 'Right to erasure (right to be forgotten)',
@@ -619,7 +546,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Erasure includes special consideration for Portuguese cultural and family data, with community impact assessment.'
     }
   }
-
   /**
    * Article 18: Right to restriction of processing
    */
@@ -651,9 +577,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['User notification before resuming processing', 'Reason explanation provided']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 18,
       title: 'Right to restriction of processing',
@@ -663,7 +587,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Restriction includes Portuguese cultural data processing and AI system cultural features.'
     }
   }
-
   /**
    * Article 20: Right to data portability
    */
@@ -691,10 +614,8 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Portability limited to appropriate legal bases', 'Cultural data consent verification']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 75 +
                   (requirements.filter(r => r.status === 'partially_compliant').length / requirements.length) * 50
-
     return {
       article: 20,
       title: 'Right to data portability',
@@ -705,7 +626,6 @@ export class GDPRComplianceAuditEngine {
       recommendations: ['Enhance direct transmission capabilities', 'Add cultural data portability features']
     }
   }
-
   /**
    * Article 21: Right to object
    */
@@ -732,9 +652,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Right to object clearly communicated', 'Portuguese language information', 'Cultural context provided']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 21,
       title: 'Right to object',
@@ -744,7 +662,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Objection rights include Portuguese cultural processing and AI system personalization based on cultural factors.'
     }
   }
-
   /**
    * Article 22: Automated individual decision-making
    */
@@ -771,9 +688,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Decision appeal processes', 'Human review requests', 'Cultural sensitivity reviews']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 22,
       title: 'Automated individual decision-making, including profiling',
@@ -783,7 +698,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Automated decisions consider Portuguese cultural factors and include community-sensitive human oversight.'
     }
   }
-
   /**
    * Article 25: Data protection by design and by default
    */
@@ -810,9 +724,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Encryption by default', 'Access controls', 'Audit trails', 'Cultural data special handling']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 25,
       title: 'Data protection by design and by default',
@@ -822,7 +734,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Design principles include Portuguese cultural sensitivity and community privacy expectations by default.'
     }
   }
-
   /**
    * Article 32: Security of processing
    */
@@ -854,9 +765,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Backup systems', 'Disaster recovery', 'Cultural data backup procedures']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 32,
       title: 'Security of processing',
@@ -866,7 +775,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'Security measures include special protection for Portuguese cultural and family data.'
     }
   }
-
   /**
    * Article 35: Data protection impact assessment
    */
@@ -898,9 +806,7 @@ export class GDPRComplianceAuditEngine {
         evidence: ['Risk mitigation measures implemented', 'Cultural protection safeguards', 'Community feedback mechanisms']
       }
     ]
-
     const score = (requirements.filter(r => r.status === 'compliant').length / requirements.length) * 100
-
     return {
       article: 35,
       title: 'Data protection impact assessment',
@@ -910,7 +816,6 @@ export class GDPRComplianceAuditEngine {
       portugueseContext: 'DPIA includes specific assessment of Portuguese cultural data processing and community impact.'
     }
   }
-
   /**
    * Audit Portuguese community-specific compliance
    */
@@ -937,7 +842,6 @@ export class GDPRComplianceAuditEngine {
       }
     }
   }
-
   /**
    * Audit AI systems compliance
    */
@@ -985,7 +889,6 @@ export class GDPRComplianceAuditEngine {
       }
     }
   }
-
   /**
    * Audit data processing activities
    */
@@ -1041,7 +944,6 @@ export class GDPRComplianceAuditEngine {
       }
     ]
   }
-
   /**
    * Perform privacy risk assessment
    */
@@ -1076,7 +978,6 @@ export class GDPRComplianceAuditEngine {
         mitigation: ['Advanced encryption', 'Access controls', 'Incident response plan']
       }
     ]
-
     const portugueseSpecificRisks: RiskFactor[] = [
       {
         factor: 'Cultural misrepresentation in AI systems',
@@ -1100,7 +1001,6 @@ export class GDPRComplianceAuditEngine {
         mitigation: ['Multi-generational consent', 'Family privacy controls', 'Enhanced security']
       }
     ]
-
     const mitigationMeasures: MitigationMeasure[] = [
       {
         risk: 'Cultural data sensitivity',
@@ -1124,12 +1024,10 @@ export class GDPRComplianceAuditEngine {
         cost: 'medium'
       }
     ]
-
     const overallRiskScore = Math.max(
       ...riskFactors.map(r => r.riskScore),
       ...portugueseSpecificRisks.map(r => r.riskScore)
     )
-
     return {
       overallRisk: overallRiskScore > 40 ? 'high' : overallRiskScore > 25 ? 'medium' : 'low',
       riskFactors,
@@ -1137,7 +1035,6 @@ export class GDPRComplianceAuditEngine {
       portugueseSpecificRisks
     }
   }
-
   /**
    * Calculate overall compliance score
    */
@@ -1147,23 +1044,19 @@ export class GDPRComplianceAuditEngine {
     aiCompliance: any
   ): number {
     const articleScore = articles.reduce((sum, article) => sum + article.score, 0) / articles.length
-    
     const portugueseScores = [
       ...Object.values(portugueseCompliance.culturalDataProtection),
       ...Object.values(portugueseCompliance.languageRights),
       ...Object.values(portugueseCompliance.communityConsent)
     ].map((item: any) => item.score)
     const portugueseScore = portugueseScores.reduce((sum, score) => sum + score, 0) / portugueseScores.length
-
     const aiScores = Object.values(aiCompliance).map((system: any) => 
       (system.gdprCompliance.score + system.dataMinimization.score + system.transparency.score + 
        system.userControl.score + system.culturalSensitivity.score) / 5
     )
     const aiScore = aiScores.reduce((sum, score) => sum + score, 0) / aiScores.length
-
     return Math.round((articleScore * 0.5 + portugueseScore * 0.3 + aiScore * 0.2))
   }
-
   /**
    * Identify critical compliance issues
    */
@@ -1173,7 +1066,6 @@ export class GDPRComplianceAuditEngine {
     aiCompliance: any
   ): ComplianceIssue[] {
     const issues: ComplianceIssue[] = []
-
     // Check for non-compliant articles
     articles.forEach(article => {
       if (!article.compliant) {
@@ -1189,7 +1081,6 @@ export class GDPRComplianceAuditEngine {
         })
       }
     })
-
     // Check AI system issues
     Object.values(aiCompliance).forEach((system: any) => {
       system.issues.forEach((issue: string) => {
@@ -1205,10 +1096,8 @@ export class GDPRComplianceAuditEngine {
         })
       })
     })
-
     return issues
   }
-
   /**
    * Generate compliance recommendations
    */
@@ -1218,7 +1107,6 @@ export class GDPRComplianceAuditEngine {
     aiCompliance: any
   ): ComplianceRecommendation[] {
     const recommendations: ComplianceRecommendation[] = []
-
     // Article-based recommendations
     articles.forEach(article => {
       if (article.score < 95 && article.recommendations) {
@@ -1235,7 +1123,6 @@ export class GDPRComplianceAuditEngine {
         })
       }
     })
-
     // Portuguese cultural recommendations
     recommendations.push({
       priority: 'high',
@@ -1250,7 +1137,6 @@ export class GDPRComplianceAuditEngine {
       expectedBenefit: 'Increased community trust and cultural authenticity',
       portugueseSpecific: true
     })
-
     // AI system recommendations
     Object.values(aiCompliance).forEach((system: any) => {
       system.recommendations.forEach((rec: string) => {
@@ -1265,10 +1151,8 @@ export class GDPRComplianceAuditEngine {
         })
       })
     })
-
     return recommendations
   }
-
   /**
    * Assess compliance score
    */
@@ -1278,10 +1162,8 @@ export class GDPRComplianceAuditEngine {
     else if (score >= 85) status = 'good'
     else if (score >= 70) status = 'needs_improvement'
     else status = 'non_compliant'
-
     return { score, status, details }
   }
-
   /**
    * Generate unique audit ID
    */
@@ -1289,11 +1171,8 @@ export class GDPRComplianceAuditEngine {
     return `GDPR-AUDIT-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
   }
 }
-
 // =============================================================================
 // EXPORT AUDIT ENGINE
 // =============================================================================
-
 export const gdprComplianceAuditEngine = new GDPRComplianceAuditEngine()
-
 export default GDPRComplianceAuditEngine

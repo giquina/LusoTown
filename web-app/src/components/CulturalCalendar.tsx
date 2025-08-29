@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -22,7 +21,6 @@ import { formatPrice } from '@/config/pricing';
 import { EventsCalendarTooltip } from '@/components/ui/GuidanceTooltip';
 import { useAriaAnnouncements, ARIA_MESSAGES } from '@/hooks/useAriaAnnouncements';
 import { useFocusIndicator } from '@/hooks/useFocusManagement';
-
 interface CulturalEvent {
   id: number;
   title: string;
@@ -45,14 +43,12 @@ interface CulturalEvent {
   flag: string;
   organizer: string;
 }
-
 interface CulturalCalendarProps {
   className?: string;
   children?: React.ReactNode;
   variant?: 'weekly' | 'monthly' | 'featured';
   showMembershipGates?: boolean;
 }
-
 export default function CulturalCalendar({ 
   className = '', 
   children,
@@ -62,12 +58,10 @@ export default function CulturalCalendar({
   const { language, t } = useLanguage();
   const [events, setEvents] = useState<CulturalEvent[]>([]);
   const [loading, setLoading] = useState(true);
-  
   // ARIA and Focus Management
   const { announcePolite } = useAriaAnnouncements();
   const { addFocusClasses } = useFocusIndicator();
   const eventRefs = useRef<{ [key: number]: HTMLElement | null }>({});
-  
   const handleEventFocus = (eventId: number) => {
     const event = events.find(e => e.id === eventId);
     if (event) {
@@ -76,21 +70,18 @@ export default function CulturalCalendar({
         en: `${eventTitle}. Cultural event focused. Press Enter to view details.`,
         pt: `${eventTitle}. Evento cultural focado. Prima Enter para ver detalhes.`
       });
-      
       const element = eventRefs.current[eventId];
       if (element) {
         addFocusClasses(element, 'card');
       }
     }
   };
-
   const handleEventBlur = (eventId: number) => {
     const element = eventRefs.current[eventId];
     if (element) {
       element.classList.remove('lusotown-card-focus', 'lusotown-focus-smooth');
     }
   };
-
   // Mock cultural events data with membership positioning
   const eventsData: CulturalEvent[] = React.useMemo(() => ([
     {
@@ -226,27 +217,22 @@ export default function CulturalCalendar({
       organizer: 'Angola Business Network UK'
     }
   ]), []);
-
   useEffect(() => {
     // Simulate API call
     const loadEvents = async () => {
       setLoading(true);
       // Filter events based on variant
   let filteredEvents = eventsData;
-      
       if (variant === 'featured') {
   filteredEvents = eventsData.filter(e => e.membershipRequired || e.spotsleft < 10);
       } else if (variant === 'weekly') {
   filteredEvents = eventsData.slice(0, 4);
       }
-      
       setEvents(filteredEvents);
       setLoading(false);
     };
-
     loadEvents();
   }, [variant, eventsData]);
-
   const getExclusivityBadge = (event: CulturalEvent) => {
     if (event.membershipRequired) {
       return (
@@ -256,7 +242,6 @@ export default function CulturalCalendar({
         </div>
       );
     }
-    
     if (event.spotsleft < 5) {
       return (
         <div className="inline-flex items-center gap-1 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs px-2 py-1 rounded-full font-bold animate-pulse">
@@ -265,7 +250,6 @@ export default function CulturalCalendar({
         </div>
       );
     }
-    
     return (
       <div className="inline-flex items-center gap-1 bg-gradient-to-r from-green-500 to-blue-500 text-white text-xs px-2 py-1 rounded-full font-bold">
         <TicketIcon className="w-3 h-3" />
@@ -273,7 +257,6 @@ export default function CulturalCalendar({
       </div>
     );
   };
-
   const getExclusivityColor = (level: string) => {
     switch (level) {
       case 'executive': return 'border-purple-500';
@@ -282,22 +265,18 @@ export default function CulturalCalendar({
       default: return 'border-gray-300';
     }
   };
-
   // Calendar integration utility
   const addToGoogleCalendar = (event: CulturalEvent) => {
     const startDate = new Date(`${event.date} ${event.time}`);
     const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // Add 2 hours
-    
     const googleCalUrl = new URL('https://calendar.google.com/calendar/render');
     googleCalUrl.searchParams.append('action', 'TEMPLATE');
     googleCalUrl.searchParams.append('text', language === 'pt' ? event.titlePt : event.title);
     googleCalUrl.searchParams.append('dates', `${startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z`);
     googleCalUrl.searchParams.append('details', `${language === 'pt' ? event.descriptionPt : event.description}\n\nOrganized by: ${event.organizer}`);
     googleCalUrl.searchParams.append('location', event.address);
-    
     window.open(googleCalUrl.toString(), '_blank');
   };
-
   // Social sharing utility
   const shareEvent = async (event: CulturalEvent) => {
     const shareData = {
@@ -305,26 +284,22 @@ export default function CulturalCalendar({
       text: `${language === 'pt' ? event.descriptionPt : event.description} - ${event.date} at ${event.time}`,
       url: `${window.location.origin}${ROUTES.events}/${event.id}`
     };
-
     if (navigator.share) {
       try {
         await navigator.share(shareData);
       } catch (err) {
-        console.log('Error sharing:', err);
         fallbackShare(shareData);
       }
     } else {
       fallbackShare(shareData);
     }
   };
-
   const fallbackShare = (shareData: { title: string; text: string; url: string }) => {
     // Copy to clipboard as fallback
     navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
     // You could add a toast notification here
     alert(language === 'pt' ? 'Link copiado para a área de transferência!' : 'Link copied to clipboard!');
   };
-
   if (loading) {
     return (
       <div className={`cultural-calendar-loading ${className}`}>
@@ -340,7 +315,6 @@ export default function CulturalCalendar({
       </div>
     );
   }
-
   return (
     <EventsCalendarTooltip>
       <section 
@@ -348,7 +322,6 @@ export default function CulturalCalendar({
         data-guidance="events-calendar"
       >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
         <div className="text-center mb-12">
           <motion.div
@@ -359,7 +332,6 @@ export default function CulturalCalendar({
             <CalendarDaysIcon className="w-4 h-4" />
             {language === 'pt' ? 'Calendário Cultural Premium' : 'Premium Cultural Calendar'}
           </motion.div>
-          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -369,7 +341,6 @@ export default function CulturalCalendar({
             {variant === 'monthly' && (language === 'pt' ? 'Calendário Mensal da Comunidade' : 'Monthly Community Calendar')}
             {variant === 'featured' && (language === 'pt' ? 'Experiências Culturais Premium' : 'Premium Cultural Experiences')}
           </motion.h2>
-          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -380,7 +351,6 @@ export default function CulturalCalendar({
               : 'Exclusive cultural events for Lusophone community members. Priority access, preferential pricing, and curated experiences.'
             }
           </motion.p>
-
           {/* Membership Benefits Banner */}
           {showMembershipGates && (
             <motion.div
@@ -407,7 +377,6 @@ export default function CulturalCalendar({
             </motion.div>
           )}
         </div>
-
         {/* Events Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {events.map((event, index) => (
@@ -453,7 +422,6 @@ export default function CulturalCalendar({
                   </p>
                 </div>
               </div>
-
               {/* Event Details */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-4 text-sm">
@@ -466,7 +434,6 @@ export default function CulturalCalendar({
                     <span>{event.time}</span>
                   </div>
                 </div>
-                
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <MapPinIcon className="w-4 h-4" />
                   <div>
@@ -474,7 +441,6 @@ export default function CulturalCalendar({
                     <div className="text-xs text-gray-500">{event.address}</div>
                   </div>
                 </div>
-                
                 <div className="flex items-center gap-4 text-sm">
                   <div className="flex items-center gap-2 text-gray-600">
                     <UsersIcon className="w-4 h-4" />
@@ -486,7 +452,6 @@ export default function CulturalCalendar({
                   </div>
                 </div>
               </div>
-
               {/* Pricing */}
               <div className="bg-gray-50 rounded-xl p-4 mb-6">
                 <div className="flex items-center justify-between">
@@ -510,10 +475,8 @@ export default function CulturalCalendar({
                   </div>
                 </div>
               </div>
-
               {/* Three-Tier CTA System */}
               <div className="space-y-3">
-                
                 {/* Primary CTA - View Event Details */}
                 <a
                   href={`${ROUTES.events}/${event.id}`}
@@ -523,7 +486,6 @@ export default function CulturalCalendar({
                   {language === 'pt' ? 'Ver Detalhes do Evento' : 'View Event Details'}
                   <ArrowRightIcon className="w-4 h-4" />
                 </a>
-
                 {/* Secondary CTAs */}
                 <div className="flex gap-2">
                   {/* Add to Calendar */}
@@ -534,7 +496,6 @@ export default function CulturalCalendar({
                     <CalendarIcon className="w-4 h-4" />
                     {language === 'pt' ? 'Adicionar ao Calendário' : 'Add to Calendar'}
                   </button>
-
                   {/* Share with Friends */}
                   <button
                     onClick={() => shareEvent(event)}
@@ -544,7 +505,6 @@ export default function CulturalCalendar({
                     {language === 'pt' ? 'Partilhar' : 'Share'}
                   </button>
                 </div>
-
                 {/* Booking CTA */}
                 {event.membershipRequired ? (
                   <div className="space-y-2">
@@ -569,12 +529,10 @@ export default function CulturalCalendar({
                     {language === 'pt' ? 'Reservar Lugar' : 'Book Now'}
                   </a>
                 )}
-                
                 {/* Organizer Credit */}
                 <div className="text-xs text-center text-gray-500 bg-gray-50 py-2 px-3 rounded-lg">
                   {language === 'pt' ? 'Organizado por' : 'Organized by'} <span className="font-medium">{event.organizer}</span>
                 </div>
-
                 {/* Visual indicator for hover actions */}
                 <div className="text-xs text-center text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
                   {language === 'pt' ? 'Clique para explorar opções' : 'Click to explore options'}
@@ -583,7 +541,6 @@ export default function CulturalCalendar({
             </motion.div>
           ))}
         </div>
-
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -601,7 +558,6 @@ export default function CulturalCalendar({
               : 'Priority access to exclusive events, preferential pricing, and an elite network across the United Kingdom.'
             }
           </p>
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={ROUTES.events}
@@ -618,12 +574,10 @@ export default function CulturalCalendar({
             </a>
           </div>
         </motion.div>
-        
         {children}
       </div>
       </section>
     </EventsCalendarTooltip>
   );
 }
-
 export { CulturalCalendar };

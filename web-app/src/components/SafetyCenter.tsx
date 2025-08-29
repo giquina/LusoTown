@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { motion } from 'framer-motion'
@@ -19,7 +18,6 @@ import {
   Camera,
   MapPin
 } from 'lucide-react'
-
 export default function SafetyCenter() {
   const { language } = useLanguage()
   const [reportForm, setReportForm] = useState({
@@ -28,21 +26,17 @@ export default function SafetyCenter() {
     evidence: ''
   })
   const [showReportForm, setShowReportForm] = useState(false)
-
   const handleReportSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Mock report submission
-    console.log('Report submitted:', reportForm)
     setShowReportForm(false)
     setReportForm({ type: '', description: '', evidence: '' })
     // Show success message
   }
-
   const translations = {
     en: {
       title: 'Safety & Security Center',
       subtitle: 'Your safety is our priority in the Portuguese-speaking community',
-      
       sections: {
         guidelines: {
           title: 'Community Safety Guidelines',
@@ -57,7 +51,6 @@ export default function SafetyCenter() {
             'Respect cultural boundaries and Portuguese traditions'
           ]
         },
-        
         features: {
           title: 'Safety Features',
           verification: {
@@ -85,7 +78,6 @@ export default function SafetyCenter() {
             description: 'Recommended public venues in London for safe first meetings.'
           }
         },
-        
         report: {
           title: 'Report a Safety Concern',
           description: 'Help us keep the Portuguese-speaking community safe by reporting any concerns.',
@@ -105,7 +97,6 @@ export default function SafetyCenter() {
             cancel: 'Cancel'
           }
         },
-        
         resources: {
           title: 'Safety Resources',
           emergency: {
@@ -130,7 +121,6 @@ export default function SafetyCenter() {
           }
         }
       },
-      
       buttons: {
         reportConcern: 'Report a Concern',
         viewGuidelines: 'View Safety Guidelines',
@@ -138,11 +128,9 @@ export default function SafetyCenter() {
         emergencyHelp: 'Emergency Help'
       }
     },
-    
     pt: {
       title: 'Centro de Segurança e Proteção',
       subtitle: 'A sua segurança é a nossa prioridade na comunidade de falantes de português',
-      
       sections: {
         guidelines: {
           title: 'Diretrizes de Segurança da Comunidade',
@@ -157,7 +145,6 @@ export default function SafetyCenter() {
             'Respeite as fronteiras culturais e tradições portuguesas'
           ]
         },
-        
         features: {
           title: 'Funcionalidades de Segurança',
           verification: {
@@ -185,7 +172,6 @@ export default function SafetyCenter() {
             description: 'Locais públicos recomendados em Londres para primeiros encontros seguros.'
           }
         },
-        
         report: {
           title: 'Reportar uma Preocupação de Segurança',
           description: 'Ajude-nos a manter a comunidade de falantes de português segura reportando qualquer preocupação.',
@@ -205,7 +191,6 @@ export default function SafetyCenter() {
             cancel: 'Cancelar'
           }
         },
-        
         resources: {
           title: 'Recursos de Segurança',
           emergency: {
@@ -230,7 +215,6 @@ export default function SafetyCenter() {
           }
         }
       },
-      
       buttons: {
         reportConcern: 'Reportar Preocupação',
         viewGuidelines: 'Ver Diretrizes de Segurança',
@@ -239,9 +223,7 @@ export default function SafetyCenter() {
       }
     }
   }
-
   const t = translations[language]
-
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -256,7 +238,6 @@ export default function SafetyCenter() {
         </div>
         <p className="text-neutral-600">{t.subtitle}</p>
       </motion.div>
-
       {/* Quick Actions */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -271,23 +252,19 @@ export default function SafetyCenter() {
           <Flag className="h-6 w-6 mx-auto mb-2" />
           <span className="text-sm font-medium">{t.buttons.reportConcern}</span>
         </button>
-        
         <button className="bg-secondary-50 text-secondary-700 p-4 rounded-xl text-center hover:bg-secondary-100 transition-colors">
           <Info className="h-6 w-6 mx-auto mb-2" />
           <span className="text-sm font-medium">{t.buttons.viewGuidelines}</span>
         </button>
-        
         <button className="bg-primary-50 text-primary-700 p-4 rounded-xl text-center hover:bg-primary-100 transition-colors">
           <MessageCircle className="h-6 w-6 mx-auto mb-2" />
           <span className="text-sm font-medium">{t.buttons.contactSupport}</span>
         </button>
-        
         <button className="bg-coral-50 text-coral-700 p-4 rounded-xl text-center hover:bg-coral-100 transition-colors">
           <Phone className="h-6 w-6 mx-auto mb-2" />
           <span className="text-sm font-medium">{t.buttons.emergencyHelp}</span>
         </button>
       </motion.div>
-
       {/* Safety Features Grid */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -296,7 +273,6 @@ export default function SafetyCenter() {
         className="space-y-6"
       >
         <h3 className="text-xl font-semibold text-neutral-900">{t.sections.features.title}</h3>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
@@ -350,7 +326,6 @@ export default function SafetyCenter() {
           ))}
         </div>
       </motion.div>
-
       {/* Safety Guidelines */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -368,7 +343,6 @@ export default function SafetyCenter() {
           ))}
         </div>
       </motion.div>
-
       {/* Emergency Resources */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -397,7 +371,6 @@ export default function SafetyCenter() {
             </div>
           </div>
         </div>
-
         {/* Meeting Safety Tips */}
         <div className="bg-secondary-50 p-6 rounded-xl border border-secondary-200">
           <h3 className="text-lg font-semibold text-secondary-900 mb-4 flex items-center gap-2">
@@ -414,7 +387,6 @@ export default function SafetyCenter() {
           </div>
         </div>
       </motion.div>
-
       {/* Report Form Modal */}
       {showReportForm && (
         <motion.div
@@ -433,7 +405,6 @@ export default function SafetyCenter() {
             <p className="text-sm text-neutral-600 mb-6">
               {t.sections.report.description}
             </p>
-            
             <form onSubmit={handleReportSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
@@ -451,7 +422,6 @@ export default function SafetyCenter() {
                   ))}
                 </select>
               </div>
-              
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
                   {t.sections.report.form.description}
@@ -464,7 +434,6 @@ export default function SafetyCenter() {
                   required
                 />
               </div>
-              
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
                   {t.sections.report.form.evidence}
@@ -476,7 +445,6 @@ export default function SafetyCenter() {
                   rows={2}
                 />
               </div>
-              
               <div className="flex gap-3 pt-4">
                 <button
                   type="button"
