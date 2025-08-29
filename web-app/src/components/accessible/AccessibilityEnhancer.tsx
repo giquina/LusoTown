@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
+
+import { SafeDOM } from '@/lib/security/safe-dom';
 import { useLanguage } from '@/context/LanguageContext'
 
 interface AccessibilityEnhancerProps {
@@ -113,26 +115,38 @@ export default function AccessibilityEnhancer({
     dialog.setAttribute('aria-modal', 'true')
     dialog.className = 'fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4'
     
-    dialog.innerHTML = `
-      <div class="bg-white rounded-lg p-6 max-w-md w-full max-h-80 overflow-y-auto">
-        <h2 id="help-title" class="text-lg font-semibold mb-4 text-heritage-primary">
-          ${language === 'pt' ? 'Ajuda de Acessibilidade' : 'Accessibility Help'}
-        </h2>
-        <div class="space-y-2 text-sm">
-          <pre class="whitespace-pre-wrap font-sans">${helpText}</pre>
-        </div>
-        <button 
-          type="button"
-          class="mt-4 px-4 py-2 bg-heritage-primary text-white rounded hover:bg-heritage-primary/90 focus:outline-none focus:ring-2 focus:ring-heritage-primary focus:ring-offset-2"
-          onclick="this.closest('#accessibility-help-dialog').remove(); document.body.focus();"
-        >
-          ${language === 'pt' ? 'Fechar' : 'Close'}
-        </button>
-      </div>
-    `
+    // SECURITY FIX: Use SafeDOM to safely create dialog content
+    const dialogContent = document.createElement('div');
+    dialogContent.className = 'bg-white rounded-lg p-6 max-w-md w-full max-h-80 overflow-y-auto';
+    
+    const title = document.createElement('h2');
+    title.id = 'help-title';
+    title.className = 'text-lg font-semibold mb-4 text-heritage-primary';
+    title.textContent = language === 'pt' ? 'Ajuda de Acessibilidade' : 'Accessibility Help';
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'space-y-2 text-sm';
+    
+    const preElement = document.createElement('pre');
+    preElement.className = 'whitespace-pre-wrap font-sans';
+    preElement.textContent = helpText;
+    contentDiv.appendChild(preElement);
+    
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'mt-4 px-4 py-2 bg-heritage-primary text-white rounded hover:bg-heritage-primary/90 focus:outline-none focus:ring-2 focus:ring-heritage-primary focus:ring-offset-2';
+    closeButton.textContent = language === 'pt' ? 'Fechar' : 'Close';
+    closeButton.onclick = () => {
+      dialog.remove();
+      document.body.focus();
+    };
+    
+    dialogContent.appendChild(title);
+    dialogContent.appendChild(contentDiv);
+    dialogContent.appendChild(closeButton);
+    dialog.appendChild(dialogContent);
 
     document.body.appendChild(dialog)
-    const closeButton = dialog.querySelector('button')
     closeButton?.focus()
 
     // Close on Escape
