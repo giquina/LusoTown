@@ -53,10 +53,10 @@ export function BusinessDirectoryFormExample() {
 
   // Price ranges
   const priceRanges = [
-    { value: '£', label: '£ - ' + t('business.price.budget') },
-    { value: '££', label: '££ - ' + t('business.price.moderate') },
-    { value: '£££', label: '£££ - ' + t('business.price.premium') },
-    { value: '££££', label: '££££ - ' + t('business.price.luxury') }
+    { value: '£', label: `£ - ${  t('business.price.budget')}` },
+    { value: '££', label: `££ - ${  t('business.price.moderate')}` },
+    { value: '£££', label: `£££ - ${  t('business.price.premium')}` },
+    { value: '££££', label: `££££ - ${  t('business.price.luxury')}` }
   ]
 
   return (

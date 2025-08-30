@@ -328,7 +328,7 @@ export class PortugueseRateLimiter {
   ): void {
     const logData = {
       timestamp: new Date().toISOString(),
-      identifier: identifier.substring(0, 20) + '***', // Partially masked for privacy
+      identifier: `${identifier.substring(0, 20)  }***`, // Partially masked for privacy
       endpoint,
       violationCount: record.violations,
       requestCount: record.count,

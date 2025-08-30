@@ -116,7 +116,7 @@ async function applyRateLimit(
       
       // Log Portuguese community violations for monitoring
       logger.security.warn('Portuguese Community Rate Limit Violation', {
-        identifier: identifier.substring(0, 20) + '***',
+        identifier: `${identifier.substring(0, 20)  }***`,
         endpoint: pathname,
         rateLimitType,
         isPortugueseCommunity: userContext.isPortugueseCommunity,

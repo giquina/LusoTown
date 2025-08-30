@@ -215,7 +215,7 @@ class BruteForceProtection {
 export const bruteForceProtection = new BruteForceProtection();
 
 // ===== SQL INJECTION PREVENTION =====
-export class SQLInjectionProtection {
+class SQLInjectionProtection {
   private static readonly DANGEROUS_PATTERNS = [
     /(\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC|EXECUTE)\b)/gi,
     /(\bUNION\s+SELECT\b)/gi,
@@ -460,7 +460,7 @@ export class AuthTokenManager {
 }
 
 // ===== SESSION MANAGEMENT FOR PORTUGUESE COMMUNITY =====
-export class PortugueseSessionManager {
+class PortugueseSessionManager {
   private static readonly SESSION_TIMEOUT = 2 * 60 * 60 * 1000; // 2 hours for regular users
   private static readonly PREMIUM_SESSION_TIMEOUT = 8 * 60 * 60 * 1000; // 8 hours for premium users
 

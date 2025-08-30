@@ -402,7 +402,7 @@ async function validateEventCulturalAuthenticity(eventData: PortugueseEventInput
   }
 
   // Check Portuguese characters in PT content (5 points)
-  const hasPortugueseChars = /[ãàáâçéêíóôõú]/i.test(eventData.title.pt + ' ' + eventData.description.pt)
+  const hasPortugueseChars = /[ãàáâçéêíóôõú]/i.test(`${eventData.title.pt  } ${  eventData.description.pt}`)
   if (hasPortugueseChars) {
     score += 5
     flags.push('authentic_portuguese_characters')

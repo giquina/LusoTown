@@ -383,7 +383,7 @@ async function logBusinessSubmission(
       businessId,
       culturalScore: culturalValidation.score,
       timestamp: new Date().toISOString(),
-      ip: ip.substring(0, 8) + '...' // Partial IP for privacy
+      ip: `${ip.substring(0, 8)  }...` // Partial IP for privacy
     })
   } catch (error) {
     console.error('Analytics logging error:', error)

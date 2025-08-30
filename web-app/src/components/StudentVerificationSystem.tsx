@@ -34,7 +34,7 @@ export default function StudentVerificationSystem({ onClose, onVerificationCompl
     e.preventDefault()
     // Simulate verification process
     setTimeout(() => {
-      onVerificationComplete('VERIFY_' + Date.now())
+      onVerificationComplete(`VERIFY_${  Date.now()}`)
     }, 2000)
   }
 

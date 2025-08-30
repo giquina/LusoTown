@@ -4,8 +4,8 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAuth } from '@/context/AuthContext'
 import { STREAMING_CONFIG } from '@/config/streaming'
-import { Button } from '@/components/ui/Button'
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
+import { Button } from '@/components/ui/button'
+import { ArrowPathIcon } from '@heroicons/react/24/solid'
 import { 
   LiveKitRoom, 
   VideoConference, 
@@ -245,7 +245,7 @@ export function StreamViewer({
     return (
       <div className="min-h-screen bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center">
         <div className="text-center text-white">
-          <LoadingSpinner size="xl" className="text-white mb-4" />
+          <ArrowPathIcon className="animate-spin h-12 w-12 text-white mb-4" />
           <h2 className="text-2xl font-bold mb-2">
             {t('streaming.viewer.connecting')}
           </h2>

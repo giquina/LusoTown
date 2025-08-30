@@ -402,7 +402,7 @@ export default function EventDiscoverySystem({ className = '' }: EventDiscoveryS
       <div className="space-y-6">
         {viewMode === 'calendar' && (
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <EnhancedCalendarView 
+            <PortugueseEventsCalendar 
               events={filteredEvents}
               onEventSelect={setSelectedEvent}
               selectedCity={selectedCity}
@@ -651,4 +651,5 @@ function getNextCelebrationDate(celebration: any, fromDate: Date): Date | null {
   }
   
   return celebrationDate
+}te
 }

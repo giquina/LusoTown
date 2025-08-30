@@ -126,7 +126,7 @@ export class SafeDOM {
       const itemElement = document.createElement('div');
       const safeLabel = sanitizeText(item.label);
       const safeValue = sanitizeText(String(item.value));
-      itemElement.textContent = safeLabel + ': ' + safeValue;
+      itemElement.textContent = `${safeLabel  }: ${  safeValue}`;
       overlay.appendChild(itemElement);
     });
 
@@ -253,7 +253,7 @@ export function safeSetInnerHTML(
  */
 export function renderSafeEventDetails(eventData: any): string {
   const safeData = SafeDOM.safeEventData(eventData);
-  return sanitizeHTML('<div class="event-details-loaded">' + safeData.title + '</div>', ['div']);
+  return sanitizeHTML(`<div class="event-details-loaded">${  safeData.title  }</div>`, ['div']);
 }
 
 export default SafeDOM;

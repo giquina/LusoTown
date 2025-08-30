@@ -95,7 +95,7 @@ class RateLimiter {
   async reset(identifier: string): Promise<void> {
     const keysToDelete = []
     for (const key of this.storage.keys()) {
-      if (key.startsWith(identifier + ':')) {
+      if (key.startsWith(`${identifier  }:`)) {
         keysToDelete.push(key)
       }
     }

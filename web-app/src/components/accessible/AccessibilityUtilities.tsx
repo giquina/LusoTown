@@ -145,7 +145,7 @@ export function usePortugueseAriaLabels() {
       parts.push(t('business.premium_context', 'Premium listing'));
     }
 
-    return parts.join('. ') + '.';
+    return `${parts.join('. ')  }.`;
   }, [t]);
 
   const generateEventAriaLabel = useCallback((event: {

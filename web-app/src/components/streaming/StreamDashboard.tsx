@@ -5,9 +5,9 @@ import { useLanguage } from '@/context/LanguageContext'
 import { useAuth } from '@/context/AuthContext'
 import { STREAMING_CONFIG } from '@/config/streaming'
 import { CloudinaryImage } from '@/components/CloudinaryImage'
-import { Button } from '@/components/ui/Button'
-import { Modal } from '@/components/ui/Modal'
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
+import { Button } from '@/components/ui/button'
+import EnhancedModal from '@/components/EnhancedModal'
+import { ArrowPathIcon } from '@heroicons/react/24/solid'
 import { PlayIcon, StopIcon, CogIcon, TvIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 
@@ -159,7 +159,7 @@ export function StreamDashboard() {
 
           {isLoading ? (
             <div className="flex justify-center py-12">
-              <LoadingSpinner size="lg" />
+              <ArrowPathIcon className="animate-spin h-10 w-10 text-primary-600" />
             </div>
           ) : myStreams.length === 0 ? (
             <div className="text-center py-12">
@@ -366,7 +366,7 @@ function CreateStreamModal({
   const selectedCategory = STREAMING_CONFIG.categories[formData.category as keyof typeof STREAMING_CONFIG.categories]
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="lg">
+    <EnhancedModal isOpen={isOpen} onClose={onClose} size="lg">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-primary-900 mb-6">
           {t('streaming.createModal.title')}
@@ -494,7 +494,7 @@ function CreateStreamModal({
               disabled={isSubmitting}
             >
               {isSubmitting ? (
-                <LoadingSpinner size="sm" />
+                <ArrowPathIcon className="animate-spin h-5 w-5 text-white" />
               ) : (
                 t('streaming.createModal.create')
               )}
@@ -502,7 +502,7 @@ function CreateStreamModal({
           </div>
         </form>
       </div>
-    </Modal>
+    </EnhancedModal>
   )
 }
 
@@ -517,7 +517,7 @@ function OBSGuideModal({
   const { t } = useLanguage()
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="lg">
+    <EnhancedModal isOpen={isOpen} onClose={onClose} size="lg">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-primary-900 mb-6">
           🎥 {t('streaming.obsGuide.title')}
@@ -576,7 +576,7 @@ function OBSGuideModal({
           </Button>
         </div>
       </div>
-    </Modal>
+    </EnhancedModal>
   )
 }
 
@@ -595,7 +595,7 @@ function StreamManagementModal({
   const { t } = useLanguage()
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="lg">
+    <EnhancedModal isOpen={isOpen} onClose={onClose} size="lg">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-primary-900 mb-6">
           {t('streaming.manageModal.title')}: {stream.title}
@@ -611,6 +611,6 @@ function StreamManagementModal({
           </Button>
         </div>
       </div>
-    </Modal>
+    </EnhancedModal>
   )
 }

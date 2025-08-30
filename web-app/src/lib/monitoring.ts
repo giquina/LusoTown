@@ -142,7 +142,7 @@ export class LusoTownMonitoringService {
    */
   private monitorPortugueseCharacterRendering(): void {
     const checkCharacterRendering = () => {
-      const portugueseText = '��o'
+      const portugueseText = 'ção'
       const testElement = document.createElement('div')
       testElement.textContent = portugueseText
       testElement.style.visibility = 'hidden'
@@ -708,7 +708,7 @@ export class LusoTownMonitoringService {
     return element.lang === 'pt' || 
            element.hasAttribute('data-portuguese') ||
            element.classList.contains('portuguese-content') ||
-           /[������������]/i.test(element.textContent || '')
+           /[áàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]/i.test(element.textContent || '')
   }
 
   private generateEventId(): string {
@@ -807,4 +807,8 @@ export const startProductionMonitoring = () => {
   if (process.env.NODE_ENV === 'production') {
     monitoring.startMonitoring()
   }
+}
+
+export const stopProductionMonitoring = () => {
+  monitoring.stopMonitoring()
 }

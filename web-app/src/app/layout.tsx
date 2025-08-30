@@ -18,7 +18,6 @@ import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
 import dynamic from "next/dynamic";
-import { WidgetManager } from "@/components/WidgetManager";
 import { METADATA_BASE } from "@/config/site";
 
 // Dynamic imports for heavy components
@@ -73,7 +72,6 @@ export default function RootLayout({
                                   <Header />
                                 </ComponentErrorBoundary>
 
-                                <WidgetManager>
                                   {/* Main Content */}
                                   <main className="relative">{children}</main>
 
@@ -85,7 +83,7 @@ export default function RootLayout({
                                   >
                                     <LusoBotWrapper />
                                   </ComponentErrorBoundary>
-                                </WidgetManager>
+                                
 
                                 {/* Toast Notifications */}
                                 <Toaster

@@ -137,12 +137,12 @@ export default function BusinessMap({
         map,
         title: t('map.your_location', 'Your Location'),
         icon: {
-          url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+          url: `data:image/svg+xml;charset=UTF-8,${  encodeURIComponent(`
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="10" fill="${colors.primary}" stroke="white" stroke-width="2"/>
               <circle cx="12" cy="12" r="4" fill="white"/>
             </svg>
-          `),
+          `)}`,
           scaledSize: new window.google.maps.Size(24, 24),
           anchor: new window.google.maps.Point(12, 12)
         }
@@ -189,7 +189,7 @@ export default function BusinessMap({
         map: mapInstance,
         title: business.name,
         icon: {
-          url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+          url: `data:image/svg+xml;charset=UTF-8,${  encodeURIComponent(`
             <svg width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 0C7.163 0 0 7.163 0 16c0 16 16 26 16 26s16-10 16-26C32 7.163 24.837 0 16 0z" fill="${getMarkerColor(business.cultural_focus)}"/>
               <circle cx="16" cy="16" r="8" fill="white"/>
@@ -197,7 +197,7 @@ export default function BusinessMap({
               ${business.is_premium ? '<circle cx="24" cy="8" r="4" fill="#fbbf24" stroke="white" stroke-width="1"/>' : ''}
               ${business.is_verified ? '<circle cx="8" cy="8" r="4" fill="#10b981" stroke="white" stroke-width="1"/>' : ''}
             </svg>
-          `),
+          `)}`,
           scaledSize: new window.google.maps.Size(32, 42),
           anchor: new window.google.maps.Point(16, 42)
         }

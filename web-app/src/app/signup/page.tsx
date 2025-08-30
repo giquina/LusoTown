@@ -1,6 +1,5 @@
+'use client'
 import dynamic from 'next/dynamic';
-import dynamic from 'next/dynamic';
-"use client";
 import Image from "next/image";
 import { PortugueseAvatar } from "@/components/OptimizedImage";
 

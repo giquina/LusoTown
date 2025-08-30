@@ -298,11 +298,11 @@ export class PortugueseCharacterTester {
       const isValid = PORTUGUESE_PATTERNS.culturalText.test(content);
       if (isValid) {
         passed++;
-        results.push({ content: content.substring(0, 50) + '...', 
+        results.push({ content: `${content.substring(0, 50)  }...`, 
           expected: true, actual: true, status: 'PASS' });
       } else {
         failed++;
-        results.push({ content: content.substring(0, 50) + '...', 
+        results.push({ content: `${content.substring(0, 50)  }...`, 
           expected: true, actual: false, status: 'FAIL' });
       }
     }
@@ -311,11 +311,11 @@ export class PortugueseCharacterTester {
       const isValid = PORTUGUESE_PATTERNS.culturalText.test(content);
       if (!isValid) {
         passed++;
-        results.push({ content: content.substring(0, 50) + '...', 
+        results.push({ content: `${content.substring(0, 50)  }...`, 
           expected: false, actual: false, status: 'PASS' });
       } else {
         failed++;
-        results.push({ content: content.substring(0, 50) + '...', 
+        results.push({ content: `${content.substring(0, 50)  }...`, 
           expected: false, actual: true, status: 'FAIL - SECURITY RISK' });
       }
     }

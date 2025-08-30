@@ -256,7 +256,7 @@ async function checkPortugueseContentHealth(): Promise<ServiceHealth> {
   
   try {
     // Test Portuguese character rendering capability
-    const testText = 'Olá! Como está? Informação cultural português.'
+    const testText = 'OlÃ¡! Como estÃ¡? InformaÃ§Ã£o cultural portuguÃªs.'
     const testEncoding = Buffer.from(testText, 'utf8').toString('utf8')
     
     if (testText !== testEncoding) {

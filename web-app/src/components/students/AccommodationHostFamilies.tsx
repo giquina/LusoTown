@@ -18,12 +18,12 @@ export default function AccommodationHostFamilies({ limit = 6, showPricing = fal
   const hostFamilies = [
     {
       id: 1,
-      name: 'Família Santos',
+      name: 'FamÃ­lia Santos',
       location: 'London',
       heritage: 'Portuguese',
       rating: 4.9,
       reviews: 23,
-      price: '£150/week',
+      price: 'Â£150/week',
       features: ['Portuguese-speaking', 'Near UCL', 'Meals included', 'Cultural activities'],
       image: '/images/host-family-1.jpg'
     },
@@ -34,18 +34,18 @@ export default function AccommodationHostFamilies({ limit = 6, showPricing = fal
       heritage: 'Brazilian',
       rating: 4.8,
       reviews: 18,
-      price: '£130/week',
+      price: 'Â£130/week',
       features: ['Portuguese/English', 'University of Manchester', 'Private room', 'Garden access'],
       image: '/images/host-family-2.jpg'
     },
     {
       id: 3,
-      name: 'Família Rodrigues',
+      name: 'FamÃ­lia Rodrigues',
       location: 'Edinburgh',
       heritage: 'Cape Verdean',
       rating: 4.9,
       reviews: 31,
-      price: '£140/week',
+      price: 'Â£140/week',
       features: ['Multilingual', 'Near University', 'Cultural exchange', 'Weekend activities'],
       image: '/images/host-family-3.jpg'
     },
@@ -56,18 +56,18 @@ export default function AccommodationHostFamilies({ limit = 6, showPricing = fal
       heritage: 'Portuguese',
       rating: 5.0,
       reviews: 15,
-      price: '£160/week',
+      price: 'Â£160/week',
       features: ['Academic family', 'Cambridge University', 'Study support', 'Library access'],
       image: '/images/host-family-4.jpg'
     },
     {
       id: 5,
-      name: 'Família Costa',
+      name: 'FamÃ­lia Costa',
       location: 'Oxford',
       heritage: 'Angolan',
       rating: 4.7,
       reviews: 22,
-      price: '£155/week',
+      price: 'Â£155/week',
       features: ['Near Oxford Uni', 'Cultural diversity', 'Mentorship', 'Social events'],
       image: '/images/host-family-5.jpg'
     },
@@ -78,7 +78,7 @@ export default function AccommodationHostFamilies({ limit = 6, showPricing = fal
       heritage: 'Brazilian',
       rating: 4.8,
       reviews: 27,
-      price: '£125/week',
+      price: 'Â£125/week',
       features: ['Portuguese cuisine', 'University area', 'Music & arts', 'Community events'],
       image: '/images/host-family-6.jpg'
     }
