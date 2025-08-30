@@ -1,0 +1,108 @@
+name: Vercel Deploy (Prod)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      retries:
+        description: "Max retries on transient errors (only used for manual runs)"
+        required: true
+        default: "2"
+      app_dir:
+        description: "Relative path to the Next.js app (default: web-app)"
+        required: true
+        default: "web-app"
+
+concurrency:
+  group: vercel-prod-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  NODE_VERSION: "20"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.event.inputs.app_dir || 'web-app' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            ${{ github.event.inputs.app_dir || 'web-app' }}/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Setup Vercel CLI
+        run: npm i -g vercel@latest
+
+      - name: Pull Vercel env
+        run: vercel pull --yes --environment=production --token "$VERCEL_TOKEN"
+
+      - name: Build (fail fast with logs)
+        id: vercel_build
+        run: |
+          set -e
+          vercel build --prod --token "$VERCEL_TOKEN" | tee vercel-build.log
+
+      - name: Deploy to production
+        id: vercel_deploy
+        run: |
+          set -e
+          url=$(vercel deploy --prebuilt --prod --token "$VERCEL_TOKEN")
+          echo "prod_url=$url" >> $GITHUB_OUTPUT
+          echo "$url" > vercel-prod-url.txt
+
+      - name: Upload artifacts (logs and URL)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vercel-artifacts
+          path: |
+            ${{ github.event.inputs.app_dir || 'web-app' }}/vercel-build.log
+            ${{ github.event.inputs.app_dir || 'web-app' }}/vercel-prod-url.txt
+          if-no-files-found: ignore
+
+  retry-on-transient:
+    needs: build-and-deploy
+    if: failure() && github.event_name == 'workflow_dispatch' && (github.event.inputs.retries != '' && fromJSON(github.event.inputs.retries) > 0)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup Vercel CLI
+        run: npm i -g vercel@latest
+
+      - name: Retry deploy on transient errors
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          RETRIES: ${{ github.event.inputs.retries }}
+          APP_DIR: ${{ github.event.inputs.app_dir || 'web-app' }}
+        run: |
+          bash scripts/vercel-retry.sh "$RETRIES" "$APP_DIR"
