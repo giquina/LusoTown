@@ -87,3 +87,5 @@ Thumbs.db
 .firebase/
 *-debug.log
 .runtimeconfig.json
+.env.production
+sentry.properties

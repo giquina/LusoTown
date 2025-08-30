@@ -1,5 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom'
+import { act } from '@testing-library/react'
 
 // Helper function to strip framer-motion props
 const stripFramerProps = (props) => {
@@ -16,7 +17,7 @@ const stripFramerProps = (props) => {
   return cleanProps
 }
 
-// Mock Next.js router
+// Mock Next.js router - Enhanced
 jest.mock('next/navigation', () => ({
   useRouter() {
     return {
@@ -26,6 +27,12 @@ jest.mock('next/navigation', () => ({
       back: jest.fn(),
       forward: jest.fn(),
       refresh: jest.fn(),
+      pathname: '/',
+      route: '/',
+      asPath: '/',
+      query: {},
+      basePath: '',
+      isLocaleDomain: true,
     }
   },
   usePathname() {
@@ -34,18 +41,34 @@ jest.mock('next/navigation', () => ({
   useSearchParams() {
     return new URLSearchParams()
   },
+  notFound: jest.fn()
 }))
 
-// Mock localStorage
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
-  clear: jest.fn(),
-}
-global.localStorage = localStorageMock
+// Mock Next.js Link
+jest.mock('next/link', () => {
+  return ({ children, href, ...props }) => {
+    return React.createElement('a', { href, ...stripFramerProps(props) }, children)
+  }
+})
 
-// Enhanced Framer Motion Mock with prop filtering
+// Mock localStorage with proper cleanup
+const localStorageMock = (() => {
+  let store = {}
+  
+  return {
+    getItem: jest.fn((key) => store[key] || null),
+    setItem: jest.fn((key, value) => { store[key] = value }),
+    removeItem: jest.fn((key) => { delete store[key] }),
+    clear: jest.fn(() => { store = {} }),
+    key: jest.fn((index) => Object.keys(store)[index] || null),
+    get length() { return Object.keys(store).length }
+  }
+})()
+
+global.localStorage = localStorageMock
+global.sessionStorage = localStorageMock
+
+// Enhanced Framer Motion Mock with proper prop filtering
 jest.mock('framer-motion', () => ({
   motion: {
     div: ({ children, ...props }) => React.createElement('div', stripFramerProps(props), children),
@@ -100,7 +123,40 @@ jest.mock('react-hot-toast', () => ({
   Toaster: () => null,
 }))
 
-// Mock window.matchMedia for mobile testing
+// Mock auth components and providers with stable implementations
+jest.mock('@/components/AuthPopupProvider', () => ({
+  useAuthPopup: () => ({
+    showPopup: jest.fn(),
+    hidePopup: jest.fn(),
+  }),
+  AuthPopupProvider: ({ children }) => children,
+}))
+
+jest.mock('@/lib/auth', () => ({
+  isAuthenticated: jest.fn(() => false),
+  useAuthState: jest.fn((callback) => {
+    // Return a cleanup function
+    return () => {}
+  }),
+  getCurrentUser: jest.fn(() => null),
+  signOut: jest.fn(),
+}))
+
+// Mock i18n with stable translations
+jest.mock('@/i18n', () => ({
+  loadTranslations: jest.fn((lang) => Promise.resolve({
+    'nav.events': lang === 'pt' ? 'Eventos' : 'Events',
+    'nav.services': lang === 'pt' ? 'Serviços' : 'Services',
+    'nav.about': lang === 'pt' ? 'Sobre' : 'About',
+    'nav.contact': lang === 'pt' ? 'Contacto' : 'Contact',
+    'favorites.title': lang === 'pt' ? 'Favoritos' : 'Saved Items',
+    'favorites.view-all': lang === 'pt' ? 'Ver todos' : 'View all',
+  })),
+  translateKey: jest.fn((translations, key, fallback) => translations[key] || fallback || key),
+  isValidLanguage: jest.fn((lang) => ['en', 'pt'].includes(lang)),
+}))
+
+// Mock window.matchMedia for responsive testing
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: jest.fn().mockImplementation(query => ({
@@ -144,7 +200,7 @@ global.Intl = {
   })),
 }
 
-// Global test utilities
+// Global test utilities (moved from global object for better encapsulation)
 global.testUtils = {
   mockPortugueseUser: {
     id: 'test-user-pt',
@@ -174,4 +230,28 @@ global.testUtils = {
     currency: 'GBP',
     category: 'cultural',
   },
+}
+
+// Clean up after each test
+afterEach(() => {
+  // Clear all mocks
+  jest.clearAllMocks()
+  
+  // Reset localStorage
+  localStorageMock.clear()
+  
+  // Clean up any DOM nodes
+  document.body.innerHTML = ''
+})
+
+// Wrap async state updates in act to prevent warnings
+const originalUseEffect = React.useEffect
+React.useEffect = (fn, deps) => {
+  return originalUseEffect(() => {
+    let cleanup
+    act(() => {
+      cleanup = fn()
+    })
+    return cleanup
+  }, deps)
 }

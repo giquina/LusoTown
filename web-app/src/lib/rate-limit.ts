@@ -132,18 +132,23 @@ export async function rateLimit(
     userBased?: boolean;
     ipBased?: boolean;
     bypassForTrusted?: boolean;
+    customLimits?: { maxRequests?: number; windowMs?: number };
   } = {}
 ): Promise<RateLimitResult> {
-  const config = RATE_LIMIT_CONFIGS[type];
-  const windowStart = Math.floor(Date.now() / config.windowMs) * config.windowMs;
-  const windowEnd = windowStart + config.windowMs;
+  // Use custom limits if provided, otherwise fallback to default config
+  const config = options.customLimits || RATE_LIMIT_CONFIGS[type];
+  const windowMs = config.windowMs || RATE_LIMIT_CONFIGS[type].windowMs;
+  const maxRequests = config.maxRequests || RATE_LIMIT_CONFIGS[type].maxRequests;
+  
+  const windowStart = Math.floor(Date.now() / windowMs) * windowMs;
+  const windowEnd = windowStart + windowMs;
   
   // Check for trusted partners bypass
   if (options.bypassForTrusted && TRUSTED_PARTNERS.has(identifier)) {
     return {
       success: true,
-      limit: config.maxRequests,
-      remaining: config.maxRequests,
+      limit: maxRequests,
+      remaining: maxRequests,
       resetTime: new Date(windowEnd),
     };
   }
@@ -153,7 +158,7 @@ export async function rateLimit(
     
     if (!redisClient) {
       // Fallback to in-memory rate limiting for development
-      return inMemoryRateLimit(identifier, type, config, windowEnd);
+      return inMemoryRateLimit(identifier, type, { maxRequests, windowMs }, windowEnd);
     }
 
     // Redis-based rate limiting
@@ -162,17 +167,17 @@ export async function rateLimit(
     // Use Redis multi for atomic operations
     const multi = redisClient.multi();
     multi.incr(key);
-    multi.expire(key, Math.ceil(config.windowMs / 1000));
+    multi.expire(key, Math.ceil(windowMs / 1000));
     
     const results = await multi.exec();
     const currentCount = (results?.[0] as number) || 0;
     
-    const remaining = Math.max(0, config.maxRequests - currentCount);
-    const success = currentCount <= config.maxRequests;
+    const remaining = Math.max(0, maxRequests - currentCount);
+    const success = currentCount <= maxRequests;
     
     return {
       success,
-      limit: config.maxRequests,
+      limit: maxRequests,
       remaining,
       resetTime: new Date(windowEnd),
       retryAfter: success ? undefined : Math.ceil((windowEnd - Date.now()) / 1000),
@@ -183,8 +188,8 @@ export async function rateLimit(
     // Fail open - allow requests if Redis is unavailable
     return {
       success: true,
-      limit: config.maxRequests,
-      remaining: config.maxRequests,
+      limit: maxRequests,
+      remaining: maxRequests,
       resetTime: new Date(windowEnd),
     };
   }
@@ -196,7 +201,7 @@ const inMemoryStore = new Map<string, { count: number; windowStart: number }>();
 function inMemoryRateLimit(
   identifier: string,
   type: RateLimitType,
-  config: typeof RATE_LIMIT_CONFIGS[RateLimitType],
+  config: { maxRequests: number; windowMs: number },
   windowEnd: number
 ): RateLimitResult {
   const windowStart = Math.floor(Date.now() / config.windowMs) * config.windowMs;

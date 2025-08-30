@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase';
 import { getPortugueseApiMiddleware } from '@/lib/api-middleware';
+import { withRateLimit } from '@/lib/rate-limit-middleware';
 import logger from '@/utils/logger';
 import { getApiErrorMessage, getApiLogMessage, getApiSuccessMessage } from '@/config/api-messages';
 import { APIValidation, validateAPIInput, ValidationError } from '@/lib/validation/api-validation';
@@ -111,30 +112,15 @@ export const GET = apiMiddleware.withOptimizations(
 );
 
 export async function POST(request: NextRequest) {
-  // Apply stricter rate limiting for business submissions
-  const rateLimitCheck = await withRateLimit(request, 'business-directory');
+  // Apply enhanced Portuguese community rate limiting for business submissions
+  const rateLimitCheck = await withRateLimit(request, 'business-directory', {
+    customLimits: {
+      maxRequests: 5, // More restrictive for business submissions
+      windowMs: 60 * 60 * 1000 // 1 hour window
+    }
+  });
   
   if (!('success' in rateLimitCheck)) {
-    const clientIP = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
-    
-    // Detect potential abuse for business submission endpoint
-    const isAbuse = detectAndLogAbuse(
-      clientIP,
-      '/api/business-directory',
-      'business-directory',
-      1,
-      60000 // 1 minute window
-    );
-    
-    if (isAbuse) {
-      logger.warn(getApiLogMessage('PORTUGUESE_BUSINESS_ABUSE_DETECTED'), undefined, {
-        area: 'security',
-        action: 'abuse_detection',
-        endpoint: 'business_directory_post',
-        client_ip: `${clientIP.substring(0, 8)}***`
-      });
-    }
-
     return rateLimitCheck;
   }
 

@@ -1,0 +1,112 @@
+{
+  "keyboard": {
+    "shortcuts": {
+      "skip_to_content": "Skip to main content",
+      "go_to_community": "Go to Community",
+      "go_to_home": "Go to Home",
+      "show_shortcuts": "Show keyboard shortcuts",
+      "hide_shortcuts": "Hide keyboard shortcuts"
+    },
+    "instructions": {
+      "enter_activate": "Press Enter or Space to activate",
+      "arrow_navigate": "Use arrow keys to navigate",
+      "escape_close": "Press Escape to close",
+      "tab_navigation": "Use Tab to move between elements"
+    },
+    "announcements": {
+      "activated": "Activated",
+      "cancelled": "Cancelled",
+      "navigating_to_community": "Navigating to Community",
+      "navigating_to_home": "Navigating to home page",
+      "skipping_to_content": "Skipping to main content"
+    }
+  },
+  "post": {
+    "by": "Post by",
+    "like": "Like",
+    "unlike": "Unlike",
+    "comment": "Comment",
+    "share": "Share",
+    "options": "Post options",
+    "report": "Report post",
+    "hide": "Hide post",
+    "reactions": "Post reactions",
+    "reaction_buttons": "Reaction buttons",
+    "engagement_stats": "Engagement statistics",
+    "actions": "Post actions",
+    "hashtags": "Hashtags",
+    "event_tag": "Event",
+    "business_tag": "Business",
+    "image_alt": "Post image",
+    "likes": "likes",
+    "comments": "comments",
+    "shares": "shares",
+    "reaction": {
+      "love": "Love reaction",
+      "like": "Like reaction",
+      "haha": "Haha reaction",
+      "wow": "Wow reaction"
+    }
+  },
+  "profile": {
+    "like": "Like profile",
+    "unlike": "Unlike profile",
+    "liked": "Liked",
+    "unliked": "Unliked",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "following": "Following",
+    "followed": "Followed user",
+    "unfollowed": "Unfollowed user",
+    "message": "Message",
+    "send_message": "Send message",
+    "message_sent": "Message sent",
+    "share": "Share profile",
+    "report": "Report profile",
+    "reported": "Profile reported",
+    "show_more": "Show more",
+    "show_less": "Show less",
+    "photos": "Profile photos",
+    "photo": "photo",
+    "photo_navigation": "Photo navigation",
+    "go_to_photo": "Go to photo",
+    "next_photo": "Next photo",
+    "previous_photo": "Previous photo",
+    "verified": "Verified profile",
+    "years_old": "years old",
+    "interests": "Interests",
+    "occupation": "Occupation",
+    "education": "Education",
+    "cultural_compatibility": "Cultural compatibility",
+    "overall_match": "Overall match",
+    "cultural_values": "Cultural values",
+    "lifestyle_match": "Lifestyle match",
+    "share_whatsapp": "Share on WhatsApp",
+    "copy_link": "Copy profile link"
+  },
+  "businesses": {
+    "business": "Business",
+    "view_details": "View business details",
+    "add_to_favorites": "Add to favorites",
+    "share": "Share business",
+    "call": "Call business",
+    "visit_website": "Visit website",
+    "get_directions": "Get directions",
+    "verified": "Verified business",
+    "premium": "Premium listing",
+    "cultural_focus": "Cultural focus",
+    "image": "business image",
+    "rating": "Rating",
+    "out_of_5": "out of 5 stars",
+    "reviews": "reviews",
+    "more": "more",
+    "away": "away",
+    "delivery": "Delivery available",
+    "takeaway": "Takeaway available",
+    "website": "Visit website",
+    "directions": "Get directions"
+  },
+  "events": {
+    "view_details": "View event details"
+  }
+}

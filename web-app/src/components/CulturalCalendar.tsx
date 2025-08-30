@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { 
   CalendarDaysIcon, 
   MapPinIcon, 
@@ -56,8 +57,11 @@ export default function CulturalCalendar({
   showMembershipGates = true
 }: CulturalCalendarProps) {
   const { language, t } = useLanguage();
+  const router = useRouter();
   const [events, setEvents] = useState<CulturalEvent[]>([]);
   const [loading, setLoading] = useState(true);
+  const [buttonLoadingStates, setButtonLoadingStates] = useState<{ [key: string]: boolean }>({});
+  const [calendarError, setCalendarError] = useState<string | null>(null);
   // ARIA and Focus Management
   const { announcePolite } = useAriaAnnouncements();
   const { addFocusClasses } = useFocusIndicator();
@@ -265,40 +269,129 @@ export default function CulturalCalendar({
       default: return 'border-gray-300';
     }
   };
-  // Calendar integration utility
-  const addToGoogleCalendar = (event: CulturalEvent) => {
-    const startDate = new Date(`${event.date} ${event.time}`);
-    const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // Add 2 hours
-    const googleCalUrl = new URL('https://calendar.google.com/calendar/render');
-    googleCalUrl.searchParams.append('action', 'TEMPLATE');
-    googleCalUrl.searchParams.append('text', language === 'pt' ? event.titlePt : event.title);
-    googleCalUrl.searchParams.append('dates', `${startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z`);
-    googleCalUrl.searchParams.append('details', `${language === 'pt' ? event.descriptionPt : event.description}\n\nOrganized by: ${event.organizer}`);
-    googleCalUrl.searchParams.append('location', event.address);
-    window.open(googleCalUrl.toString(), '_blank');
+  // Calendar integration utility with loading states and error handling
+  const addToGoogleCalendar = async (event: CulturalEvent) => {
+    const buttonKey = `calendar-${event.id}`;
+    setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: true }));
+    setCalendarError(null);
+    
+    try {
+      const startDate = new Date(`${event.date} ${event.time}`);
+      const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // Add 2 hours
+      
+      // Validate dates
+      if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+        throw new Error(language === 'pt' ? 'Data do evento inválida' : 'Invalid event date');
+      }
+      
+      const googleCalUrl = new URL('https://calendar.google.com/calendar/render');
+      googleCalUrl.searchParams.append('action', 'TEMPLATE');
+      googleCalUrl.searchParams.append('text', language === 'pt' ? event.titlePt : event.title);
+      googleCalUrl.searchParams.append('dates', `${startDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z`);
+      googleCalUrl.searchParams.append('details', `${language === 'pt' ? event.descriptionPt : event.description}\n\nOrganized by: ${event.organizer}`);
+      googleCalUrl.searchParams.append('location', event.address);
+      
+      // Announce calendar action
+      announcePolite({
+        en: `Adding ${event.title} to Google Calendar`,
+        pt: `Adicionando ${event.titlePt} ao Google Calendar`
+      });
+      
+      window.open(googleCalUrl.toString(), '_blank');
+      
+      // Success feedback after brief delay
+      setTimeout(() => {
+        announcePolite({
+          en: `${event.title} calendar event opened in new tab`,
+          pt: `Evento ${event.titlePt} aberto numa nova aba do calendário`
+        });
+      }, 1000);
+      
+    } catch (error) {
+      console.error('Calendar integration error:', error);
+      const errorMessage = error instanceof Error ? error.message : 
+        (language === 'pt' ? 'Erro ao adicionar ao calendário' : 'Error adding to calendar');
+      setCalendarError(errorMessage);
+      
+      announcePolite({
+        en: `Error: ${errorMessage}`,
+        pt: `Erro: ${errorMessage}`
+      });
+    } finally {
+      setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: false }));
+    }
   };
   // Social sharing utility
   const shareEvent = async (event: CulturalEvent) => {
-    const shareData = {
-      title: language === 'pt' ? event.titlePt : event.title,
-      text: `${language === 'pt' ? event.descriptionPt : event.description} - ${event.date} at ${event.time}`,
-      url: `${window.location.origin}${ROUTES.events}/${event.id}`
-    };
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-      } catch (err) {
+    const buttonKey = `share-${event.id}`;
+    setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: true }));
+    
+    try {
+      const shareData = {
+        title: language === 'pt' ? event.titlePt : event.title,
+        text: `${language === 'pt' ? event.descriptionPt : event.description} - ${event.date} at ${event.time}`,
+        url: `${window.location.origin}${ROUTES.events}/${event.id}`
+      };
+      
+      announcePolite({
+        en: `Sharing ${event.title}`,
+        pt: `Partilhando ${event.titlePt}`
+      });
+      
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          announcePolite({
+            en: `${event.title} shared successfully`,
+            pt: `${event.titlePt} partilhado com sucesso`
+          });
+        } catch (err) {
+          if (err instanceof Error && err.name !== 'AbortError') {
+            fallbackShare(shareData);
+          }
+        }
+      } else {
         fallbackShare(shareData);
       }
-    } else {
-      fallbackShare(shareData);
+    } catch (error) {
+      console.error('Share error:', error);
+      announcePolite({
+        en: 'Error sharing event',
+        pt: 'Erro ao partilhar evento'
+      });
+    } finally {
+      setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: false }));
     }
   };
   const fallbackShare = (shareData: { title: string; text: string; url: string }) => {
     // Copy to clipboard as fallback
-    navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
-    // You could add a toast notification here
-    alert(language === 'pt' ? 'Link copiado para a área de transferência!' : 'Link copied to clipboard!');
+    navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`)
+      .then(() => {
+        announcePolite({
+          en: 'Event link copied to clipboard',
+          pt: 'Link do evento copiado para a área de transferência'
+        });
+      })
+      .catch(() => {
+        announcePolite({
+          en: 'Unable to copy link',
+          pt: 'Não foi possível copiar o link'
+        });
+      });
+  };
+
+  // Enhanced event navigation with loading states
+  const handleEventClick = (event: CulturalEvent) => {
+    const buttonKey = `event-${event.id}`;
+    setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: true }));
+    
+    announcePolite({
+      en: `Navigating to ${event.title} details`,
+      pt: `Navegando para detalhes de ${event.titlePt}`
+    });
+    
+    // Use Next.js router for client-side navigation
+    router.push(`${ROUTES.events}/${event.id}`);
   };
   if (loading) {
     return (
@@ -401,8 +494,8 @@ export default function CulturalCalendar({
                     en: `${eventTitle} selected. Details panel opened.`,
                     pt: `${eventTitle} selecionado. Painel de detalhes aberto.`
                   });
-                  // Navigate to event details
-                  window.location.href = `${ROUTES.events}/${event.id}`;
+                  // Navigate to event details using router
+                  handleEventClick(event);
                 }
               }}
             >
@@ -478,31 +571,67 @@ export default function CulturalCalendar({
               {/* Three-Tier CTA System */}
               <div className="space-y-3">
                 {/* Primary CTA - View Event Details */}
-                <a
-                  href={`${ROUTES.events}/${event.id}`}
-                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-3 px-4 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 text-center block flex items-center justify-center gap-2"
+                <button
+                  onClick={() => handleEventClick(event)}
+                  disabled={buttonLoadingStates[`event-${event.id}`]}
+                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-3 px-4 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 text-center flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label={language === 'pt' 
+                    ? `Ver detalhes do evento ${event.titlePt}` 
+                    : `View ${event.title} event details`
+                  }
                 >
-                  <EyeIcon className="w-5 h-5" />
-                  {language === 'pt' ? 'Ver Detalhes do Evento' : 'View Event Details'}
-                  <ArrowRightIcon className="w-4 h-4" />
-                </a>
+                  {buttonLoadingStates[`event-${event.id}`] ? (
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <EyeIcon className="w-5 h-5" />
+                  )}
+                  {buttonLoadingStates[`event-${event.id}`] 
+                    ? (language === 'pt' ? 'A carregar...' : 'Loading...') 
+                    : (language === 'pt' ? 'Ver Detalhes do Evento' : 'View Event Details')
+                  }
+                  {!buttonLoadingStates[`event-${event.id}`] && <ArrowRightIcon className="w-4 h-4" />}
+                </button>
                 {/* Secondary CTAs */}
                 <div className="flex gap-2">
                   {/* Add to Calendar */}
                   <button
                     onClick={() => addToGoogleCalendar(event)}
-                    className="flex-1 bg-green-100 text-green-700 py-2 px-3 rounded-lg hover:bg-green-200 transition-colors font-medium text-sm flex items-center justify-center gap-2"
+                    disabled={buttonLoadingStates[`calendar-${event.id}`]}
+                    className="flex-1 bg-green-100 text-green-700 py-2 px-3 rounded-lg hover:bg-green-200 transition-colors font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label={language === 'pt' 
+                      ? `Adicionar ${event.titlePt} ao Google Calendar` 
+                      : `Add ${event.title} to Google Calendar`
+                    }
                   >
-                    <CalendarIcon className="w-4 h-4" />
-                    {language === 'pt' ? 'Adicionar ao Calendário' : 'Add to Calendar'}
+                    {buttonLoadingStates[`calendar-${event.id}`] ? (
+                      <div className="w-4 h-4 border-2 border-green-600 border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <CalendarIcon className="w-4 h-4" />
+                    )}
+                    {buttonLoadingStates[`calendar-${event.id}`] 
+                      ? (language === 'pt' ? 'A adicionar...' : 'Adding...') 
+                      : (language === 'pt' ? 'Adicionar ao Calendário' : 'Add to Calendar')
+                    }
                   </button>
                   {/* Share with Friends */}
                   <button
                     onClick={() => shareEvent(event)}
-                    className="flex-1 bg-blue-100 text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-200 transition-colors font-medium text-sm flex items-center justify-center gap-2"
+                    disabled={buttonLoadingStates[`share-${event.id}`]}
+                    className="flex-1 bg-blue-100 text-blue-700 py-2 px-3 rounded-lg hover:bg-blue-200 transition-colors font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label={language === 'pt' 
+                      ? `Partilhar ${event.titlePt}` 
+                      : `Share ${event.title}`
+                    }
                   >
-                    <ShareIcon className="w-4 h-4" />
-                    {language === 'pt' ? 'Partilhar' : 'Share'}
+                    {buttonLoadingStates[`share-${event.id}`] ? (
+                      <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <ShareIcon className="w-4 h-4" />
+                    )}
+                    {buttonLoadingStates[`share-${event.id}`] 
+                      ? (language === 'pt' ? 'A partilhar...' : 'Sharing...') 
+                      : (language === 'pt' ? 'Partilhar' : 'Share')
+                    }
                   </button>
                 </div>
                 {/* Booking CTA */}
@@ -574,6 +703,38 @@ export default function CulturalCalendar({
             </a>
           </div>
         </motion.div>
+        
+        {/* Error Display */}
+        {calendarError && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="max-w-2xl mx-auto mb-8 p-4 bg-red-50 border border-red-200 rounded-xl"
+            role="alert"
+            aria-live="assertive"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-red-600 text-sm font-bold">!</span>
+              </div>
+              <div className="flex-1">
+                <p className="text-red-800 font-medium text-sm">
+                  {language === 'pt' ? 'Erro de Calendário' : 'Calendar Error'}
+                </p>
+                <p className="text-red-700 text-sm mt-1">{calendarError}</p>
+              </div>
+              <button
+                onClick={() => setCalendarError(null)}
+                className="text-red-400 hover:text-red-600 p-1 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                aria-label={language === 'pt' ? 'Fechar erro' : 'Close error'}
+              >
+                <span className="w-4 h-4 block text-lg leading-none">×</span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+
         {children}
       </div>
       </section>

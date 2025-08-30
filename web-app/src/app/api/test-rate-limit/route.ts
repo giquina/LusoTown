@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { withRateLimit } from '@/lib/rate-limit-middleware';
+import { withRateLimit, createRateLimitMiddleware, getRateLimitMetrics } from '@/lib/rate-limit-middleware';
 import { getRateLimitStatus, RateLimitType, RATE_LIMIT_CONFIGS } from '@/lib/rate-limit';
-import { getPortugueseCommunitySecurityStats } from '@/lib/rate-limit-monitoring';
+import logger from '@/utils/logger';
 
 // Test endpoint for Portuguese community rate limiting functionality
 export async function GET(request: NextRequest) {
@@ -25,12 +25,13 @@ export async function GET(request: NextRequest) {
   
   if (action === 'stats') {
     // Get Portuguese community security statistics
-    const stats = getPortugueseCommunitySecurityStats();
+    const stats = getRateLimitMetrics();
     
     return NextResponse.json({
       ...stats,
       availableEndpoints: Object.keys(RATE_LIMIT_CONFIGS),
       culturalContext: 'portuguese-speaking-community',
+      timestamp: new Date().toISOString()
     });
   }
   

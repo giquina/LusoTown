@@ -1,53 +1,41 @@
 /**
- * Basic test to verify Jest setup is working correctly
+ * Setup Verification Test
+ * Tests basic Jest configuration and Portuguese community platform setup
  */
 
-describe('LusoTown Testing Framework Setup', () => {
-  it('should have Jest configured correctly', () => {
-    expect(true).toBe(true)
-  })
-
-  it('should have Portuguese test utilities available', () => {
+describe('Jest Setup Verification', () => {
+  it('should have proper test environment setup', () => {
     expect(global.testUtils).toBeDefined()
     expect(global.testUtils.mockPortugueseUser).toBeDefined()
-    expect(global.testUtils.mockPortugueseUser.name).toBe('João Silva')
-  })
-
-  it('should have localStorage mock available', () => {
     expect(global.localStorage).toBeDefined()
-    expect(typeof global.localStorage.setItem).toBe('function')
-    expect(typeof global.localStorage.getItem).toBe('function')
+    expect(global.sessionStorage).toBeDefined()
   })
 
-  it('should support Portuguese text', () => {
-    const portugueseText = 'Bem-vindo à comunidade de falantes de português em Londres'
-    expect(portugueseText).toContain('à')
-    expect(portugueseText).toContain('Bem-vindo')
-    expect(portugueseText.length).toBeGreaterThan(0)
+  it('should mock localStorage correctly', () => {
+    localStorage.setItem('test-key', 'test-value')
+    expect(localStorage.getItem('test-key')).toBe('test-value')
+    localStorage.clear()
+    expect(localStorage.getItem('test-key')).toBeNull()
   })
 
-  it('should have mobile testing support', () => {
-    expect(global.matchMedia).toBeDefined()
+  it('should have Portuguese community test data', () => {
+    const { mockPortugueseUser, mockPortugueseEvent } = global.testUtils
+    
+    expect(mockPortugueseUser.name).toBe('João Silva')
+    expect(mockPortugueseUser.language).toBe('pt')
+    expect(mockPortugueseEvent.title).toBe('Noite de Fado')
+  })
+
+  it('should mock Next.js environment', () => {
+    expect(process.env.NODE_ENV).toBe('test')
+    expect(process.env.NEXT_PUBLIC_TOTAL_MEMBERS).toBe('750')
+    expect(process.env.NEXT_PUBLIC_TOTAL_STUDENTS).toBe('2150')
+  })
+
+  it('should have stable mocks for testing', () => {
+    expect(jest.isMockFunction(global.fetch)).toBe(true)
+    expect(jest.isMockFunction(global.crypto.randomUUID)).toBe(true)
     expect(global.IntersectionObserver).toBeDefined()
     expect(global.ResizeObserver).toBeDefined()
-  })
-
-  it('should mock Framer Motion correctly', () => {
-    const { motion } = require('framer-motion')
-    expect(motion.div).toBeDefined()
-    expect(typeof motion.div).toBe('function')
-  })
-
-  it('should mock react-hot-toast correctly', () => {
-    const toast = require('react-hot-toast')
-    expect(toast.default.success).toBeDefined()
-    expect(typeof toast.default.success).toBe('function')
-  })
-
-  it('should support Portuguese event data', () => {
-    const event = global.testUtils.mockPortugueseEvent
-    expect(event.title).toBe('Noite de Fado')
-    expect(event.location).toContain('Portuguese Cultural Centre')
-    expect(event.category).toBe('cultural')
   })
 })

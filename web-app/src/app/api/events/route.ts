@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { getPortugueseApiMiddleware } from '@/lib/api-middleware';
+import { withRateLimit } from '@/lib/rate-limit-middleware';
 import logger from '@/utils/logger';
 
 export const dynamic = 'force-dynamic';
@@ -108,6 +109,18 @@ export const GET = apiMiddleware.withOptimizations(
 
 // POST /api/events - Create new Portuguese cultural event
 export async function POST(request: NextRequest) {
+  // Apply Portuguese community rate limiting for event creation
+  const rateLimitCheck = await withRateLimit(request, 'events', {
+    customLimits: {
+      maxRequests: 3, // Limit event creation to prevent spam
+      windowMs: 60 * 60 * 1000 // 1 hour window
+    }
+  });
+  
+  if (!('success' in rateLimitCheck)) {
+    return rateLimitCheck;
+  }
+
   try {
     const cookieStore = cookies();
     const supabase = createRouteHandlerClient({ cookies });

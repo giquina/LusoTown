@@ -5,9 +5,12 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start:livekit": "node livekit-server.js",
     "dev": "nodemon server.js",
+    "dev:livekit": "nodemon livekit-server.js",
     "test": "jest",
-    "health-check": "node health-check.js"
+    "health-check": "node health-check.js",
+    "cultural-content-sync": "node portuguese-features.js"
   },
   "keywords": [
     "streaming",
@@ -18,8 +21,10 @@
     "srs"
   ],
   "dependencies": {
+    "concurrently": "^9.2.1",
     "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
     "ffmpeg-static": "^5.2.0",
     "fluent-ffmpeg": "^2.1.2",
     "helmet": "^7.0.0",

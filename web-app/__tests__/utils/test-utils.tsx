@@ -1,12 +1,24 @@
 import React, { ReactElement } from 'react'
-import { render, RenderOptions } from '@testing-library/react'
+import { render, RenderOptions, screen, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { LanguageProvider } from '@/context/LanguageContext'
-import { NetworkingProvider } from '@/context/NetworkingContext'
-import { SubscriptionProvider } from '@/context/SubscriptionContext'
-import { CartProvider } from '@/context/CartContext'
-import { FavoritesProvider } from '@/context/FavoritesContext'
-import { HeritageProvider } from '@/context/HeritageContext'
+
+// Mock context providers to prevent actual API calls during testing
+const MockLanguageProvider = ({ children, initialLanguage = 'en' }) => {
+  return (
+    <div data-testid="language-provider" data-language={initialLanguage}>
+      {children}
+    </div>
+  )
+}
+
+const MockContextProvider = ({ children, name }) => {
+  const providerId = name.toLowerCase() + '-provider'
+  return (
+    <div data-testid={providerId}>
+      {children}
+    </div>
+  )
+}
 
 interface AllTheProvidersProps {
   children: React.ReactNode
@@ -14,35 +26,26 @@ interface AllTheProvidersProps {
   mockUser?: any
 }
 
-// Custom render function that includes all LusoTown providers
+// Custom render function that includes mock LusoTown providers
 const AllTheProviders: React.FC<AllTheProvidersProps> = ({ 
   children, 
   initialLanguage = 'en',
   mockUser 
 }) => {
-  // Mock localStorage for initial language
-  if (initialLanguage) {
-    global.localStorage.getItem = jest.fn((key) => {
-      if (key === 'lusotown-language') return initialLanguage
-      if (key === 'lusotown-user' && mockUser) return JSON.stringify(mockUser)
-      return null
-    })
-  }
-
   return (
-    <LanguageProvider>
-      <HeritageProvider>
-        <CartProvider>
-          <FavoritesProvider>
-            <SubscriptionProvider>
-              <NetworkingProvider>
+    <MockLanguageProvider initialLanguage={initialLanguage}>
+      <MockContextProvider name="Heritage">
+        <MockContextProvider name="Cart">
+          <MockContextProvider name="Favorites">
+            <MockContextProvider name="Subscription">
+              <MockContextProvider name="Networking">
                 {children}
-              </NetworkingProvider>
-            </SubscriptionProvider>
-          </FavoritesProvider>
-        </CartProvider>
-      </HeritageProvider>
-    </LanguageProvider>
+              </MockContextProvider>
+            </MockContextProvider>
+          </MockContextProvider>
+        </MockContextProvider>
+      </MockContextProvider>
+    </MockLanguageProvider>
   )
 }
 
@@ -69,100 +72,40 @@ const customRender = (
 
 // Portuguese-specific test utilities
 export const portugueseTestUtils = {
-  // Mock Portuguese user
-  mockPortugueseUser: (global as any).testUtils?.mockPortugueseUser,
-  
-  // Mock English user living in London
-  mockEnglishUser: (global as any).testUtils?.mockEnglishUser,
-  
-  // Mock Portuguese event
-  mockPortugueseEvent: (global as any).testUtils?.mockPortugueseEvent,
-  
-  // Verify Portuguese text content
-  expectPortugueseText: (element: HTMLElement, expectedText: string) => {
-    expect(element).toHaveTextContent(expectedText)
+  mockPortugueseUser: {
+    id: 'test-user-pt',
+    name: 'João Silva',
+    email: 'joao@example.com',
+    language: 'pt',
+    location: 'Lisboa, Portugal',
+    membershipTier: 'premium',
   },
   
-  // Verify bilingual content
-  expectBilingualContent: (container: HTMLElement, textEn: string, textPt: string) => {
-    const hasEnglish = container.textContent?.includes(textEn)
-    const hasPortuguese = container.textContent?.includes(textPt)
-    expect(hasEnglish || hasPortuguese).toBe(true)
+  mockEnglishUser: {
+    id: 'test-user-en',
+    name: 'John Smith',
+    email: 'john@example.com',
+    language: 'en',
+    location: 'London, United Kingdom',
+    membershipTier: 'free',
   },
   
-  // Mock networking connections for Portuguese-speaking community
-  mockPortugueseConnections: [
-    {
-      id: 'conn-1',
-      userId: 'current-user',
-      connectedUserId: 'user-maria',
-      connectedUser: {
-        id: 'user-maria',
-        firstName: 'Maria',
-        lastName: 'Santos',
-        profilePictureUrl: 'https://example.com/maria.jpg',
-        location: 'Camberwell, London',
-        membershipTier: 'premium' as const,
-        isVerified: true
-      },
-      connectionSource: 'event_based' as const,
-      sharedEventsCount: 3,
-      connectionStrength: 8.5,
-      lastInteractionAt: '2024-01-20T18:00:00Z',
-      isActive: true,
-      privacyLevel: 'normal' as const,
-      createdAt: '2024-01-15T20:30:00Z'
-    }
-  ],
-  
-  // Mock subscription data
-  mockPremiumSubscription: {
-    id: 'sub-1',
-    user_id: 'test-user',
-    status: 'active' as const,
-    plan_type: 'yearly' as const,
-    tier: 'platinum' as const,
-    current_period_end: '2025-01-01T00:00:00Z',
-    amount: 25,
+  mockPortugueseEvent: {
+    id: 'event-fado',
+    title: 'Noite de Fado',
+    title_en: 'Fado Night',
+    description: 'Uma noite especial de música tradicional portuguesa',
+    description_en: 'A special night of traditional Portuguese music',
+    date: '2024-02-15T20:00:00Z',
+    location: 'Portuguese Cultural Centre, London',
+    price: 25,
     currency: 'GBP',
-    created_at: '2024-01-01T00:00:00Z',
-    updated_at: '2024-01-01T00:00:00Z'
-  },
-  
-  // Mock cultural events
-  mockCulturalEvents: [
-    {
-      id: 'event-fado',
-      title: 'Noite de Fado',
-      title_en: 'Fado Night',
-      description: 'Uma noite especial de música tradicional portuguesa',
-      description_en: 'A special night of traditional Portuguese music',
-      date: '2024-02-15T20:00:00Z',
-      location: 'Portuguese Cultural Centre, London',
-      price: 25,
-      currency: 'GBP',
-      category: 'cultural',
-      image_url: 'https://example.com/fado.jpg'
-    },
-    {
-      id: 'event-food-tour',
-      title: 'Tour Gastronómico Português',
-      title_en: 'Portuguese Food Tour',
-      description: 'Explore os sabores de Portugal em Londres',
-      description_en: 'Explore the flavors of Portugal in London',
-      date: '2024-02-20T14:00:00Z',
-      location: 'Little Portugal, London',
-      price: 35,
-      currency: 'GBP',
-      category: 'food',
-      image_url: 'https://example.com/food-tour.jpg'
-    }
-  ]
+    category: 'cultural',
+  }
 }
 
 // Mobile testing utilities
 export const mobileTestUtils = {
-  // Set viewport to mobile size
   setMobileViewport: () => {
     Object.defineProperty(window, 'innerWidth', {
       writable: true,
@@ -177,22 +120,6 @@ export const mobileTestUtils = {
     window.dispatchEvent(new Event('resize'))
   },
   
-  // Set viewport to tablet size
-  setTabletViewport: () => {
-    Object.defineProperty(window, 'innerWidth', {
-      writable: true,
-      configurable: true,
-      value: 768,
-    })
-    Object.defineProperty(window, 'innerHeight', {
-      writable: true,
-      configurable: true,
-      value: 1024,
-    })
-    window.dispatchEvent(new Event('resize'))
-  },
-  
-  // Set viewport to desktop size
   setDesktopViewport: () => {
     Object.defineProperty(window, 'innerWidth', {
       writable: true,
@@ -207,7 +134,6 @@ export const mobileTestUtils = {
     window.dispatchEvent(new Event('resize'))
   },
   
-  // Mock touch events
   mockTouchStart: (element: HTMLElement, x: number = 0, y: number = 0) => {
     const touch = {
       clientX: x,
@@ -218,11 +144,7 @@ export const mobileTestUtils = {
       screenX: x,
       screenY: y,
       target: element,
-      force: 1,
-      radiusX: 1,
-      radiusY: 1,
-      rotationAngle: 0
-    } as unknown as Touch
+    } as Touch
 
     const event = new TouchEvent('touchstart', {
       touches: [touch]
@@ -231,99 +153,6 @@ export const mobileTestUtils = {
   }
 }
 
-// Performance testing utilities
-export const performanceTestUtils = {
-  // Mock performance API
-  mockPerformanceNow: () => {
-    const startTime = Date.now()
-    jest.spyOn(performance, 'now').mockImplementation(() => Date.now() - startTime)
-  },
-  
-  // Measure component render time
-  measureRenderTime: async (renderFn: () => void) => {
-    const start = performance.now()
-    await renderFn()
-    const end = performance.now()
-    return end - start
-  },
-  
-  // Mock slow network conditions
-  mockSlowNetwork: () => {
-    jest.spyOn(window, 'fetch').mockImplementation(
-      () => new Promise(resolve => setTimeout(() => resolve(new Response()), 2000))
-    )
-  }
-}
-
-// Security testing utilities
-export const securityTestUtils = {
-  // Test for XSS vulnerabilities
-  createXSSPayload: (elementType: string = 'script') => {
-    return `<${elementType}>alert('XSS')</${elementType}>`
-  },
-  
-  // Test for SQL injection patterns
-  createSQLInjectionPayload: () => {
-    return "'; DROP TABLE users; --"
-  },
-  
-  // Verify content sanitization
-  expectSanitizedContent: (element: HTMLElement, dangerousContent: string) => {
-    expect(element.innerHTML).not.toContain('<script')
-    expect(element.innerHTML).not.toContain('javascript:')
-    expect(element.innerHTML).not.toContain('DROP TABLE')
-  }
-}
-
-// Cultural sensitivity testing utilities
-export const culturalTestUtils = {
-  // Portuguese cultural terms that should be preserved
-  portugueseCulturalTerms: [
-    'Fado',
-    'Saudade',
-    'Bacalhau',
-    'Pastéis de Nata',
-    'Santos Populares',
-    'Lusófono',
-    'Saldo',
-    'Obrigado',
-    'Obrigada'
-  ],
-  
-  // Verify cultural term preservation
-  expectCulturalTermPreservation: (element: HTMLElement, terms: string[]) => {
-    terms.forEach(term => {
-      if (element.textContent?.includes(term)) {
-        // Ensure the term is not translated or altered
-        expect(element.textContent).toContain(term)
-      }
-    })
-  },
-  
-  // United Kingdom-specific location terms
-  ukLocationTerms: [
-    'London',
-    'Greater London',
-    'Camden',
-    'Vauxhall',
-    'Kennington',
-    'United Kingdom',
-    'United Kingdom'
-  ],
-  
-  // Verify United Kingdom focus in content
-  expectUKLocationFocus: (element: HTMLElement) => {
-    const hasUKReference = culturalTestUtils.ukLocationTerms.some(term => 
-      element.textContent?.includes(term)
-    )
-    expect(hasUKReference).toBe(true)
-  }
-}
-
-// Re-export everything from testing-library
 export * from '@testing-library/react'
-// Custom render for LusoTown components
 export { customRender as render }
-
-// Additional missing exports for test compatibility
-export { screen, fireEvent, waitFor } from '@testing-library/react'
+export { screen, fireEvent, waitFor }

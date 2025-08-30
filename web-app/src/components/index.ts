@@ -155,3 +155,7 @@ export { default as GroupEventCard } from './GroupEventCard'
 export { default as PortuguesePolls } from './PortuguesePolls'
 export { default as MessageAuthorizationGate } from './MessageAuthorizationGate'
 export { default as ServiceIntegrationFeed } from './ServiceIntegrationFeed'
+
+// Streaming Components - Portuguese Cultural Streaming
+export { StreamDashboard } from './streaming/StreamDashboard'
+export { StreamViewer } from './streaming/StreamViewer'

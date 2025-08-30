@@ -1,0 +1,112 @@
+{
+  "keyboard": {
+    "shortcuts": {
+      "skip_to_content": "Saltar para conteúdo principal",
+      "go_to_community": "Ir para Comunidade",
+      "go_to_home": "Ir para página inicial",
+      "show_shortcuts": "Mostrar atalhos de teclado",
+      "hide_shortcuts": "Ocultar atalhos de teclado"
+    },
+    "instructions": {
+      "enter_activate": "Pressione Enter ou Espaço para ativar",
+      "arrow_navigate": "Use as teclas de seta para navegar",
+      "escape_close": "Pressione Escape para fechar",
+      "tab_navigation": "Use Tab para mover entre elementos"
+    },
+    "announcements": {
+      "activated": "Ativado",
+      "cancelled": "Cancelado",
+      "navigating_to_community": "Navegando para Comunidade",
+      "navigating_to_home": "Navegando para página inicial",
+      "skipping_to_content": "Saltando para conteúdo principal"
+    }
+  },
+  "post": {
+    "by": "Publicação de",
+    "like": "Gostar",
+    "unlike": "Não gostar",
+    "comment": "Comentar",
+    "share": "Partilhar",
+    "options": "Opções da publicação",
+    "report": "Denunciar publicação",
+    "hide": "Ocultar publicação",
+    "reactions": "Reações da publicação",
+    "reaction_buttons": "Botões de reação",
+    "engagement_stats": "Estatísticas de envolvimento",
+    "actions": "Ações da publicação",
+    "hashtags": "Hashtags",
+    "event_tag": "Evento",
+    "business_tag": "Negócio",
+    "image_alt": "Imagem da publicação",
+    "likes": "gostos",
+    "comments": "comentários",
+    "shares": "partilhas",
+    "reaction": {
+      "love": "Reação amor",
+      "like": "Reação gostar",
+      "haha": "Reação riso",
+      "wow": "Reação surpresa"
+    }
+  },
+  "profile": {
+    "like": "Gostar do perfil",
+    "unlike": "Não gostar do perfil",
+    "liked": "Gostei",
+    "unliked": "Não gostei",
+    "follow": "Seguir",
+    "unfollow": "Deixar de seguir",
+    "following": "Seguindo",
+    "followed": "Utilizador seguido",
+    "unfollowed": "Utilizador não seguido",
+    "message": "Mensagem",
+    "send_message": "Enviar mensagem",
+    "message_sent": "Mensagem enviada",
+    "share": "Partilhar perfil",
+    "report": "Denunciar perfil",
+    "reported": "Perfil denunciado",
+    "show_more": "Mostrar mais",
+    "show_less": "Mostrar menos",
+    "photos": "Fotos do perfil",
+    "photo": "foto",
+    "photo_navigation": "Navegação de fotos",
+    "go_to_photo": "Ir para foto",
+    "next_photo": "Próxima foto",
+    "previous_photo": "Foto anterior",
+    "verified": "Perfil verificado",
+    "years_old": "anos de idade",
+    "interests": "Interesses",
+    "occupation": "Profissão",
+    "education": "Educação",
+    "cultural_compatibility": "Compatibilidade cultural",
+    "overall_match": "Compatibilidade geral",
+    "cultural_values": "Valores culturais",
+    "lifestyle_match": "Compatibilidade de estilo de vida",
+    "share_whatsapp": "Partilhar no WhatsApp",
+    "copy_link": "Copiar ligação do perfil"
+  },
+  "businesses": {
+    "business": "Negócio",
+    "view_details": "Ver detalhes do negócio",
+    "add_to_favorites": "Adicionar aos favoritos",
+    "share": "Partilhar negócio",
+    "call": "Ligar para negócio",
+    "visit_website": "Visitar website",
+    "get_directions": "Obter direções",
+    "verified": "Negócio verificado",
+    "premium": "Listagem premium",
+    "cultural_focus": "Foco cultural",
+    "image": "imagem do negócio",
+    "rating": "Avaliação",
+    "out_of_5": "de 5 estrelas",
+    "reviews": "avaliações",
+    "more": "mais",
+    "away": "de distância",
+    "delivery": "Entrega disponível",
+    "takeaway": "Takeaway disponível",
+    "website": "Visitar website",
+    "directions": "Obter direções"
+  },
+  "events": {
+    "view_details": "Ver detalhes do evento"
+  }
+}

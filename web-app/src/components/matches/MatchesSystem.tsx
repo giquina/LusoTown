@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAriaAnnouncements } from '@/hooks/useAriaAnnouncements';
+import { useFocusIndicator } from '@/hooks/useFocusManagement';
 import { 
   Heart, 
   Users, 
@@ -52,7 +54,81 @@ export default function MatchesSystem({
   const [matches, setMatches] = useState<ExtendedMatchProfile[]>([]);
   const [filters, setFilters] = useState<MatchingFilters>(DEFAULT_MATCHING_FILTERS);
   const [loading, setLoading] = useState(false);
+  const [buttonLoadingStates, setButtonLoadingStates] = useState<{ [key: string]: boolean }>({});
   const [selectedMatch, setSelectedMatch] = useState<ExtendedMatchProfile | null>(null);
+  const [showConfirmationDialog, setShowConfirmationDialog] = useState<string | null>(null);
+  const [focusedMatchId, setFocusedMatchId] = useState<string | null>(null);
+
+  // Accessibility and focus management
+  const { announcePolite, announceAssertive } = useAriaAnnouncements();
+  const { addFocusClasses } = useFocusIndicator();
+  const matchRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  // Enhanced conversation handling with confirmation
+  const handleStartConversation = async (match: ExtendedMatchProfile) => {
+    const buttonKey = `conversation-${match.id}`;
+    setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: true }));
+    
+    try {
+      announcePolite({
+        en: `Starting conversation with ${match.name}`,
+        pt: `Iniciando conversa com ${match.name}`
+      });
+      
+      // Show confirmation dialog first
+      setShowConfirmationDialog(match.id);
+      
+    } catch (error) {
+      console.error('Error starting conversation:', error);
+      announceAssertive({
+        en: 'Error starting conversation. Please try again.',
+        pt: 'Erro ao iniciar conversa. Tente novamente.'
+      });
+    } finally {
+      setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: false }));
+    }
+  };
+
+  // Confirm conversation start
+  const confirmStartConversation = (match: ExtendedMatchProfile) => {
+    const buttonKey = `confirm-${match.id}`;
+    setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: true }));
+    
+    announceAssertive({
+      en: `Conversation with ${match.name} started successfully`,
+      pt: `Conversa com ${match.name} iniciada com sucesso`
+    });
+    
+    // Call the parent callback
+    onStartConversation?.(match.id, match.name);
+    setShowConfirmationDialog(null);
+    
+    setTimeout(() => {
+      setButtonLoadingStates(prev => ({ ...prev, [buttonKey]: false }));
+    }, 1000);
+  };
+
+  // Focus management for matches
+  const handleMatchFocus = (matchId: string, matchName: string) => {
+    setFocusedMatchId(matchId);
+    announcePolite({
+      en: `${matchName} match focused. Press Enter to view profile or Tab to navigate actions.`,
+      pt: `${matchName} match focado. Prima Enter para ver perfil ou Tab para navegar nas ações.`
+    });
+    
+    const element = matchRefs.current[matchId];
+    if (element) {
+      addFocusClasses(element, 'card');
+    }
+  };
+
+  const handleMatchBlur = (matchId: string) => {
+    setFocusedMatchId(null);
+    const element = matchRefs.current[matchId];
+    if (element) {
+      element.classList.remove('lusotown-card-focus', 'lusotown-focus-smooth');
+    }
+  };
 
   const translations = {
     en: {
@@ -398,11 +474,25 @@ export default function MatchesSystem({
             {tr.matchCard.viewProfile}
           </button>
           <button
-            onClick={() => onStartConversation?.(match.id, match.name)}
-            className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors flex items-center justify-center space-x-1"
+            onClick={() => handleStartConversation(match)}
+            disabled={buttonLoadingStates[`conversation-${match.id}`]}
+            className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center space-x-1"
+            aria-label={language === 'pt' 
+              ? `Iniciar conversa com ${match.name}` 
+              : `Start conversation with ${match.name}`
+            }
           >
-            <MessageCircle className="w-4 h-4" />
-            <span>{tr.matchCard.startChat}</span>
+            {buttonLoadingStates[`conversation-${match.id}`] ? (
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <MessageCircle className="w-4 h-4" />
+            )}
+            <span>
+              {buttonLoadingStates[`conversation-${match.id}`] 
+                ? (language === 'pt' ? 'A iniciar...' : 'Starting...') 
+                : tr.matchCard.startChat
+              }
+            </span>
           </button>
         </div>
 

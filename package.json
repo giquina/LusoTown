@@ -36,7 +36,16 @@
     "mobile:web": "cd mobile-app && npm run web",
     "init": "scripts/claude-init-wrapper.sh",
     "update-ai-docs": "node scripts/enhanced-ai-guidance-updater.js",
-    "update-ai-docs:basic": "node scripts/update-ai-guidance.js"
+    "update-ai-docs:basic": "node scripts/update-ai-guidance.js",
+    
+    "deploy:validate": "bash scripts/deployment/validate-deployment.sh",
+    "deploy:optimize": "bash scripts/deployment/optimize-production.sh",
+    "deploy:setup-monitoring": "bash scripts/deployment/setup-monitoring.sh",
+    "deploy:production": "bash scripts/deployment/deploy-production.sh",
+    "deploy:complete": "bash scripts/deployment/complete-deployment.sh",
+    
+    "deploy:pre-checks": "npm run deploy:validate && npm run deploy:optimize",
+    "deploy:post-checks": "node scripts/monitoring/performance-monitor.js && node scripts/monitoring/cultural-monitor.js"
   },
   "engines": {
     "node": ">=18.0.0",

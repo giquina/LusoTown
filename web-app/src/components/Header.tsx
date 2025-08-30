@@ -585,6 +585,47 @@ export default function Header() {
                 transition={{ duration: 0.3 }}
               />
             </motion.a>
+
+            {/* Go Live - Streaming */}
+            <motion.a
+              href={ROUTES.streaming}
+              className="relative text-gray-600 hover:text-primary-600 px-3 py-3 rounded-md text-sm font-medium transition-all duration-300 group min-h-[44px] flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <motion.div
+                className="text-primary-500 group-hover:text-primary-600"
+                whileHover={{ scale: 1.2 }}
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              >
+                🎥
+              </motion.div>
+              <span className="relative z-10">
+                {t("nav.go_live", "Go Live")}
+              </span>
+              {/* Live streaming background hover effect */}
+              <motion.div
+                className="absolute inset-0 bg-primary-50 rounded-md"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+              />
+              {/* Live streaming underline effect */}
+              <motion.div
+                className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full"
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.a>
           </div>
 
           {/* Desktop CTA / User Menu */}
@@ -818,6 +859,18 @@ export default function Header() {
                     >
                       <span className="text-red-500 text-lg">💗</span>
                       <span>{t("nav.find_your_match", "Find Your Match")}</span>
+                    </motion.a>
+
+                    {/* Go Live - Mobile */}
+                    <motion.a
+                      href={ROUTES.streaming}
+                      className="flex items-center gap-3 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group"
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                    >
+                      <span className="text-primary-500 text-lg">🎥</span>
+                      <span>{t("nav.go_live", "Go Live")}</span>
                     </motion.a>
                   </div>
 
