@@ -1,94 +1,67 @@
 {
-  "name": "LusoTown Portuguese Streaming Platform",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-  
+  "name": "Claude Flow Development",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2.12.2": {
+      "version": "latest",
+      "moby": true
+    }
+  },
+  "runArgs": ["--privileged"],
+  "remoteUser": "vscode",
+  
+  "onCreateCommand": "npm install -g claude-flow@alpha && npm install -g @anthropic-ai/claude-code",
+  "postCreateCommand": "bash -c 'mkdir -p claude-flow-tool/{coordination/{memory_bank,orchestration,subtasks},memory/{agents,sessions}} project && touch project/.gitkeep && echo \"✅ Claude Flow project structure created\"'",
+  
+  "remoteEnv": {
+    "CLAUDE_FLOW_TOOL_DIR": "${containerWorkspaceFolder}/claude-flow-tool",
+    "CLAUDE_FLOW_PROJECT_DIR": "${containerWorkspaceFolder}/project",
+    "CLAUDE_FLOW_MEMORY_DIR": "${containerWorkspaceFolder}/claude-flow-tool/memory"
   },
   
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-typescript-next",
-        "bradlc.vscode-tailwindcss",
-        "esbenp.prettier-vscode",
-        "ms-vscode.vscode-docker",
-        "ms-vscode.vscode-json",
-        "formulahendry.auto-rename-tag",
-        "ms-vscode.vscode-eslint",
-        "ms-vscode.js-debug"
+        "rooveterinaryinc.roo-cline",
+        "vsls-contrib.gistfs",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "github.copilot",
+        "github.copilot-chat"
       ],
       "settings": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-          "source.fixAll.eslint": "explicit"
+        "terminal.integrated.cwd": "${workspaceFolder}/project",
+        "files.exclude": {
+          "**/node_modules": true,
+          "**/.git": false,
+          "**/claude-flow-tool/memory/sessions/*": true,
+          "**/claude-flow-tool/memory/agents/*": true,
+          "**/claude-flow-tool/coordination/memory_bank/*": true,
+          "**/claude-flow-tool/coordination/subtasks/*": true,
+          "**/claude-flow-tool/coordination/orchestration/*": true
         },
-        "typescript.preferences.quoteStyle": "single",
-        "javascript.preferences.quoteStyle": "single",
-        "editor.tabSize": 2,
-        "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 1000
+        "search.exclude": {
+          "**/node_modules": true,
+          "**/claude-flow-tool/memory/**": true,
+          "**/claude-flow-tool/coordination/**": true
+        },
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        }
       }
     }
   },
   
-  "forwardPorts": [
-    1935,  // RTMP for Streamlabs ingestion
-    8080,  // HLS streaming output  
-    1985,  // SRS API management
-    3000,  // LusoTown web platform
-    3002,  // Streaming API server
-    6379   // Redis
-  ],
-  
-  "portsAttributes": {
-    "1935": {
-      "label": "🎥 RTMP Ingestion (Streamlabs)",
-      "protocol": "tcp",
-      "visibility": "public",
-      "onAutoForward": "notify"
-    },
-    "8080": {
-      "label": "📺 HLS Streaming Output",
-      "protocol": "https", 
-      "visibility": "public",
-      "onAutoForward": "notify"
-    },
-    "1985": {
-      "label": "🔧 SRS API Management",
-      "protocol": "https",
-      "visibility": "public",
-      "onAutoForward": "silent"
-    },
-    "3000": {
-      "label": "🇵🇹 LusoTown Web Platform",
-      "protocol": "https",
-      "visibility": "public",
-      "onAutoForward": "notify"
-    },
-    "3002": {
-      "label": "🚀 Streaming API Server",
-      "protocol": "https",
-      "visibility": "public",
-      "onAutoForward": "silent"
-    },
-    "6379": {
-      "label": "💾 Redis",
-      "protocol": "tcp",
-      "visibility": "private",
-      "onAutoForward": "silent"
-    }
-  },
-  
-  "postCreateCommand": "cd web-app && npm install && echo '🇵🇹 LusoTown Portuguese streaming environment ready!'",
-  
-  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
   
   "mounts": [
-    "source=lusotown-node-modules,target=${containerWorkspaceFolder}/web-app/node_modules,type=volume",
-    "source=lusotown-streaming-modules,target=${containerWorkspaceFolder}/streaming/node_modules,type=volume"
-  ]
+    "source=${localWorkspaceFolderBasename}-claude-flow-memory,target=/workspaces/${localWorkspaceFolderBasename}/claude-flow-tool/memory,type=volume"
+  ],
+  
+  "shutdownAction": "none"
 }
